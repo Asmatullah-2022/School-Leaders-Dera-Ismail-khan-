@@ -1,30 +1,26 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hive/hive.dart';
 
-import 'package:school_leaders_di_khan/main.dart';
+import 'package:school_leaders_di_khan/app.dart';
+import 'package:school_leaders_di_khan/core/local_db/hive_boxes.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  setUpAll(() async {
+    final Directory dir = await Directory.systemTemp.createTemp('school_leaders_hive_test');
+    Hive.init(dir.path);
+    for (final String name in HiveBoxes.eagerBoxes) {
+      await Hive.openBox(name);
+    }
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('App boots to the first-run setup screen without throwing', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: SchoolLeaderApp()));
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    expect(find.text('Welcome to School Leader DI Khan'), findsOneWidget);
   });
 }

@@ -1,0 +1,267 @@
+rules_version = '2';
+
+// Security model summary (see README.md → "Firestore data model & security"
+// for the full write-up):
+//  - Every user has a role + a scope id tuple on `users/{uid}` (districtId /
+//    subDivisionId / circleId / clusterId / schoolId — only the fields
+//    relevant to their role are set).
+//  - Every transactional document denormalizes the full ancestor hierarchy
+//    (districtId, subDivisionId, circleId, clusterId, schoolId), so scope
+//    checks are simple field comparisons, never joins.
+//  - super_admin bypasses all scope checks. Every other role is restricted
+//    to documents whose hierarchy fields match their own assigned scope.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function role() {
+      return userDoc().role;
+    }
+
+    function isSuperAdmin() {
+      return isSignedIn() && role() == 'super_admin';
+    }
+
+    function isAdminRole() {
+      return isSignedIn() && role() in
+        ['super_admin', 'district_admin', 'sub_division_admin', 'circle_admin'];
+    }
+
+    // True if `data`'s denormalized hierarchy matches the caller's own
+    // assigned scope at whichever level their role operates. Falls back
+    // through narrower-to-broader scope fields.
+    function hasScopeAccess(data) {
+      let u = userDoc();
+      return isSuperAdmin()
+        || (u.schoolId != null && data.schoolId == u.schoolId)
+        || (u.clusterId != null && data.clusterId == u.clusterId)
+        || (u.circleId != null && data.circleId == u.circleId)
+        || (u.subDivisionId != null && data.subDivisionId == u.subDivisionId)
+        || (u.districtId != null && data.districtId == u.districtId);
+    }
+
+    // True if the document about to be written (`request.resource.data`)
+    // falls within the caller's own scope — prevents e.g. a school_leader
+    // from creating a record under a different school.
+    function writeWithinOwnScope(newData) {
+      let u = userDoc();
+      return isSuperAdmin()
+        || (u.schoolId != null && newData.schoolId == u.schoolId)
+        || (u.clusterId != null && newData.clusterId == u.clusterId)
+        || (u.circleId != null && newData.circleId == u.circleId)
+        || (u.subDivisionId != null && newData.subDivisionId == u.subDivisionId)
+        || (u.districtId != null && newData.districtId == u.districtId);
+    }
+
+    function isOwnRecord(data) {
+      return isSignedIn() && data.createdBy == request.auth.uid;
+    }
+
+    // ---- Identity ----
+    match /users/{uid} {
+      allow read: if isSignedIn() && (request.auth.uid == uid || isAdminRole());
+      allow update: if isSignedIn() && request.auth.uid == uid
+        && !('role' in request.resource.data.diff(resource.data).affectedKeys())
+        && !('districtId' in request.resource.data.diff(resource.data).affectedKeys())
+        && !('subDivisionId' in request.resource.data.diff(resource.data).affectedKeys())
+        && !('circleId' in request.resource.data.diff(resource.data).affectedKeys())
+        && !('clusterId' in request.resource.data.diff(resource.data).affectedKeys())
+        && !('schoolId' in request.resource.data.diff(resource.data).affectedKeys());
+      allow update: if isAdminRole();
+      allow create, delete: if isSuperAdmin();
+    }
+
+    // ---- Hierarchy (District > Sub-Division > Circle > Cluster > School) ----
+    match /districts/{id} {
+      allow read: if isSignedIn();
+      allow write: if isSuperAdmin();
+    }
+    match /sub_divisions/{id} {
+      allow read: if isSignedIn();
+      allow write: if isSuperAdmin() || (isAdminRole() && writeWithinOwnScope(request.resource.data));
+    }
+    match /circles/{id} {
+      allow read: if isSignedIn();
+      allow write: if isSuperAdmin() || (isAdminRole() && writeWithinOwnScope(request.resource.data));
+    }
+    match /clusters/{id} {
+      allow read: if isSignedIn();
+      allow write: if isSuperAdmin() || (isAdminRole() && writeWithinOwnScope(request.resource.data));
+    }
+    match /schools/{id} {
+      allow read: if isSignedIn();
+      allow create, update: if isAdminRole() && writeWithinOwnScope(request.resource.data);
+      allow delete: if isSuperAdmin() || role() == 'district_admin';
+    }
+
+    // ---- Flagship modules ----
+    match /admission_campaigns/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+    }
+
+    match /oosc_records/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+    }
+
+    match /monitoring_reports/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn()
+        && role() in ['monitoring_officer', 'circle_admin', 'sub_division_admin', 'district_admin', 'super_admin']
+        && writeWithinOwnScope(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+    }
+
+    match /school_problems/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+      // school_leader may edit their own report's description/evidence but not resolve it;
+      // status transitions to resolved/closed are reserved for officers/admins.
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data)
+        && (
+          role() in ['monitoring_officer', 'circle_admin', 'sub_division_admin', 'district_admin', 'super_admin']
+          || !('status' in request.resource.data.diff(resource.data).affectedKeys())
+          || request.resource.data.status in ['reported']
+        );
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+    }
+
+    match /emergency_reports/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+    }
+
+    match /ptc_priorities/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+    }
+
+    // ---- Scaffold-only modules (schema defined, same scope rule shape) ----
+    // Firestore rules have no "collection in [...]" wildcard match, so each
+    // collection gets its own (identical-shaped) block.
+    match /door_to_door_activities/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /community_activities/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /parent_contacts/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /advertisement_campaigns/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /social_media_campaigns/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /textbook_distribution/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /statements/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /school_functionality/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /school_opening/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /cleanliness/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /plantation/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /ece_monitoring/{id} { allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create: if isSignedIn() && writeWithinOwnScope(request.resource.data) && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSignedIn() && hasScopeAccess(resource.data) && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data); }
+
+    match /cluster_meetings/{id} {
+      allow read: if isSignedIn() && hasScopeAccess(resource.data);
+      allow create, update: if isSignedIn() && writeWithinOwnScope(request.resource.data);
+      allow delete: if isAdminRole() && hasScopeAccess(resource.data);
+
+      match /meeting_actions/{actionId} {
+        allow read: if isSignedIn() && hasScopeAccess(get(/databases/$(database)/documents/cluster_meetings/$(id)).data);
+        allow write: if isSignedIn() && hasScopeAccess(get(/databases/$(database)/documents/cluster_meetings/$(id)).data);
+      }
+    }
+
+    // ---- Supporting collections ----
+    match /notifications/{id} {
+      allow read: if isSignedIn() && (resource.data.recipientUid == request.auth.uid || isAdminRole());
+      allow create: if isAdminRole() || isSignedIn();
+      allow update: if isSignedIn() && resource.data.recipientUid == request.auth.uid;
+      allow delete: if isAdminRole();
+    }
+
+    match /official_updates/{id} {
+      allow read: if isSignedIn();
+      allow write: if isAdminRole();
+    }
+
+    match /reports/{id} {
+      allow read: if isSignedIn() && (resource.data.generatedByUid == request.auth.uid || isAdminRole());
+      allow create: if isSignedIn() && request.resource.data.generatedByUid == request.auth.uid;
+      allow update, delete: if isAdminRole();
+    }
+
+    match /config/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isAdminRole();
+    }
+
+    // Audit logs are never written directly by clients — only by the
+    // `logAuditEvent` Cloud Function trigger (service-account credentials).
+    match /audit_logs/{id} {
+      allow read: if isSuperAdmin() || role() == 'district_admin';
+      allow write: if false;
+    }
+  }
+}

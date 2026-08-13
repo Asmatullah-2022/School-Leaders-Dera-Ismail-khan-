@@ -1,0 +1,61 @@
+rules_version = '2';
+
+// Mirrors firestore.rules' scope model: evidence photos live under
+// /evidence/{collectionName}/{docId}/{fileName} and read/write access is
+// gated by looking up the matching Firestore document's denormalized
+// hierarchy against the caller's own assigned scope.
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isSuperAdmin() {
+      return isSignedIn() && userDoc().role == 'super_admin';
+    }
+
+    function hasScopeAccessToDoc(collectionName, docId) {
+      let data = firestore.get(/databases/(default)/documents/$(collectionName)/$(docId)).data;
+      let u = userDoc();
+      return isSuperAdmin()
+        || (u.schoolId != null && data.schoolId == u.schoolId)
+        || (u.clusterId != null && data.clusterId == u.clusterId)
+        || (u.circleId != null && data.circleId == u.circleId)
+        || (u.subDivisionId != null && data.subDivisionId == u.subDivisionId)
+        || (u.districtId != null && data.districtId == u.districtId);
+    }
+
+    function isValidImageUpload() {
+      return request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    match /evidence/{collectionName}/{docId}/{fileName} {
+      allow read: if isSignedIn() && hasScopeAccessToDoc(collectionName, docId);
+      allow write: if isSignedIn() && hasScopeAccessToDoc(collectionName, docId) && isValidImageUpload();
+    }
+
+    match /attachments/official_updates/{docId}/{fileName} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && userDoc().role in
+        ['super_admin', 'district_admin', 'sub_division_admin', 'circle_admin']
+        && request.resource.size < 10 * 1024 * 1024;
+    }
+
+    match /profile_photos/{uid}/{fileName} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && request.auth.uid == uid && isValidImageUpload();
+    }
+
+    match /reports_exports/{uid}/{fileName} {
+      allow read: if isSignedIn() && (request.auth.uid == uid || isSuperAdmin());
+      allow write: if isSignedIn() && request.auth.uid == uid
+        && request.resource.size < 20 * 1024 * 1024;
+    }
+  }
+}

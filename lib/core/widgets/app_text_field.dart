@@ -19,6 +19,7 @@ class AppTextField extends StatelessWidget {
     this.prefixIcon,
     this.hintText,
     this.autovalidateMode,
+    this.obscureText = false,
   });
 
   final String label;
@@ -34,6 +35,7 @@ class AppTextField extends StatelessWidget {
   final IconData? prefixIcon;
   final String? hintText;
   final AutovalidateMode? autovalidateMode;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,8 @@ class AppTextField extends StatelessWidget {
       onChanged: onChanged,
       validator: validator,
       keyboardType: keyboardType,
-      maxLines: maxLines,
+      maxLines: obscureText ? 1 : maxLines,
+      obscureText: obscureText,
       enabled: enabled,
       autovalidateMode: autovalidateMode,
       textDirection: forceLtr ? TextDirection.ltr : null,
