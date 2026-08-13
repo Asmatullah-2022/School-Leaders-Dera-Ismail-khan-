@@ -774,4 +774,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get oosc_reason_other => 'Other';
+
+  @override
+  String get monitoring_grade_excellent => 'Excellent';
+
+  @override
+  String get monitoring_grade_veryGood => 'Very Good';
+
+  @override
+  String get monitoring_grade_good => 'Good';
+
+  @override
+  String get monitoring_grade_needsImprovement => 'Needs Improvement';
+
+  @override
+  String get monitoring_grade_critical => 'Critical';
+
+  @override
+  String get monitoring_visitDate => 'Visit Date';
+
+  @override
+  String get monitoring_status_draft => 'Draft';
+
+  @override
+  String get monitoring_status_submitted => 'Submitted';
+
+  @override
+  String get monitoring_noReports => 'No monitoring reports recorded yet';
+
+  @override
+  String get monitoring_addReport => 'New Monitoring Report';
+
+  @override
+  String get monitoring_scoringConfig => 'Monitoring Score Weights';
+
+  @override
+  String get monitoring_criteria => 'Scoring Criteria';
+
+  @override
+  String get monitoring_weight => 'Weight';
+
+  @override
+  String get monitoring_maxScore => 'Max Score';
+
+  @override
+  String get monitoring_saveConfig => 'Save Weights';
+
+  @override
+  String get monitoring_configSaved => 'Scoring weights updated';
+
+  @override
+  String get monitoring_overallScore => 'Overall Score';
 }

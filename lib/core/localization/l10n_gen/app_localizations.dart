@@ -1609,6 +1609,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get oosc_reason_other;
+
+  /// No description provided for @monitoring_grade_excellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent'**
+  String get monitoring_grade_excellent;
+
+  /// No description provided for @monitoring_grade_veryGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Very Good'**
+  String get monitoring_grade_veryGood;
+
+  /// No description provided for @monitoring_grade_good.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get monitoring_grade_good;
+
+  /// No description provided for @monitoring_grade_needsImprovement.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs Improvement'**
+  String get monitoring_grade_needsImprovement;
+
+  /// No description provided for @monitoring_grade_critical.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get monitoring_grade_critical;
+
+  /// No description provided for @monitoring_visitDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit Date'**
+  String get monitoring_visitDate;
+
+  /// No description provided for @monitoring_status_draft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get monitoring_status_draft;
+
+  /// No description provided for @monitoring_status_submitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted'**
+  String get monitoring_status_submitted;
+
+  /// No description provided for @monitoring_noReports.
+  ///
+  /// In en, this message translates to:
+  /// **'No monitoring reports recorded yet'**
+  String get monitoring_noReports;
+
+  /// No description provided for @monitoring_addReport.
+  ///
+  /// In en, this message translates to:
+  /// **'New Monitoring Report'**
+  String get monitoring_addReport;
+
+  /// No description provided for @monitoring_scoringConfig.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitoring Score Weights'**
+  String get monitoring_scoringConfig;
+
+  /// No description provided for @monitoring_criteria.
+  ///
+  /// In en, this message translates to:
+  /// **'Scoring Criteria'**
+  String get monitoring_criteria;
+
+  /// No description provided for @monitoring_weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight'**
+  String get monitoring_weight;
+
+  /// No description provided for @monitoring_maxScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Max Score'**
+  String get monitoring_maxScore;
+
+  /// No description provided for @monitoring_saveConfig.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Weights'**
+  String get monitoring_saveConfig;
+
+  /// No description provided for @monitoring_configSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Scoring weights updated'**
+  String get monitoring_configSaved;
+
+  /// No description provided for @monitoring_overallScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Overall Score'**
+  String get monitoring_overallScore;
 }
 
 class _AppLocalizationsDelegate

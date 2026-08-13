@@ -14,6 +14,8 @@ import '../../features/hierarchy/presentation/screens/school_form_screen.dart';
 import '../../features/notifications/presentation/screens/notification_list_screen.dart';
 import '../../features/onboarding/presentation/screens/setup_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/school_monitoring/presentation/screens/monitoring_report_form_screen.dart';
+import '../../features/school_monitoring/presentation/screens/scoring_config_admin_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
 import '../local_db/app_meta_store.dart';
 import '../localization/l10n_gen/app_localizations.dart';
@@ -97,9 +99,14 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       _placeholder(RoutePaths.ooscForm, (l) => l.dashboard_oosc),
       _placeholder(RoutePaths.ooscDetail, (l) => l.dashboard_oosc),
 
-      _placeholder(RoutePaths.monitoringForm, (l) => l.dashboard_qa_monitoring),
-      _placeholder(RoutePaths.monitoringDetail, (l) => l.nav_monitoring),
-      _placeholder(RoutePaths.monitoringScoringConfig, (l) => l.nav_monitoring),
+      GoRoute(
+        path: RoutePaths.monitoringForm,
+        builder: (context, state) => const MonitoringReportFormScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.monitoringScoringConfig,
+        builder: (context, state) => const ScoringConfigAdminScreen(),
+      ),
 
       _placeholder(RoutePaths.schoolProblems, (l) => l.more_schoolProblems),
       _placeholder(RoutePaths.schoolProblemForm, (l) => l.dashboard_qa_problem),

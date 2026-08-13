@@ -775,4 +775,56 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get oosc_reason_other => 'دیگر';
+
+  @override
+  String get monitoring_grade_excellent => 'بہترین';
+
+  @override
+  String get monitoring_grade_veryGood => 'بہت اچھا';
+
+  @override
+  String get monitoring_grade_good => 'اچھا';
+
+  @override
+  String get monitoring_grade_needsImprovement => 'بہتری درکار';
+
+  @override
+  String get monitoring_grade_critical => 'انتہائی خراب';
+
+  @override
+  String get monitoring_visitDate => 'وزٹ کی تاریخ';
+
+  @override
+  String get monitoring_status_draft => 'مسودہ';
+
+  @override
+  String get monitoring_status_submitted => 'جمع شدہ';
+
+  @override
+  String get monitoring_noReports =>
+      'ابھی تک کوئی مانیٹرنگ رپورٹ درج نہیں کی گئی';
+
+  @override
+  String get monitoring_addReport => 'نئی مانیٹرنگ رپورٹ';
+
+  @override
+  String get monitoring_scoringConfig => 'مانیٹرنگ سکور وزن';
+
+  @override
+  String get monitoring_criteria => 'سکورنگ کے معیارات';
+
+  @override
+  String get monitoring_weight => 'وزن';
+
+  @override
+  String get monitoring_maxScore => 'زیادہ سے زیادہ سکور';
+
+  @override
+  String get monitoring_saveConfig => 'وزن محفوظ کریں';
+
+  @override
+  String get monitoring_configSaved => 'سکورنگ وزن اپ ڈیٹ ہو گیا';
+
+  @override
+  String get monitoring_overallScore => 'مجموعی سکور';
 }

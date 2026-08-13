@@ -275,5 +275,23 @@
   "oosc_reason_financial": "Financial Hardship",
   "oosc_reason_distance": "Distance from School",
   "oosc_reason_earlyMarriage": "Early Marriage",
-  "oosc_reason_other": "Other"
+  "oosc_reason_other": "Other",
+
+  "monitoring_grade_excellent": "Excellent",
+  "monitoring_grade_veryGood": "Very Good",
+  "monitoring_grade_good": "Good",
+  "monitoring_grade_needsImprovement": "Needs Improvement",
+  "monitoring_grade_critical": "Critical",
+  "monitoring_visitDate": "Visit Date",
+  "monitoring_status_draft": "Draft",
+  "monitoring_status_submitted": "Submitted",
+  "monitoring_noReports": "No monitoring reports recorded yet",
+  "monitoring_addReport": "New Monitoring Report",
+  "monitoring_scoringConfig": "Monitoring Score Weights",
+  "monitoring_criteria": "Scoring Criteria",
+  "monitoring_weight": "Weight",
+  "monitoring_maxScore": "Max Score",
+  "monitoring_saveConfig": "Save Weights",
+  "monitoring_configSaved": "Scoring weights updated",
+  "monitoring_overallScore": "Overall Score"
 }

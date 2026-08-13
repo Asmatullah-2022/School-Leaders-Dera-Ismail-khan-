@@ -275,5 +275,23 @@
   "oosc_reason_financial": "مالی مشکلات",
   "oosc_reason_distance": "سکول کا فاصلہ",
   "oosc_reason_earlyMarriage": "کم عمری کی شادی",
-  "oosc_reason_other": "دیگر"
+  "oosc_reason_other": "دیگر",
+
+  "monitoring_grade_excellent": "بہترین",
+  "monitoring_grade_veryGood": "بہت اچھا",
+  "monitoring_grade_good": "اچھا",
+  "monitoring_grade_needsImprovement": "بہتری درکار",
+  "monitoring_grade_critical": "انتہائی خراب",
+  "monitoring_visitDate": "وزٹ کی تاریخ",
+  "monitoring_status_draft": "مسودہ",
+  "monitoring_status_submitted": "جمع شدہ",
+  "monitoring_noReports": "ابھی تک کوئی مانیٹرنگ رپورٹ درج نہیں کی گئی",
+  "monitoring_addReport": "نئی مانیٹرنگ رپورٹ",
+  "monitoring_scoringConfig": "مانیٹرنگ سکور وزن",
+  "monitoring_criteria": "سکورنگ کے معیارات",
+  "monitoring_weight": "وزن",
+  "monitoring_maxScore": "زیادہ سے زیادہ سکور",
+  "monitoring_saveConfig": "وزن محفوظ کریں",
+  "monitoring_configSaved": "سکورنگ وزن اپ ڈیٹ ہو گیا",
+  "monitoring_overallScore": "مجموعی سکور"
 }
