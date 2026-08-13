@@ -6,6 +6,9 @@ import '../../features/auth/domain/entities/app_user.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/dashboard/presentation/screens/home_shell_screen.dart';
+import '../../features/hierarchy/domain/hierarchy_level.dart';
+import '../../features/hierarchy/presentation/screens/hierarchy_level_list_screen.dart';
+import '../../features/hierarchy/presentation/screens/school_form_screen.dart';
 import '../../features/notifications/presentation/screens/notification_list_screen.dart';
 import '../../features/onboarding/presentation/screens/setup_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
@@ -67,11 +70,23 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       // Hierarchy management, flagship modules, reports, admin, and
       // scaffold-only modules are wired here as real screens replace these
       // placeholders in subsequent build steps.
-      _placeholder(RoutePaths.districts, (l) => l.hierarchy_districts),
-      _placeholder(RoutePaths.subDivisions, (l) => l.hierarchy_subDivisions),
-      _placeholder(RoutePaths.circles, (l) => l.hierarchy_circles),
-      _placeholder(RoutePaths.clusters, (l) => l.hierarchy_clusters),
-      _placeholder(RoutePaths.schoolForm, (l) => l.hierarchy_addSchool),
+      GoRoute(
+        path: RoutePaths.districts,
+        builder: (context, state) => const HierarchyLevelListScreen(level: HierarchyLevel.district),
+      ),
+      GoRoute(
+        path: RoutePaths.subDivisions,
+        builder: (context, state) => const HierarchyLevelListScreen(level: HierarchyLevel.subDivision),
+      ),
+      GoRoute(
+        path: RoutePaths.circles,
+        builder: (context, state) => const HierarchyLevelListScreen(level: HierarchyLevel.circle),
+      ),
+      GoRoute(
+        path: RoutePaths.clusters,
+        builder: (context, state) => const HierarchyLevelListScreen(level: HierarchyLevel.cluster),
+      ),
+      GoRoute(path: RoutePaths.schoolForm, builder: (context, state) => const SchoolFormScreen()),
       _placeholder(RoutePaths.schoolDetail, (l) => l.common_school),
 
       _placeholder(RoutePaths.admission, (l) => l.more_admission),

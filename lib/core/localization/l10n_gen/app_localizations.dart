@@ -1105,6 +1105,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Are you sure you want to deactivate this record?'**
   String get hierarchy_deactivateConfirm;
+
+  /// No description provided for @hierarchy_village.
+  ///
+  /// In en, this message translates to:
+  /// **'Village/Locality'**
+  String get hierarchy_village;
+
+  /// No description provided for @hierarchy_teachers.
+  ///
+  /// In en, this message translates to:
+  /// **'Teachers'**
+  String get hierarchy_teachers;
+
+  /// No description provided for @hierarchy_boys.
+  ///
+  /// In en, this message translates to:
+  /// **'Boys'**
+  String get hierarchy_boys;
+
+  /// No description provided for @hierarchy_girls.
+  ///
+  /// In en, this message translates to:
+  /// **'Girls'**
+  String get hierarchy_girls;
+
+  /// No description provided for @hierarchy_classrooms.
+  ///
+  /// In en, this message translates to:
+  /// **'Classrooms'**
+  String get hierarchy_classrooms;
+
+  /// No description provided for @hierarchy_toilets.
+  ///
+  /// In en, this message translates to:
+  /// **'Toilets'**
+  String get hierarchy_toilets;
+
+  /// No description provided for @hierarchy_facilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Facilities'**
+  String get hierarchy_facilities;
+
+  /// No description provided for @hierarchy_drinkingWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Drinking Water'**
+  String get hierarchy_drinkingWater;
+
+  /// No description provided for @hierarchy_electricity.
+  ///
+  /// In en, this message translates to:
+  /// **'Electricity'**
+  String get hierarchy_electricity;
+
+  /// No description provided for @hierarchy_boundaryWall.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Wall'**
+  String get hierarchy_boundaryWall;
+
+  /// No description provided for @hierarchy_eceRoom.
+  ///
+  /// In en, this message translates to:
+  /// **'ECE Room'**
+  String get hierarchy_eceRoom;
+
+  /// No description provided for @hierarchy_playground.
+  ///
+  /// In en, this message translates to:
+  /// **'Playground'**
+  String get hierarchy_playground;
+
+  /// No description provided for @hierarchy_furniture.
+  ///
+  /// In en, this message translates to:
+  /// **'Furniture'**
+  String get hierarchy_furniture;
+
+  /// No description provided for @hierarchy_library.
+  ///
+  /// In en, this message translates to:
+  /// **'Library'**
+  String get hierarchy_library;
+
+  /// No description provided for @hierarchy_itFacilities.
+  ///
+  /// In en, this message translates to:
+  /// **'IT Facilities'**
+  String get hierarchy_itFacilities;
+
+  /// No description provided for @hierarchy_buildingCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Building Condition'**
+  String get hierarchy_buildingCondition;
+
+  /// No description provided for @hierarchy_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get hierarchy_location;
+
+  /// No description provided for @hierarchy_latitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get hierarchy_latitude;
+
+  /// No description provided for @hierarchy_longitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get hierarchy_longitude;
+
+  /// No description provided for @school_level_primary.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary'**
+  String get school_level_primary;
+
+  /// No description provided for @school_level_elementary.
+  ///
+  /// In en, this message translates to:
+  /// **'Elementary'**
+  String get school_level_elementary;
+
+  /// No description provided for @school_level_middle.
+  ///
+  /// In en, this message translates to:
+  /// **'Middle'**
+  String get school_level_middle;
+
+  /// No description provided for @school_level_high.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get school_level_high;
+
+  /// No description provided for @school_level_higherSecondary.
+  ///
+  /// In en, this message translates to:
+  /// **'Higher Secondary'**
+  String get school_level_higherSecondary;
+
+  /// No description provided for @school_gender_boys.
+  ///
+  /// In en, this message translates to:
+  /// **'Boys'**
+  String get school_gender_boys;
+
+  /// No description provided for @school_gender_girls.
+  ///
+  /// In en, this message translates to:
+  /// **'Girls'**
+  String get school_gender_girls;
+
+  /// No description provided for @school_gender_mixed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mixed'**
+  String get school_gender_mixed;
+
+  /// No description provided for @building_condition_good.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get building_condition_good;
+
+  /// No description provided for @building_condition_needsRepair.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs Repair'**
+  String get building_condition_needsRepair;
+
+  /// No description provided for @building_condition_critical.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get building_condition_critical;
 }
 
 class _AppLocalizationsDelegate

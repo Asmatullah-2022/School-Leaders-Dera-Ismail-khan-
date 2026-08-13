@@ -523,4 +523,94 @@ class AppLocalizationsUr extends AppLocalizations {
   @override
   String get hierarchy_deactivateConfirm =>
       'کیا آپ واقعی اس ریکارڈ کو غیر فعال کرنا چاہتے ہیں؟';
+
+  @override
+  String get hierarchy_village => 'گاؤں/علاقہ';
+
+  @override
+  String get hierarchy_teachers => 'اساتذہ';
+
+  @override
+  String get hierarchy_boys => 'لڑکے';
+
+  @override
+  String get hierarchy_girls => 'لڑکیاں';
+
+  @override
+  String get hierarchy_classrooms => 'کلاس روم';
+
+  @override
+  String get hierarchy_toilets => 'بیت الخلاء';
+
+  @override
+  String get hierarchy_facilities => 'سہولیات';
+
+  @override
+  String get hierarchy_drinkingWater => 'پینے کا پانی';
+
+  @override
+  String get hierarchy_electricity => 'بجلی';
+
+  @override
+  String get hierarchy_boundaryWall => 'چار دیواری';
+
+  @override
+  String get hierarchy_eceRoom => 'ECE روم';
+
+  @override
+  String get hierarchy_playground => 'کھیل کا میدان';
+
+  @override
+  String get hierarchy_furniture => 'فرنیچر';
+
+  @override
+  String get hierarchy_library => 'لائبریری';
+
+  @override
+  String get hierarchy_itFacilities => 'IT سہولیات';
+
+  @override
+  String get hierarchy_buildingCondition => 'عمارت کی حالت';
+
+  @override
+  String get hierarchy_location => 'محل وقوع';
+
+  @override
+  String get hierarchy_latitude => 'عرض بلد';
+
+  @override
+  String get hierarchy_longitude => 'طول بلد';
+
+  @override
+  String get school_level_primary => 'پرائمری';
+
+  @override
+  String get school_level_elementary => 'ایلیمنٹری';
+
+  @override
+  String get school_level_middle => 'مڈل';
+
+  @override
+  String get school_level_high => 'ہائی';
+
+  @override
+  String get school_level_higherSecondary => 'ہائیر سیکنڈری';
+
+  @override
+  String get school_gender_boys => 'لڑکے';
+
+  @override
+  String get school_gender_girls => 'لڑکیاں';
+
+  @override
+  String get school_gender_mixed => 'مخلوط';
+
+  @override
+  String get building_condition_good => 'اچھی';
+
+  @override
+  String get building_condition_needsRepair => 'مرمت درکار';
+
+  @override
+  String get building_condition_critical => 'انتہائی خراب';
 }

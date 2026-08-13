@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/localization/l10n_gen/app_localizations.dart';
 import '../../../../core/widgets/coming_soon_screen.dart';
 import '../../../../core/widgets/offline_banner.dart';
+import '../../../hierarchy/presentation/screens/school_list_screen.dart';
 import 'home_dashboard_screen.dart';
 import 'more_menu_screen.dart';
 
@@ -26,7 +27,7 @@ class _HomeShellScreenState extends ConsumerState<HomeShellScreen> {
     final AppLocalizations l10n = AppLocalizations.of(context);
     final List<Widget> tabs = <Widget>[
       const HomeDashboardScreen(),
-      ComingSoonScreen(title: l10n.nav_schools),
+      const SchoolListScreen(),
       ComingSoonScreen(title: l10n.nav_monitoring),
       ComingSoonScreen(title: l10n.nav_reports),
       const MoreMenuScreen(),

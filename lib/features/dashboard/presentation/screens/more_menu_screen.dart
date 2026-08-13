@@ -27,6 +27,12 @@ class MoreMenuScreen extends ConsumerWidget {
       _MenuEntry(Icons.emergency_outlined, l10n.more_emergency, RoutePaths.emergency),
       _MenuEntry(Icons.campaign_outlined, l10n.more_officialUpdates, RoutePaths.officialUpdates),
       _MenuEntry(Icons.notifications_outlined, l10n.more_notifications, RoutePaths.notifications),
+      if (role != null && role.canManageHierarchy) ...<_MenuEntry>[
+        _MenuEntry(Icons.map_outlined, l10n.hierarchy_districts, RoutePaths.districts),
+        _MenuEntry(Icons.map_outlined, l10n.hierarchy_subDivisions, RoutePaths.subDivisions),
+        _MenuEntry(Icons.map_outlined, l10n.hierarchy_circles, RoutePaths.circles),
+        _MenuEntry(Icons.hub_outlined, l10n.hierarchy_clusters, RoutePaths.clusters),
+      ],
       if (role != null && role.isAdmin)
         _MenuEntry(Icons.manage_accounts_outlined, l10n.more_adminManagement, RoutePaths.adminUsers),
       if (role == AppRole.superAdmin || role == AppRole.districtAdmin)

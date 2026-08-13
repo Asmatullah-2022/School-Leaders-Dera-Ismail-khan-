@@ -522,4 +522,94 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hierarchy_deactivateConfirm =>
       'Are you sure you want to deactivate this record?';
+
+  @override
+  String get hierarchy_village => 'Village/Locality';
+
+  @override
+  String get hierarchy_teachers => 'Teachers';
+
+  @override
+  String get hierarchy_boys => 'Boys';
+
+  @override
+  String get hierarchy_girls => 'Girls';
+
+  @override
+  String get hierarchy_classrooms => 'Classrooms';
+
+  @override
+  String get hierarchy_toilets => 'Toilets';
+
+  @override
+  String get hierarchy_facilities => 'Facilities';
+
+  @override
+  String get hierarchy_drinkingWater => 'Drinking Water';
+
+  @override
+  String get hierarchy_electricity => 'Electricity';
+
+  @override
+  String get hierarchy_boundaryWall => 'Boundary Wall';
+
+  @override
+  String get hierarchy_eceRoom => 'ECE Room';
+
+  @override
+  String get hierarchy_playground => 'Playground';
+
+  @override
+  String get hierarchy_furniture => 'Furniture';
+
+  @override
+  String get hierarchy_library => 'Library';
+
+  @override
+  String get hierarchy_itFacilities => 'IT Facilities';
+
+  @override
+  String get hierarchy_buildingCondition => 'Building Condition';
+
+  @override
+  String get hierarchy_location => 'Location';
+
+  @override
+  String get hierarchy_latitude => 'Latitude';
+
+  @override
+  String get hierarchy_longitude => 'Longitude';
+
+  @override
+  String get school_level_primary => 'Primary';
+
+  @override
+  String get school_level_elementary => 'Elementary';
+
+  @override
+  String get school_level_middle => 'Middle';
+
+  @override
+  String get school_level_high => 'High';
+
+  @override
+  String get school_level_higherSecondary => 'Higher Secondary';
+
+  @override
+  String get school_gender_boys => 'Boys';
+
+  @override
+  String get school_gender_girls => 'Girls';
+
+  @override
+  String get school_gender_mixed => 'Mixed';
+
+  @override
+  String get building_condition_good => 'Good';
+
+  @override
+  String get building_condition_needsRepair => 'Needs Repair';
+
+  @override
+  String get building_condition_critical => 'Critical';
 }
