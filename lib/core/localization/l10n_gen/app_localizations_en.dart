@@ -1,0 +1,525 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
+class AppLocalizationsEn extends AppLocalizations {
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get appName => 'School Leader DI Khan';
+
+  @override
+  String get appNameFull => 'School Leader District Dera Ismail Khan';
+
+  @override
+  String get appSubtitle => 'School Leadership, Monitoring & Management System';
+
+  @override
+  String get districtLabel => 'District Dera Ismail Khan';
+
+  @override
+  String get common_save => 'Save';
+
+  @override
+  String get common_cancel => 'Cancel';
+
+  @override
+  String get common_submit => 'Submit';
+
+  @override
+  String get common_edit => 'Edit';
+
+  @override
+  String get common_delete => 'Delete';
+
+  @override
+  String get common_add => 'Add';
+
+  @override
+  String get common_search => 'Search';
+
+  @override
+  String get common_filter => 'Filter';
+
+  @override
+  String get common_close => 'Close';
+
+  @override
+  String get common_retry => 'Retry';
+
+  @override
+  String get common_ok => 'OK';
+
+  @override
+  String get common_yes => 'Yes';
+
+  @override
+  String get common_no => 'No';
+
+  @override
+  String get common_continue => 'Continue';
+
+  @override
+  String get common_back => 'Back';
+
+  @override
+  String get common_next => 'Next';
+
+  @override
+  String get common_done => 'Done';
+
+  @override
+  String get common_confirm => 'Confirm';
+
+  @override
+  String get common_export => 'Export';
+
+  @override
+  String get common_share => 'Share';
+
+  @override
+  String get common_print => 'Print';
+
+  @override
+  String get common_viewAll => 'View All';
+
+  @override
+  String get common_remarks => 'Remarks';
+
+  @override
+  String get common_date => 'Date';
+
+  @override
+  String get common_status => 'Status';
+
+  @override
+  String get common_photo => 'Photo';
+
+  @override
+  String get common_photos => 'Photos';
+
+  @override
+  String get common_camera => 'Camera';
+
+  @override
+  String get common_gallery => 'Gallery';
+
+  @override
+  String get common_school => 'School';
+
+  @override
+  String get common_cluster => 'Cluster';
+
+  @override
+  String get common_circle => 'Circle';
+
+  @override
+  String get common_subDivision => 'Sub-Division';
+
+  @override
+  String get common_district => 'District';
+
+  @override
+  String get common_optional => 'Optional';
+
+  @override
+  String get common_required => 'Required';
+
+  @override
+  String get common_loading => 'Loading...';
+
+  @override
+  String get common_comingSoon => 'This module is coming soon';
+
+  @override
+  String get common_selectOption => 'Select an option';
+
+  @override
+  String get common_noInternet => 'No internet connection';
+
+  @override
+  String get common_logout => 'Logout';
+
+  @override
+  String get common_error_network =>
+      'Internet connection is unavailable. Your data has been saved locally.';
+
+  @override
+  String get common_error_auth =>
+      'Authentication failed. Please sign in again.';
+
+  @override
+  String get common_error_permission =>
+      'You do not have permission to perform this action.';
+
+  @override
+  String get common_error_notFound =>
+      'The requested record could not be found.';
+
+  @override
+  String get common_error_unknown => 'Something went wrong. Please try again.';
+
+  @override
+  String get common_success_saved => 'Saved successfully.';
+
+  @override
+  String get common_success_submitted => 'Report submitted successfully.';
+
+  @override
+  String get common_success_savedOffline =>
+      'Your data has been saved locally. It will sync automatically once internet is available.';
+
+  @override
+  String get validation_required => 'This field is required';
+
+  @override
+  String get validation_nonNegative => 'Value cannot be negative';
+
+  @override
+  String get validation_positive => 'Value must be greater than zero';
+
+  @override
+  String get validation_invalidPhone => 'Enter a valid phone number';
+
+  @override
+  String get validation_invalidEmail => 'Enter a valid email address';
+
+  @override
+  String get validation_minLength => 'Value is too short';
+
+  @override
+  String get validation_invalidAge => 'Enter a valid age';
+
+  @override
+  String get validation_boysGirlsMismatch =>
+      'Boys + Girls must equal Total Students';
+
+  @override
+  String get validation_dateInFuture => 'Date cannot be in the future';
+
+  @override
+  String get validation_endBeforeStart => 'End date must be after start date';
+
+  @override
+  String get sync_offline => 'Offline';
+
+  @override
+  String get sync_savedLocally => 'Saved Locally';
+
+  @override
+  String get sync_syncing => 'Syncing';
+
+  @override
+  String get sync_synced => 'Synced';
+
+  @override
+  String get sync_syncFailed => 'Sync Failed';
+
+  @override
+  String sync_pendingBanner(int count) {
+    return '$count item(s) waiting to sync';
+  }
+
+  @override
+  String get nav_home => 'Home';
+
+  @override
+  String get nav_schools => 'Schools';
+
+  @override
+  String get nav_monitoring => 'Monitoring';
+
+  @override
+  String get nav_reports => 'Reports';
+
+  @override
+  String get nav_more => 'More';
+
+  @override
+  String get more_admission => 'Admission';
+
+  @override
+  String get more_clusterMeetings => 'Cluster Meetings';
+
+  @override
+  String get more_ptc => 'PTC';
+
+  @override
+  String get more_ece => 'ECE';
+
+  @override
+  String get more_cleanliness => 'Cleanliness';
+
+  @override
+  String get more_plantation => 'Plantation';
+
+  @override
+  String get more_community => 'Community';
+
+  @override
+  String get more_schoolProblems => 'School Problems';
+
+  @override
+  String get more_emergency => 'Emergency';
+
+  @override
+  String get more_officialUpdates => 'Official Updates';
+
+  @override
+  String get more_notifications => 'Notifications';
+
+  @override
+  String get more_profile => 'Profile';
+
+  @override
+  String get more_settings => 'Settings';
+
+  @override
+  String get more_auditLog => 'Audit Log';
+
+  @override
+  String get more_adminManagement => 'User Management';
+
+  @override
+  String get role_superAdmin => 'Super Admin';
+
+  @override
+  String get role_districtAdmin => 'District Admin';
+
+  @override
+  String get role_subDivisionAdmin => 'Sub-Division Admin';
+
+  @override
+  String get role_circleAdmin => 'Circle/Cluster Admin';
+
+  @override
+  String get role_schoolLeader => 'School Leader / Head Teacher';
+
+  @override
+  String get role_monitoringOfficer => 'Monitoring Officer';
+
+  @override
+  String get setup_welcomeTitle => 'Welcome to School Leader DI Khan';
+
+  @override
+  String get setup_selectLanguage => 'Select Language';
+
+  @override
+  String get setup_selectDisplayMode => 'Select Display Mode';
+
+  @override
+  String get setup_light => 'Light';
+
+  @override
+  String get setup_dark => 'Dark';
+
+  @override
+  String get setup_systemDefault => 'System Default';
+
+  @override
+  String get setup_continue => 'Continue';
+
+  @override
+  String get auth_loginTitle => 'Sign In';
+
+  @override
+  String get auth_email => 'Email';
+
+  @override
+  String get auth_password => 'Password';
+
+  @override
+  String get auth_forgotPassword => 'Forgot Password?';
+
+  @override
+  String get auth_signIn => 'Sign In';
+
+  @override
+  String get auth_signOut => 'Sign Out';
+
+  @override
+  String get auth_notConfigured => 'Firebase is not configured yet';
+
+  @override
+  String get auth_notConfiguredBody =>
+      'This app has not been connected to a Firebase project. Follow the setup instructions in the project README to enable sign-in and data sync.';
+
+  @override
+  String get settings_language => 'Language';
+
+  @override
+  String get settings_displayMode => 'Display Mode';
+
+  @override
+  String get settings_notifications => 'Notifications';
+
+  @override
+  String get settings_password => 'Password';
+
+  @override
+  String get settings_security => 'Security';
+
+  @override
+  String get settings_offlineSync => 'Offline Sync';
+
+  @override
+  String get settings_about => 'About';
+
+  @override
+  String get settings_privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get settings_terms => 'Terms';
+
+  @override
+  String get settings_support => 'Support';
+
+  @override
+  String get settings_title => 'Settings';
+
+  @override
+  String get profile_title => 'Profile';
+
+  @override
+  String get profile_designation => 'Designation';
+
+  @override
+  String get profile_mobile => 'Mobile';
+
+  @override
+  String get dashboard_totalSchools => 'Total Schools';
+
+  @override
+  String get dashboard_totalClusters => 'Total Clusters';
+
+  @override
+  String get dashboard_totalEnrollment => 'Total Enrollment';
+
+  @override
+  String get dashboard_newAdmissions => 'New Admissions';
+
+  @override
+  String get dashboard_oosc => 'OOSC';
+
+  @override
+  String get dashboard_functionalSchools => 'Functional Schools';
+
+  @override
+  String get dashboard_schoolsNeedingAttention => 'Schools Requiring Attention';
+
+  @override
+  String get dashboard_pendingReports => 'Pending Reports';
+
+  @override
+  String get dashboard_quickActions => 'Quick Actions';
+
+  @override
+  String get dashboard_qa_admission => 'New Admission';
+
+  @override
+  String get dashboard_qa_monitoring => 'Monitoring Report';
+
+  @override
+  String get dashboard_qa_problem => 'School Problem';
+
+  @override
+  String get dashboard_qa_emergency => 'Emergency Report';
+
+  @override
+  String get dashboard_qa_ptc => 'PTC Activity';
+
+  @override
+  String get dashboard_qa_community => 'Community Activity';
+
+  @override
+  String get dashboard_qa_evidence => 'Upload Evidence';
+
+  @override
+  String get hierarchy_districts => 'Districts';
+
+  @override
+  String get hierarchy_subDivisions => 'Sub-Divisions';
+
+  @override
+  String get hierarchy_circles => 'Circles';
+
+  @override
+  String get hierarchy_clusters => 'Clusters';
+
+  @override
+  String get hierarchy_schools => 'Schools';
+
+  @override
+  String get hierarchy_addDistrict => 'Add District';
+
+  @override
+  String get hierarchy_addSubDivision => 'Add Sub-Division';
+
+  @override
+  String get hierarchy_addCircle => 'Add Circle';
+
+  @override
+  String get hierarchy_addCluster => 'Add Cluster';
+
+  @override
+  String get hierarchy_addSchool => 'Add School';
+
+  @override
+  String get hierarchy_name => 'Name';
+
+  @override
+  String get hierarchy_nameUrdu => 'Name (Urdu)';
+
+  @override
+  String get hierarchy_code => 'Code';
+
+  @override
+  String get hierarchy_active => 'Active';
+
+  @override
+  String get hierarchy_inactive => 'Inactive';
+
+  @override
+  String get hierarchy_selectDistrict => 'Select District';
+
+  @override
+  String get hierarchy_selectSubDivision => 'Select Sub-Division';
+
+  @override
+  String get hierarchy_selectCircle => 'Select Circle';
+
+  @override
+  String get hierarchy_selectCluster => 'Select Cluster';
+
+  @override
+  String get hierarchy_selectSchool => 'Select School';
+
+  @override
+  String get hierarchy_emisCode => 'EMIS Code';
+
+  @override
+  String get hierarchy_schoolLevel => 'School Level';
+
+  @override
+  String get hierarchy_schoolType => 'School Type';
+
+  @override
+  String get hierarchy_headTeacher => 'Head Teacher';
+
+  @override
+  String get hierarchy_totalEnrollment => 'Total Enrollment';
+
+  @override
+  String get hierarchy_noSchools => 'No schools found in this scope';
+
+  @override
+  String get hierarchy_noClusters => 'No clusters found';
+
+  @override
+  String get hierarchy_deactivateConfirm =>
+      'Are you sure you want to deactivate this record?';
+}
