@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/admission_campaign/presentation/screens/admission_campaign_form_screen.dart';
+import '../../features/admission_campaign/presentation/screens/admission_campaign_list_screen.dart';
 import '../../features/auth/domain/entities/app_user.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
@@ -89,9 +91,8 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(path: RoutePaths.schoolForm, builder: (context, state) => const SchoolFormScreen()),
       _placeholder(RoutePaths.schoolDetail, (l) => l.common_school),
 
-      _placeholder(RoutePaths.admission, (l) => l.more_admission),
-      _placeholder(RoutePaths.admissionForm, (l) => l.dashboard_qa_admission),
-      _placeholder(RoutePaths.admissionDetail, (l) => l.more_admission),
+      GoRoute(path: RoutePaths.admission, builder: (context, state) => const AdmissionCampaignListScreen()),
+      GoRoute(path: RoutePaths.admissionForm, builder: (context, state) => const AdmissionCampaignFormScreen()),
       _placeholder(RoutePaths.oosc, (l) => l.dashboard_oosc),
       _placeholder(RoutePaths.ooscForm, (l) => l.dashboard_oosc),
       _placeholder(RoutePaths.ooscDetail, (l) => l.dashboard_oosc),

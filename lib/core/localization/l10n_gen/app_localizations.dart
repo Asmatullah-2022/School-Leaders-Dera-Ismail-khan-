@@ -1285,6 +1285,330 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Critical'**
   String get building_condition_critical;
+
+  /// No description provided for @admission_target.
+  ///
+  /// In en, this message translates to:
+  /// **'Target'**
+  String get admission_target;
+
+  /// No description provided for @admission_achieved.
+  ///
+  /// In en, this message translates to:
+  /// **'Achieved'**
+  String get admission_achieved;
+
+  /// No description provided for @admission_academicYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Academic Year'**
+  String get admission_academicYear;
+
+  /// No description provided for @admission_previousEnrollment.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous Enrollment'**
+  String get admission_previousEnrollment;
+
+  /// No description provided for @admission_currentEnrollment.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Enrollment'**
+  String get admission_currentEnrollment;
+
+  /// No description provided for @admission_newAdmissionsBoys.
+  ///
+  /// In en, this message translates to:
+  /// **'New Admissions — Boys'**
+  String get admission_newAdmissionsBoys;
+
+  /// No description provided for @admission_newAdmissionsGirls.
+  ///
+  /// In en, this message translates to:
+  /// **'New Admissions — Girls'**
+  String get admission_newAdmissionsGirls;
+
+  /// No description provided for @admission_newAdmissionsTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'New Admissions — Total'**
+  String get admission_newAdmissionsTotal;
+
+  /// No description provided for @admission_ooscIdentified.
+  ///
+  /// In en, this message translates to:
+  /// **'OOSC Identified'**
+  String get admission_ooscIdentified;
+
+  /// No description provided for @admission_ooscReenrolled.
+  ///
+  /// In en, this message translates to:
+  /// **'OOSC Re-enrolled'**
+  String get admission_ooscReenrolled;
+
+  /// No description provided for @admission_doorToDoorVisits.
+  ///
+  /// In en, this message translates to:
+  /// **'Door-to-door Visits'**
+  String get admission_doorToDoorVisits;
+
+  /// No description provided for @admission_parentMeetings.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Meetings'**
+  String get admission_parentMeetings;
+
+  /// No description provided for @admission_communityMeetings.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Meetings'**
+  String get admission_communityMeetings;
+
+  /// No description provided for @admission_banners.
+  ///
+  /// In en, this message translates to:
+  /// **'Banners'**
+  String get admission_banners;
+
+  /// No description provided for @admission_posters.
+  ///
+  /// In en, this message translates to:
+  /// **'Posters'**
+  String get admission_posters;
+
+  /// No description provided for @admission_socialMediaActivities.
+  ///
+  /// In en, this message translates to:
+  /// **'Social Media Activities'**
+  String get admission_socialMediaActivities;
+
+  /// No description provided for @admission_freeTextbooksDistributed.
+  ///
+  /// In en, this message translates to:
+  /// **'Free Textbooks Distributed'**
+  String get admission_freeTextbooksDistributed;
+
+  /// No description provided for @admission_otherSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Other Support'**
+  String get admission_otherSupport;
+
+  /// No description provided for @admission_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Campaign Status'**
+  String get admission_status;
+
+  /// No description provided for @admission_status_planned.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned'**
+  String get admission_status_planned;
+
+  /// No description provided for @admission_status_active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get admission_status_active;
+
+  /// No description provided for @admission_status_completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get admission_status_completed;
+
+  /// No description provided for @admission_noCampaigns.
+  ///
+  /// In en, this message translates to:
+  /// **'No admission campaigns recorded yet'**
+  String get admission_noCampaigns;
+
+  /// No description provided for @admission_addCampaign.
+  ///
+  /// In en, this message translates to:
+  /// **'New Admission Campaign'**
+  String get admission_addCampaign;
+
+  /// No description provided for @admission_linkedOosc.
+  ///
+  /// In en, this message translates to:
+  /// **'OOSC linked to this campaign'**
+  String get admission_linkedOosc;
+
+  /// No description provided for @oosc_childName.
+  ///
+  /// In en, this message translates to:
+  /// **'Child Name'**
+  String get oosc_childName;
+
+  /// No description provided for @oosc_childNameUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Child Name (Urdu)'**
+  String get oosc_childNameUrdu;
+
+  /// No description provided for @oosc_gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get oosc_gender;
+
+  /// No description provided for @oosc_age.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get oosc_age;
+
+  /// No description provided for @oosc_village.
+  ///
+  /// In en, this message translates to:
+  /// **'Village/Area'**
+  String get oosc_village;
+
+  /// No description provided for @oosc_parentGuardian.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent/Guardian'**
+  String get oosc_parentGuardian;
+
+  /// No description provided for @oosc_contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact'**
+  String get oosc_contact;
+
+  /// No description provided for @oosc_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason for being out of school'**
+  String get oosc_reason;
+
+  /// No description provided for @oosc_reasonDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason Detail'**
+  String get oosc_reasonDetail;
+
+  /// No description provided for @oosc_previousSchool.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous School'**
+  String get oosc_previousSchool;
+
+  /// No description provided for @oosc_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get oosc_status;
+
+  /// No description provided for @oosc_followUpDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up Date'**
+  String get oosc_followUpDate;
+
+  /// No description provided for @oosc_noRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'No out-of-school children recorded yet'**
+  String get oosc_noRecords;
+
+  /// No description provided for @oosc_addRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'New OOSC Record'**
+  String get oosc_addRecord;
+
+  /// No description provided for @oosc_male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get oosc_male;
+
+  /// No description provided for @oosc_female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get oosc_female;
+
+  /// No description provided for @oosc_status_identified.
+  ///
+  /// In en, this message translates to:
+  /// **'Identified'**
+  String get oosc_status_identified;
+
+  /// No description provided for @oosc_status_contacted.
+  ///
+  /// In en, this message translates to:
+  /// **'Contacted'**
+  String get oosc_status_contacted;
+
+  /// No description provided for @oosc_status_counseled.
+  ///
+  /// In en, this message translates to:
+  /// **'Counseled'**
+  String get oosc_status_counseled;
+
+  /// No description provided for @oosc_status_reenrolled.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enrolled'**
+  String get oosc_status_reenrolled;
+
+  /// No description provided for @oosc_status_notReenrolled.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Re-enrolled'**
+  String get oosc_status_notReenrolled;
+
+  /// No description provided for @oosc_status_followUpRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up Required'**
+  String get oosc_status_followUpRequired;
+
+  /// No description provided for @oosc_reason_labor.
+  ///
+  /// In en, this message translates to:
+  /// **'Child Labor'**
+  String get oosc_reason_labor;
+
+  /// No description provided for @oosc_reason_migration.
+  ///
+  /// In en, this message translates to:
+  /// **'Migration'**
+  String get oosc_reason_migration;
+
+  /// No description provided for @oosc_reason_disability.
+  ///
+  /// In en, this message translates to:
+  /// **'Disability'**
+  String get oosc_reason_disability;
+
+  /// No description provided for @oosc_reason_financial.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial Hardship'**
+  String get oosc_reason_financial;
+
+  /// No description provided for @oosc_reason_distance.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance from School'**
+  String get oosc_reason_distance;
+
+  /// No description provided for @oosc_reason_earlyMarriage.
+  ///
+  /// In en, this message translates to:
+  /// **'Early Marriage'**
+  String get oosc_reason_earlyMarriage;
+
+  /// No description provided for @oosc_reason_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get oosc_reason_other;
 }
 
 class _AppLocalizationsDelegate

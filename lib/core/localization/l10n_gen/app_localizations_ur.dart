@@ -613,4 +613,166 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get building_condition_critical => 'انتہائی خراب';
+
+  @override
+  String get admission_target => 'ہدف';
+
+  @override
+  String get admission_achieved => 'حاصل شدہ';
+
+  @override
+  String get admission_academicYear => 'تعلیمی سال';
+
+  @override
+  String get admission_previousEnrollment => 'سابقہ انرولمنٹ';
+
+  @override
+  String get admission_currentEnrollment => 'موجودہ انرولمنٹ';
+
+  @override
+  String get admission_newAdmissionsBoys => 'نئے داخلے — لڑکے';
+
+  @override
+  String get admission_newAdmissionsGirls => 'نئے داخلے — لڑکیاں';
+
+  @override
+  String get admission_newAdmissionsTotal => 'نئے داخلے — کل';
+
+  @override
+  String get admission_ooscIdentified => 'OOSC کی نشاندہی';
+
+  @override
+  String get admission_ooscReenrolled => 'OOSC دوبارہ داخل';
+
+  @override
+  String get admission_doorToDoorVisits => 'گھر گھر وزٹ';
+
+  @override
+  String get admission_parentMeetings => 'والدین اجلاس';
+
+  @override
+  String get admission_communityMeetings => 'کمیونٹی اجلاس';
+
+  @override
+  String get admission_banners => 'بینرز';
+
+  @override
+  String get admission_posters => 'پوسٹرز';
+
+  @override
+  String get admission_socialMediaActivities => 'سوشل میڈیا سرگرمیاں';
+
+  @override
+  String get admission_freeTextbooksDistributed => 'مفت درسی کتب تقسیم';
+
+  @override
+  String get admission_otherSupport => 'دیگر معاونت';
+
+  @override
+  String get admission_status => 'مہم کی حیثیت';
+
+  @override
+  String get admission_status_planned => 'منصوبہ بند';
+
+  @override
+  String get admission_status_active => 'جاری';
+
+  @override
+  String get admission_status_completed => 'مکمل';
+
+  @override
+  String get admission_noCampaigns => 'ابھی تک کوئی داخلہ مہم درج نہیں کی گئی';
+
+  @override
+  String get admission_addCampaign => 'نئی داخلہ مہم';
+
+  @override
+  String get admission_linkedOosc => 'اس مہم سے منسلک OOSC';
+
+  @override
+  String get oosc_childName => 'بچے کا نام';
+
+  @override
+  String get oosc_childNameUrdu => 'بچے کا نام (اردو)';
+
+  @override
+  String get oosc_gender => 'جنس';
+
+  @override
+  String get oosc_age => 'عمر';
+
+  @override
+  String get oosc_village => 'گاؤں/علاقہ';
+
+  @override
+  String get oosc_parentGuardian => 'والدین/سرپرست';
+
+  @override
+  String get oosc_contact => 'رابطہ';
+
+  @override
+  String get oosc_reason => 'سکول سے باہر ہونے کی وجہ';
+
+  @override
+  String get oosc_reasonDetail => 'وجہ کی تفصیل';
+
+  @override
+  String get oosc_previousSchool => 'سابقہ سکول';
+
+  @override
+  String get oosc_status => 'حیثیت';
+
+  @override
+  String get oosc_followUpDate => 'فالو اپ تاریخ';
+
+  @override
+  String get oosc_noRecords => 'ابھی تک کوئی آؤٹ آف سکول بچہ درج نہیں کیا گیا';
+
+  @override
+  String get oosc_addRecord => 'نیا OOSC ریکارڈ';
+
+  @override
+  String get oosc_male => 'مرد';
+
+  @override
+  String get oosc_female => 'خاتون';
+
+  @override
+  String get oosc_status_identified => 'نشاندہی شدہ';
+
+  @override
+  String get oosc_status_contacted => 'رابطہ کیا گیا';
+
+  @override
+  String get oosc_status_counseled => 'مشاورت کی گئی';
+
+  @override
+  String get oosc_status_reenrolled => 'دوبارہ داخل';
+
+  @override
+  String get oosc_status_notReenrolled => 'دوبارہ داخل نہیں';
+
+  @override
+  String get oosc_status_followUpRequired => 'فالو اپ درکار';
+
+  @override
+  String get oosc_reason_labor => 'بچہ مزدوری';
+
+  @override
+  String get oosc_reason_migration => 'نقل مکانی';
+
+  @override
+  String get oosc_reason_disability => 'معذوری';
+
+  @override
+  String get oosc_reason_financial => 'مالی مشکلات';
+
+  @override
+  String get oosc_reason_distance => 'سکول کا فاصلہ';
+
+  @override
+  String get oosc_reason_earlyMarriage => 'کم عمری کی شادی';
+
+  @override
+  String get oosc_reason_other => 'دیگر';
 }

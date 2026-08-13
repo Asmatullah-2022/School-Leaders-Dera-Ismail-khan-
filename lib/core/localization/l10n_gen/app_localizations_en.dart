@@ -612,4 +612,166 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get building_condition_critical => 'Critical';
+
+  @override
+  String get admission_target => 'Target';
+
+  @override
+  String get admission_achieved => 'Achieved';
+
+  @override
+  String get admission_academicYear => 'Academic Year';
+
+  @override
+  String get admission_previousEnrollment => 'Previous Enrollment';
+
+  @override
+  String get admission_currentEnrollment => 'Current Enrollment';
+
+  @override
+  String get admission_newAdmissionsBoys => 'New Admissions — Boys';
+
+  @override
+  String get admission_newAdmissionsGirls => 'New Admissions — Girls';
+
+  @override
+  String get admission_newAdmissionsTotal => 'New Admissions — Total';
+
+  @override
+  String get admission_ooscIdentified => 'OOSC Identified';
+
+  @override
+  String get admission_ooscReenrolled => 'OOSC Re-enrolled';
+
+  @override
+  String get admission_doorToDoorVisits => 'Door-to-door Visits';
+
+  @override
+  String get admission_parentMeetings => 'Parent Meetings';
+
+  @override
+  String get admission_communityMeetings => 'Community Meetings';
+
+  @override
+  String get admission_banners => 'Banners';
+
+  @override
+  String get admission_posters => 'Posters';
+
+  @override
+  String get admission_socialMediaActivities => 'Social Media Activities';
+
+  @override
+  String get admission_freeTextbooksDistributed => 'Free Textbooks Distributed';
+
+  @override
+  String get admission_otherSupport => 'Other Support';
+
+  @override
+  String get admission_status => 'Campaign Status';
+
+  @override
+  String get admission_status_planned => 'Planned';
+
+  @override
+  String get admission_status_active => 'Active';
+
+  @override
+  String get admission_status_completed => 'Completed';
+
+  @override
+  String get admission_noCampaigns => 'No admission campaigns recorded yet';
+
+  @override
+  String get admission_addCampaign => 'New Admission Campaign';
+
+  @override
+  String get admission_linkedOosc => 'OOSC linked to this campaign';
+
+  @override
+  String get oosc_childName => 'Child Name';
+
+  @override
+  String get oosc_childNameUrdu => 'Child Name (Urdu)';
+
+  @override
+  String get oosc_gender => 'Gender';
+
+  @override
+  String get oosc_age => 'Age';
+
+  @override
+  String get oosc_village => 'Village/Area';
+
+  @override
+  String get oosc_parentGuardian => 'Parent/Guardian';
+
+  @override
+  String get oosc_contact => 'Contact';
+
+  @override
+  String get oosc_reason => 'Reason for being out of school';
+
+  @override
+  String get oosc_reasonDetail => 'Reason Detail';
+
+  @override
+  String get oosc_previousSchool => 'Previous School';
+
+  @override
+  String get oosc_status => 'Status';
+
+  @override
+  String get oosc_followUpDate => 'Follow-up Date';
+
+  @override
+  String get oosc_noRecords => 'No out-of-school children recorded yet';
+
+  @override
+  String get oosc_addRecord => 'New OOSC Record';
+
+  @override
+  String get oosc_male => 'Male';
+
+  @override
+  String get oosc_female => 'Female';
+
+  @override
+  String get oosc_status_identified => 'Identified';
+
+  @override
+  String get oosc_status_contacted => 'Contacted';
+
+  @override
+  String get oosc_status_counseled => 'Counseled';
+
+  @override
+  String get oosc_status_reenrolled => 'Re-enrolled';
+
+  @override
+  String get oosc_status_notReenrolled => 'Not Re-enrolled';
+
+  @override
+  String get oosc_status_followUpRequired => 'Follow-up Required';
+
+  @override
+  String get oosc_reason_labor => 'Child Labor';
+
+  @override
+  String get oosc_reason_migration => 'Migration';
+
+  @override
+  String get oosc_reason_disability => 'Disability';
+
+  @override
+  String get oosc_reason_financial => 'Financial Hardship';
+
+  @override
+  String get oosc_reason_distance => 'Distance from School';
+
+  @override
+  String get oosc_reason_earlyMarriage => 'Early Marriage';
+
+  @override
+  String get oosc_reason_other => 'Other';
 }
