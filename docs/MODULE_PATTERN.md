@@ -14,25 +14,30 @@ bring a scaffold module up to full depth:
 
 1. **Model** — already exists at
    `lib/features/<module>/data/models/<module>_model.dart` (freezed +
-   json_serializable, with `id`/`localId`, denormalized hierarchy fields,
-   `createdAt`/`updatedAt`/`createdBy`, `isSynced`).
-2. **Repository** — already exists at
-   `lib/features/<module>/data/<module>_repository_impl.dart` implementing
-   `watchByScope(ScopeFilter)`, `getById(String)`, `create(Entity)`,
-   `update(Entity)`, `delete(String)`, using `OfflineWriteHelper`
-   (`lib/core/local_db/offline_write_helper.dart`) for the offline-first
-   write path — copy `admission_campaign_repository_impl.dart` and adjust
-   field mapping and `dateFields`.
-3. **Providers** — add
-   `lib/features/<module>/presentation/providers/<module>_providers.dart`:
-   a `Provider<XRepository>`, a `StreamProvider.family<List<Entity>,
-   ScopeFilter>` for lists, a `FutureProvider.family<Entity?, String>` for
-   detail, and a form controller (`AsyncNotifier` or plain
-   `ConsumerStatefulWidget` state, matching the flagship modules).
+   json_serializable, with `id`, denormalized hierarchy fields,
+   `createdAt`/`updatedAt`/`createdBy`, `isSynced`, and the static
+   `dateFields` / `orderByField` the repository needs).
+2. **Repository** — **already done, nothing to write.** Every scaffold
+   module is a plain CRUD collection, so they all share the generic
+   `ScopedFirestoreRepository<T>`
+   (`lib/core/data/scoped_firestore_repository.dart`), which provides
+   `watchByScope`, `getById`, `create`, `update`, `delete`, and
+   `queueEvidencePhoto` on top of `OfflineWriteHelper`. The wiring lives in
+   `lib/features/scaffold_modules/presentation/providers/scaffold_module_providers.dart`
+   — each module is one repository provider plus one scoped-list provider.
+
+   Write a hand-rolled repository *only* when a module needs behaviour the
+   generic one can't express. The five flagship modules do: notification
+   fan-out on create (emergency), batched rank rewrites (PTC), campaign
+   linkage (OOSC), config snapshotting (monitoring).
+3. **Providers** — the repository and list providers already exist (step 2).
+   Add a `FutureProvider.family<Entity?, String>` for the detail screen and
+   any form controller state, matching the flagship modules.
 4. **Screens** — add `presentation/screens/<module>_list_screen.dart`,
    `_form_screen.dart`, `_detail_screen.dart`, reusing `AppScaffold`,
-   `AppTextField`, `PhotoPickerField`, `HierarchyPicker`, `EmptyState`,
-   `ErrorView`, `LoadingIndicator`, `ConfirmDialog`.
+   `AppTextField`, `PhotoPickerField`, `SchoolPicker`,
+   `HierarchyCascadePicker`, `EmptyState`, `ErrorView`, `LoadingIndicator`,
+   `showConfirmDialog`.
 5. **Localization** — add ARB keys under a `<module>_*` namespace to both
    `app_en.arb` and `app_ur.arb` for every field label, enum value, and
    validation message the new form introduces; reuse `common_*` for
