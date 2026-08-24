@@ -954,4 +954,94 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get problem_category_other => 'دیگر';
+
+  @override
+  String get emergency_type => 'ہنگامی صورتحال کی قسم';
+
+  @override
+  String get emergency_severity => 'شدت';
+
+  @override
+  String get emergency_description => 'تفصیل';
+
+  @override
+  String get emergency_descriptionUrdu => 'تفصیل (اردو)';
+
+  @override
+  String get emergency_occurredAt => 'تاریخ و وقت';
+
+  @override
+  String get emergency_immediateAction => 'فوری اٹھایا گیا اقدام';
+
+  @override
+  String get emergency_requiredSupport => 'درکار معاونت';
+
+  @override
+  String get emergency_contactPerson => 'رابطہ کار';
+
+  @override
+  String get emergency_contactPhone => 'رابطہ نمبر';
+
+  @override
+  String get emergency_casualties => 'جانی نقصان (اگر ہو)';
+
+  @override
+  String get emergency_noReports => 'کوئی ہنگامی اطلاع درج نہیں';
+
+  @override
+  String get emergency_addReport => 'ہنگامی صورتحال رپورٹ کریں';
+
+  @override
+  String get emergency_quickReport => 'فوری ہنگامی رپورٹ';
+
+  @override
+  String get emergency_activeCritical => 'فعال انتہائی اہم ہنگامی صورتحال';
+
+  @override
+  String get emergency_reportedBy => 'اطلاع دہندہ';
+
+  @override
+  String get emergency_updateStatus => 'حیثیت اپ ڈیٹ کریں';
+
+  @override
+  String get emergency_resolutionNotes => 'حل کے نوٹس';
+
+  @override
+  String get emergency_status_open => 'کھلا';
+
+  @override
+  String get emergency_status_responding => 'کارروائی جاری';
+
+  @override
+  String get emergency_status_resolved => 'حل شدہ';
+
+  @override
+  String get emergency_type_fire => 'آگ';
+
+  @override
+  String get emergency_type_flood => 'سیلاب';
+
+  @override
+  String get emergency_type_buildingDamage => 'عمارت کو نقصان';
+
+  @override
+  String get emergency_type_security => 'سیکیورٹی';
+
+  @override
+  String get emergency_type_naturalDisaster => 'قدرتی آفت';
+
+  @override
+  String get emergency_type_health => 'طبی ہنگامی صورتحال';
+
+  @override
+  String get emergency_type_electricalHazard => 'بجلی کا خطرہ';
+
+  @override
+  String get emergency_type_waterProblem => 'پانی کا مسئلہ';
+
+  @override
+  String get emergency_type_boundaryWall => 'چار دیواری';
+
+  @override
+  String get emergency_type_other => 'دیگر';
 }

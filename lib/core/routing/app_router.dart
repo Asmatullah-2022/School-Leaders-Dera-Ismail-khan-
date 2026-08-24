@@ -8,6 +8,8 @@ import '../../features/auth/domain/entities/app_user.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/dashboard/presentation/screens/home_shell_screen.dart';
+import '../../features/emergency_reports/presentation/screens/emergency_report_form_screen.dart';
+import '../../features/emergency_reports/presentation/screens/emergency_report_list_screen.dart';
 import '../../features/hierarchy/domain/hierarchy_level.dart';
 import '../../features/hierarchy/presentation/screens/hierarchy_level_list_screen.dart';
 import '../../features/hierarchy/presentation/screens/school_form_screen.dart';
@@ -119,9 +121,15 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const SchoolProblemFormScreen(),
       ),
 
-      _placeholder(RoutePaths.emergency, (l) => l.more_emergency),
-      _placeholder(RoutePaths.emergencyForm, (l) => l.dashboard_qa_emergency),
-      _placeholder(RoutePaths.emergencyDetail, (l) => l.more_emergency),
+      GoRoute(
+        path: RoutePaths.emergency,
+        builder: (context, state) => const EmergencyReportListScreen(),
+      ),
+      GoRoute(
+        // Reached from the dashboard SOS quick action — opens the trimmed form.
+        path: RoutePaths.emergencyForm,
+        builder: (context, state) => const EmergencyReportFormScreen(quickMode: true),
+      ),
 
       _placeholder(RoutePaths.ptc, (l) => l.more_ptc),
       _placeholder(RoutePaths.ptcForm, (l) => l.dashboard_qa_ptc),

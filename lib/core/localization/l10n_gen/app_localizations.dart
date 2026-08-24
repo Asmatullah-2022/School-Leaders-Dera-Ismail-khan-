@@ -1963,6 +1963,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get problem_category_other;
+
+  /// No description provided for @emergency_type.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Type'**
+  String get emergency_type;
+
+  /// No description provided for @emergency_severity.
+  ///
+  /// In en, this message translates to:
+  /// **'Severity'**
+  String get emergency_severity;
+
+  /// No description provided for @emergency_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get emergency_description;
+
+  /// No description provided for @emergency_descriptionUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (Urdu)'**
+  String get emergency_descriptionUrdu;
+
+  /// No description provided for @emergency_occurredAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Date & Time'**
+  String get emergency_occurredAt;
+
+  /// No description provided for @emergency_immediateAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Immediate Action Taken'**
+  String get emergency_immediateAction;
+
+  /// No description provided for @emergency_requiredSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Required Support'**
+  String get emergency_requiredSupport;
+
+  /// No description provided for @emergency_contactPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Person'**
+  String get emergency_contactPerson;
+
+  /// No description provided for @emergency_contactPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Number'**
+  String get emergency_contactPhone;
+
+  /// No description provided for @emergency_casualties.
+  ///
+  /// In en, this message translates to:
+  /// **'Casualties (if any)'**
+  String get emergency_casualties;
+
+  /// No description provided for @emergency_noReports.
+  ///
+  /// In en, this message translates to:
+  /// **'No emergencies reported'**
+  String get emergency_noReports;
+
+  /// No description provided for @emergency_addReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Report an Emergency'**
+  String get emergency_addReport;
+
+  /// No description provided for @emergency_quickReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Emergency Report'**
+  String get emergency_quickReport;
+
+  /// No description provided for @emergency_activeCritical.
+  ///
+  /// In en, this message translates to:
+  /// **'Active critical emergencies'**
+  String get emergency_activeCritical;
+
+  /// No description provided for @emergency_reportedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reported By'**
+  String get emergency_reportedBy;
+
+  /// No description provided for @emergency_updateStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Status'**
+  String get emergency_updateStatus;
+
+  /// No description provided for @emergency_resolutionNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution Notes'**
+  String get emergency_resolutionNotes;
+
+  /// No description provided for @emergency_status_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get emergency_status_open;
+
+  /// No description provided for @emergency_status_responding.
+  ///
+  /// In en, this message translates to:
+  /// **'Responding'**
+  String get emergency_status_responding;
+
+  /// No description provided for @emergency_status_resolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get emergency_status_resolved;
+
+  /// No description provided for @emergency_type_fire.
+  ///
+  /// In en, this message translates to:
+  /// **'Fire'**
+  String get emergency_type_fire;
+
+  /// No description provided for @emergency_type_flood.
+  ///
+  /// In en, this message translates to:
+  /// **'Flood'**
+  String get emergency_type_flood;
+
+  /// No description provided for @emergency_type_buildingDamage.
+  ///
+  /// In en, this message translates to:
+  /// **'Building Damage'**
+  String get emergency_type_buildingDamage;
+
+  /// No description provided for @emergency_type_security.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get emergency_type_security;
+
+  /// No description provided for @emergency_type_naturalDisaster.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural Disaster'**
+  String get emergency_type_naturalDisaster;
+
+  /// No description provided for @emergency_type_health.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Emergency'**
+  String get emergency_type_health;
+
+  /// No description provided for @emergency_type_electricalHazard.
+  ///
+  /// In en, this message translates to:
+  /// **'Electrical Hazard'**
+  String get emergency_type_electricalHazard;
+
+  /// No description provided for @emergency_type_waterProblem.
+  ///
+  /// In en, this message translates to:
+  /// **'Water Problem'**
+  String get emergency_type_waterProblem;
+
+  /// No description provided for @emergency_type_boundaryWall.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Wall'**
+  String get emergency_type_boundaryWall;
+
+  /// No description provided for @emergency_type_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get emergency_type_other;
 }
 
 class _AppLocalizationsDelegate

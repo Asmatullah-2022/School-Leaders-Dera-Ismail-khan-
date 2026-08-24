@@ -952,4 +952,94 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get problem_category_other => 'Other';
+
+  @override
+  String get emergency_type => 'Emergency Type';
+
+  @override
+  String get emergency_severity => 'Severity';
+
+  @override
+  String get emergency_description => 'Description';
+
+  @override
+  String get emergency_descriptionUrdu => 'Description (Urdu)';
+
+  @override
+  String get emergency_occurredAt => 'Date & Time';
+
+  @override
+  String get emergency_immediateAction => 'Immediate Action Taken';
+
+  @override
+  String get emergency_requiredSupport => 'Required Support';
+
+  @override
+  String get emergency_contactPerson => 'Contact Person';
+
+  @override
+  String get emergency_contactPhone => 'Contact Number';
+
+  @override
+  String get emergency_casualties => 'Casualties (if any)';
+
+  @override
+  String get emergency_noReports => 'No emergencies reported';
+
+  @override
+  String get emergency_addReport => 'Report an Emergency';
+
+  @override
+  String get emergency_quickReport => 'Quick Emergency Report';
+
+  @override
+  String get emergency_activeCritical => 'Active critical emergencies';
+
+  @override
+  String get emergency_reportedBy => 'Reported By';
+
+  @override
+  String get emergency_updateStatus => 'Update Status';
+
+  @override
+  String get emergency_resolutionNotes => 'Resolution Notes';
+
+  @override
+  String get emergency_status_open => 'Open';
+
+  @override
+  String get emergency_status_responding => 'Responding';
+
+  @override
+  String get emergency_status_resolved => 'Resolved';
+
+  @override
+  String get emergency_type_fire => 'Fire';
+
+  @override
+  String get emergency_type_flood => 'Flood';
+
+  @override
+  String get emergency_type_buildingDamage => 'Building Damage';
+
+  @override
+  String get emergency_type_security => 'Security';
+
+  @override
+  String get emergency_type_naturalDisaster => 'Natural Disaster';
+
+  @override
+  String get emergency_type_health => 'Health Emergency';
+
+  @override
+  String get emergency_type_electricalHazard => 'Electrical Hazard';
+
+  @override
+  String get emergency_type_waterProblem => 'Water Problem';
+
+  @override
+  String get emergency_type_boundaryWall => 'Boundary Wall';
+
+  @override
+  String get emergency_type_other => 'Other';
 }
