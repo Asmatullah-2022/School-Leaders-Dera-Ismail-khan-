@@ -1042,4 +1042,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get emergency_type_other => 'Other';
+
+  @override
+  String get ptc_meetingDate => 'Meeting Date';
+
+  @override
+  String get ptc_priorityTitle => 'Priority';
+
+  @override
+  String get ptc_priorityTitleUrdu => 'Priority (Urdu)';
+
+  @override
+  String get ptc_category => 'Category';
+
+  @override
+  String get ptc_priorityLevel => 'Priority Level';
+
+  @override
+  String get ptc_estimatedCost => 'Estimated Cost';
+
+  @override
+  String get ptc_availableFunds => 'Available Funds';
+
+  @override
+  String get ptc_requiredFunds => 'Required Funds';
+
+  @override
+  String get ptc_proposedAction => 'Proposed Action';
+
+  @override
+  String get ptc_decision => 'Decision';
+
+  @override
+  String get ptc_responsiblePerson => 'Responsible Person';
+
+  @override
+  String get ptc_targetDate => 'Target Date';
+
+  @override
+  String get ptc_rank => 'Rank';
+
+  @override
+  String get ptc_noPriorities => 'No PTC priorities recorded yet';
+
+  @override
+  String get ptc_addPriority => 'New PTC Priority';
+
+  @override
+  String get ptc_reorderHint => 'Press and hold to drag a priority into order';
+
+  @override
+  String get ptc_status_proposed => 'Proposed';
+
+  @override
+  String get ptc_status_approved => 'Approved';
+
+  @override
+  String get ptc_status_inProgress => 'In Progress';
+
+  @override
+  String get ptc_status_completed => 'Completed';
+
+  @override
+  String get ptc_category_furniture => 'Furniture';
+
+  @override
+  String get ptc_category_buildingRepair => 'Building Repair';
+
+  @override
+  String get ptc_category_water => 'Water';
+
+  @override
+  String get ptc_category_toilets => 'Toilets';
+
+  @override
+  String get ptc_category_boundaryWall => 'Boundary Wall';
+
+  @override
+  String get ptc_category_electricity => 'Electricity';
+
+  @override
+  String get ptc_category_classroom => 'Classroom';
+
+  @override
+  String get ptc_category_ece => 'ECE';
+
+  @override
+  String get ptc_category_cleanliness => 'Cleanliness';
+
+  @override
+  String get ptc_category_plantation => 'Plantation';
+
+  @override
+  String get ptc_category_learningMaterials => 'Learning Materials';
+
+  @override
+  String get ptc_category_other => 'Other';
 }

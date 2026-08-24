@@ -1044,4 +1044,100 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get emergency_type_other => 'دیگر';
+
+  @override
+  String get ptc_meetingDate => 'اجلاس کی تاریخ';
+
+  @override
+  String get ptc_priorityTitle => 'ترجیح';
+
+  @override
+  String get ptc_priorityTitleUrdu => 'ترجیح (اردو)';
+
+  @override
+  String get ptc_category => 'زمرہ';
+
+  @override
+  String get ptc_priorityLevel => 'ترجیحی درجہ';
+
+  @override
+  String get ptc_estimatedCost => 'تخمینی لاگت';
+
+  @override
+  String get ptc_availableFunds => 'دستیاب فنڈز';
+
+  @override
+  String get ptc_requiredFunds => 'درکار فنڈز';
+
+  @override
+  String get ptc_proposedAction => 'مجوزہ اقدام';
+
+  @override
+  String get ptc_decision => 'فیصلہ';
+
+  @override
+  String get ptc_responsiblePerson => 'ذمہ دار شخص';
+
+  @override
+  String get ptc_targetDate => 'ہدف کی تاریخ';
+
+  @override
+  String get ptc_rank => 'درجہ';
+
+  @override
+  String get ptc_noPriorities => 'ابھی تک کوئی PTC ترجیح درج نہیں کی گئی';
+
+  @override
+  String get ptc_addPriority => 'نئی PTC ترجیح';
+
+  @override
+  String get ptc_reorderHint => 'ترتیب تبدیل کرنے کے لیے دبا کر کھینچیں';
+
+  @override
+  String get ptc_status_proposed => 'تجویز کردہ';
+
+  @override
+  String get ptc_status_approved => 'منظور شدہ';
+
+  @override
+  String get ptc_status_inProgress => 'زیر عمل';
+
+  @override
+  String get ptc_status_completed => 'مکمل';
+
+  @override
+  String get ptc_category_furniture => 'فرنیچر';
+
+  @override
+  String get ptc_category_buildingRepair => 'عمارت کی مرمت';
+
+  @override
+  String get ptc_category_water => 'پانی';
+
+  @override
+  String get ptc_category_toilets => 'بیت الخلاء';
+
+  @override
+  String get ptc_category_boundaryWall => 'چار دیواری';
+
+  @override
+  String get ptc_category_electricity => 'بجلی';
+
+  @override
+  String get ptc_category_classroom => 'کلاس روم';
+
+  @override
+  String get ptc_category_ece => 'ECE';
+
+  @override
+  String get ptc_category_cleanliness => 'صفائی ستھرائی';
+
+  @override
+  String get ptc_category_plantation => 'شجر کاری';
+
+  @override
+  String get ptc_category_learningMaterials => 'تدریسی مواد';
+
+  @override
+  String get ptc_category_other => 'دیگر';
 }

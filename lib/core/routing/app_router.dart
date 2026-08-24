@@ -16,6 +16,8 @@ import '../../features/hierarchy/presentation/screens/school_form_screen.dart';
 import '../../features/notifications/presentation/screens/notification_list_screen.dart';
 import '../../features/onboarding/presentation/screens/setup_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
+import '../../features/ptc_priorities/presentation/screens/ptc_priority_form_screen.dart';
+import '../../features/ptc_priorities/presentation/screens/ptc_priority_list_screen.dart';
 import '../../features/school_monitoring/presentation/screens/monitoring_report_form_screen.dart';
 import '../../features/school_monitoring/presentation/screens/scoring_config_admin_screen.dart';
 import '../../features/school_problems/presentation/screens/school_problem_form_screen.dart';
@@ -131,9 +133,8 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const EmergencyReportFormScreen(quickMode: true),
       ),
 
-      _placeholder(RoutePaths.ptc, (l) => l.more_ptc),
-      _placeholder(RoutePaths.ptcForm, (l) => l.dashboard_qa_ptc),
-      _placeholder(RoutePaths.ptcDetail, (l) => l.more_ptc),
+      GoRoute(path: RoutePaths.ptc, builder: (context, state) => const PtcPriorityListScreen()),
+      GoRoute(path: RoutePaths.ptcForm, builder: (context, state) => const PtcPriorityFormScreen()),
 
       _placeholder(RoutePaths.reportsFilter, (l) => l.nav_reports),
       _placeholder(RoutePaths.reportPreview, (l) => l.nav_reports),

@@ -2143,6 +2143,198 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get emergency_type_other;
+
+  /// No description provided for @ptc_meetingDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Meeting Date'**
+  String get ptc_meetingDate;
+
+  /// No description provided for @ptc_priorityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get ptc_priorityTitle;
+
+  /// No description provided for @ptc_priorityTitleUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority (Urdu)'**
+  String get ptc_priorityTitleUrdu;
+
+  /// No description provided for @ptc_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get ptc_category;
+
+  /// No description provided for @ptc_priorityLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority Level'**
+  String get ptc_priorityLevel;
+
+  /// No description provided for @ptc_estimatedCost.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated Cost'**
+  String get ptc_estimatedCost;
+
+  /// No description provided for @ptc_availableFunds.
+  ///
+  /// In en, this message translates to:
+  /// **'Available Funds'**
+  String get ptc_availableFunds;
+
+  /// No description provided for @ptc_requiredFunds.
+  ///
+  /// In en, this message translates to:
+  /// **'Required Funds'**
+  String get ptc_requiredFunds;
+
+  /// No description provided for @ptc_proposedAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Proposed Action'**
+  String get ptc_proposedAction;
+
+  /// No description provided for @ptc_decision.
+  ///
+  /// In en, this message translates to:
+  /// **'Decision'**
+  String get ptc_decision;
+
+  /// No description provided for @ptc_responsiblePerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Responsible Person'**
+  String get ptc_responsiblePerson;
+
+  /// No description provided for @ptc_targetDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Target Date'**
+  String get ptc_targetDate;
+
+  /// No description provided for @ptc_rank.
+  ///
+  /// In en, this message translates to:
+  /// **'Rank'**
+  String get ptc_rank;
+
+  /// No description provided for @ptc_noPriorities.
+  ///
+  /// In en, this message translates to:
+  /// **'No PTC priorities recorded yet'**
+  String get ptc_noPriorities;
+
+  /// No description provided for @ptc_addPriority.
+  ///
+  /// In en, this message translates to:
+  /// **'New PTC Priority'**
+  String get ptc_addPriority;
+
+  /// No description provided for @ptc_reorderHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Press and hold to drag a priority into order'**
+  String get ptc_reorderHint;
+
+  /// No description provided for @ptc_status_proposed.
+  ///
+  /// In en, this message translates to:
+  /// **'Proposed'**
+  String get ptc_status_proposed;
+
+  /// No description provided for @ptc_status_approved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved'**
+  String get ptc_status_approved;
+
+  /// No description provided for @ptc_status_inProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get ptc_status_inProgress;
+
+  /// No description provided for @ptc_status_completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get ptc_status_completed;
+
+  /// No description provided for @ptc_category_furniture.
+  ///
+  /// In en, this message translates to:
+  /// **'Furniture'**
+  String get ptc_category_furniture;
+
+  /// No description provided for @ptc_category_buildingRepair.
+  ///
+  /// In en, this message translates to:
+  /// **'Building Repair'**
+  String get ptc_category_buildingRepair;
+
+  /// No description provided for @ptc_category_water.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get ptc_category_water;
+
+  /// No description provided for @ptc_category_toilets.
+  ///
+  /// In en, this message translates to:
+  /// **'Toilets'**
+  String get ptc_category_toilets;
+
+  /// No description provided for @ptc_category_boundaryWall.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Wall'**
+  String get ptc_category_boundaryWall;
+
+  /// No description provided for @ptc_category_electricity.
+  ///
+  /// In en, this message translates to:
+  /// **'Electricity'**
+  String get ptc_category_electricity;
+
+  /// No description provided for @ptc_category_classroom.
+  ///
+  /// In en, this message translates to:
+  /// **'Classroom'**
+  String get ptc_category_classroom;
+
+  /// No description provided for @ptc_category_ece.
+  ///
+  /// In en, this message translates to:
+  /// **'ECE'**
+  String get ptc_category_ece;
+
+  /// No description provided for @ptc_category_cleanliness.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleanliness'**
+  String get ptc_category_cleanliness;
+
+  /// No description provided for @ptc_category_plantation.
+  ///
+  /// In en, this message translates to:
+  /// **'Plantation'**
+  String get ptc_category_plantation;
+
+  /// No description provided for @ptc_category_learningMaterials.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Materials'**
+  String get ptc_category_learningMaterials;
+
+  /// No description provided for @ptc_category_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get ptc_category_other;
 }
 
 class _AppLocalizationsDelegate
