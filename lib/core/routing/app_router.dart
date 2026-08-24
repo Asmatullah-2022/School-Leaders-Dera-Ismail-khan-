@@ -16,6 +16,8 @@ import '../../features/onboarding/presentation/screens/setup_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/school_monitoring/presentation/screens/monitoring_report_form_screen.dart';
 import '../../features/school_monitoring/presentation/screens/scoring_config_admin_screen.dart';
+import '../../features/school_problems/presentation/screens/school_problem_form_screen.dart';
+import '../../features/school_problems/presentation/screens/school_problem_list_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
 import '../local_db/app_meta_store.dart';
 import '../localization/l10n_gen/app_localizations.dart';
@@ -108,9 +110,14 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const ScoringConfigAdminScreen(),
       ),
 
-      _placeholder(RoutePaths.schoolProblems, (l) => l.more_schoolProblems),
-      _placeholder(RoutePaths.schoolProblemForm, (l) => l.dashboard_qa_problem),
-      _placeholder(RoutePaths.schoolProblemDetail, (l) => l.more_schoolProblems),
+      GoRoute(
+        path: RoutePaths.schoolProblems,
+        builder: (context, state) => const SchoolProblemListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.schoolProblemForm,
+        builder: (context, state) => const SchoolProblemFormScreen(),
+      ),
 
       _placeholder(RoutePaths.emergency, (l) => l.more_emergency),
       _placeholder(RoutePaths.emergencyForm, (l) => l.dashboard_qa_emergency),

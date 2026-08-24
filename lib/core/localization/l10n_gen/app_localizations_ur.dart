@@ -827,4 +827,131 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get monitoring_overallScore => 'مجموعی سکور';
+
+  @override
+  String get priority_low => 'کم';
+
+  @override
+  String get priority_medium => 'درمیانہ';
+
+  @override
+  String get priority_high => 'زیادہ';
+
+  @override
+  String get priority_critical => 'انتہائی اہم';
+
+  @override
+  String get problem_status_open => 'کھلا';
+
+  @override
+  String get problem_status_inProgress => 'زیر عمل';
+
+  @override
+  String get problem_status_resolved => 'حل شدہ';
+
+  @override
+  String get problem_status_closed => 'بند';
+
+  @override
+  String get problem_title => 'مسئلے کا عنوان';
+
+  @override
+  String get problem_titleUrdu => 'مسئلے کا عنوان (اردو)';
+
+  @override
+  String get problem_category => 'زمرہ';
+
+  @override
+  String get problem_description => 'تفصیل';
+
+  @override
+  String get problem_descriptionUrdu => 'تفصیل (اردو)';
+
+  @override
+  String get problem_priority => 'ترجیح';
+
+  @override
+  String get problem_dateReported => 'اطلاع کی تاریخ';
+
+  @override
+  String get problem_requiredSupport => 'درکار معاونت';
+
+  @override
+  String get problem_assignedTo => 'ذمہ دار شخص';
+
+  @override
+  String get problem_expectedResolution => 'متوقع حل کی تاریخ';
+
+  @override
+  String get problem_resolutionNotes => 'حل کے نوٹس';
+
+  @override
+  String get problem_resolutionEvidence => 'حل کے شواہد';
+
+  @override
+  String get problem_reportedBy => 'اطلاع دہندہ';
+
+  @override
+  String get problem_noProblems => 'ابھی تک کوئی سکول مسئلہ رپورٹ نہیں کیا گیا';
+
+  @override
+  String get problem_addProblem => 'سکول کا مسئلہ رپورٹ کریں';
+
+  @override
+  String get problem_updateStatus => 'حیثیت اپ ڈیٹ کریں';
+
+  @override
+  String get problem_statusRestricted =>
+      'صرف مانیٹرنگ آفیسر اور ایڈمن ہی رپورٹ شدہ مسئلے کی حیثیت تبدیل کر سکتے ہیں۔';
+
+  @override
+  String get problem_summaryOpen => 'کھلے';
+
+  @override
+  String get problem_summaryInProgress => 'زیر عمل';
+
+  @override
+  String get problem_summaryResolved => 'حل شدہ';
+
+  @override
+  String get problem_summaryCritical => 'انتہائی اہم';
+
+  @override
+  String get problem_category_infrastructure => 'بنیادی ڈھانچہ';
+
+  @override
+  String get problem_category_furniture => 'فرنیچر';
+
+  @override
+  String get problem_category_water => 'پانی';
+
+  @override
+  String get problem_category_toilets => 'بیت الخلاء';
+
+  @override
+  String get problem_category_boundaryWall => 'چار دیواری';
+
+  @override
+  String get problem_category_electricity => 'بجلی';
+
+  @override
+  String get problem_category_classroom => 'کلاس روم';
+
+  @override
+  String get problem_category_ece => 'ECE';
+
+  @override
+  String get problem_category_cleanliness => 'صفائی ستھرائی';
+
+  @override
+  String get problem_category_staffing => 'عملہ';
+
+  @override
+  String get problem_category_safety => 'حفاظت';
+
+  @override
+  String get problem_category_academic => 'تعلیمی';
+
+  @override
+  String get problem_category_other => 'دیگر';
 }

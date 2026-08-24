@@ -1711,6 +1711,258 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Overall Score'**
   String get monitoring_overallScore;
+
+  /// No description provided for @priority_low.
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get priority_low;
+
+  /// No description provided for @priority_medium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get priority_medium;
+
+  /// No description provided for @priority_high.
+  ///
+  /// In en, this message translates to:
+  /// **'High'**
+  String get priority_high;
+
+  /// No description provided for @priority_critical.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get priority_critical;
+
+  /// No description provided for @problem_status_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get problem_status_open;
+
+  /// No description provided for @problem_status_inProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get problem_status_inProgress;
+
+  /// No description provided for @problem_status_resolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get problem_status_resolved;
+
+  /// No description provided for @problem_status_closed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get problem_status_closed;
+
+  /// No description provided for @problem_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Problem Title'**
+  String get problem_title;
+
+  /// No description provided for @problem_titleUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Problem Title (Urdu)'**
+  String get problem_titleUrdu;
+
+  /// No description provided for @problem_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get problem_category;
+
+  /// No description provided for @problem_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get problem_description;
+
+  /// No description provided for @problem_descriptionUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (Urdu)'**
+  String get problem_descriptionUrdu;
+
+  /// No description provided for @problem_priority.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get problem_priority;
+
+  /// No description provided for @problem_dateReported.
+  ///
+  /// In en, this message translates to:
+  /// **'Date Reported'**
+  String get problem_dateReported;
+
+  /// No description provided for @problem_requiredSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Required Support'**
+  String get problem_requiredSupport;
+
+  /// No description provided for @problem_assignedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned Person'**
+  String get problem_assignedTo;
+
+  /// No description provided for @problem_expectedResolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected Resolution Date'**
+  String get problem_expectedResolution;
+
+  /// No description provided for @problem_resolutionNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution Notes'**
+  String get problem_resolutionNotes;
+
+  /// No description provided for @problem_resolutionEvidence.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolution Evidence'**
+  String get problem_resolutionEvidence;
+
+  /// No description provided for @problem_reportedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reported By'**
+  String get problem_reportedBy;
+
+  /// No description provided for @problem_noProblems.
+  ///
+  /// In en, this message translates to:
+  /// **'No school problems reported yet'**
+  String get problem_noProblems;
+
+  /// No description provided for @problem_addProblem.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a School Problem'**
+  String get problem_addProblem;
+
+  /// No description provided for @problem_updateStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Status'**
+  String get problem_updateStatus;
+
+  /// No description provided for @problem_statusRestricted.
+  ///
+  /// In en, this message translates to:
+  /// **'Only monitoring officers and admins can change the status of a reported problem.'**
+  String get problem_statusRestricted;
+
+  /// No description provided for @problem_summaryOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get problem_summaryOpen;
+
+  /// No description provided for @problem_summaryInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get problem_summaryInProgress;
+
+  /// No description provided for @problem_summaryResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get problem_summaryResolved;
+
+  /// No description provided for @problem_summaryCritical.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get problem_summaryCritical;
+
+  /// No description provided for @problem_category_infrastructure.
+  ///
+  /// In en, this message translates to:
+  /// **'Infrastructure'**
+  String get problem_category_infrastructure;
+
+  /// No description provided for @problem_category_furniture.
+  ///
+  /// In en, this message translates to:
+  /// **'Furniture'**
+  String get problem_category_furniture;
+
+  /// No description provided for @problem_category_water.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get problem_category_water;
+
+  /// No description provided for @problem_category_toilets.
+  ///
+  /// In en, this message translates to:
+  /// **'Toilets'**
+  String get problem_category_toilets;
+
+  /// No description provided for @problem_category_boundaryWall.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Wall'**
+  String get problem_category_boundaryWall;
+
+  /// No description provided for @problem_category_electricity.
+  ///
+  /// In en, this message translates to:
+  /// **'Electricity'**
+  String get problem_category_electricity;
+
+  /// No description provided for @problem_category_classroom.
+  ///
+  /// In en, this message translates to:
+  /// **'Classroom'**
+  String get problem_category_classroom;
+
+  /// No description provided for @problem_category_ece.
+  ///
+  /// In en, this message translates to:
+  /// **'ECE'**
+  String get problem_category_ece;
+
+  /// No description provided for @problem_category_cleanliness.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleanliness'**
+  String get problem_category_cleanliness;
+
+  /// No description provided for @problem_category_staffing.
+  ///
+  /// In en, this message translates to:
+  /// **'Staffing'**
+  String get problem_category_staffing;
+
+  /// No description provided for @problem_category_safety.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety'**
+  String get problem_category_safety;
+
+  /// No description provided for @problem_category_academic.
+  ///
+  /// In en, this message translates to:
+  /// **'Academic'**
+  String get problem_category_academic;
+
+  /// No description provided for @problem_category_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get problem_category_other;
 }
 
 class _AppLocalizationsDelegate

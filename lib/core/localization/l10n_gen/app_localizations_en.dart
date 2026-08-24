@@ -825,4 +825,131 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get monitoring_overallScore => 'Overall Score';
+
+  @override
+  String get priority_low => 'Low';
+
+  @override
+  String get priority_medium => 'Medium';
+
+  @override
+  String get priority_high => 'High';
+
+  @override
+  String get priority_critical => 'Critical';
+
+  @override
+  String get problem_status_open => 'Open';
+
+  @override
+  String get problem_status_inProgress => 'In Progress';
+
+  @override
+  String get problem_status_resolved => 'Resolved';
+
+  @override
+  String get problem_status_closed => 'Closed';
+
+  @override
+  String get problem_title => 'Problem Title';
+
+  @override
+  String get problem_titleUrdu => 'Problem Title (Urdu)';
+
+  @override
+  String get problem_category => 'Category';
+
+  @override
+  String get problem_description => 'Description';
+
+  @override
+  String get problem_descriptionUrdu => 'Description (Urdu)';
+
+  @override
+  String get problem_priority => 'Priority';
+
+  @override
+  String get problem_dateReported => 'Date Reported';
+
+  @override
+  String get problem_requiredSupport => 'Required Support';
+
+  @override
+  String get problem_assignedTo => 'Assigned Person';
+
+  @override
+  String get problem_expectedResolution => 'Expected Resolution Date';
+
+  @override
+  String get problem_resolutionNotes => 'Resolution Notes';
+
+  @override
+  String get problem_resolutionEvidence => 'Resolution Evidence';
+
+  @override
+  String get problem_reportedBy => 'Reported By';
+
+  @override
+  String get problem_noProblems => 'No school problems reported yet';
+
+  @override
+  String get problem_addProblem => 'Report a School Problem';
+
+  @override
+  String get problem_updateStatus => 'Update Status';
+
+  @override
+  String get problem_statusRestricted =>
+      'Only monitoring officers and admins can change the status of a reported problem.';
+
+  @override
+  String get problem_summaryOpen => 'Open';
+
+  @override
+  String get problem_summaryInProgress => 'In Progress';
+
+  @override
+  String get problem_summaryResolved => 'Resolved';
+
+  @override
+  String get problem_summaryCritical => 'Critical';
+
+  @override
+  String get problem_category_infrastructure => 'Infrastructure';
+
+  @override
+  String get problem_category_furniture => 'Furniture';
+
+  @override
+  String get problem_category_water => 'Water';
+
+  @override
+  String get problem_category_toilets => 'Toilets';
+
+  @override
+  String get problem_category_boundaryWall => 'Boundary Wall';
+
+  @override
+  String get problem_category_electricity => 'Electricity';
+
+  @override
+  String get problem_category_classroom => 'Classroom';
+
+  @override
+  String get problem_category_ece => 'ECE';
+
+  @override
+  String get problem_category_cleanliness => 'Cleanliness';
+
+  @override
+  String get problem_category_staffing => 'Staffing';
+
+  @override
+  String get problem_category_safety => 'Safety';
+
+  @override
+  String get problem_category_academic => 'Academic';
+
+  @override
+  String get problem_category_other => 'Other';
 }
