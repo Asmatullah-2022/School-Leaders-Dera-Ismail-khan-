@@ -19,15 +19,18 @@ service firebase.storage {
       return isSignedIn() && userDoc().role == 'super_admin';
     }
 
+    // `.get(field, null)` for the same reason as firestore.rules: reading an
+    // absent field is an error, and these fields are legitimately absent on
+    // some documents.
     function hasScopeAccessToDoc(collectionName, docId) {
       let data = firestore.get(/databases/(default)/documents/$(collectionName)/$(docId)).data;
       let u = userDoc();
       return isSuperAdmin()
-        || (u.schoolId != null && data.schoolId == u.schoolId)
-        || (u.clusterId != null && data.clusterId == u.clusterId)
-        || (u.circleId != null && data.circleId == u.circleId)
-        || (u.subDivisionId != null && data.subDivisionId == u.subDivisionId)
-        || (u.districtId != null && data.districtId == u.districtId);
+        || (u.get('schoolId', null) != null && data.get('schoolId', null) == u.get('schoolId', null))
+        || (u.get('clusterId', null) != null && data.get('clusterId', null) == u.get('clusterId', null))
+        || (u.get('circleId', null) != null && data.get('circleId', null) == u.get('circleId', null))
+        || (u.get('subDivisionId', null) != null && data.get('subDivisionId', null) == u.get('subDivisionId', null))
+        || (u.get('districtId', null) != null && data.get('districtId', null) == u.get('districtId', null));
     }
 
     function isValidImageUpload() {

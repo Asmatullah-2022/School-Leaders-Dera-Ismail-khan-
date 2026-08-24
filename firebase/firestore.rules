@@ -37,14 +37,20 @@ service cloud.firestore {
     // True if `data`'s denormalized hierarchy matches the caller's own
     // assigned scope at whichever level their role operates. Falls back
     // through narrower-to-broader scope fields.
+    //
+    // Every field access uses `.get(field, null)` because reading a field
+    // that does not exist on a document is an ERROR in Firestore rules, not
+    // null — and these fields are legitimately absent on some documents
+    // (a district has no clusterId; a cluster meeting has no schoolId; a
+    // school_leader's user doc may not carry a circleId).
     function hasScopeAccess(data) {
       let u = userDoc();
       return isSuperAdmin()
-        || (u.schoolId != null && data.schoolId == u.schoolId)
-        || (u.clusterId != null && data.clusterId == u.clusterId)
-        || (u.circleId != null && data.circleId == u.circleId)
-        || (u.subDivisionId != null && data.subDivisionId == u.subDivisionId)
-        || (u.districtId != null && data.districtId == u.districtId);
+        || (u.get('schoolId', null) != null && data.get('schoolId', null) == u.get('schoolId', null))
+        || (u.get('clusterId', null) != null && data.get('clusterId', null) == u.get('clusterId', null))
+        || (u.get('circleId', null) != null && data.get('circleId', null) == u.get('circleId', null))
+        || (u.get('subDivisionId', null) != null && data.get('subDivisionId', null) == u.get('subDivisionId', null))
+        || (u.get('districtId', null) != null && data.get('districtId', null) == u.get('districtId', null));
     }
 
     // True if the document about to be written (`request.resource.data`)
@@ -53,11 +59,11 @@ service cloud.firestore {
     function writeWithinOwnScope(newData) {
       let u = userDoc();
       return isSuperAdmin()
-        || (u.schoolId != null && newData.schoolId == u.schoolId)
-        || (u.clusterId != null && newData.clusterId == u.clusterId)
-        || (u.circleId != null && newData.circleId == u.circleId)
-        || (u.subDivisionId != null && newData.subDivisionId == u.subDivisionId)
-        || (u.districtId != null && newData.districtId == u.districtId);
+        || (u.get('schoolId', null) != null && newData.get('schoolId', null) == u.get('schoolId', null))
+        || (u.get('clusterId', null) != null && newData.get('clusterId', null) == u.get('clusterId', null))
+        || (u.get('circleId', null) != null && newData.get('circleId', null) == u.get('circleId', null))
+        || (u.get('subDivisionId', null) != null && newData.get('subDivisionId', null) == u.get('subDivisionId', null))
+        || (u.get('districtId', null) != null && newData.get('districtId', null) == u.get('districtId', null));
     }
 
     function isOwnRecord(data) {
@@ -235,9 +241,15 @@ service cloud.firestore {
 
     // ---- Supporting collections ----
     match /notifications/{id} {
-      allow read: if isSignedIn() && (resource.data.recipientUid == request.auth.uid || isAdminRole());
-      allow create: if isAdminRole() || isSignedIn();
-      allow update: if isSignedIn() && resource.data.recipientUid == request.auth.uid;
+      allow read: if isSignedIn()
+        && (resource.data.get('recipientUid', null) == request.auth.uid || isAdminRole());
+      // Any signed-in user may raise one — a school leader filing an
+      // emergency notifies the supervising tier (see emergency repository).
+      allow create: if isSignedIn();
+      // Recipients may only flip their own read flag, never rewrite content.
+      allow update: if isSignedIn()
+        && resource.data.get('recipientUid', null) == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['isRead']);
       allow delete: if isAdminRole();
     }
 
