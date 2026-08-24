@@ -1351,4 +1351,256 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notifications_empty => 'No notifications yet';
+
+  @override
+  String get doorToDoor_title => 'Door-to-Door Campaign';
+
+  @override
+  String get doorToDoor_area => 'Area';
+
+  @override
+  String get doorToDoor_teamMembers => 'Team Members';
+
+  @override
+  String get doorToDoor_housesVisited => 'Houses Visited';
+
+  @override
+  String get doorToDoor_childrenIdentified => 'Children Identified';
+
+  @override
+  String get doorToDoor_childrenEnrolled => 'Children Enrolled';
+
+  @override
+  String get doorToDoor_parentsContacted => 'Parents Contacted';
+
+  @override
+  String get doorToDoor_addActivity => 'New Door-to-Door Activity';
+
+  @override
+  String get doorToDoor_noActivities =>
+      'No door-to-door activities recorded yet';
+
+  @override
+  String get community_addActivity => 'New Community Activity';
+
+  @override
+  String get community_noActivities => 'No community activities recorded yet';
+
+  @override
+  String get community_activityType => 'Activity Type';
+
+  @override
+  String get community_participants => 'Participants';
+
+  @override
+  String get community_femaleParticipants => 'Female Participants';
+
+  @override
+  String get community_venue => 'Venue';
+
+  @override
+  String get community_type_parentMeeting => 'Parent Meeting';
+
+  @override
+  String get community_type_communityMeeting => 'Community Meeting';
+
+  @override
+  String get community_type_localEngagement => 'Local Community Engagement';
+
+  @override
+  String get community_type_awarenessSession => 'Awareness Session';
+
+  @override
+  String get community_type_enrollmentCounseling => 'Enrollment Counseling';
+
+  @override
+  String get community_type_ooscIdentification => 'OOSC Identification';
+
+  @override
+  String get community_type_reEnrollmentActivity => 'Re-enrollment Activity';
+
+  @override
+  String get community_type_communitySupport => 'Community Support';
+
+  @override
+  String get community_type_femaleParentEngagement =>
+      'Female Parent Engagement';
+
+  @override
+  String get parentContact_addContact => 'New Parent Contact';
+
+  @override
+  String get parentContact_noContacts =>
+      'No parent-teacher contacts recorded yet';
+
+  @override
+  String get parentContact_parentName => 'Parent Name';
+
+  @override
+  String get parentContact_studentName => 'Student Name';
+
+  @override
+  String get parentContact_contactNumber => 'Contact Number';
+
+  @override
+  String get parentContact_contactMethod => 'Contact Method';
+
+  @override
+  String get parentContact_purpose => 'Purpose';
+
+  @override
+  String get parentContact_discussion => 'Discussion';
+
+  @override
+  String get parentContact_result => 'Result';
+
+  @override
+  String get parentContact_followUpRequired => 'Follow-up Required';
+
+  @override
+  String get parentContact_followUpDate => 'Follow-up Date';
+
+  @override
+  String get parentContact_method_schoolVisit => 'School Visit';
+
+  @override
+  String get parentContact_method_homeVisit => 'Home Visit';
+
+  @override
+  String get parentContact_method_phoneCall => 'Phone Call';
+
+  @override
+  String get parentContact_method_sms => 'SMS';
+
+  @override
+  String get parentContact_method_whatsapp => 'WhatsApp';
+
+  @override
+  String get parentContact_method_meeting => 'Meeting';
+
+  @override
+  String get parentContact_method_other => 'Other';
+
+  @override
+  String get advertisement_title => 'Advertisement Campaigns';
+
+  @override
+  String get advertisement_addCampaign => 'New Advertisement Campaign';
+
+  @override
+  String get advertisement_noCampaigns =>
+      'No advertisement campaigns recorded yet';
+
+  @override
+  String get advertisement_campaignTitle => 'Campaign Title';
+
+  @override
+  String get advertisement_type => 'Advertisement Type';
+
+  @override
+  String get advertisement_location => 'Location';
+
+  @override
+  String get advertisement_quantity => 'Quantity';
+
+  @override
+  String get advertisement_type_banner => 'Banner';
+
+  @override
+  String get advertisement_type_poster => 'Poster';
+
+  @override
+  String get advertisement_type_pamphlet => 'Pamphlet';
+
+  @override
+  String get advertisement_type_schoolWallAwareness => 'School Wall Awareness';
+
+  @override
+  String get advertisement_type_communityAnnouncement =>
+      'Community Announcement';
+
+  @override
+  String get advertisement_type_mosqueAnnouncement => 'Mosque Announcement';
+
+  @override
+  String get advertisement_type_other => 'Other';
+
+  @override
+  String get socialMedia_title => 'Social Media Campaigns';
+
+  @override
+  String get socialMedia_addCampaign => 'New Social Media Campaign';
+
+  @override
+  String get socialMedia_noCampaigns =>
+      'No social media campaigns recorded yet';
+
+  @override
+  String get socialMedia_platform => 'Platform';
+
+  @override
+  String get socialMedia_postUrl => 'Post URL';
+
+  @override
+  String get socialMedia_reach => 'Reach';
+
+  @override
+  String get socialMedia_engagement => 'Engagement';
+
+  @override
+  String get socialMedia_platform_facebook => 'Facebook';
+
+  @override
+  String get socialMedia_platform_whatsapp => 'WhatsApp';
+
+  @override
+  String get socialMedia_platform_tiktok => 'TikTok';
+
+  @override
+  String get socialMedia_platform_instagram => 'Instagram';
+
+  @override
+  String get socialMedia_platform_youtube => 'YouTube';
+
+  @override
+  String get socialMedia_platform_other => 'Other';
+
+  @override
+  String get textbook_title => 'Textbook Distribution';
+
+  @override
+  String get textbook_addRecord => 'New Textbook Record';
+
+  @override
+  String get textbook_noRecords => 'No textbook distribution records yet';
+
+  @override
+  String get textbook_academicYear => 'Academic Year';
+
+  @override
+  String get textbook_classGrade => 'Class/Grade';
+
+  @override
+  String get textbook_subject => 'Subject';
+
+  @override
+  String get textbook_booksRequired => 'Books Required';
+
+  @override
+  String get textbook_booksAvailable => 'Books Available';
+
+  @override
+  String get textbook_booksDistributed => 'Books Distributed';
+
+  @override
+  String get textbook_studentsReceiving => 'Students Receiving';
+
+  @override
+  String get textbook_shortage => 'Shortage';
+
+  @override
+  String get textbook_otherMaterials => 'Other Learning Materials';
+
+  @override
+  String get textbook_supportRequired => 'Support Required';
 }

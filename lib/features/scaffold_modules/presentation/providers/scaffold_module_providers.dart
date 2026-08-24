@@ -274,3 +274,67 @@ final scopedEceMonitoringProvider = StreamProvider<List<EceMonitoringModel>>((re
   final ScopeFilter filter = ref.watch(currentScopeFilterProvider);
   return ref.watch(eceMonitoringRepositoryProvider).watchByScope(filter);
 });
+
+// --- Detail (getById) providers, one per module, all delegating to the
+// repository above so a detail screen can `ref.watch` a single family. ---
+
+final doorToDoorByIdProvider = FutureProvider.family<DoorToDoorActivityModel?, String>((ref, id) {
+  return ref.watch(doorToDoorRepositoryProvider).getById(id);
+});
+
+final communityActivityByIdProvider = FutureProvider.family<CommunityActivityModel?, String>((
+  ref,
+  id,
+) {
+  return ref.watch(communityActivityRepositoryProvider).getById(id);
+});
+
+final parentContactByIdProvider = FutureProvider.family<ParentContactModel?, String>((ref, id) {
+  return ref.watch(parentContactRepositoryProvider).getById(id);
+});
+
+final advertisementByIdProvider = FutureProvider.family<AdvertisementCampaignModel?, String>((
+  ref,
+  id,
+) {
+  return ref.watch(advertisementRepositoryProvider).getById(id);
+});
+
+final socialMediaByIdProvider = FutureProvider.family<SocialMediaCampaignModel?, String>((ref, id) {
+  return ref.watch(socialMediaRepositoryProvider).getById(id);
+});
+
+final textbookByIdProvider = FutureProvider.family<TextbookDistributionModel?, String>((ref, id) {
+  return ref.watch(textbookRepositoryProvider).getById(id);
+});
+
+final clusterMeetingByIdProvider = FutureProvider.family<ClusterMeetingModel?, String>((ref, id) {
+  return ref.watch(clusterMeetingRepositoryProvider).getById(id);
+});
+
+final statementByIdProvider = FutureProvider.family<StatementModel?, String>((ref, id) {
+  return ref.watch(statementRepositoryProvider).getById(id);
+});
+
+final schoolFunctionalityByIdProvider = FutureProvider.family<SchoolFunctionalityModel?, String>((
+  ref,
+  id,
+) {
+  return ref.watch(schoolFunctionalityRepositoryProvider).getById(id);
+});
+
+final schoolOpeningByIdProvider = FutureProvider.family<SchoolOpeningModel?, String>((ref, id) {
+  return ref.watch(schoolOpeningRepositoryProvider).getById(id);
+});
+
+final cleanlinessByIdProvider = FutureProvider.family<CleanlinessModel?, String>((ref, id) {
+  return ref.watch(cleanlinessRepositoryProvider).getById(id);
+});
+
+final plantationByIdProvider = FutureProvider.family<PlantationModel?, String>((ref, id) {
+  return ref.watch(plantationRepositoryProvider).getById(id);
+});
+
+final eceMonitoringByIdProvider = FutureProvider.family<EceMonitoringModel?, String>((ref, id) {
+  return ref.watch(eceMonitoringRepositoryProvider).getById(id);
+});

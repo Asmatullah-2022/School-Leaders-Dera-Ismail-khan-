@@ -2755,6 +2755,498 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No notifications yet'**
   String get notifications_empty;
+
+  /// No description provided for @doorToDoor_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Door-to-Door Campaign'**
+  String get doorToDoor_title;
+
+  /// No description provided for @doorToDoor_area.
+  ///
+  /// In en, this message translates to:
+  /// **'Area'**
+  String get doorToDoor_area;
+
+  /// No description provided for @doorToDoor_teamMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Team Members'**
+  String get doorToDoor_teamMembers;
+
+  /// No description provided for @doorToDoor_housesVisited.
+  ///
+  /// In en, this message translates to:
+  /// **'Houses Visited'**
+  String get doorToDoor_housesVisited;
+
+  /// No description provided for @doorToDoor_childrenIdentified.
+  ///
+  /// In en, this message translates to:
+  /// **'Children Identified'**
+  String get doorToDoor_childrenIdentified;
+
+  /// No description provided for @doorToDoor_childrenEnrolled.
+  ///
+  /// In en, this message translates to:
+  /// **'Children Enrolled'**
+  String get doorToDoor_childrenEnrolled;
+
+  /// No description provided for @doorToDoor_parentsContacted.
+  ///
+  /// In en, this message translates to:
+  /// **'Parents Contacted'**
+  String get doorToDoor_parentsContacted;
+
+  /// No description provided for @doorToDoor_addActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'New Door-to-Door Activity'**
+  String get doorToDoor_addActivity;
+
+  /// No description provided for @doorToDoor_noActivities.
+  ///
+  /// In en, this message translates to:
+  /// **'No door-to-door activities recorded yet'**
+  String get doorToDoor_noActivities;
+
+  /// No description provided for @community_addActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'New Community Activity'**
+  String get community_addActivity;
+
+  /// No description provided for @community_noActivities.
+  ///
+  /// In en, this message translates to:
+  /// **'No community activities recorded yet'**
+  String get community_noActivities;
+
+  /// No description provided for @community_activityType.
+  ///
+  /// In en, this message translates to:
+  /// **'Activity Type'**
+  String get community_activityType;
+
+  /// No description provided for @community_participants.
+  ///
+  /// In en, this message translates to:
+  /// **'Participants'**
+  String get community_participants;
+
+  /// No description provided for @community_femaleParticipants.
+  ///
+  /// In en, this message translates to:
+  /// **'Female Participants'**
+  String get community_femaleParticipants;
+
+  /// No description provided for @community_venue.
+  ///
+  /// In en, this message translates to:
+  /// **'Venue'**
+  String get community_venue;
+
+  /// No description provided for @community_type_parentMeeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Meeting'**
+  String get community_type_parentMeeting;
+
+  /// No description provided for @community_type_communityMeeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Meeting'**
+  String get community_type_communityMeeting;
+
+  /// No description provided for @community_type_localEngagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Local Community Engagement'**
+  String get community_type_localEngagement;
+
+  /// No description provided for @community_type_awarenessSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Awareness Session'**
+  String get community_type_awarenessSession;
+
+  /// No description provided for @community_type_enrollmentCounseling.
+  ///
+  /// In en, this message translates to:
+  /// **'Enrollment Counseling'**
+  String get community_type_enrollmentCounseling;
+
+  /// No description provided for @community_type_ooscIdentification.
+  ///
+  /// In en, this message translates to:
+  /// **'OOSC Identification'**
+  String get community_type_ooscIdentification;
+
+  /// No description provided for @community_type_reEnrollmentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enrollment Activity'**
+  String get community_type_reEnrollmentActivity;
+
+  /// No description provided for @community_type_communitySupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Support'**
+  String get community_type_communitySupport;
+
+  /// No description provided for @community_type_femaleParentEngagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Female Parent Engagement'**
+  String get community_type_femaleParentEngagement;
+
+  /// No description provided for @parentContact_addContact.
+  ///
+  /// In en, this message translates to:
+  /// **'New Parent Contact'**
+  String get parentContact_addContact;
+
+  /// No description provided for @parentContact_noContacts.
+  ///
+  /// In en, this message translates to:
+  /// **'No parent-teacher contacts recorded yet'**
+  String get parentContact_noContacts;
+
+  /// No description provided for @parentContact_parentName.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent Name'**
+  String get parentContact_parentName;
+
+  /// No description provided for @parentContact_studentName.
+  ///
+  /// In en, this message translates to:
+  /// **'Student Name'**
+  String get parentContact_studentName;
+
+  /// No description provided for @parentContact_contactNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Number'**
+  String get parentContact_contactNumber;
+
+  /// No description provided for @parentContact_contactMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Method'**
+  String get parentContact_contactMethod;
+
+  /// No description provided for @parentContact_purpose.
+  ///
+  /// In en, this message translates to:
+  /// **'Purpose'**
+  String get parentContact_purpose;
+
+  /// No description provided for @parentContact_discussion.
+  ///
+  /// In en, this message translates to:
+  /// **'Discussion'**
+  String get parentContact_discussion;
+
+  /// No description provided for @parentContact_result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get parentContact_result;
+
+  /// No description provided for @parentContact_followUpRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up Required'**
+  String get parentContact_followUpRequired;
+
+  /// No description provided for @parentContact_followUpDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-up Date'**
+  String get parentContact_followUpDate;
+
+  /// No description provided for @parentContact_method_schoolVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'School Visit'**
+  String get parentContact_method_schoolVisit;
+
+  /// No description provided for @parentContact_method_homeVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'Home Visit'**
+  String get parentContact_method_homeVisit;
+
+  /// No description provided for @parentContact_method_phoneCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Call'**
+  String get parentContact_method_phoneCall;
+
+  /// No description provided for @parentContact_method_sms.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS'**
+  String get parentContact_method_sms;
+
+  /// No description provided for @parentContact_method_whatsapp.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp'**
+  String get parentContact_method_whatsapp;
+
+  /// No description provided for @parentContact_method_meeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Meeting'**
+  String get parentContact_method_meeting;
+
+  /// No description provided for @parentContact_method_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get parentContact_method_other;
+
+  /// No description provided for @advertisement_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement Campaigns'**
+  String get advertisement_title;
+
+  /// No description provided for @advertisement_addCampaign.
+  ///
+  /// In en, this message translates to:
+  /// **'New Advertisement Campaign'**
+  String get advertisement_addCampaign;
+
+  /// No description provided for @advertisement_noCampaigns.
+  ///
+  /// In en, this message translates to:
+  /// **'No advertisement campaigns recorded yet'**
+  String get advertisement_noCampaigns;
+
+  /// No description provided for @advertisement_campaignTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Campaign Title'**
+  String get advertisement_campaignTitle;
+
+  /// No description provided for @advertisement_type.
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement Type'**
+  String get advertisement_type;
+
+  /// No description provided for @advertisement_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get advertisement_location;
+
+  /// No description provided for @advertisement_quantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get advertisement_quantity;
+
+  /// No description provided for @advertisement_type_banner.
+  ///
+  /// In en, this message translates to:
+  /// **'Banner'**
+  String get advertisement_type_banner;
+
+  /// No description provided for @advertisement_type_poster.
+  ///
+  /// In en, this message translates to:
+  /// **'Poster'**
+  String get advertisement_type_poster;
+
+  /// No description provided for @advertisement_type_pamphlet.
+  ///
+  /// In en, this message translates to:
+  /// **'Pamphlet'**
+  String get advertisement_type_pamphlet;
+
+  /// No description provided for @advertisement_type_schoolWallAwareness.
+  ///
+  /// In en, this message translates to:
+  /// **'School Wall Awareness'**
+  String get advertisement_type_schoolWallAwareness;
+
+  /// No description provided for @advertisement_type_communityAnnouncement.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Announcement'**
+  String get advertisement_type_communityAnnouncement;
+
+  /// No description provided for @advertisement_type_mosqueAnnouncement.
+  ///
+  /// In en, this message translates to:
+  /// **'Mosque Announcement'**
+  String get advertisement_type_mosqueAnnouncement;
+
+  /// No description provided for @advertisement_type_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get advertisement_type_other;
+
+  /// No description provided for @socialMedia_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Social Media Campaigns'**
+  String get socialMedia_title;
+
+  /// No description provided for @socialMedia_addCampaign.
+  ///
+  /// In en, this message translates to:
+  /// **'New Social Media Campaign'**
+  String get socialMedia_addCampaign;
+
+  /// No description provided for @socialMedia_noCampaigns.
+  ///
+  /// In en, this message translates to:
+  /// **'No social media campaigns recorded yet'**
+  String get socialMedia_noCampaigns;
+
+  /// No description provided for @socialMedia_platform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform'**
+  String get socialMedia_platform;
+
+  /// No description provided for @socialMedia_postUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Post URL'**
+  String get socialMedia_postUrl;
+
+  /// No description provided for @socialMedia_reach.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach'**
+  String get socialMedia_reach;
+
+  /// No description provided for @socialMedia_engagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Engagement'**
+  String get socialMedia_engagement;
+
+  /// No description provided for @socialMedia_platform_facebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Facebook'**
+  String get socialMedia_platform_facebook;
+
+  /// No description provided for @socialMedia_platform_whatsapp.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp'**
+  String get socialMedia_platform_whatsapp;
+
+  /// No description provided for @socialMedia_platform_tiktok.
+  ///
+  /// In en, this message translates to:
+  /// **'TikTok'**
+  String get socialMedia_platform_tiktok;
+
+  /// No description provided for @socialMedia_platform_instagram.
+  ///
+  /// In en, this message translates to:
+  /// **'Instagram'**
+  String get socialMedia_platform_instagram;
+
+  /// No description provided for @socialMedia_platform_youtube.
+  ///
+  /// In en, this message translates to:
+  /// **'YouTube'**
+  String get socialMedia_platform_youtube;
+
+  /// No description provided for @socialMedia_platform_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get socialMedia_platform_other;
+
+  /// No description provided for @textbook_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Textbook Distribution'**
+  String get textbook_title;
+
+  /// No description provided for @textbook_addRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'New Textbook Record'**
+  String get textbook_addRecord;
+
+  /// No description provided for @textbook_noRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'No textbook distribution records yet'**
+  String get textbook_noRecords;
+
+  /// No description provided for @textbook_academicYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Academic Year'**
+  String get textbook_academicYear;
+
+  /// No description provided for @textbook_classGrade.
+  ///
+  /// In en, this message translates to:
+  /// **'Class/Grade'**
+  String get textbook_classGrade;
+
+  /// No description provided for @textbook_subject.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject'**
+  String get textbook_subject;
+
+  /// No description provided for @textbook_booksRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Books Required'**
+  String get textbook_booksRequired;
+
+  /// No description provided for @textbook_booksAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Books Available'**
+  String get textbook_booksAvailable;
+
+  /// No description provided for @textbook_booksDistributed.
+  ///
+  /// In en, this message translates to:
+  /// **'Books Distributed'**
+  String get textbook_booksDistributed;
+
+  /// No description provided for @textbook_studentsReceiving.
+  ///
+  /// In en, this message translates to:
+  /// **'Students Receiving'**
+  String get textbook_studentsReceiving;
+
+  /// No description provided for @textbook_shortage.
+  ///
+  /// In en, this message translates to:
+  /// **'Shortage'**
+  String get textbook_shortage;
+
+  /// No description provided for @textbook_otherMaterials.
+  ///
+  /// In en, this message translates to:
+  /// **'Other Learning Materials'**
+  String get textbook_otherMaterials;
+
+  /// No description provided for @textbook_supportRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Required'**
+  String get textbook_supportRequired;
 }
 
 class _AppLocalizationsDelegate

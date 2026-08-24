@@ -1353,4 +1353,256 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get notifications_empty => 'ابھی تک کوئی اطلاع نہیں';
+
+  @override
+  String get doorToDoor_title => 'گھر گھر داخلہ مہم';
+
+  @override
+  String get doorToDoor_area => 'علاقہ';
+
+  @override
+  String get doorToDoor_teamMembers => 'ٹیم ممبران';
+
+  @override
+  String get doorToDoor_housesVisited => 'زیر دورہ گھر';
+
+  @override
+  String get doorToDoor_childrenIdentified => 'شناخت شدہ بچے';
+
+  @override
+  String get doorToDoor_childrenEnrolled => 'داخل شدہ بچے';
+
+  @override
+  String get doorToDoor_parentsContacted => 'رابطہ شدہ والدین';
+
+  @override
+  String get doorToDoor_addActivity => 'نئی گھر گھر سرگرمی';
+
+  @override
+  String get doorToDoor_noActivities =>
+      'ابھی تک کوئی گھر گھر سرگرمی درج نہیں کی گئی';
+
+  @override
+  String get community_addActivity => 'نئی کمیونٹی سرگرمی';
+
+  @override
+  String get community_noActivities =>
+      'ابھی تک کوئی کمیونٹی سرگرمی درج نہیں کی گئی';
+
+  @override
+  String get community_activityType => 'سرگرمی کی قسم';
+
+  @override
+  String get community_participants => 'شرکاء';
+
+  @override
+  String get community_femaleParticipants => 'خواتین شرکاء';
+
+  @override
+  String get community_venue => 'مقام';
+
+  @override
+  String get community_type_parentMeeting => 'والدین کا اجلاس';
+
+  @override
+  String get community_type_communityMeeting => 'کمیونٹی اجلاس';
+
+  @override
+  String get community_type_localEngagement => 'مقامی کمیونٹی شراکت';
+
+  @override
+  String get community_type_awarenessSession => 'آگاہی سیشن';
+
+  @override
+  String get community_type_enrollmentCounseling => 'داخلہ مشاورت';
+
+  @override
+  String get community_type_ooscIdentification => 'آؤٹ آف اسکول بچوں کی شناخت';
+
+  @override
+  String get community_type_reEnrollmentActivity => 'دوبارہ داخلہ سرگرمی';
+
+  @override
+  String get community_type_communitySupport => 'کمیونٹی معاونت';
+
+  @override
+  String get community_type_femaleParentEngagement => 'خواتین والدین شراکت';
+
+  @override
+  String get parentContact_addContact => 'نیا والدین رابطہ';
+
+  @override
+  String get parentContact_noContacts =>
+      'ابھی تک کوئی والدین اساتذہ رابطہ درج نہیں کیا گیا';
+
+  @override
+  String get parentContact_parentName => 'والدین کا نام';
+
+  @override
+  String get parentContact_studentName => 'طالب علم کا نام';
+
+  @override
+  String get parentContact_contactNumber => 'رابطہ نمبر';
+
+  @override
+  String get parentContact_contactMethod => 'رابطے کا طریقہ';
+
+  @override
+  String get parentContact_purpose => 'مقصد';
+
+  @override
+  String get parentContact_discussion => 'گفتگو';
+
+  @override
+  String get parentContact_result => 'نتیجہ';
+
+  @override
+  String get parentContact_followUpRequired => 'پیروی درکار ہے';
+
+  @override
+  String get parentContact_followUpDate => 'پیروی کی تاریخ';
+
+  @override
+  String get parentContact_method_schoolVisit => 'اسکول کا دورہ';
+
+  @override
+  String get parentContact_method_homeVisit => 'گھر کا دورہ';
+
+  @override
+  String get parentContact_method_phoneCall => 'فون کال';
+
+  @override
+  String get parentContact_method_sms => 'ایس ایم ایس';
+
+  @override
+  String get parentContact_method_whatsapp => 'واٹس ایپ';
+
+  @override
+  String get parentContact_method_meeting => 'اجلاس';
+
+  @override
+  String get parentContact_method_other => 'دیگر';
+
+  @override
+  String get advertisement_title => 'تشہیری مہمات';
+
+  @override
+  String get advertisement_addCampaign => 'نئی تشہیری مہم';
+
+  @override
+  String get advertisement_noCampaigns =>
+      'ابھی تک کوئی تشہیری مہم درج نہیں کی گئی';
+
+  @override
+  String get advertisement_campaignTitle => 'مہم کا عنوان';
+
+  @override
+  String get advertisement_type => 'تشہیر کی قسم';
+
+  @override
+  String get advertisement_location => 'مقام';
+
+  @override
+  String get advertisement_quantity => 'تعداد';
+
+  @override
+  String get advertisement_type_banner => 'بینر';
+
+  @override
+  String get advertisement_type_poster => 'پوسٹر';
+
+  @override
+  String get advertisement_type_pamphlet => 'پمفلٹ';
+
+  @override
+  String get advertisement_type_schoolWallAwareness => 'اسکول دیوار آگاہی';
+
+  @override
+  String get advertisement_type_communityAnnouncement => 'کمیونٹی اعلان';
+
+  @override
+  String get advertisement_type_mosqueAnnouncement => 'مسجد اعلان';
+
+  @override
+  String get advertisement_type_other => 'دیگر';
+
+  @override
+  String get socialMedia_title => 'سوشل میڈیا مہمات';
+
+  @override
+  String get socialMedia_addCampaign => 'نئی سوشل میڈیا مہم';
+
+  @override
+  String get socialMedia_noCampaigns =>
+      'ابھی تک کوئی سوشل میڈیا مہم درج نہیں کی گئی';
+
+  @override
+  String get socialMedia_platform => 'پلیٹ فارم';
+
+  @override
+  String get socialMedia_postUrl => 'پوسٹ کا لنک';
+
+  @override
+  String get socialMedia_reach => 'رسائی';
+
+  @override
+  String get socialMedia_engagement => 'مشغولیت';
+
+  @override
+  String get socialMedia_platform_facebook => 'فیس بک';
+
+  @override
+  String get socialMedia_platform_whatsapp => 'واٹس ایپ';
+
+  @override
+  String get socialMedia_platform_tiktok => 'ٹک ٹاک';
+
+  @override
+  String get socialMedia_platform_instagram => 'انسٹاگرام';
+
+  @override
+  String get socialMedia_platform_youtube => 'یوٹیوب';
+
+  @override
+  String get socialMedia_platform_other => 'دیگر';
+
+  @override
+  String get textbook_title => 'نصابی کتب کی تقسیم';
+
+  @override
+  String get textbook_addRecord => 'نیا کتب ریکارڈ';
+
+  @override
+  String get textbook_noRecords =>
+      'ابھی تک کوئی کتب تقسیم ریکارڈ درج نہیں کیا گیا';
+
+  @override
+  String get textbook_academicYear => 'تعلیمی سال';
+
+  @override
+  String get textbook_classGrade => 'جماعت';
+
+  @override
+  String get textbook_subject => 'مضمون';
+
+  @override
+  String get textbook_booksRequired => 'درکار کتابیں';
+
+  @override
+  String get textbook_booksAvailable => 'دستیاب کتابیں';
+
+  @override
+  String get textbook_booksDistributed => 'تقسیم شدہ کتابیں';
+
+  @override
+  String get textbook_studentsReceiving => 'وصول کنندہ طلباء';
+
+  @override
+  String get textbook_shortage => 'کمی';
+
+  @override
+  String get textbook_otherMaterials => 'دیگر تعلیمی مواد';
+
+  @override
+  String get textbook_supportRequired => 'درکار معاونت';
 }
