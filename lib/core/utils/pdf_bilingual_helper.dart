@@ -162,7 +162,13 @@ Future<pw.Document> buildReportDocument({
         ),
         pw.SizedBox(height: 8),
         if (rows.isEmpty)
-          pw.Text('No records', style: pw.TextStyle(font: fonts.latin, fontSize: 10))
+          // Honours the report's language rather than always printing English.
+          bilingualText(
+            'No records',
+            'کوئی ریکارڈ نہیں',
+            language: language,
+            fonts: fonts,
+          )
         else
           reportTable(headers: headers, rows: rows, fonts: fonts),
       ],
