@@ -76,8 +76,8 @@ class SyncEngine {
     final File file = File(path);
     if (!file.existsSync()) return;
     final Reference ref = _storage.ref().child(
-          'evidence/${item.collectionName}/${item.docId}/${DateTime.now().millisecondsSinceEpoch}.jpg',
-        );
+      'evidence/${item.collectionName}/${item.docId}/${DateTime.now().millisecondsSinceEpoch}.jpg',
+    );
     await ref.putFile(file);
     final String url = await ref.getDownloadURL();
     await _firestore.collection(item.collectionName).doc(item.docId).update(<String, dynamic>{
@@ -124,9 +124,11 @@ final Provider<SyncEngine> syncEngineProvider = Provider<SyncEngine>((ref) {
 final StreamProvider<int> pendingSyncCountProvider = StreamProvider<int>((ref) async* {
   final SyncEngine engine = ref.watch(syncEngineProvider);
   yield engine.pendingCount;
-  await for (final bool online in ref.watch(connectivityProvider).onConnectivityChanged.map(
-        (List<ConnectivityResult> r) => !r.contains(ConnectivityResult.none),
-      )) {
+  await for (final bool online
+      in ref
+          .watch(connectivityProvider)
+          .onConnectivityChanged
+          .map((List<ConnectivityResult> r) => !r.contains(ConnectivityResult.none))) {
     if (online) {
       await engine.drainQueue();
     }

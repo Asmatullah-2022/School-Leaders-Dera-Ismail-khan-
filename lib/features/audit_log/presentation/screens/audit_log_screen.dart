@@ -22,27 +22,29 @@ final auditLogProvider = StreamProvider<List<AuditLogModel>>((ref) {
       .orderBy('timestamp', descending: true)
       .limit(200)
       .snapshots()
-      .map((QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-          .map((doc) => AuditLogModel.fromJson(firestoreDataToJson(doc.data())))
-          .toList());
+      .map(
+        (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+            .map((doc) => AuditLogModel.fromJson(firestoreDataToJson(doc.data())))
+            .toList(),
+      );
 });
 
 class AuditLogScreen extends ConsumerWidget {
   const AuditLogScreen({super.key});
 
   static String actionLabel(AppLocalizations l10n, AuditAction a) => switch (a) {
-        AuditAction.login => l10n.audit_action_login,
-        AuditAction.logout => l10n.audit_action_logout,
-        AuditAction.create => l10n.audit_action_create,
-        AuditAction.update => l10n.audit_action_update,
-        AuditAction.delete => l10n.audit_action_delete,
-        AuditAction.submit => l10n.audit_action_submit,
-        AuditAction.approve => l10n.audit_action_approve,
-        AuditAction.reject => l10n.audit_action_reject,
-        AuditAction.returned => l10n.audit_action_returned,
-        AuditAction.roleChange => l10n.audit_action_roleChange,
-        AuditAction.export => l10n.audit_action_export,
-      };
+    AuditAction.login => l10n.audit_action_login,
+    AuditAction.logout => l10n.audit_action_logout,
+    AuditAction.create => l10n.audit_action_create,
+    AuditAction.update => l10n.audit_action_update,
+    AuditAction.delete => l10n.audit_action_delete,
+    AuditAction.submit => l10n.audit_action_submit,
+    AuditAction.approve => l10n.audit_action_approve,
+    AuditAction.reject => l10n.audit_action_reject,
+    AuditAction.returned => l10n.audit_action_returned,
+    AuditAction.roleChange => l10n.audit_action_roleChange,
+    AuditAction.export => l10n.audit_action_export,
+  };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -57,9 +59,7 @@ class AuditLogScreen extends ConsumerWidget {
             padding: const EdgeInsets.all(12),
             child: Text(
               l10n.audit_readOnlyNote,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall
+              style: Theme.of(context).textTheme.bodySmall
                   ?.copyWith(color: Theme.of(context).colorScheme.outline),
             ),
           ),
@@ -70,7 +70,10 @@ class AuditLogScreen extends ConsumerWidget {
                   EmptyState(message: l10n.common_error_permission, icon: Icons.lock_outline),
               data: (List<AuditLogModel> logs) {
                 if (logs.isEmpty) {
-                  return EmptyState(message: l10n.audit_noEntries, icon: Icons.history_edu_outlined);
+                  return EmptyState(
+                    message: l10n.audit_noEntries,
+                    icon: Icons.history_edu_outlined,
+                  );
                 }
                 return ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -102,16 +105,16 @@ class AuditLogScreen extends ConsumerWidget {
   }
 
   IconData _iconFor(AuditAction a) => switch (a) {
-        AuditAction.login => Icons.login,
-        AuditAction.logout => Icons.logout,
-        AuditAction.create => Icons.add_circle_outline,
-        AuditAction.update => Icons.edit_outlined,
-        AuditAction.delete => Icons.delete_outline,
-        AuditAction.submit => Icons.send_outlined,
-        AuditAction.approve => Icons.check_circle_outline,
-        AuditAction.reject => Icons.cancel_outlined,
-        AuditAction.returned => Icons.undo,
-        AuditAction.roleChange => Icons.manage_accounts_outlined,
-        AuditAction.export => Icons.download_outlined,
-      };
+    AuditAction.login => Icons.login,
+    AuditAction.logout => Icons.logout,
+    AuditAction.create => Icons.add_circle_outline,
+    AuditAction.update => Icons.edit_outlined,
+    AuditAction.delete => Icons.delete_outline,
+    AuditAction.submit => Icons.send_outlined,
+    AuditAction.approve => Icons.check_circle_outline,
+    AuditAction.reject => Icons.cancel_outlined,
+    AuditAction.returned => Icons.undo,
+    AuditAction.roleChange => Icons.manage_accounts_outlined,
+    AuditAction.export => Icons.download_outlined,
+  };
 }

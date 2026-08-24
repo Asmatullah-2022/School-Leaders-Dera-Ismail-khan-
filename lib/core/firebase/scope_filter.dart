@@ -16,11 +16,11 @@ class ScopeFilter {
 
   /// No restriction — used by Super Admin.
   const ScopeFilter.unrestricted()
-      : districtId = null,
-        subDivisionId = null,
-        circleId = null,
-        clusterId = null,
-        schoolId = null;
+    : districtId = null,
+      subDivisionId = null,
+      circleId = null,
+      clusterId = null,
+      schoolId = null;
 
   final String? districtId;
   final String? subDivisionId;
@@ -29,7 +29,11 @@ class ScopeFilter {
   final String? schoolId;
 
   bool get isUnrestricted =>
-      districtId == null && subDivisionId == null && circleId == null && clusterId == null && schoolId == null;
+      districtId == null &&
+      subDivisionId == null &&
+      circleId == null &&
+      clusterId == null &&
+      schoolId == null;
 
   /// Applies the narrowest non-null scope field to [query] as an equality
   /// filter. Narrowest-first because a school-scoped user's schoolId is more
@@ -41,7 +45,9 @@ class ScopeFilter {
     if (subDivisionId != null) {
       return query.where(FirestorePaths.fieldSubDivisionId, isEqualTo: subDivisionId);
     }
-    if (districtId != null) return query.where(FirestorePaths.fieldDistrictId, isEqualTo: districtId);
+    if (districtId != null) {
+      return query.where(FirestorePaths.fieldDistrictId, isEqualTo: districtId);
+    }
     return query;
   }
 }

@@ -53,8 +53,10 @@ class SchoolPicker extends ConsumerWidget {
           onSelected: onChanged,
           fieldViewBuilder: (context, controller, focusNode, onSubmit) {
             if (selectedSchoolId != null && controller.text.isEmpty) {
-              final SchoolModel? match =
-                  schools.where((s) => s.id == selectedSchoolId).cast<SchoolModel?>().firstOrNull;
+              final SchoolModel? match = schools
+                  .where((s) => s.id == selectedSchoolId)
+                  .cast<SchoolModel?>()
+                  .firstOrNull;
               if (match != null) controller.text = '${match.name} (${match.emisCode})';
             }
             return TextFormField(

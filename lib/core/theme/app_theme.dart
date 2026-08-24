@@ -6,32 +6,31 @@ class AppTheme {
   AppTheme._();
 
   static ThemeData light() {
-    final ColorScheme scheme = ColorScheme.fromSeed(
-      seedColor: AppColors.primaryDarkGreen,
-      brightness: Brightness.light,
-    ).copyWith(
-      primary: AppColors.primaryDarkGreen,
-      secondary: AppColors.primaryGreen,
-      tertiary: AppColors.warningAmber,
-      error: AppColors.criticalRed,
-      surface: AppColors.white,
-      surfaceContainerHighest: AppColors.neutralGrayLight,
-    );
+    final ColorScheme scheme =
+        ColorScheme.fromSeed(
+          seedColor: AppColors.primaryDarkGreen,
+          brightness: Brightness.light,
+        ).copyWith(
+          primary: AppColors.primaryDarkGreen,
+          secondary: AppColors.primaryGreen,
+          tertiary: AppColors.warningAmber,
+          error: AppColors.criticalRed,
+          surface: AppColors.white,
+          surfaceContainerHighest: AppColors.neutralGrayLight,
+        );
     return _themeFrom(scheme, Brightness.light);
   }
 
   static ThemeData dark() {
-    final ColorScheme scheme = ColorScheme.fromSeed(
-      seedColor: AppColors.lightGreen,
-      brightness: Brightness.dark,
-    ).copyWith(
-      primary: AppColors.lightGreen,
-      secondary: AppColors.primaryGreen,
-      tertiary: AppColors.warningAmber,
-      error: const Color(0xFFEF9A9A),
-      surface: AppColors.darkSurface,
-      surfaceContainerHighest: AppColors.darkSurfaceContainer,
-    );
+    final ColorScheme scheme =
+        ColorScheme.fromSeed(seedColor: AppColors.lightGreen, brightness: Brightness.dark).copyWith(
+          primary: AppColors.lightGreen,
+          secondary: AppColors.primaryGreen,
+          tertiary: AppColors.warningAmber,
+          error: const Color(0xFFEF9A9A),
+          surface: AppColors.darkSurface,
+          surfaceContainerHighest: AppColors.darkSurfaceContainer,
+        );
     return _themeFrom(scheme, Brightness.dark);
   }
 

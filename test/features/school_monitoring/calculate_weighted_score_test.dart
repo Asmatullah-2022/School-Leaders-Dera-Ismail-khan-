@@ -3,7 +3,11 @@ import 'package:school_leaders_di_khan/features/school_monitoring/data/models/mo
 import 'package:school_leaders_di_khan/features/school_monitoring/data/models/scoring_criterion_model.dart';
 import 'package:school_leaders_di_khan/features/school_monitoring/domain/usecases/calculate_weighted_score.dart';
 
-CriterionScoreModel _c({required double weight, required double maxScore, required double achieved}) {
+CriterionScoreModel _c({
+  required double weight,
+  required double maxScore,
+  required double achieved,
+}) {
   return CriterionScoreModel(
     criterionId: 'x',
     label: 'X',
@@ -66,12 +70,15 @@ void main() {
       expect(calculateWeightedScore(scores), 66.7);
     });
 
-    test('clamps an achieved score above maxScore instead of exceeding 100% for that criterion', () {
-      final List<CriterionScoreModel> scores = <CriterionScoreModel>[
-        _c(weight: 100, maxScore: 100, achieved: 150),
-      ];
-      expect(calculateWeightedScore(scores), 100.0);
-    });
+    test(
+      'clamps an achieved score above maxScore instead of exceeding 100% for that criterion',
+      () {
+        final List<CriterionScoreModel> scores = <CriterionScoreModel>[
+          _c(weight: 100, maxScore: 100, achieved: 150),
+        ];
+        expect(calculateWeightedScore(scores), 100.0);
+      },
+    );
   });
 
   group('resolveGrade', () {

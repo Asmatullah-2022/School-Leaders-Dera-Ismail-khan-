@@ -20,8 +20,10 @@ enum AppNotificationType {
 abstract class NotificationModel with _$NotificationModel {
   const factory NotificationModel({
     required String id,
+
     /// Either a specific recipient, or null for a role/scope broadcast.
     String? recipientUid,
+
     /// For broadcasts: the minimum role tier plus the hierarchy scope the
     /// notification applies to, so a recipient's own scope decides visibility.
     String? recipientRole,
@@ -36,6 +38,7 @@ abstract class NotificationModel with _$NotificationModel {
     String? bodyUrdu,
     required AppNotificationType type,
     @Default(false) bool isRead,
+
     /// Deep-link target: which collection + document this notification is about.
     String? relatedCollection,
     String? relatedDocId,
@@ -45,7 +48,8 @@ abstract class NotificationModel with _$NotificationModel {
 
   const NotificationModel._();
 
-  factory NotificationModel.fromJson(Map<String, dynamic> json) => _$NotificationModelFromJson(json);
+  factory NotificationModel.fromJson(Map<String, dynamic> json) =>
+      _$NotificationModelFromJson(json);
 
   static const Set<String> dateFields = <String>{'createdAt'};
 }

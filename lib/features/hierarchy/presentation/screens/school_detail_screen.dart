@@ -33,9 +33,9 @@ class SchoolDetailScreen extends ConsumerWidget {
                 ? const SizedBox.shrink()
                 : IconButton(
                     icon: const Icon(Icons.edit_outlined),
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => SchoolFormScreen(existing: s)),
-                    ),
+                    onPressed: () => Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute<void>(builder: (_) => SchoolFormScreen(existing: s))),
                   ),
             orElse: () => const SizedBox.shrink(),
           ),
@@ -49,7 +49,8 @@ class SchoolDetailScreen extends ConsumerWidget {
             padding: const EdgeInsets.all(16),
             children: <Widget>[
               Text(school.name, style: Theme.of(context).textTheme.headlineSmall),
-              if (school.nameUrdu != null) Text(school.nameUrdu!, style: Theme.of(context).textTheme.titleMedium),
+              if (school.nameUrdu != null)
+                Text(school.nameUrdu!, style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: 4),
               Chip(label: Text('${l10n.hierarchy_emisCode}: ${school.emisCode}')),
               const SizedBox(height: 16),

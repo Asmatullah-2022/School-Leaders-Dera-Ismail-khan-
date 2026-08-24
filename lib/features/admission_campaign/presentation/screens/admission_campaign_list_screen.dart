@@ -21,7 +21,9 @@ class AdmissionCampaignListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<AdmissionCampaignModel>> campaignsAsync = ref.watch(scopedAdmissionCampaignsProvider);
+    final AsyncValue<List<AdmissionCampaignModel>> campaignsAsync = ref.watch(
+      scopedAdmissionCampaignsProvider,
+    );
 
     return AppScaffold(
       title: l10n.more_admission,
@@ -29,15 +31,15 @@ class AdmissionCampaignListScreen extends ConsumerWidget {
         IconButton(
           icon: const Icon(Icons.person_search_outlined),
           tooltip: l10n.dashboard_oosc,
-          onPressed: () => Navigator.of(context).push(
-            MaterialPageRoute<void>(builder: (_) => const OoscListScreen()),
-          ),
+          onPressed: () =>
+              Navigator.of(context)
+                  .push(MaterialPageRoute<void>(builder: (_) => const OoscListScreen())),
         ),
       ],
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const AdmissionCampaignFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const AdmissionCampaignFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.admission_addCampaign),
       ),
@@ -58,7 +60,9 @@ class AdmissionCampaignListScreen extends ConsumerWidget {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(16),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => AdmissionCampaignDetailScreen(campaignId: c.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => AdmissionCampaignDetailScreen(campaignId: c.id),
+                    ),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(14),
@@ -69,7 +73,10 @@ class AdmissionCampaignListScreen extends ConsumerWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(c.academicYear, style: Theme.of(context).textTheme.titleMedium),
-                            Text(DateFormat.yMMMd().format(c.date), style: Theme.of(context).textTheme.bodySmall),
+                            Text(
+                              DateFormat.yMMMd().format(c.date),
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
                           ],
                         ),
                         const SizedBox(height: 8),

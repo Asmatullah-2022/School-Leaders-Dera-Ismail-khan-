@@ -11,11 +11,11 @@ import 'models/emergency_report_model.dart';
 
 class EmergencyReportRepositoryImpl implements EmergencyReportRepository {
   EmergencyReportRepositoryImpl(this._firestore, this._notifications)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.emergencyReports,
-          dateFields: EmergencyReportModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.emergencyReports,
+        dateFields: EmergencyReportModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final NotificationRepository _notifications;
@@ -26,13 +26,14 @@ class EmergencyReportRepositoryImpl implements EmergencyReportRepository {
 
   @override
   Stream<List<EmergencyReportModel>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query =
-        filter.apply(_collection).orderBy('occurredAt', descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy('occurredAt', descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-              .map((doc) => EmergencyReportModel.fromJson(firestoreDataToJson(doc.data())))
-              .toList(),
-        );
+      (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+          .map((doc) => EmergencyReportModel.fromJson(firestoreDataToJson(doc.data())))
+          .toList(),
+    );
   }
 
   @override

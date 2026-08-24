@@ -6,11 +6,7 @@ import '../../data/models/scoring_criterion_model.dart';
 /// + numeric readout, used in the monitoring report form for each of the
 /// active `monitoring_config` criteria.
 class CriterionSliderField extends StatelessWidget {
-  const CriterionSliderField({
-    super.key,
-    required this.criterion,
-    required this.onChanged,
-  });
+  const CriterionSliderField({super.key, required this.criterion, required this.onChanged});
 
   final CriterionScoreModel criterion;
   final ValueChanged<double> onChanged;
@@ -18,7 +14,9 @@ class CriterionSliderField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool rtl = Directionality.of(context) == TextDirection.rtl;
-    final String label = (rtl && criterion.labelUrdu != null) ? criterion.labelUrdu! : criterion.label;
+    final String label = (rtl && criterion.labelUrdu != null)
+        ? criterion.labelUrdu!
+        : criterion.label;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Column(
@@ -30,7 +28,8 @@ class CriterionSliderField extends StatelessWidget {
               Text(label, style: Theme.of(context).textTheme.bodyMedium),
               Text(
                 '${criterion.achievedScore.toStringAsFixed(0)} / ${criterion.maxScore.toStringAsFixed(0)}',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodyMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),

@@ -10,18 +10,18 @@ class ProblemStatusBadge extends StatelessWidget {
   final ProblemStatus status;
 
   static String label(AppLocalizations l10n, ProblemStatus status) => switch (status) {
-        ProblemStatus.open => l10n.problem_status_open,
-        ProblemStatus.inProgress => l10n.problem_status_inProgress,
-        ProblemStatus.resolved => l10n.problem_status_resolved,
-        ProblemStatus.closed => l10n.problem_status_closed,
-      };
+    ProblemStatus.open => l10n.problem_status_open,
+    ProblemStatus.inProgress => l10n.problem_status_inProgress,
+    ProblemStatus.resolved => l10n.problem_status_resolved,
+    ProblemStatus.closed => l10n.problem_status_closed,
+  };
 
   static Color color(ProblemStatus status) => switch (status) {
-        ProblemStatus.open => AppColors.criticalRed,
-        ProblemStatus.inProgress => AppColors.warningAmber,
-        ProblemStatus.resolved => AppColors.success,
-        ProblemStatus.closed => AppColors.neutralGrayMid,
-      };
+    ProblemStatus.open => AppColors.criticalRed,
+    ProblemStatus.inProgress => AppColors.warningAmber,
+    ProblemStatus.resolved => AppColors.success,
+    ProblemStatus.closed => AppColors.neutralGrayMid,
+  };
 
   @override
   Widget build(BuildContext context) {

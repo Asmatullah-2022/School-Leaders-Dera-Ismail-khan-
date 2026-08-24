@@ -25,7 +25,9 @@ import '../../../textbook_distribution/data/models/textbook_distribution_model.d
 /// layer at all (see docs/MODULE_PATTERN.md).
 
 // --- Door-to-door (§14) ---
-final doorToDoorRepositoryProvider = Provider<ScopedFirestoreRepository<DoorToDoorActivityModel>>((ref) {
+final doorToDoorRepositoryProvider = Provider<ScopedFirestoreRepository<DoorToDoorActivityModel>>((
+  ref,
+) {
   return ScopedFirestoreRepository<DoorToDoorActivityModel>(
     firestore: ref.watch(firestoreProvider),
     collectionName: FirestorePaths.doorToDoorActivities,
@@ -45,16 +47,16 @@ final scopedDoorToDoorProvider = StreamProvider<List<DoorToDoorActivityModel>>((
 // --- Community engagement (§15) ---
 final communityActivityRepositoryProvider =
     Provider<ScopedFirestoreRepository<CommunityActivityModel>>((ref) {
-  return ScopedFirestoreRepository<CommunityActivityModel>(
-    firestore: ref.watch(firestoreProvider),
-    collectionName: FirestorePaths.communityActivities,
-    dateFields: CommunityActivityModel.dateFields,
-    orderByField: CommunityActivityModel.orderByField,
-    fromJson: CommunityActivityModel.fromJson,
-    toJson: (CommunityActivityModel e) => e.toJson(),
-    idOf: (CommunityActivityModel e) => e.id,
-  );
-});
+      return ScopedFirestoreRepository<CommunityActivityModel>(
+        firestore: ref.watch(firestoreProvider),
+        collectionName: FirestorePaths.communityActivities,
+        dateFields: CommunityActivityModel.dateFields,
+        orderByField: CommunityActivityModel.orderByField,
+        fromJson: CommunityActivityModel.fromJson,
+        toJson: (CommunityActivityModel e) => e.toJson(),
+        idOf: (CommunityActivityModel e) => e.id,
+      );
+    });
 
 final scopedCommunityActivitiesProvider = StreamProvider<List<CommunityActivityModel>>((ref) {
   final ScopeFilter filter = ref.watch(currentScopeFilterProvider);
@@ -62,7 +64,9 @@ final scopedCommunityActivitiesProvider = StreamProvider<List<CommunityActivityM
 });
 
 // --- Parent–teacher contact (§16) ---
-final parentContactRepositoryProvider = Provider<ScopedFirestoreRepository<ParentContactModel>>((ref) {
+final parentContactRepositoryProvider = Provider<ScopedFirestoreRepository<ParentContactModel>>((
+  ref,
+) {
   return ScopedFirestoreRepository<ParentContactModel>(
     firestore: ref.watch(firestoreProvider),
     collectionName: FirestorePaths.parentContacts,
@@ -82,16 +86,16 @@ final scopedParentContactsProvider = StreamProvider<List<ParentContactModel>>((r
 // --- Advertisement campaigns (§17) ---
 final advertisementRepositoryProvider =
     Provider<ScopedFirestoreRepository<AdvertisementCampaignModel>>((ref) {
-  return ScopedFirestoreRepository<AdvertisementCampaignModel>(
-    firestore: ref.watch(firestoreProvider),
-    collectionName: FirestorePaths.advertisementCampaigns,
-    dateFields: AdvertisementCampaignModel.dateFields,
-    orderByField: AdvertisementCampaignModel.orderByField,
-    fromJson: AdvertisementCampaignModel.fromJson,
-    toJson: (AdvertisementCampaignModel e) => e.toJson(),
-    idOf: (AdvertisementCampaignModel e) => e.id,
-  );
-});
+      return ScopedFirestoreRepository<AdvertisementCampaignModel>(
+        firestore: ref.watch(firestoreProvider),
+        collectionName: FirestorePaths.advertisementCampaigns,
+        dateFields: AdvertisementCampaignModel.dateFields,
+        orderByField: AdvertisementCampaignModel.orderByField,
+        fromJson: AdvertisementCampaignModel.fromJson,
+        toJson: (AdvertisementCampaignModel e) => e.toJson(),
+        idOf: (AdvertisementCampaignModel e) => e.id,
+      );
+    });
 
 final scopedAdvertisementsProvider = StreamProvider<List<AdvertisementCampaignModel>>((ref) {
   final ScopeFilter filter = ref.watch(currentScopeFilterProvider);
@@ -99,18 +103,19 @@ final scopedAdvertisementsProvider = StreamProvider<List<AdvertisementCampaignMo
 });
 
 // --- Social media campaigns (§18) ---
-final socialMediaRepositoryProvider =
-    Provider<ScopedFirestoreRepository<SocialMediaCampaignModel>>((ref) {
-  return ScopedFirestoreRepository<SocialMediaCampaignModel>(
-    firestore: ref.watch(firestoreProvider),
-    collectionName: FirestorePaths.socialMediaCampaigns,
-    dateFields: SocialMediaCampaignModel.dateFields,
-    orderByField: SocialMediaCampaignModel.orderByField,
-    fromJson: SocialMediaCampaignModel.fromJson,
-    toJson: (SocialMediaCampaignModel e) => e.toJson(),
-    idOf: (SocialMediaCampaignModel e) => e.id,
-  );
-});
+final socialMediaRepositoryProvider = Provider<ScopedFirestoreRepository<SocialMediaCampaignModel>>(
+  (ref) {
+    return ScopedFirestoreRepository<SocialMediaCampaignModel>(
+      firestore: ref.watch(firestoreProvider),
+      collectionName: FirestorePaths.socialMediaCampaigns,
+      dateFields: SocialMediaCampaignModel.dateFields,
+      orderByField: SocialMediaCampaignModel.orderByField,
+      fromJson: SocialMediaCampaignModel.fromJson,
+      toJson: (SocialMediaCampaignModel e) => e.toJson(),
+      idOf: (SocialMediaCampaignModel e) => e.id,
+    );
+  },
+);
 
 final scopedSocialMediaProvider = StreamProvider<List<SocialMediaCampaignModel>>((ref) {
   final ScopeFilter filter = ref.watch(currentScopeFilterProvider);
@@ -118,8 +123,9 @@ final scopedSocialMediaProvider = StreamProvider<List<SocialMediaCampaignModel>>
 });
 
 // --- Textbook distribution (§19) ---
-final textbookRepositoryProvider =
-    Provider<ScopedFirestoreRepository<TextbookDistributionModel>>((ref) {
+final textbookRepositoryProvider = Provider<ScopedFirestoreRepository<TextbookDistributionModel>>((
+  ref,
+) {
   return ScopedFirestoreRepository<TextbookDistributionModel>(
     firestore: ref.watch(firestoreProvider),
     collectionName: FirestorePaths.textbookDistribution,
@@ -137,8 +143,9 @@ final scopedTextbooksProvider = StreamProvider<List<TextbookDistributionModel>>(
 });
 
 // --- Cluster meetings (§20) ---
-final clusterMeetingRepositoryProvider =
-    Provider<ScopedFirestoreRepository<ClusterMeetingModel>>((ref) {
+final clusterMeetingRepositoryProvider = Provider<ScopedFirestoreRepository<ClusterMeetingModel>>((
+  ref,
+) {
   return ScopedFirestoreRepository<ClusterMeetingModel>(
     firestore: ref.watch(firestoreProvider),
     collectionName: FirestorePaths.clusterMeetings,
@@ -176,16 +183,16 @@ final scopedStatementsProvider = StreamProvider<List<StatementModel>>((ref) {
 // --- School functionality (§30) ---
 final schoolFunctionalityRepositoryProvider =
     Provider<ScopedFirestoreRepository<SchoolFunctionalityModel>>((ref) {
-  return ScopedFirestoreRepository<SchoolFunctionalityModel>(
-    firestore: ref.watch(firestoreProvider),
-    collectionName: FirestorePaths.schoolFunctionality,
-    dateFields: SchoolFunctionalityModel.dateFields,
-    orderByField: SchoolFunctionalityModel.orderByField,
-    fromJson: SchoolFunctionalityModel.fromJson,
-    toJson: (SchoolFunctionalityModel e) => e.toJson(),
-    idOf: (SchoolFunctionalityModel e) => e.id,
-  );
-});
+      return ScopedFirestoreRepository<SchoolFunctionalityModel>(
+        firestore: ref.watch(firestoreProvider),
+        collectionName: FirestorePaths.schoolFunctionality,
+        dateFields: SchoolFunctionalityModel.dateFields,
+        orderByField: SchoolFunctionalityModel.orderByField,
+        fromJson: SchoolFunctionalityModel.fromJson,
+        toJson: (SchoolFunctionalityModel e) => e.toJson(),
+        idOf: (SchoolFunctionalityModel e) => e.id,
+      );
+    });
 
 final scopedSchoolFunctionalityProvider = StreamProvider<List<SchoolFunctionalityModel>>((ref) {
   final ScopeFilter filter = ref.watch(currentScopeFilterProvider);
@@ -193,8 +200,9 @@ final scopedSchoolFunctionalityProvider = StreamProvider<List<SchoolFunctionalit
 });
 
 // --- School opening (§31) ---
-final schoolOpeningRepositoryProvider =
-    Provider<ScopedFirestoreRepository<SchoolOpeningModel>>((ref) {
+final schoolOpeningRepositoryProvider = Provider<ScopedFirestoreRepository<SchoolOpeningModel>>((
+  ref,
+) {
   return ScopedFirestoreRepository<SchoolOpeningModel>(
     firestore: ref.watch(firestoreProvider),
     collectionName: FirestorePaths.schoolOpening,
@@ -248,8 +256,9 @@ final scopedPlantationProvider = StreamProvider<List<PlantationModel>>((ref) {
 });
 
 // --- ECE monitoring (§26) ---
-final eceMonitoringRepositoryProvider =
-    Provider<ScopedFirestoreRepository<EceMonitoringModel>>((ref) {
+final eceMonitoringRepositoryProvider = Provider<ScopedFirestoreRepository<EceMonitoringModel>>((
+  ref,
+) {
   return ScopedFirestoreRepository<EceMonitoringModel>(
     firestore: ref.watch(firestoreProvider),
     collectionName: FirestorePaths.eceMonitoring,

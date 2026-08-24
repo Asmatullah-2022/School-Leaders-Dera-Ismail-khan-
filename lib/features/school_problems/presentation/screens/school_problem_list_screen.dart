@@ -30,14 +30,16 @@ class _SchoolProblemListScreenState extends ConsumerState<SchoolProblemListScree
   @override
   Widget build(BuildContext context) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<SchoolProblemModel>> problemsAsync = ref.watch(scopedSchoolProblemsProvider);
+    final AsyncValue<List<SchoolProblemModel>> problemsAsync = ref.watch(
+      scopedSchoolProblemsProvider,
+    );
 
     return AppScaffold(
       title: l10n.more_schoolProblems,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const SchoolProblemFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const SchoolProblemFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.problem_addProblem),
       ),
@@ -66,7 +68,10 @@ class _SchoolProblemListScreenState extends ConsumerState<SchoolProblemListScree
               ),
               Expanded(
                 child: filtered.isEmpty
-                    ? EmptyState(message: l10n.problem_noProblems, icon: Icons.report_problem_outlined)
+                    ? EmptyState(
+                        message: l10n.problem_noProblems,
+                        icon: Icons.report_problem_outlined,
+                      )
                     : ListView.separated(
                         padding: const EdgeInsets.all(12),
                         itemCount: filtered.length,
@@ -156,7 +161,9 @@ class _SummaryRow extends StatelessWidget {
     final int open = problems.where((p) => p.status == ProblemStatus.open).length;
     final int inProgress = problems.where((p) => p.status == ProblemStatus.inProgress).length;
     final int resolved = problems.where((p) => p.status == ProblemStatus.resolved).length;
-    final int critical = problems.where((p) => p.isCritical && p.status != ProblemStatus.closed).length;
+    final int critical = problems
+        .where((p) => p.isCritical && p.status != ProblemStatus.closed)
+        .length;
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
@@ -184,9 +191,7 @@ class _SummaryRow extends StatelessWidget {
           children: <Widget>[
             Text(
               '$value',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
+              style: Theme.of(context).textTheme.titleLarge
                   ?.copyWith(color: color, fontWeight: FontWeight.bold),
             ),
             Text(

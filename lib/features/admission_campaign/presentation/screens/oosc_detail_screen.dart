@@ -31,9 +31,8 @@ class OoscDetailScreen extends ConsumerWidget {
               ? const SizedBox.shrink()
               : IconButton(
                   icon: const Icon(Icons.edit_outlined),
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => OoscFormScreen(existing: r)),
-                  ),
+                  onPressed: () => Navigator.of(context)
+                      .push(MaterialPageRoute<void>(builder: (_) => OoscFormScreen(existing: r))),
                 ),
           orElse: () => const SizedBox.shrink(),
         ),
@@ -53,15 +52,21 @@ class OoscDetailScreen extends ConsumerWidget {
                   OoscStatusChip(status: r.status),
                 ],
               ),
-              if (r.childNameUrdu != null) Text(r.childNameUrdu!, style: Theme.of(context).textTheme.titleMedium),
+              if (r.childNameUrdu != null)
+                Text(r.childNameUrdu!, style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: 16),
               _row(context, l10n.oosc_age, '${r.age}'),
-              _row(context, l10n.oosc_gender, r.gender == OoscGender.male ? l10n.oosc_male : l10n.oosc_female),
+              _row(
+                context,
+                l10n.oosc_gender,
+                r.gender == OoscGender.male ? l10n.oosc_male : l10n.oosc_female,
+              ),
               _row(context, l10n.oosc_village, r.village ?? '—'),
               _row(context, l10n.oosc_parentGuardian, r.parentGuardianName ?? '—'),
               _row(context, l10n.oosc_contact, r.contactPhone ?? '—'),
               _row(context, l10n.oosc_previousSchool, r.previousSchool ?? '—'),
-              if (r.followUpDate != null) _row(context, l10n.oosc_followUpDate, DateFormat.yMMMd().format(r.followUpDate!)),
+              if (r.followUpDate != null)
+                _row(context, l10n.oosc_followUpDate, DateFormat.yMMMd().format(r.followUpDate!)),
               if (r.remarks != null) _row(context, l10n.common_remarks, r.remarks!),
               if (r.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),

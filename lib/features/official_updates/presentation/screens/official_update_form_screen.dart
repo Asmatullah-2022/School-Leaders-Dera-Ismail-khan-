@@ -155,10 +155,12 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
               initialValue: _category,
               decoration: InputDecoration(labelText: l10n.update_category),
               items: UpdateCategory.values
-                  .map((c) => DropdownMenuItem<UpdateCategory>(
-                        value: c,
-                        child: Text(updateCategoryLabel(l10n, c)),
-                      ))
+                  .map(
+                    (c) => DropdownMenuItem<UpdateCategory>(
+                      value: c,
+                      child: Text(updateCategoryLabel(l10n, c)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _category = v ?? _category),
             ),
@@ -167,10 +169,12 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
               initialValue: _priority,
               decoration: InputDecoration(labelText: l10n.update_priority),
               items: UpdatePriority.values
-                  .map((p) => DropdownMenuItem<UpdatePriority>(
-                        value: p,
-                        child: Text(updatePriorityLabel(l10n, p)),
-                      ))
+                  .map(
+                    (p) => DropdownMenuItem<UpdatePriority>(
+                      value: p,
+                      child: Text(updatePriorityLabel(l10n, p)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _priority = v ?? _priority),
             ),
@@ -179,10 +183,12 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
               initialValue: _audience,
               decoration: InputDecoration(labelText: l10n.update_audience),
               items: UpdateAudience.values
-                  .map((a) => DropdownMenuItem<UpdateAudience>(
-                        value: a,
-                        child: Text(updateAudienceLabel(l10n, a)),
-                      ))
+                  .map(
+                    (a) => DropdownMenuItem<UpdateAudience>(
+                      value: a,
+                      child: Text(updateAudienceLabel(l10n, a)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _audience = v ?? _audience),
             ),
@@ -229,7 +235,11 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
             FilledButton(
               onPressed: _isSaving ? null : _save,
               child: _isSaving
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],

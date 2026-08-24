@@ -36,10 +36,10 @@ class ReportExportService {
   }
 
   String titleFor(ReportTable table, ReportLanguage language) => switch (language) {
-        ReportLanguage.english => table.titleEn,
-        ReportLanguage.urdu => table.titleUr,
-        ReportLanguage.bilingual => '${table.titleEn} — ${table.titleUr}',
-      };
+    ReportLanguage.english => table.titleEn,
+    ReportLanguage.urdu => table.titleUr,
+    ReportLanguage.bilingual => '${table.titleEn} — ${table.titleUr}',
+  };
 
   String buildCsvString(ReportTable table, ReportLanguage language) {
     return buildCsv(headers: headersFor(table, language), rows: table.rows);

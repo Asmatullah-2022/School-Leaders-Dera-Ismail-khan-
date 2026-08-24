@@ -9,11 +9,11 @@ import 'models/ptc_priority_model.dart';
 
 class PtcPriorityRepositoryImpl implements PtcPriorityRepository {
   PtcPriorityRepositoryImpl(this._firestore)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.ptcPriorities,
-          dateFields: PtcPriorityModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.ptcPriorities,
+        dateFields: PtcPriorityModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final OfflineWriteHelper _writer;
@@ -23,10 +23,12 @@ class PtcPriorityRepositoryImpl implements PtcPriorityRepository {
 
   @override
   Stream<List<PtcPriorityModel>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query =
-        filter.apply(_collection).orderBy('meetingDate', descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy('meetingDate', descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+      (QuerySnapshot<Map<String, dynamic>> snap) =>
+          snap.docs
               .map((doc) => PtcPriorityModel.fromJson(firestoreDataToJson(doc.data())))
               .toList()
             // Secondary sort by rank so a single meeting's priorities always
@@ -35,7 +37,7 @@ class PtcPriorityRepositoryImpl implements PtcPriorityRepository {
               final int byDate = b.meetingDate.compareTo(a.meetingDate);
               return byDate != 0 ? byDate : a.rank.compareTo(b.rank);
             }),
-        );
+    );
   }
 
   @override

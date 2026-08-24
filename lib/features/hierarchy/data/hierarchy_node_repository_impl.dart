@@ -8,11 +8,11 @@ import 'models/hierarchy_node_model.dart';
 
 class HierarchyNodeRepositoryImpl implements HierarchyNodeRepository {
   HierarchyNodeRepositoryImpl(this._firestore, this.level)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: level.collectionName,
-          dateFields: HierarchyNodeModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: level.collectionName,
+        dateFields: HierarchyNodeModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final HierarchyLevel level;
@@ -23,7 +23,10 @@ class HierarchyNodeRepositoryImpl implements HierarchyNodeRepository {
 
   @override
   Stream<List<HierarchyNodeModel>> watchAll() {
-    return _collection.orderBy('name').snapshots().map(
+    return _collection
+        .orderBy('name')
+        .snapshots()
+        .map(
           (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
               .map((doc) => HierarchyNodeModel.fromJson(firestoreDataToJson(doc.data())))
               .toList(),
@@ -37,11 +40,12 @@ class HierarchyNodeRepositoryImpl implements HierarchyNodeRepository {
         ? query.where('parentId', isNull: true)
         : query.where('parentId', isEqualTo: parentId);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+      (QuerySnapshot<Map<String, dynamic>> snap) =>
+          snap.docs
               .map((doc) => HierarchyNodeModel.fromJson(firestoreDataToJson(doc.data())))
               .toList()
             ..sort((a, b) => a.name.compareTo(b.name)),
-        );
+    );
   }
 
   @override

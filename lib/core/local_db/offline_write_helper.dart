@@ -39,15 +39,17 @@ class OfflineWriteHelper {
       await firestore.collection(collectionName).doc(docId).set(data, SetOptions(merge: true));
       _cachePut(docId, json, isSynced: true);
     } catch (_) {
-      await _queue.enqueue(SyncQueueItem(
-        id: _uuid.v4(),
-        collectionName: collectionName,
-        docId: docId,
-        operation: isCreate ? SyncOperation.create : SyncOperation.update,
-        payloadJson: json,
-        dateFields: dateFields.toList(),
-        createdAt: DateTime.now(),
-      ));
+      await _queue.enqueue(
+        SyncQueueItem(
+          id: _uuid.v4(),
+          collectionName: collectionName,
+          docId: docId,
+          operation: isCreate ? SyncOperation.create : SyncOperation.update,
+          payloadJson: json,
+          dateFields: dateFields.toList(),
+          createdAt: DateTime.now(),
+        ),
+      );
     }
   }
 
@@ -56,15 +58,17 @@ class OfflineWriteHelper {
     try {
       await firestore.collection(collectionName).doc(docId).delete();
     } catch (_) {
-      await _queue.enqueue(SyncQueueItem(
-        id: _uuid.v4(),
-        collectionName: collectionName,
-        docId: docId,
-        operation: SyncOperation.delete,
-        payloadJson: const <String, dynamic>{},
-        dateFields: const <String>[],
-        createdAt: DateTime.now(),
-      ));
+      await _queue.enqueue(
+        SyncQueueItem(
+          id: _uuid.v4(),
+          collectionName: collectionName,
+          docId: docId,
+          operation: SyncOperation.delete,
+          payloadJson: const <String, dynamic>{},
+          dateFields: const <String>[],
+          createdAt: DateTime.now(),
+        ),
+      );
     }
   }
 
@@ -76,17 +80,19 @@ class OfflineWriteHelper {
     required String filePath,
     required String storageField,
   }) async {
-    await _queue.enqueue(SyncQueueItem(
-      id: _uuid.v4(),
-      collectionName: collectionName,
-      docId: docId,
-      operation: SyncOperation.uploadPhoto,
-      payloadJson: const <String, dynamic>{},
-      dateFields: const <String>[],
-      createdAt: DateTime.now(),
-      filePath: filePath,
-      storageField: storageField,
-    ));
+    await _queue.enqueue(
+      SyncQueueItem(
+        id: _uuid.v4(),
+        collectionName: collectionName,
+        docId: docId,
+        operation: SyncOperation.uploadPhoto,
+        payloadJson: const <String, dynamic>{},
+        dateFields: const <String>[],
+        createdAt: DateTime.now(),
+        filePath: filePath,
+        storageField: storageField,
+      ),
+    );
   }
 
   void _cachePut(String docId, Map<String, dynamic> json, {required bool isSynced}) {

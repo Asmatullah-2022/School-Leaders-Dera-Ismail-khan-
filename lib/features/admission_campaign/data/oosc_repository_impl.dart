@@ -9,11 +9,11 @@ import 'models/oosc_record_model.dart';
 
 class OoscRepositoryImpl implements OoscRepository {
   OoscRepositoryImpl(this._firestore)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.ooscRecords,
-          dateFields: OoscRecordModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.ooscRecords,
+        dateFields: OoscRecordModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final OfflineWriteHelper _writer;
@@ -23,18 +23,22 @@ class OoscRepositoryImpl implements OoscRepository {
 
   @override
   Stream<List<OoscRecordModel>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query =
-        filter.apply(_collection).orderBy('createdAt', descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy('createdAt', descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-              .map((doc) => OoscRecordModel.fromJson(firestoreDataToJson(doc.data())))
-              .toList(),
-        );
+      (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+          .map((doc) => OoscRecordModel.fromJson(firestoreDataToJson(doc.data())))
+          .toList(),
+    );
   }
 
   @override
   Stream<List<OoscRecordModel>> watchByCampaign(String campaignId) {
-    return _collection.where('campaignId', isEqualTo: campaignId).snapshots().map(
+    return _collection
+        .where('campaignId', isEqualTo: campaignId)
+        .snapshots()
+        .map(
           (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
               .map((doc) => OoscRecordModel.fromJson(firestoreDataToJson(doc.data())))
               .toList(),

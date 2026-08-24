@@ -33,11 +33,8 @@ class PdfFonts {
 
   /// Falls back to the Arabic-script face for any glyph the Latin face lacks,
   /// so a mixed-script table cell renders fully instead of showing tofu.
-  pw.ThemeData get theme => pw.ThemeData.withFont(
-        base: latin,
-        bold: latinBold,
-        fontFallback: <pw.Font>[urdu, urduBold],
-      );
+  pw.ThemeData get theme =>
+      pw.ThemeData.withFont(base: latin, bold: latinBold, fontFallback: <pw.Font>[urdu, urduBold]);
 }
 
 /// Builds a bilingual label. The `pdf` package has no automatic
@@ -110,7 +107,10 @@ pw.Widget reportHeader({
       pw.SizedBox(height: 4),
       bilingualText(titleEn, titleUr, language: language, fonts: fonts, fontSize: 12, bold: true),
       pw.SizedBox(height: 2),
-      pw.Text(generatedOn, style: pw.TextStyle(font: fonts.latin, fontSize: 8, color: PdfColors.grey700)),
+      pw.Text(
+        generatedOn,
+        style: pw.TextStyle(font: fonts.latin, fontSize: 8, color: PdfColors.grey700),
+      ),
       pw.Divider(thickness: 0.5),
     ],
   );
@@ -163,12 +163,7 @@ Future<pw.Document> buildReportDocument({
         pw.SizedBox(height: 8),
         if (rows.isEmpty)
           // Honours the report's language rather than always printing English.
-          bilingualText(
-            'No records',
-            'کوئی ریکارڈ نہیں',
-            language: language,
-            fonts: fonts,
-          )
+          bilingualText('No records', 'کوئی ریکارڈ نہیں', language: language, fonts: fonts)
         else
           reportTable(headers: headers, rows: rows, fonts: fonts),
       ],

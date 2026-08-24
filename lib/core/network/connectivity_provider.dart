@@ -8,8 +8,8 @@ final Provider<Connectivity> connectivityProvider = Provider<Connectivity>((ref)
 /// Raw connectivity_plus result stream.
 final StreamProvider<List<ConnectivityResult>> connectivityStreamProvider =
     StreamProvider<List<ConnectivityResult>>((ref) {
-  return ref.watch(connectivityProvider).onConnectivityChanged;
-});
+      return ref.watch(connectivityProvider).onConnectivityChanged;
+    });
 
 /// Simplified online/offline boolean stream, deduplicated, with an initial
 /// synchronous check so UI doesn't flash "offline" on first frame.
@@ -29,8 +29,7 @@ final StreamProvider<bool> isOnlineStreamProvider = StreamProvider<bool>((ref) a
 
 /// Synchronous-ish read for widgets that just need "am I online right now".
 final Provider<bool> isOnlineProvider = Provider<bool>((ref) {
-  return ref.watch(isOnlineStreamProvider).maybeWhen(
-        data: (bool value) => value,
-        orElse: () => true,
-      );
+  return ref
+      .watch(isOnlineStreamProvider)
+      .maybeWhen(data: (bool value) => value, orElse: () => true);
 });

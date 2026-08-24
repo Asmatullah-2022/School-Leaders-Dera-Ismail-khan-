@@ -17,8 +17,7 @@ class AppMetaStore {
 
   Future<void> setString(String key, String value) => _box.put(key, value);
 
-  bool getBool(String key, {bool defaultValue = false}) =>
-      (_box.get(key) as bool?) ?? defaultValue;
+  bool getBool(String key, {bool defaultValue = false}) => (_box.get(key) as bool?) ?? defaultValue;
 
   Future<void> setBool(String key, bool value) => _box.put(key, value);
 

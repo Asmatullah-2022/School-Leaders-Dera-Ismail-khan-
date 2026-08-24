@@ -23,7 +23,11 @@ class MoreMenuScreen extends ConsumerWidget {
       _MenuEntry(Icons.cleaning_services_outlined, l10n.more_cleanliness, RoutePaths.cleanliness),
       _MenuEntry(Icons.park_outlined, l10n.more_plantation, RoutePaths.plantation),
       _MenuEntry(Icons.diversity_3_outlined, l10n.more_community, RoutePaths.community),
-      _MenuEntry(Icons.report_problem_outlined, l10n.more_schoolProblems, RoutePaths.schoolProblems),
+      _MenuEntry(
+        Icons.report_problem_outlined,
+        l10n.more_schoolProblems,
+        RoutePaths.schoolProblems,
+      ),
       _MenuEntry(Icons.emergency_outlined, l10n.more_emergency, RoutePaths.emergency),
       _MenuEntry(Icons.campaign_outlined, l10n.more_officialUpdates, RoutePaths.officialUpdates),
       _MenuEntry(Icons.notifications_outlined, l10n.more_notifications, RoutePaths.notifications),
@@ -34,7 +38,11 @@ class MoreMenuScreen extends ConsumerWidget {
         _MenuEntry(Icons.hub_outlined, l10n.hierarchy_clusters, RoutePaths.clusters),
       ],
       if (role != null && role.isAdmin)
-        _MenuEntry(Icons.manage_accounts_outlined, l10n.more_adminManagement, RoutePaths.adminUsers),
+        _MenuEntry(
+          Icons.manage_accounts_outlined,
+          l10n.more_adminManagement,
+          RoutePaths.adminUsers,
+        ),
       if (role == AppRole.superAdmin || role == AppRole.districtAdmin)
         _MenuEntry(Icons.history_edu_outlined, l10n.more_auditLog, RoutePaths.auditLog),
       _MenuEntry(Icons.person_outline, l10n.more_profile, RoutePaths.profile),

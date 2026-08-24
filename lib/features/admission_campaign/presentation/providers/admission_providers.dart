@@ -19,7 +19,10 @@ final scopedAdmissionCampaignsProvider = StreamProvider<List<AdmissionCampaignMo
   return ref.watch(admissionCampaignRepositoryProvider).watchByScope(filter);
 });
 
-final admissionCampaignByIdProvider = FutureProvider.family<AdmissionCampaignModel?, String>((ref, id) {
+final admissionCampaignByIdProvider = FutureProvider.family<AdmissionCampaignModel?, String>((
+  ref,
+  id,
+) {
   return ref.watch(admissionCampaignRepositoryProvider).getById(id);
 });
 
@@ -32,7 +35,10 @@ final scopedOoscRecordsProvider = StreamProvider<List<OoscRecordModel>>((ref) {
   return ref.watch(ooscRepositoryProvider).watchByScope(filter);
 });
 
-final ooscByCampaignProvider = StreamProvider.family<List<OoscRecordModel>, String>((ref, campaignId) {
+final ooscByCampaignProvider = StreamProvider.family<List<OoscRecordModel>, String>((
+  ref,
+  campaignId,
+) {
   return ref.watch(ooscRepositoryProvider).watchByCampaign(campaignId);
 });
 

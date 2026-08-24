@@ -39,9 +39,8 @@ class HomeDashboardScreen extends ConsumerWidget {
                 label: Text('$unread'),
                 child: const Icon(Icons.notifications_outlined),
               ),
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const NotificationListScreen()),
-              ),
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute<void>(builder: (_) => const NotificationListScreen())),
             ),
             IconButton(
               icon: const Icon(Icons.logout),
@@ -59,7 +58,10 @@ class HomeDashboardScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(l10n.districtLabel, style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                  Text(
+                    l10n.districtLabel,
+                    style: const TextStyle(color: Colors.white70, fontSize: 12),
+                  ),
                   if (user != null)
                     Text(
                       '${user.displayName} · ${_roleLabel(l10n, user.role)}',
@@ -178,13 +180,13 @@ class HomeDashboardScreen extends ConsumerWidget {
   }
 
   String _roleLabel(AppLocalizations l10n, AppRole role) => switch (role) {
-        AppRole.superAdmin => l10n.role_superAdmin,
-        AppRole.districtAdmin => l10n.role_districtAdmin,
-        AppRole.subDivisionAdmin => l10n.role_subDivisionAdmin,
-        AppRole.circleAdmin => l10n.role_circleAdmin,
-        AppRole.schoolLeader => l10n.role_schoolLeader,
-        AppRole.monitoringOfficer => l10n.role_monitoringOfficer,
-      };
+    AppRole.superAdmin => l10n.role_superAdmin,
+    AppRole.districtAdmin => l10n.role_districtAdmin,
+    AppRole.subDivisionAdmin => l10n.role_subDivisionAdmin,
+    AppRole.circleAdmin => l10n.role_circleAdmin,
+    AppRole.schoolLeader => l10n.role_schoolLeader,
+    AppRole.monitoringOfficer => l10n.role_monitoringOfficer,
+  };
 }
 
 class _QuickAction extends StatelessWidget {

@@ -27,9 +27,11 @@ class OfficialUpdateRepository {
         .orderBy('publishDate', descending: true)
         .limit(200)
         .snapshots()
-        .map((QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-            .map((doc) => OfficialUpdateModel.fromJson(firestoreDataToJson(doc.data())))
-            .toList());
+        .map(
+          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+              .map((doc) => OfficialUpdateModel.fromJson(firestoreDataToJson(doc.data())))
+              .toList(),
+        );
   }
 
   /// Everything including drafts — admin authoring view.
@@ -38,9 +40,11 @@ class OfficialUpdateRepository {
         .orderBy('publishDate', descending: true)
         .limit(200)
         .snapshots()
-        .map((QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-            .map((doc) => OfficialUpdateModel.fromJson(firestoreDataToJson(doc.data())))
-            .toList());
+        .map(
+          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+              .map((doc) => OfficialUpdateModel.fromJson(firestoreDataToJson(doc.data())))
+              .toList(),
+        );
   }
 
   Future<OfficialUpdateModel?> getById(String id) async {

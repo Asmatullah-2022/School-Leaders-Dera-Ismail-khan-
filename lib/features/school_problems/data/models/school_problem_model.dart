@@ -58,7 +58,8 @@ abstract class SchoolProblemModel with _$SchoolProblemModel {
 
   const SchoolProblemModel._();
 
-  factory SchoolProblemModel.fromJson(Map<String, dynamic> json) => _$SchoolProblemModelFromJson(json);
+  factory SchoolProblemModel.fromJson(Map<String, dynamic> json) =>
+      _$SchoolProblemModelFromJson(json);
 
   static const Set<String> dateFields = <String>{
     'dateReported',

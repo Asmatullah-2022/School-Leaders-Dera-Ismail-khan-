@@ -9,11 +9,11 @@ import 'models/monitoring_report_model.dart';
 
 class MonitoringReportRepositoryImpl implements MonitoringReportRepository {
   MonitoringReportRepositoryImpl(this._firestore)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.monitoringReports,
-          dateFields: MonitoringReportModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.monitoringReports,
+        dateFields: MonitoringReportModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final OfflineWriteHelper _writer;
@@ -23,13 +23,14 @@ class MonitoringReportRepositoryImpl implements MonitoringReportRepository {
 
   @override
   Stream<List<MonitoringReportModel>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query =
-        filter.apply(_collection).orderBy('visitDate', descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy('visitDate', descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-              .map((doc) => MonitoringReportModel.fromJson(firestoreDataToJson(doc.data())))
-              .toList(),
-        );
+      (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+          .map((doc) => MonitoringReportModel.fromJson(firestoreDataToJson(doc.data())))
+          .toList(),
+    );
   }
 
   @override

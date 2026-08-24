@@ -21,7 +21,9 @@ class EmergencyReportListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<EmergencyReportModel>> reportsAsync = ref.watch(scopedEmergencyReportsProvider);
+    final AsyncValue<List<EmergencyReportModel>> reportsAsync = ref.watch(
+      scopedEmergencyReportsProvider,
+    );
     final List<EmergencyReportModel> critical = ref.watch(activeCriticalEmergenciesProvider);
 
     return AppScaffold(
@@ -29,9 +31,9 @@ class EmergencyReportListScreen extends ConsumerWidget {
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Theme.of(context).colorScheme.error,
         foregroundColor: Colors.white,
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const EmergencyReportFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const EmergencyReportFormScreen())),
         icon: const Icon(Icons.add_alert),
         label: Text(l10n.emergency_addReport),
       ),
@@ -83,10 +85,7 @@ class EmergencyReportListScreen extends ConsumerWidget {
                           : null,
                       child: ListTile(
                         contentPadding: const EdgeInsets.all(12),
-                        leading: Icon(
-                          Icons.emergency,
-                          color: SeverityBadge.color(r.severity),
-                        ),
+                        leading: Icon(Icons.emergency, color: SeverityBadge.color(r.severity)),
                         title: Text(emergencyTypeLabel(l10n, r.emergencyType)),
                         subtitle: Text(
                           '${DateFormat.yMMMd().format(r.occurredAt)} · ${emergencyStatusLabel(l10n, r.status)}',

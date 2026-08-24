@@ -26,7 +26,9 @@ class SchoolProblemDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<SchoolProblemModel?> problemAsync = ref.watch(schoolProblemByIdProvider(problemId));
+    final AsyncValue<SchoolProblemModel?> problemAsync = ref.watch(
+      schoolProblemByIdProvider(problemId),
+    );
     final AppRole? role = ref.watch(currentRoleProvider);
     final bool canManageStatus = canManageProblemStatus(role);
 
@@ -56,9 +58,7 @@ class SchoolProblemDetailScreen extends ConsumerWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Expanded(
-                    child: Text(p.title, style: Theme.of(context).textTheme.headlineSmall),
-                  ),
+                  Expanded(child: Text(p.title, style: Theme.of(context).textTheme.headlineSmall)),
                   ProblemStatusBadge(status: p.status),
                 ],
               ),
@@ -69,8 +69,10 @@ class SchoolProblemDetailScreen extends ConsumerWidget {
                 children: <Widget>[
                   PriorityChip(priority: p.priority),
                   const SizedBox(width: 8),
-                  Text(problemCategoryLabel(l10n, p.category),
-                      style: Theme.of(context).textTheme.bodyMedium),
+                  Text(
+                    problemCategoryLabel(l10n, p.category),
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ],
               ),
               const Divider(height: 32),
@@ -84,14 +86,24 @@ class SchoolProblemDetailScreen extends ConsumerWidget {
               const Divider(height: 32),
               _row(context, l10n.problem_dateReported, DateFormat.yMMMd().format(p.dateReported)),
               _row(context, l10n.problem_reportedBy, p.reportedByName),
-              if (p.requiredSupport != null) _row(context, l10n.problem_requiredSupport, p.requiredSupport!),
-              if (p.assignedToName != null) _row(context, l10n.problem_assignedTo, p.assignedToName!),
+              if (p.requiredSupport != null)
+                _row(context, l10n.problem_requiredSupport, p.requiredSupport!),
+              if (p.assignedToName != null)
+                _row(context, l10n.problem_assignedTo, p.assignedToName!),
               if (p.expectedResolutionDate != null)
-                _row(context, l10n.problem_expectedResolution,
-                    DateFormat.yMMMd().format(p.expectedResolutionDate!)),
-              if (p.resolutionNotes != null) _row(context, l10n.problem_resolutionNotes, p.resolutionNotes!),
+                _row(
+                  context,
+                  l10n.problem_expectedResolution,
+                  DateFormat.yMMMd().format(p.expectedResolutionDate!),
+                ),
+              if (p.resolutionNotes != null)
+                _row(context, l10n.problem_resolutionNotes, p.resolutionNotes!),
               if (p.resolvedAt != null)
-                _row(context, l10n.problem_status_resolved, DateFormat.yMMMd().format(p.resolvedAt!)),
+                _row(
+                  context,
+                  l10n.problem_status_resolved,
+                  DateFormat.yMMMd().format(p.resolvedAt!),
+                ),
               if (p.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const Divider(height: 32),
                 Text(l10n.common_photos, style: Theme.of(context).textTheme.titleSmall),
@@ -100,7 +112,10 @@ class SchoolProblemDetailScreen extends ConsumerWidget {
               ],
               if (p.resolutionEvidenceUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),
-                Text(l10n.problem_resolutionEvidence, style: Theme.of(context).textTheme.titleSmall),
+                Text(
+                  l10n.problem_resolutionEvidence,
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
                 const SizedBox(height: 8),
                 _photoWrap(p.resolutionEvidenceUrls),
               ],
@@ -110,9 +125,7 @@ class SchoolProblemDetailScreen extends ConsumerWidget {
               if (!canManageStatus)
                 Text(
                   l10n.problem_statusRestricted,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall
+                  style: Theme.of(context).textTheme.bodySmall
                       ?.copyWith(color: Theme.of(context).colorScheme.outline),
                 )
               else

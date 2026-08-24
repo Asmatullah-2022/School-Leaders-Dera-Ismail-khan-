@@ -21,6 +21,7 @@ abstract class SocialMediaCampaignModel with _$SocialMediaCampaignModel {
     String? description,
     String? descriptionUrdu,
     String? postUrl,
+
     /// Reach/engagement are optional — platforms don't always expose them.
     int? reach,
     int? engagement,

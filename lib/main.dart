@@ -26,10 +26,5 @@ Future<void> main() async {
     }
   }
 
-  runApp(
-    UncontrolledProviderScope(
-      container: container,
-      child: const SchoolLeaderApp(),
-    ),
-  );
+  runApp(UncontrolledProviderScope(container: container, child: const SchoolLeaderApp()));
 }

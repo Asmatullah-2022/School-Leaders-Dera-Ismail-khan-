@@ -27,13 +27,13 @@ enum AppRole {
   monitoringOfficer;
 
   String get firestoreValue => switch (this) {
-        AppRole.superAdmin => 'super_admin',
-        AppRole.districtAdmin => 'district_admin',
-        AppRole.subDivisionAdmin => 'sub_division_admin',
-        AppRole.circleAdmin => 'circle_admin',
-        AppRole.schoolLeader => 'school_leader',
-        AppRole.monitoringOfficer => 'monitoring_officer',
-      };
+    AppRole.superAdmin => 'super_admin',
+    AppRole.districtAdmin => 'district_admin',
+    AppRole.subDivisionAdmin => 'sub_division_admin',
+    AppRole.circleAdmin => 'circle_admin',
+    AppRole.schoolLeader => 'school_leader',
+    AppRole.monitoringOfficer => 'monitoring_officer',
+  };
 
   static AppRole fromFirestoreValue(String value) {
     return AppRole.values.firstWhere(
@@ -45,13 +45,12 @@ enum AppRole {
   bool get isAdmin => this != AppRole.schoolLeader && this != AppRole.monitoringOfficer;
 
   bool get canManageHierarchy => switch (this) {
-        AppRole.superAdmin ||
-        AppRole.districtAdmin ||
-        AppRole.subDivisionAdmin ||
-        AppRole.circleAdmin =>
-          true,
-        AppRole.schoolLeader || AppRole.monitoringOfficer => false,
-      };
+    AppRole.superAdmin ||
+    AppRole.districtAdmin ||
+    AppRole.subDivisionAdmin ||
+    AppRole.circleAdmin => true,
+    AppRole.schoolLeader || AppRole.monitoringOfficer => false,
+  };
 }
 
 enum SyncStatus { offline, savedLocally, syncing, synced, syncFailed }

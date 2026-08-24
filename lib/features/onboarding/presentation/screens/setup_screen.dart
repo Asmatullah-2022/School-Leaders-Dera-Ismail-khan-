@@ -55,7 +55,10 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
                     const SizedBox(height: 32),
                     Align(
                       alignment: AlignmentDirectional.centerStart,
-                      child: Text(l10n.setup_selectLanguage, style: Theme.of(context).textTheme.titleMedium),
+                      child: Text(
+                        l10n.setup_selectLanguage,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                     ),
                     const SizedBox(height: 12),
                     Row(
@@ -80,7 +83,10 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
                     const SizedBox(height: 32),
                     Align(
                       alignment: AlignmentDirectional.centerStart,
-                      child: Text(l10n.setup_selectDisplayMode, style: Theme.of(context).textTheme.titleMedium),
+                      child: Text(
+                        l10n.setup_selectDisplayMode,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                     ),
                     const SizedBox(height: 12),
                     Row(
@@ -116,10 +122,7 @@ class _SetupScreenState extends ConsumerState<SetupScreen> {
                     const SizedBox(height: 36),
                     SizedBox(
                       width: double.infinity,
-                      child: FilledButton(
-                        onPressed: _finish,
-                        child: Text(l10n.setup_continue),
-                      ),
+                      child: FilledButton(onPressed: _finish, child: Text(l10n.setup_continue)),
                     ),
                   ],
                 ),
@@ -150,13 +153,17 @@ class _ChoiceCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 8),
         decoration: BoxDecoration(
           color: selected ? scheme.primaryContainer : scheme.surface,
-          border: Border.all(color: selected ? scheme.primary : scheme.outlineVariant, width: selected ? 2 : 1),
+          border: Border.all(
+            color: selected ? scheme.primary : scheme.outlineVariant,
+            width: selected ? 2 : 1,
+          ),
           borderRadius: BorderRadius.circular(14),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            if (icon != null) Icon(icon, color: selected ? scheme.primary : scheme.onSurfaceVariant),
+            if (icon != null)
+              Icon(icon, color: selected ? scheme.primary : scheme.onSurfaceVariant),
             if (icon != null) const SizedBox(height: 6),
             Text(
               label,

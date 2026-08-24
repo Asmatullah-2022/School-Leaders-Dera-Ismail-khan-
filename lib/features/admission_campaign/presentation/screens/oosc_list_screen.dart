@@ -31,9 +31,9 @@ class _OoscListScreenState extends ConsumerState<OoscListScreen> {
     return AppScaffold(
       title: l10n.dashboard_oosc,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const OoscFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const OoscFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.oosc_addRecord),
       ),
@@ -41,8 +41,9 @@ class _OoscListScreenState extends ConsumerState<OoscListScreen> {
         loading: () => const LoadingIndicator(),
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<OoscRecordModel> records) {
-          final List<OoscRecordModel> filtered =
-              _filter == null ? records : records.where((r) => r.status == _filter).toList();
+          final List<OoscRecordModel> filtered = _filter == null
+              ? records
+              : records.where((r) => r.status == _filter).toList();
           return Column(
             children: <Widget>[
               SizedBox(
@@ -72,7 +73,9 @@ class _OoscListScreenState extends ConsumerState<OoscListScreen> {
                               subtitle: Text('${l10n.oosc_age}: ${r.age} · ${r.village ?? ''}'),
                               trailing: OoscStatusChip(status: r.status),
                               onTap: () => Navigator.of(context).push(
-                                MaterialPageRoute<void>(builder: (_) => OoscDetailScreen(recordId: r.id)),
+                                MaterialPageRoute<void>(
+                                  builder: (_) => OoscDetailScreen(recordId: r.id),
+                                ),
                               ),
                             ),
                           );

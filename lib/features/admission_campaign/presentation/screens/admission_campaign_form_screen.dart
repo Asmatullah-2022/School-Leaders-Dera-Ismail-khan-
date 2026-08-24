@@ -94,9 +94,24 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
   @override
   void dispose() {
     for (final c in [
-      _academicYear, _target, _previousEnrollment, _currentEnrollment, _boys, _girls,
-      _ooscIdentified, _ooscReenrolled, _doorToDoor, _parentMeetings, _communityMeetings,
-      _banners, _posters, _socialMedia, _textbooks, _otherSupport, _remarks, _remarksUrdu,
+      _academicYear,
+      _target,
+      _previousEnrollment,
+      _currentEnrollment,
+      _boys,
+      _girls,
+      _ooscIdentified,
+      _ooscReenrolled,
+      _doorToDoor,
+      _parentMeetings,
+      _communityMeetings,
+      _banners,
+      _posters,
+      _socialMedia,
+      _textbooks,
+      _otherSupport,
+      _remarks,
+      _remarksUrdu,
     ]) {
       c.dispose();
     }
@@ -154,7 +169,10 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
       remarksUrdu: _remarksUrdu.text.trim().isEmpty ? null : _remarksUrdu.text.trim(),
       date: _date,
       status: _status,
-      achievementPercentage: calculateAchievementPercentage(targetEnrollment: target, currentEnrollment: current),
+      achievementPercentage: calculateAchievementPercentage(
+        targetEnrollment: target,
+        currentEnrollment: current,
+      ),
       evidencePhotoUrls: widget.existing?.evidencePhotoUrls ?? const <String>[],
       createdAt: widget.existing?.createdAt ?? now,
       updatedAt: now,
@@ -179,7 +197,10 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
     final AppLocalizations l10n = AppLocalizations.of(context);
     final int target = int.tryParse(_target.text) ?? 0;
     final int current = int.tryParse(_currentEnrollment.text) ?? 0;
-    final double previewPct = calculateAchievementPercentage(targetEnrollment: target, currentEnrollment: current);
+    final double previewPct = calculateAchievementPercentage(
+      targetEnrollment: target,
+      currentEnrollment: current,
+    );
 
     return Scaffold(
       appBar: AppBar(title: Text(_isEdit ? l10n.common_edit : l10n.admission_addCampaign)),
@@ -191,7 +212,9 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
             SchoolPicker(
               selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
               onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-              errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+              errorText: (_schoolTouched && _selectedSchool == null)
+                  ? l10n.validation_required
+                  : null,
             ),
             const SizedBox(height: 12),
             AppTextField(
@@ -231,9 +254,23 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
             const SizedBox(height: 12),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.admission_previousEnrollment, controller: _previousEnrollment, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_previousEnrollment,
+                    controller: _previousEnrollment,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.admission_currentEnrollment, controller: _currentEnrollment, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_currentEnrollment,
+                    controller: _currentEnrollment,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 16),
@@ -242,51 +279,130 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
             SectionHeader(title: l10n.admission_newAdmissionsTotal),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.admission_newAdmissionsBoys, controller: _boys, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_newAdmissionsBoys,
+                    controller: _boys,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.admission_newAdmissionsGirls, controller: _girls, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_newAdmissionsGirls,
+                    controller: _girls,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 20),
             SectionHeader(title: l10n.dashboard_oosc),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.admission_ooscIdentified, controller: _ooscIdentified, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_ooscIdentified,
+                    controller: _ooscIdentified,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.admission_ooscReenrolled, controller: _ooscReenrolled, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_ooscReenrolled,
+                    controller: _ooscReenrolled,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 20),
             SectionHeader(title: l10n.more_community),
-            AppTextField(label: l10n.admission_doorToDoorVisits, controller: _doorToDoor, forceLtr: true, keyboardType: TextInputType.number),
+            AppTextField(
+              label: l10n.admission_doorToDoorVisits,
+              controller: _doorToDoor,
+              forceLtr: true,
+              keyboardType: TextInputType.number,
+            ),
             const SizedBox(height: 12),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.admission_parentMeetings, controller: _parentMeetings, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_parentMeetings,
+                    controller: _parentMeetings,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.admission_communityMeetings, controller: _communityMeetings, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_communityMeetings,
+                    controller: _communityMeetings,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 20),
             SectionHeader(title: l10n.admission_socialMediaActivities),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.admission_banners, controller: _banners, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_banners,
+                    controller: _banners,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.admission_posters, controller: _posters, forceLtr: true, keyboardType: TextInputType.number)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.admission_posters,
+                    controller: _posters,
+                    forceLtr: true,
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.admission_socialMediaActivities, controller: _socialMedia, forceLtr: true, keyboardType: TextInputType.number),
+            AppTextField(
+              label: l10n.admission_socialMediaActivities,
+              controller: _socialMedia,
+              forceLtr: true,
+              keyboardType: TextInputType.number,
+            ),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.admission_freeTextbooksDistributed, controller: _textbooks, forceLtr: true, keyboardType: TextInputType.number),
+            AppTextField(
+              label: l10n.admission_freeTextbooksDistributed,
+              controller: _textbooks,
+              forceLtr: true,
+              keyboardType: TextInputType.number,
+            ),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.admission_otherSupport, controller: _otherSupport, maxLines: 2),
+            AppTextField(
+              label: l10n.admission_otherSupport,
+              controller: _otherSupport,
+              maxLines: 2,
+            ),
             const SizedBox(height: 20),
             SectionHeader(title: l10n.common_remarks),
             AppTextField(label: l10n.common_remarks, controller: _remarks, maxLines: 3),
             const SizedBox(height: 12),
-            AppTextField(label: '${l10n.common_remarks} (اردو)', controller: _remarksUrdu, maxLines: 3),
+            AppTextField(
+              label: '${l10n.common_remarks} (اردو)',
+              controller: _remarksUrdu,
+              maxLines: 3,
+            ),
             const SizedBox(height: 20),
             PhotoPickerField(
               localPaths: _newPhotoPaths,
@@ -297,7 +413,11 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_submit),
             ),
           ],
@@ -307,8 +427,8 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
   }
 
   String _statusLabel(AppLocalizations l10n, CampaignStatus s) => switch (s) {
-        CampaignStatus.planned => l10n.admission_status_planned,
-        CampaignStatus.active => l10n.admission_status_active,
-        CampaignStatus.completed => l10n.admission_status_completed,
-      };
+    CampaignStatus.planned => l10n.admission_status_planned,
+    CampaignStatus.active => l10n.admission_status_active,
+    CampaignStatus.completed => l10n.admission_status_completed,
+  };
 }

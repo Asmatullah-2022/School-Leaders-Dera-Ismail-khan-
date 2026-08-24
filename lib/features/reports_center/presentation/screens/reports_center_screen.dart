@@ -30,27 +30,23 @@ class _ReportsCenterScreenState extends ConsumerState<ReportsCenterScreen> {
   SchoolModel? _school;
   bool _isExporting = false;
 
-  ReportFilter get _filter => ReportFilter(
-        module: _module,
-        fromDate: _fromDate,
-        toDate: _toDate,
-        schoolId: _school?.id,
-      );
+  ReportFilter get _filter =>
+      ReportFilter(module: _module, fromDate: _fromDate, toDate: _toDate, schoolId: _school?.id);
 
   String _moduleLabel(AppLocalizations l10n, ReportModule m) => switch (m) {
-        ReportModule.admissionCampaigns => l10n.reports_module_admission,
-        ReportModule.oosc => l10n.reports_module_oosc,
-        ReportModule.monitoringReports => l10n.reports_module_monitoring,
-        ReportModule.schoolProblems => l10n.reports_module_problems,
-        ReportModule.emergencyReports => l10n.reports_module_emergency,
-        ReportModule.ptcPriorities => l10n.reports_module_ptc,
-      };
+    ReportModule.admissionCampaigns => l10n.reports_module_admission,
+    ReportModule.oosc => l10n.reports_module_oosc,
+    ReportModule.monitoringReports => l10n.reports_module_monitoring,
+    ReportModule.schoolProblems => l10n.reports_module_problems,
+    ReportModule.emergencyReports => l10n.reports_module_emergency,
+    ReportModule.ptcPriorities => l10n.reports_module_ptc,
+  };
 
   String _languageLabel(AppLocalizations l10n, ReportLanguage lang) => switch (lang) {
-        ReportLanguage.english => l10n.reports_language_english,
-        ReportLanguage.urdu => l10n.reports_language_urdu,
-        ReportLanguage.bilingual => l10n.reports_language_bilingual,
-      };
+    ReportLanguage.english => l10n.reports_language_english,
+    ReportLanguage.urdu => l10n.reports_language_urdu,
+    ReportLanguage.bilingual => l10n.reports_language_bilingual,
+  };
 
   Future<void> _exportPdf(ReportTable table) async {
     final AppLocalizations l10n = AppLocalizations.of(context);
@@ -120,10 +116,10 @@ class _ReportsCenterScreenState extends ConsumerState<ReportsCenterScreen> {
             initialValue: _module,
             decoration: InputDecoration(labelText: l10n.reports_selectModule),
             items: ReportModule.values
-                .map((m) => DropdownMenuItem<ReportModule>(
-                      value: m,
-                      child: Text(_moduleLabel(l10n, m)),
-                    ))
+                .map(
+                  (m) =>
+                      DropdownMenuItem<ReportModule>(value: m, child: Text(_moduleLabel(l10n, m))),
+                )
                 .toList(),
             onChanged: (v) => setState(() => _module = v ?? _module),
           ),
@@ -132,10 +128,12 @@ class _ReportsCenterScreenState extends ConsumerState<ReportsCenterScreen> {
             initialValue: _language,
             decoration: InputDecoration(labelText: l10n.reports_language),
             items: ReportLanguage.values
-                .map((lang) => DropdownMenuItem<ReportLanguage>(
-                      value: lang,
-                      child: Text(_languageLabel(l10n, lang)),
-                    ))
+                .map(
+                  (lang) => DropdownMenuItem<ReportLanguage>(
+                    value: lang,
+                    child: Text(_languageLabel(l10n, lang)),
+                  ),
+                )
                 .toList(),
             onChanged: (v) => setState(() => _language = v ?? _language),
           ),

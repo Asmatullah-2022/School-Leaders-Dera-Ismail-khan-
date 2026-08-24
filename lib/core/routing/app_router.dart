@@ -81,7 +81,10 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 
       GoRoute(path: RoutePaths.profile, builder: (context, state) => const ProfileScreen()),
       GoRoute(path: RoutePaths.settings, builder: (context, state) => const SettingsScreen()),
-      GoRoute(path: RoutePaths.notifications, builder: (context, state) => const NotificationListScreen()),
+      GoRoute(
+        path: RoutePaths.notifications,
+        builder: (context, state) => const NotificationListScreen(),
+      ),
 
       // Hierarchy management, flagship modules, reports, admin, and
       // scaffold-only modules are wired here as real screens replace these
@@ -92,7 +95,8 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: RoutePaths.subDivisions,
-        builder: (context, state) => const HierarchyLevelListScreen(level: HierarchyLevel.subDivision),
+        builder: (context, state) =>
+            const HierarchyLevelListScreen(level: HierarchyLevel.subDivision),
       ),
       GoRoute(
         path: RoutePaths.circles,
@@ -105,8 +109,14 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(path: RoutePaths.schoolForm, builder: (context, state) => const SchoolFormScreen()),
       _placeholder(RoutePaths.schoolDetail, (l) => l.common_school),
 
-      GoRoute(path: RoutePaths.admission, builder: (context, state) => const AdmissionCampaignListScreen()),
-      GoRoute(path: RoutePaths.admissionForm, builder: (context, state) => const AdmissionCampaignFormScreen()),
+      GoRoute(
+        path: RoutePaths.admission,
+        builder: (context, state) => const AdmissionCampaignListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.admissionForm,
+        builder: (context, state) => const AdmissionCampaignFormScreen(),
+      ),
       GoRoute(path: RoutePaths.oosc, builder: (context, state) => const OoscListScreen()),
       GoRoute(path: RoutePaths.ooscForm, builder: (context, state) => const OoscFormScreen()),
 

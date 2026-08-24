@@ -61,9 +61,9 @@ class _PtcPriorityListScreenState extends ConsumerState<PtcPriorityListScreen> {
     return AppScaffold(
       title: l10n.more_ptc,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const PtcPriorityFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const PtcPriorityFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.ptc_addPriority),
       ),
@@ -88,9 +88,7 @@ class _PtcPriorityListScreenState extends ConsumerState<PtcPriorityListScreen> {
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
                   l10n.ptc_reorderHint,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall
+                  style: Theme.of(context).textTheme.bodySmall
                       ?.copyWith(color: Theme.of(context).colorScheme.outline),
                 ),
               ),
@@ -157,7 +155,9 @@ class _MeetingGroup extends StatelessWidget {
                   '${ptcCategoryLabel(l10n, p.category)} · ${ptcStatusLabel(l10n, p.status)}',
                 ),
                 onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(builder: (_) => PtcPriorityDetailScreen(priorityId: p.id)),
+                  MaterialPageRoute<void>(
+                    builder: (_) => PtcPriorityDetailScreen(priorityId: p.id),
+                  ),
                 ),
               ),
             );

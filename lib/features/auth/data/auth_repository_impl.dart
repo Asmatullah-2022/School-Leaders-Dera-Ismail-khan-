@@ -26,8 +26,10 @@ class AuthRepositoryImpl implements AuthRepository {
         password: password,
       );
       final String uid = credential.user!.uid;
-      final DocumentSnapshot<Map<String, dynamic>> doc =
-          await _firestore.collection(FirestorePaths.users).doc(uid).get();
+      final DocumentSnapshot<Map<String, dynamic>> doc = await _firestore
+          .collection(FirestorePaths.users)
+          .doc(uid)
+          .get();
       if (!doc.exists) {
         return const Result.err(AuthFailure(details: 'user-doc-missing'));
       }
@@ -54,12 +56,12 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Stream<AppUser?> watchUserDoc(String uid) {
-    return _firestore.collection(FirestorePaths.users).doc(uid).snapshots().map(
-      (DocumentSnapshot<Map<String, dynamic>> doc) {
-        if (!doc.exists || doc.data() == null) return null;
-        return AppUser.fromJson(<String, dynamic>{...doc.data()!, 'uid': uid});
-      },
-    );
+    return _firestore.collection(FirestorePaths.users).doc(uid).snapshots().map((
+      DocumentSnapshot<Map<String, dynamic>> doc,
+    ) {
+      if (!doc.exists || doc.data() == null) return null;
+      return AppUser.fromJson(<String, dynamic>{...doc.data()!, 'uid': uid});
+    });
   }
 
   @override

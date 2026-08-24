@@ -16,12 +16,7 @@ enum ExportFormat { pdf, csv }
 /// applied on top of these from the current user's own scope, so a filter
 /// can only ever narrow what a user is already allowed to see.
 class ReportFilter {
-  const ReportFilter({
-    required this.module,
-    this.fromDate,
-    this.toDate,
-    this.schoolId,
-  });
+  const ReportFilter({required this.module, this.fromDate, this.toDate, this.schoolId});
 
   final ReportModule module;
   final DateTime? fromDate;
@@ -29,7 +24,8 @@ class ReportFilter {
   final String? schoolId;
 
   bool matchesDate(DateTime date) {
-    if (fromDate != null && date.isBefore(DateTime(fromDate!.year, fromDate!.month, fromDate!.day))) {
+    if (fromDate != null &&
+        date.isBefore(DateTime(fromDate!.year, fromDate!.month, fromDate!.day))) {
       return false;
     }
     if (toDate != null) {
@@ -40,6 +36,5 @@ class ReportFilter {
     return true;
   }
 
-  bool matchesSchool(String candidateSchoolId) =>
-      schoolId == null || schoolId == candidateSchoolId;
+  bool matchesSchool(String candidateSchoolId) => schoolId == null || schoolId == candidateSchoolId;
 }

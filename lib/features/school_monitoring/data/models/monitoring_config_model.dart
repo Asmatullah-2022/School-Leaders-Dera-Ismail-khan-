@@ -27,16 +27,36 @@ abstract class MonitoringConfigModel with _$MonitoringConfigModel {
   static MonitoringConfigModel defaults() {
     return const MonitoringConfigModel(
       criteria: <ScoringCriterionModel>[
-        ScoringCriterionModel(id: 'enrollment', label: 'Enrollment', labelUrdu: 'انرولمنٹ', weight: 15),
-        ScoringCriterionModel(id: 'attendance', label: 'Attendance', labelUrdu: 'حاضری', weight: 15),
+        ScoringCriterionModel(
+          id: 'enrollment',
+          label: 'Enrollment',
+          labelUrdu: 'انرولمنٹ',
+          weight: 15,
+        ),
+        ScoringCriterionModel(
+          id: 'attendance',
+          label: 'Attendance',
+          labelUrdu: 'حاضری',
+          weight: 15,
+        ),
         ScoringCriterionModel(
           id: 'teachingLearning',
           label: 'Teaching & Learning',
           labelUrdu: 'تدریس و تعلم',
           weight: 20,
         ),
-        ScoringCriterionModel(id: 'cleanliness', label: 'Cleanliness', labelUrdu: 'صفائی ستھرائی', weight: 10),
-        ScoringCriterionModel(id: 'infrastructure', label: 'Infrastructure', labelUrdu: 'بنیادی ڈھانچہ', weight: 10),
+        ScoringCriterionModel(
+          id: 'cleanliness',
+          label: 'Cleanliness',
+          labelUrdu: 'صفائی ستھرائی',
+          weight: 10,
+        ),
+        ScoringCriterionModel(
+          id: 'infrastructure',
+          label: 'Infrastructure',
+          labelUrdu: 'بنیادی ڈھانچہ',
+          weight: 10,
+        ),
         ScoringCriterionModel(id: 'ece', label: 'ECE', labelUrdu: 'ای سی ای', weight: 10),
         ScoringCriterionModel(id: 'ptc', label: 'PTC', labelUrdu: 'PTC', weight: 10),
         ScoringCriterionModel(

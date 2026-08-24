@@ -72,8 +72,15 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
   @override
   void dispose() {
     for (final c in [
-      _childName, _childNameUrdu, _age, _village, _parentGuardian, _contact,
-      _reasonDetail, _previousSchool, _remarks,
+      _childName,
+      _childNameUrdu,
+      _age,
+      _village,
+      _parentGuardian,
+      _contact,
+      _reasonDetail,
+      _previousSchool,
+      _remarks,
     ]) {
       c.dispose();
     }
@@ -145,7 +152,9 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
             SchoolPicker(
               selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
               onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-              errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+              errorText: (_schoolTouched && _selectedSchool == null)
+                  ? l10n.validation_required
+                  : null,
             ),
             const SizedBox(height: 12),
             AppTextField(
@@ -205,7 +214,9 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
             DropdownButtonFormField<OoscReason>(
               initialValue: _reason,
               decoration: InputDecoration(labelText: l10n.oosc_reason),
-              items: OoscReason.values.map((r) => DropdownMenuItem(value: r, child: Text(_reasonLabel(l10n, r)))).toList(),
+              items: OoscReason.values
+                  .map((r) => DropdownMenuItem(value: r, child: Text(_reasonLabel(l10n, r))))
+                  .toList(),
               onChanged: (v) => setState(() => _reason = v ?? _reason),
             ),
             const SizedBox(height: 12),
@@ -217,7 +228,9 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
               initialValue: _status,
               decoration: InputDecoration(labelText: l10n.oosc_status),
               items: OoscStatus.values
-                  .map((s) => DropdownMenuItem(value: s, child: Text(OoscStatusChip.label(l10n, s))))
+                  .map(
+                    (s) => DropdownMenuItem(value: s, child: Text(OoscStatusChip.label(l10n, s))),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _status = v ?? _status),
             ),
@@ -234,7 +247,9 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
               },
               child: InputDecorator(
                 decoration: InputDecoration(labelText: l10n.oosc_followUpDate),
-                child: Text(_followUpDate != null ? DateFormat.yMMMd().format(_followUpDate!) : '—'),
+                child: Text(
+                  _followUpDate != null ? DateFormat.yMMMd().format(_followUpDate!) : '—',
+                ),
               ),
             ),
             const SizedBox(height: 12),
@@ -249,7 +264,11 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_submit),
             ),
           ],
@@ -259,12 +278,12 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
   }
 
   String _reasonLabel(AppLocalizations l10n, OoscReason r) => switch (r) {
-        OoscReason.labor => l10n.oosc_reason_labor,
-        OoscReason.migration => l10n.oosc_reason_migration,
-        OoscReason.disability => l10n.oosc_reason_disability,
-        OoscReason.financial => l10n.oosc_reason_financial,
-        OoscReason.distance => l10n.oosc_reason_distance,
-        OoscReason.earlyMarriage => l10n.oosc_reason_earlyMarriage,
-        OoscReason.other => l10n.oosc_reason_other,
-      };
+    OoscReason.labor => l10n.oosc_reason_labor,
+    OoscReason.migration => l10n.oosc_reason_migration,
+    OoscReason.disability => l10n.oosc_reason_disability,
+    OoscReason.financial => l10n.oosc_reason_financial,
+    OoscReason.distance => l10n.oosc_reason_distance,
+    OoscReason.earlyMarriage => l10n.oosc_reason_earlyMarriage,
+    OoscReason.other => l10n.oosc_reason_other,
+  };
 }

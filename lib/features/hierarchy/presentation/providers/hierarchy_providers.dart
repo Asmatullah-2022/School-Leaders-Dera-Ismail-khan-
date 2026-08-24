@@ -13,8 +13,8 @@ import '../../domain/repositories/school_repository.dart';
 
 final ProviderFamily<HierarchyNodeRepository, HierarchyLevel> _nodeRepoFamily =
     Provider.family<HierarchyNodeRepository, HierarchyLevel>((ref, level) {
-  return HierarchyNodeRepositoryImpl(ref.watch(firestoreProvider), level);
-});
+      return HierarchyNodeRepositoryImpl(ref.watch(firestoreProvider), level);
+    });
 
 class ChildrenQuery {
   const ChildrenQuery(this.level, this.parentId);
@@ -29,12 +29,17 @@ class ChildrenQuery {
   int get hashCode => Object.hash(level, parentId);
 }
 
-final hierarchyChildrenProvider =
-    StreamProvider.family<List<HierarchyNodeModel>, ChildrenQuery>((ref, query) {
+final hierarchyChildrenProvider = StreamProvider.family<List<HierarchyNodeModel>, ChildrenQuery>((
+  ref,
+  query,
+) {
   return ref.watch(_nodeRepoFamily(query.level)).watchChildrenOf(query.parentId);
 });
 
-final hierarchyAllProvider = StreamProvider.family<List<HierarchyNodeModel>, HierarchyLevel>((ref, level) {
+final hierarchyAllProvider = StreamProvider.family<List<HierarchyNodeModel>, HierarchyLevel>((
+  ref,
+  level,
+) {
   return ref.watch(_nodeRepoFamily(level)).watchAll();
 });
 
@@ -44,7 +49,9 @@ final Provider<SchoolRepository> schoolRepositoryProvider = Provider<SchoolRepos
   return SchoolRepositoryImpl(ref.watch(firestoreProvider));
 });
 
-final StreamProvider<List<SchoolModel>> scopedSchoolsProvider = StreamProvider<List<SchoolModel>>((ref) {
+final StreamProvider<List<SchoolModel>> scopedSchoolsProvider = StreamProvider<List<SchoolModel>>((
+  ref,
+) {
   final ScopeFilter filter = ref.watch(currentScopeFilterProvider);
   return ref.watch(schoolRepositoryProvider).watchByScope(filter);
 });

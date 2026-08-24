@@ -35,9 +35,9 @@ class _SchoolListScreenState extends ConsumerState<SchoolListScreen> {
       title: l10n.hierarchy_schools,
       floatingActionButton: (role != null && role.canManageHierarchy)
           ? FloatingActionButton.extended(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const SchoolFormScreen()),
-              ),
+              onPressed: () =>
+                  Navigator.of(context)
+                      .push(MaterialPageRoute<void>(builder: (_) => const SchoolFormScreen())),
               icon: const Icon(Icons.add),
               label: Text(l10n.hierarchy_addSchool),
             )
@@ -63,13 +63,18 @@ class _SchoolListScreenState extends ConsumerState<SchoolListScreen> {
                 final List<SchoolModel> filtered = _query.isEmpty
                     ? schools
                     : schools
-                        .where((s) =>
-                            s.name.toLowerCase().contains(_query) ||
-                            s.emisCode.toLowerCase().contains(_query) ||
-                            (s.village?.toLowerCase().contains(_query) ?? false))
-                        .toList();
+                          .where(
+                            (s) =>
+                                s.name.toLowerCase().contains(_query) ||
+                                s.emisCode.toLowerCase().contains(_query) ||
+                                (s.village?.toLowerCase().contains(_query) ?? false),
+                          )
+                          .toList();
                 if (filtered.isEmpty) {
-                  return EmptyState(message: l10n.hierarchy_noSchools, icon: Icons.apartment_outlined);
+                  return EmptyState(
+                    message: l10n.hierarchy_noSchools,
+                    icon: Icons.apartment_outlined,
+                  );
                 }
                 return ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -84,7 +89,9 @@ class _SchoolListScreenState extends ConsumerState<SchoolListScreen> {
                         subtitle: Text('${l10n.hierarchy_emisCode}: ${school.emisCode}'),
                         trailing: Text('${school.totalEnrollment}'),
                         onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(builder: (_) => SchoolDetailScreen(schoolId: school.id)),
+                          MaterialPageRoute<void>(
+                            builder: (_) => SchoolDetailScreen(schoolId: school.id),
+                          ),
                         ),
                       ),
                     );

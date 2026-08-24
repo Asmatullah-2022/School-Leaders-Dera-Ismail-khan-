@@ -43,8 +43,10 @@ class NotificationRepositoryImpl implements NotificationRepository {
 
   @override
   Future<void> markAllRead(String uid) async {
-    final QuerySnapshot<Map<String, dynamic>> unread =
-        await _collection.where('recipientUid', isEqualTo: uid).where('isRead', isEqualTo: false).get();
+    final QuerySnapshot<Map<String, dynamic>> unread = await _collection
+        .where('recipientUid', isEqualTo: uid)
+        .where('isRead', isEqualTo: false)
+        .get();
     final WriteBatch batch = _firestore.batch();
     for (final QueryDocumentSnapshot<Map<String, dynamic>> doc in unread.docs) {
       batch.update(doc.reference, <String, dynamic>{'isRead': true});

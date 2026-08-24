@@ -10,18 +10,18 @@ class PriorityChip extends StatelessWidget {
   final ProblemPriority priority;
 
   static String label(AppLocalizations l10n, ProblemPriority p) => switch (p) {
-        ProblemPriority.low => l10n.priority_low,
-        ProblemPriority.medium => l10n.priority_medium,
-        ProblemPriority.high => l10n.priority_high,
-        ProblemPriority.critical => l10n.priority_critical,
-      };
+    ProblemPriority.low => l10n.priority_low,
+    ProblemPriority.medium => l10n.priority_medium,
+    ProblemPriority.high => l10n.priority_high,
+    ProblemPriority.critical => l10n.priority_critical,
+  };
 
   static Color color(ProblemPriority p) => switch (p) {
-        ProblemPriority.low => AppColors.success,
-        ProblemPriority.medium => AppColors.infoBlue,
-        ProblemPriority.high => AppColors.warningAmber,
-        ProblemPriority.critical => AppColors.criticalRed,
-      };
+    ProblemPriority.low => AppColors.success,
+    ProblemPriority.medium => AppColors.infoBlue,
+    ProblemPriority.high => AppColors.warningAmber,
+    ProblemPriority.critical => AppColors.criticalRed,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,14 @@ class PriorityChip extends StatelessWidget {
     final Color c = color(priority);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(color: c.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(6)),
-      child: Text(label(l10n, priority), style: TextStyle(color: c, fontSize: 12, fontWeight: FontWeight.bold)),
+      decoration: BoxDecoration(
+        color: c.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: Text(
+        label(l10n, priority),
+        style: TextStyle(color: c, fontSize: 12, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

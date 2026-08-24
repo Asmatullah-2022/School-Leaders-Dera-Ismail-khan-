@@ -34,6 +34,7 @@ abstract class PtcPriorityModel with _$PtcPriorityModel {
     required DateTime meetingDate,
     required String priorityTitle,
     String? priorityTitleUrdu,
+
     /// 1-based ordering within a school's meeting; maintained by the
     /// drag-to-reorder list (see `reassignRanks`).
     @Default(1) int rank,

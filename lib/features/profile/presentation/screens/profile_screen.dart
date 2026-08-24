@@ -37,18 +37,21 @@ class ProfileScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Center(
-                child: Text(user.displayName, style: Theme.of(context).textTheme.titleLarge),
-              ),
+              Center(child: Text(user.displayName, style: Theme.of(context).textTheme.titleLarge)),
               Center(child: Text(user.email, style: Theme.of(context).textTheme.bodyMedium)),
               const SizedBox(height: 24),
               _InfoTile(label: l10n.profile_designation, value: _roleLabel(l10n, user.role)),
               if (user.phone != null) _InfoTile(label: l10n.profile_mobile, value: user.phone!),
-              if (user.schoolId != null) _InfoTile(label: l10n.common_school, value: user.schoolId!),
-              if (user.clusterId != null) _InfoTile(label: l10n.common_cluster, value: user.clusterId!),
-              if (user.circleId != null) _InfoTile(label: l10n.common_circle, value: user.circleId!),
-              if (user.subDivisionId != null) _InfoTile(label: l10n.common_subDivision, value: user.subDivisionId!),
-              if (user.districtId != null) _InfoTile(label: l10n.common_district, value: user.districtId!),
+              if (user.schoolId != null)
+                _InfoTile(label: l10n.common_school, value: user.schoolId!),
+              if (user.clusterId != null)
+                _InfoTile(label: l10n.common_cluster, value: user.clusterId!),
+              if (user.circleId != null)
+                _InfoTile(label: l10n.common_circle, value: user.circleId!),
+              if (user.subDivisionId != null)
+                _InfoTile(label: l10n.common_subDivision, value: user.subDivisionId!),
+              if (user.districtId != null)
+                _InfoTile(label: l10n.common_district, value: user.districtId!),
             ],
           );
         },
@@ -57,13 +60,13 @@ class ProfileScreen extends ConsumerWidget {
   }
 
   String _roleLabel(AppLocalizations l10n, AppRole role) => switch (role) {
-        AppRole.superAdmin => l10n.role_superAdmin,
-        AppRole.districtAdmin => l10n.role_districtAdmin,
-        AppRole.subDivisionAdmin => l10n.role_subDivisionAdmin,
-        AppRole.circleAdmin => l10n.role_circleAdmin,
-        AppRole.schoolLeader => l10n.role_schoolLeader,
-        AppRole.monitoringOfficer => l10n.role_monitoringOfficer,
-      };
+    AppRole.superAdmin => l10n.role_superAdmin,
+    AppRole.districtAdmin => l10n.role_districtAdmin,
+    AppRole.subDivisionAdmin => l10n.role_subDivisionAdmin,
+    AppRole.circleAdmin => l10n.role_circleAdmin,
+    AppRole.schoolLeader => l10n.role_schoolLeader,
+    AppRole.monitoringOfficer => l10n.role_monitoringOfficer,
+  };
 }
 
 class _InfoTile extends StatelessWidget {

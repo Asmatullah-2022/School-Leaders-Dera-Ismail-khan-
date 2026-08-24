@@ -19,11 +19,11 @@ bool canManageProblemStatus(AppRole? role) => role != null && statusManagerRoles
 /// Open → Closed so a problem cannot be closed without first being resolved,
 /// and allows Resolved → In Progress so a premature resolution can be reopened.
 List<ProblemStatus> nextProblemStatuses(ProblemStatus current) => switch (current) {
-      ProblemStatus.open => const <ProblemStatus>[ProblemStatus.inProgress, ProblemStatus.resolved],
-      ProblemStatus.inProgress => const <ProblemStatus>[ProblemStatus.resolved],
-      ProblemStatus.resolved => const <ProblemStatus>[ProblemStatus.closed, ProblemStatus.inProgress],
-      ProblemStatus.closed => const <ProblemStatus>[],
-    };
+  ProblemStatus.open => const <ProblemStatus>[ProblemStatus.inProgress, ProblemStatus.resolved],
+  ProblemStatus.inProgress => const <ProblemStatus>[ProblemStatus.resolved],
+  ProblemStatus.resolved => const <ProblemStatus>[ProblemStatus.closed, ProblemStatus.inProgress],
+  ProblemStatus.closed => const <ProblemStatus>[],
+};
 
 bool isValidProblemTransition(ProblemStatus from, ProblemStatus to) =>
     nextProblemStatuses(from).contains(to);

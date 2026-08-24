@@ -31,8 +31,7 @@ class PhotoPickerField extends StatelessWidget {
     final XFile? picked = await picker.pickImage(source: source, imageQuality: 85);
     if (picked == null) return;
     final Directory dir = await getApplicationDocumentsDirectory();
-    final String targetPath =
-        '${dir.path}/evidence_${DateTime.now().millisecondsSinceEpoch}.jpg';
+    final String targetPath = '${dir.path}/evidence_${DateTime.now().millisecondsSinceEpoch}.jpg';
     final XFile? compressed = await FlutterImageCompress.compressAndGetFile(
       picked.path,
       targetPath,

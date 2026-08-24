@@ -16,10 +16,12 @@ abstract class StatementModel with _$StatementModel {
     required String subDivisionId,
     required String districtId,
     required String statementType,
+
     /// Reporting period label, e.g. "2026-01" or "2025-26 Q3".
     required String period,
     required DateTime periodStart,
     DateTime? periodEnd,
+
     /// Statement formats vary by return type, so the payload is stored as a
     /// flexible key/value map rather than a fixed set of columns.
     @Default(<String, dynamic>{}) Map<String, dynamic> data,

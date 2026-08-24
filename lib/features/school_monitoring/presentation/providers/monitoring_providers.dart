@@ -27,6 +27,9 @@ final scopedMonitoringReportsProvider = StreamProvider<List<MonitoringReportMode
   return ref.watch(monitoringReportRepositoryProvider).watchByScope(filter);
 });
 
-final monitoringReportByIdProvider = FutureProvider.family<MonitoringReportModel?, String>((ref, id) {
+final monitoringReportByIdProvider = FutureProvider.family<MonitoringReportModel?, String>((
+  ref,
+  id,
+) {
   return ref.watch(monitoringReportRepositoryProvider).getById(id);
 });

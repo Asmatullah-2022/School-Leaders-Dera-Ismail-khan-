@@ -9,11 +9,11 @@ import 'models/school_model.dart';
 
 class SchoolRepositoryImpl implements SchoolRepository {
   SchoolRepositoryImpl(this._firestore)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.schools,
-          dateFields: SchoolModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.schools,
+        dateFields: SchoolModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final OfflineWriteHelper _writer;
@@ -25,11 +25,10 @@ class SchoolRepositoryImpl implements SchoolRepository {
   Stream<List<SchoolModel>> watchByScope(ScopeFilter filter) {
     final Query<Map<String, dynamic>> query = filter.apply(_collection);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-              .map((doc) => SchoolModel.fromJson(firestoreDataToJson(doc.data())))
-              .toList()
+      (QuerySnapshot<Map<String, dynamic>> snap) =>
+          snap.docs.map((doc) => SchoolModel.fromJson(firestoreDataToJson(doc.data()))).toList()
             ..sort((a, b) => a.name.compareTo(b.name)),
-        );
+    );
   }
 
   @override

@@ -41,7 +41,11 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
   SchoolGender _gender = SchoolGender.mixed;
   BuildingCondition _condition = BuildingCondition.good;
   bool _drinkingWater = false, _electricity = false, _boundaryWall = false;
-  bool _eceRoom = false, _playground = false, _furniture = false, _library = false, _itFacilities = false;
+  bool _eceRoom = false,
+      _playground = false,
+      _furniture = false,
+      _library = false,
+      _itFacilities = false;
   bool _isSubmitting = false;
 
   bool get _isEdit => widget.existing != null;
@@ -85,8 +89,19 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
   @override
   void dispose() {
     for (final c in [
-      _name, _nameUr, _emis, _village, _headTeacherName, _contactPhone,
-      _teachers, _boys, _girls, _classrooms, _toilets, _latitude, _longitude,
+      _name,
+      _nameUr,
+      _emis,
+      _village,
+      _headTeacherName,
+      _contactPhone,
+      _teachers,
+      _boys,
+      _girls,
+      _classrooms,
+      _toilets,
+      _latitude,
+      _longitude,
     ]) {
       c.dispose();
     }
@@ -179,14 +194,26 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
             if (_clusterId == null)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
-                child: Text(l10n.validation_required, style: TextStyle(color: Theme.of(context).colorScheme.error, fontSize: 12)),
+                child: Text(
+                  l10n.validation_required,
+                  style: TextStyle(color: Theme.of(context).colorScheme.error, fontSize: 12),
+                ),
               ),
             const SizedBox(height: 16),
-            AppTextField(label: l10n.hierarchy_name, controller: _name, validator: (v) => Validators.required(v) == null ? null : l10n.validation_required),
+            AppTextField(
+              label: l10n.hierarchy_name,
+              controller: _name,
+              validator: (v) => Validators.required(v) == null ? null : l10n.validation_required,
+            ),
             const SizedBox(height: 12),
             AppTextField(label: l10n.hierarchy_nameUrdu, controller: _nameUr),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.hierarchy_emisCode, controller: _emis, forceLtr: true, validator: (v) => Validators.required(v) == null ? null : l10n.validation_required),
+            AppTextField(
+              label: l10n.hierarchy_emisCode,
+              controller: _emis,
+              forceLtr: true,
+              validator: (v) => Validators.required(v) == null ? null : l10n.validation_required,
+            ),
             const SizedBox(height: 12),
             AppTextField(label: l10n.hierarchy_village, controller: _village),
             const SizedBox(height: 12),
@@ -225,31 +252,96 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
             SectionHeader(title: l10n.dashboard_totalEnrollment),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.hierarchy_teachers, controller: _teachers, keyboardType: TextInputType.number, forceLtr: true)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.hierarchy_teachers,
+                    controller: _teachers,
+                    keyboardType: TextInputType.number,
+                    forceLtr: true,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.hierarchy_boys, controller: _boys, keyboardType: TextInputType.number, forceLtr: true)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.hierarchy_boys,
+                    controller: _boys,
+                    keyboardType: TextInputType.number,
+                    forceLtr: true,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 12),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.hierarchy_girls, controller: _girls, keyboardType: TextInputType.number, forceLtr: true)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.hierarchy_girls,
+                    controller: _girls,
+                    keyboardType: TextInputType.number,
+                    forceLtr: true,
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.hierarchy_classrooms, controller: _classrooms, keyboardType: TextInputType.number, forceLtr: true)),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.hierarchy_classrooms,
+                    controller: _classrooms,
+                    keyboardType: TextInputType.number,
+                    forceLtr: true,
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.hierarchy_toilets, controller: _toilets, keyboardType: TextInputType.number, forceLtr: true),
+            AppTextField(
+              label: l10n.hierarchy_toilets,
+              controller: _toilets,
+              keyboardType: TextInputType.number,
+              forceLtr: true,
+            ),
             const SizedBox(height: 20),
             SectionHeader(title: l10n.hierarchy_facilities),
-            SwitchListTile(value: _drinkingWater, title: Text(l10n.hierarchy_drinkingWater), onChanged: (v) => setState(() => _drinkingWater = v)),
-            SwitchListTile(value: _electricity, title: Text(l10n.hierarchy_electricity), onChanged: (v) => setState(() => _electricity = v)),
-            SwitchListTile(value: _boundaryWall, title: Text(l10n.hierarchy_boundaryWall), onChanged: (v) => setState(() => _boundaryWall = v)),
-            SwitchListTile(value: _eceRoom, title: Text(l10n.hierarchy_eceRoom), onChanged: (v) => setState(() => _eceRoom = v)),
-            SwitchListTile(value: _playground, title: Text(l10n.hierarchy_playground), onChanged: (v) => setState(() => _playground = v)),
-            SwitchListTile(value: _furniture, title: Text(l10n.hierarchy_furniture), onChanged: (v) => setState(() => _furniture = v)),
-            SwitchListTile(value: _library, title: Text(l10n.hierarchy_library), onChanged: (v) => setState(() => _library = v)),
-            SwitchListTile(value: _itFacilities, title: Text(l10n.hierarchy_itFacilities), onChanged: (v) => setState(() => _itFacilities = v)),
+            SwitchListTile(
+              value: _drinkingWater,
+              title: Text(l10n.hierarchy_drinkingWater),
+              onChanged: (v) => setState(() => _drinkingWater = v),
+            ),
+            SwitchListTile(
+              value: _electricity,
+              title: Text(l10n.hierarchy_electricity),
+              onChanged: (v) => setState(() => _electricity = v),
+            ),
+            SwitchListTile(
+              value: _boundaryWall,
+              title: Text(l10n.hierarchy_boundaryWall),
+              onChanged: (v) => setState(() => _boundaryWall = v),
+            ),
+            SwitchListTile(
+              value: _eceRoom,
+              title: Text(l10n.hierarchy_eceRoom),
+              onChanged: (v) => setState(() => _eceRoom = v),
+            ),
+            SwitchListTile(
+              value: _playground,
+              title: Text(l10n.hierarchy_playground),
+              onChanged: (v) => setState(() => _playground = v),
+            ),
+            SwitchListTile(
+              value: _furniture,
+              title: Text(l10n.hierarchy_furniture),
+              onChanged: (v) => setState(() => _furniture = v),
+            ),
+            SwitchListTile(
+              value: _library,
+              title: Text(l10n.hierarchy_library),
+              onChanged: (v) => setState(() => _library = v),
+            ),
+            SwitchListTile(
+              value: _itFacilities,
+              title: Text(l10n.hierarchy_itFacilities),
+              onChanged: (v) => setState(() => _itFacilities = v),
+            ),
             const SizedBox(height: 12),
             DropdownButtonFormField<BuildingCondition>(
               initialValue: _condition,
@@ -263,16 +355,40 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
             SectionHeader(title: l10n.hierarchy_location),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.hierarchy_latitude, controller: _latitude, forceLtr: true, keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true))),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.hierarchy_latitude,
+                    controller: _latitude,
+                    forceLtr: true,
+                    keyboardType: const TextInputType.numberWithOptions(
+                      decimal: true,
+                      signed: true,
+                    ),
+                  ),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.hierarchy_longitude, controller: _longitude, forceLtr: true, keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true))),
+                Expanded(
+                  child: AppTextField(
+                    label: l10n.hierarchy_longitude,
+                    controller: _longitude,
+                    forceLtr: true,
+                    keyboardType: const TextInputType.numberWithOptions(
+                      decimal: true,
+                      signed: true,
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 24),
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],
@@ -282,22 +398,22 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
   }
 
   String _levelLabel(AppLocalizations l10n, SchoolLevel v) => switch (v) {
-        SchoolLevel.primary => l10n.school_level_primary,
-        SchoolLevel.elementary => l10n.school_level_elementary,
-        SchoolLevel.middle => l10n.school_level_middle,
-        SchoolLevel.high => l10n.school_level_high,
-        SchoolLevel.higherSecondary => l10n.school_level_higherSecondary,
-      };
+    SchoolLevel.primary => l10n.school_level_primary,
+    SchoolLevel.elementary => l10n.school_level_elementary,
+    SchoolLevel.middle => l10n.school_level_middle,
+    SchoolLevel.high => l10n.school_level_high,
+    SchoolLevel.higherSecondary => l10n.school_level_higherSecondary,
+  };
 
   String _genderLabel(AppLocalizations l10n, SchoolGender v) => switch (v) {
-        SchoolGender.boys => l10n.school_gender_boys,
-        SchoolGender.girls => l10n.school_gender_girls,
-        SchoolGender.mixed => l10n.school_gender_mixed,
-      };
+    SchoolGender.boys => l10n.school_gender_boys,
+    SchoolGender.girls => l10n.school_gender_girls,
+    SchoolGender.mixed => l10n.school_gender_mixed,
+  };
 
   String _conditionLabel(AppLocalizations l10n, BuildingCondition v) => switch (v) {
-        BuildingCondition.good => l10n.building_condition_good,
-        BuildingCondition.needsRepair => l10n.building_condition_needsRepair,
-        BuildingCondition.critical => l10n.building_condition_critical,
-      };
+    BuildingCondition.good => l10n.building_condition_good,
+    BuildingCondition.needsRepair => l10n.building_condition_needsRepair,
+    BuildingCondition.critical => l10n.building_condition_critical,
+  };
 }

@@ -9,11 +9,11 @@ import 'models/school_problem_model.dart';
 
 class SchoolProblemRepositoryImpl implements SchoolProblemRepository {
   SchoolProblemRepositoryImpl(this._firestore)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.schoolProblems,
-          dateFields: SchoolProblemModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.schoolProblems,
+        dateFields: SchoolProblemModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final OfflineWriteHelper _writer;
@@ -23,13 +23,14 @@ class SchoolProblemRepositoryImpl implements SchoolProblemRepository {
 
   @override
   Stream<List<SchoolProblemModel>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query =
-        filter.apply(_collection).orderBy('dateReported', descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy('dateReported', descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-              .map((doc) => SchoolProblemModel.fromJson(firestoreDataToJson(doc.data())))
-              .toList(),
-        );
+      (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+          .map((doc) => SchoolProblemModel.fromJson(firestoreDataToJson(doc.data())))
+          .toList(),
+    );
   }
 
   @override
@@ -53,7 +54,11 @@ class SchoolProblemRepositoryImpl implements SchoolProblemRepository {
   Future<void> delete(String id) => _writer.delete(id);
 
   @override
-  Future<void> queueEvidencePhoto(String problemId, String localFilePath, {bool isResolution = false}) {
+  Future<void> queueEvidencePhoto(
+    String problemId,
+    String localFilePath, {
+    bool isResolution = false,
+  }) {
     return _writer.queuePhotoUpload(
       docId: problemId,
       filePath: localFilePath,

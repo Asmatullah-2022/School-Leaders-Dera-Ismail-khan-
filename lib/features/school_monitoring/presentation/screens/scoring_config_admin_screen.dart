@@ -47,20 +47,22 @@ class _ScoringConfigAdminScreenState extends ConsumerState<ScoringConfigAdminScr
   Future<void> _save(MonitoringConfigModel current) async {
     setState(() => _isSaving = true);
     final List<ScoringCriterionModel> updated = _criteria!
-        .map((c) => c.copyWith(
-              weight: double.tryParse(_weightControllers[c.id]!.text) ?? c.weight,
-              maxScore: double.tryParse(_maxScoreControllers[c.id]!.text) ?? c.maxScore,
-            ))
+        .map(
+          (c) => c.copyWith(
+            weight: double.tryParse(_weightControllers[c.id]!.text) ?? c.weight,
+            maxScore: double.tryParse(_maxScoreControllers[c.id]!.text) ?? c.maxScore,
+          ),
+        )
         .toList();
     final String uid = ref.read(currentUserProvider).valueOrNull?.uid ?? 'unknown';
-    await ref.read(monitoringConfigRepositoryProvider).save(
-          current.copyWith(criteria: updated),
-          updatedByUid: uid,
-        );
+    await ref
+        .read(monitoringConfigRepositoryProvider)
+        .save(current.copyWith(criteria: updated), updatedByUid: uid);
     if (!mounted) return;
     setState(() => _isSaving = false);
     final AppLocalizations l10n = AppLocalizations.of(context);
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.monitoring_configSaved)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(l10n.monitoring_configSaved)));
   }
 
   @override
@@ -75,7 +77,10 @@ class _ScoringConfigAdminScreenState extends ConsumerState<ScoringConfigAdminScr
         error: (_, _) => Center(child: Text(l10n.common_error_unknown)),
         data: (MonitoringConfigModel config) {
           _initFrom(config);
-          final double totalWeight = _criteria!.fold(0.0, (sum, c) => sum + (double.tryParse(_weightControllers[c.id]!.text) ?? 0));
+          final double totalWeight = _criteria!.fold(
+            0.0,
+            (sum, c) => sum + (double.tryParse(_weightControllers[c.id]!.text) ?? 0),
+          );
           return ListView(
             padding: const EdgeInsets.all(16),
             children: <Widget>[
@@ -124,7 +129,11 @@ class _ScoringConfigAdminScreenState extends ConsumerState<ScoringConfigAdminScr
               FilledButton(
                 onPressed: _isSaving ? null : () => _save(config),
                 child: _isSaving
-                    ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                    ? const SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
                     : Text(l10n.monitoring_saveConfig),
               ),
             ],

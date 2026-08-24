@@ -25,10 +25,7 @@ final reportTableProvider = Provider.family<ReportTable, ReportFilter>((ref, fil
         filter,
       );
     case ReportModule.oosc:
-      return buildOoscTable(
-        ref.watch(scopedOoscRecordsProvider).valueOrNull ?? const [],
-        filter,
-      );
+      return buildOoscTable(ref.watch(scopedOoscRecordsProvider).valueOrNull ?? const [], filter);
     case ReportModule.monitoringReports:
       return buildMonitoringTable(
         ref.watch(scopedMonitoringReportsProvider).valueOrNull ?? const [],
@@ -45,9 +42,6 @@ final reportTableProvider = Provider.family<ReportTable, ReportFilter>((ref, fil
         filter,
       );
     case ReportModule.ptcPriorities:
-      return buildPtcTable(
-        ref.watch(scopedPtcPrioritiesProvider).valueOrNull ?? const [],
-        filter,
-      );
+      return buildPtcTable(ref.watch(scopedPtcPrioritiesProvider).valueOrNull ?? const [], filter);
   }
 });

@@ -100,12 +100,15 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
 
     // A brand-new priority lands at the end of its meeting's list; drag to
     // reorder afterwards (ranks are renumbered by the list screen).
-    final int nextRank = widget.existing?.rank ??
+    final int nextRank =
+        widget.existing?.rank ??
         ((ref.read(scopedPtcPrioritiesProvider).valueOrNull ?? const <PtcPriorityModel>[])
-                .where((p) =>
-                    p.schoolId == _selectedSchool!.id &&
-                    DateFormat('yyyy-MM-dd').format(p.meetingDate) ==
-                        DateFormat('yyyy-MM-dd').format(_meetingDate))
+                .where(
+                  (p) =>
+                      p.schoolId == _selectedSchool!.id &&
+                      DateFormat('yyyy-MM-dd').format(p.meetingDate) ==
+                          DateFormat('yyyy-MM-dd').format(_meetingDate),
+                )
                 .length +
             1);
 
@@ -126,8 +129,9 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
       estimatedCost: double.tryParse(_estimatedCost.text) ?? 0,
       availableFunds: double.tryParse(_availableFunds.text) ?? 0,
       decision: _decision.text.trim().isEmpty ? null : _decision.text.trim(),
-      responsiblePersonName:
-          _responsiblePerson.text.trim().isEmpty ? null : _responsiblePerson.text.trim(),
+      responsiblePersonName: _responsiblePerson.text.trim().isEmpty
+          ? null
+          : _responsiblePerson.text.trim(),
       targetDate: _targetDate,
       status: _status,
       evidencePhotoUrls: widget.existing?.evidencePhotoUrls ?? const <String>[],
@@ -167,7 +171,9 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
             SchoolPicker(
               selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
               onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-              errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+              errorText: (_schoolTouched && _selectedSchool == null)
+                  ? l10n.validation_required
+                  : null,
             ),
             const SizedBox(height: 12),
             InkWell(
@@ -198,10 +204,12 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
               initialValue: _category,
               decoration: InputDecoration(labelText: l10n.ptc_category),
               items: PtcCategory.values
-                  .map((c) => DropdownMenuItem<PtcCategory>(
-                        value: c,
-                        child: Text(ptcCategoryLabel(l10n, c)),
-                      ))
+                  .map(
+                    (c) => DropdownMenuItem<PtcCategory>(
+                      value: c,
+                      child: Text(ptcCategoryLabel(l10n, c)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _category = v ?? _category),
             ),
@@ -210,10 +218,12 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
               initialValue: _level,
               decoration: InputDecoration(labelText: l10n.ptc_priorityLevel),
               items: PtcPriorityLevel.values
-                  .map((p) => DropdownMenuItem<PtcPriorityLevel>(
-                        value: p,
-                        child: Text(ptcPriorityLevelLabel(l10n, p)),
-                      ))
+                  .map(
+                    (p) => DropdownMenuItem<PtcPriorityLevel>(
+                      value: p,
+                      child: Text(ptcPriorityLevelLabel(l10n, p)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _level = v ?? _level),
             ),
@@ -257,7 +267,8 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
               decoration: InputDecoration(labelText: l10n.ptc_requiredFunds),
               child: Text(
                 required.toStringAsFixed(0),
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 20),
@@ -287,10 +298,10 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
               initialValue: _status,
               decoration: InputDecoration(labelText: l10n.common_status),
               items: PtcStatus.values
-                  .map((s) => DropdownMenuItem<PtcStatus>(
-                        value: s,
-                        child: Text(ptcStatusLabel(l10n, s)),
-                      ))
+                  .map(
+                    (s) =>
+                        DropdownMenuItem<PtcStatus>(value: s, child: Text(ptcStatusLabel(l10n, s))),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _status = v ?? _status),
             ),
@@ -304,7 +315,11 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],

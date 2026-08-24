@@ -12,5 +12,9 @@ abstract class SchoolProblemRepository {
 
   Future<void> delete(String id);
 
-  Future<void> queueEvidencePhoto(String problemId, String localFilePath, {bool isResolution = false});
+  Future<void> queueEvidencePhoto(
+    String problemId,
+    String localFilePath, {
+    bool isResolution = false,
+  });
 }

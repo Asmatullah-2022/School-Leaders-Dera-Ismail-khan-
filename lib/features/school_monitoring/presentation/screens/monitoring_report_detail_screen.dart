@@ -21,7 +21,9 @@ class MonitoringReportDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<MonitoringReportModel?> reportAsync = ref.watch(monitoringReportByIdProvider(reportId));
+    final AsyncValue<MonitoringReportModel?> reportAsync = ref.watch(
+      monitoringReportByIdProvider(reportId),
+    );
 
     return AppScaffold(
       title: l10n.nav_monitoring,
@@ -33,12 +35,18 @@ class MonitoringReportDetailScreen extends ConsumerWidget {
           return ListView(
             padding: const EdgeInsets.all(16),
             children: <Widget>[
-              Center(child: GradeBadge(grade: r.grade, score: r.totalWeightedScore)),
+              Center(
+                child: GradeBadge(grade: r.grade, score: r.totalWeightedScore),
+              ),
               const SizedBox(height: 16),
               _row(context, l10n.monitoring_visitDate, DateFormat.yMMMd().format(r.visitDate)),
-              _row(context, l10n.common_status, r.status == MonitoringReportStatus.draft
-                  ? l10n.monitoring_status_draft
-                  : l10n.monitoring_status_submitted),
+              _row(
+                context,
+                l10n.common_status,
+                r.status == MonitoringReportStatus.draft
+                    ? l10n.monitoring_status_draft
+                    : l10n.monitoring_status_submitted,
+              ),
               _row(context, l10n.profile_title, r.monitoredByName),
               const Divider(height: 32),
               Text(l10n.monitoring_criteria, style: Theme.of(context).textTheme.titleSmall),

@@ -14,9 +14,8 @@ class MonitoringConfigRepositoryImpl implements MonitoringConfigRepository {
 
   final FirebaseFirestore _firestore;
 
-  DocumentReference<Map<String, dynamic>> get _doc => _firestore
-      .collection(FirestorePaths.config)
-      .doc(FirestorePaths.configMonitoringWeightsDoc);
+  DocumentReference<Map<String, dynamic>> get _doc =>
+      _firestore.collection(FirestorePaths.config).doc(FirestorePaths.configMonitoringWeightsDoc);
 
   @override
   Stream<MonitoringConfigModel> watch() {

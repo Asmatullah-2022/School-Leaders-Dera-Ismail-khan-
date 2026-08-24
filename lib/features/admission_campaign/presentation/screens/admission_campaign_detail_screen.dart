@@ -23,7 +23,9 @@ class AdmissionCampaignDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<AdmissionCampaignModel?> campaignAsync = ref.watch(admissionCampaignByIdProvider(campaignId));
+    final AsyncValue<AdmissionCampaignModel?> campaignAsync = ref.watch(
+      admissionCampaignByIdProvider(campaignId),
+    );
 
     return AppScaffold(
       title: l10n.more_admission,
@@ -34,7 +36,9 @@ class AdmissionCampaignDetailScreen extends ConsumerWidget {
               : IconButton(
                   icon: const Icon(Icons.edit_outlined),
                   onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => AdmissionCampaignFormScreen(existing: c)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => AdmissionCampaignFormScreen(existing: c),
+                    ),
                   ),
                 ),
           orElse: () => const SizedBox.shrink(),
@@ -45,14 +49,20 @@ class AdmissionCampaignDetailScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (AdmissionCampaignModel? c) {
           if (c == null) return EmptyState(message: l10n.common_error_notFound);
-          final AsyncValue<List<OoscRecordModel>> linkedOosc = ref.watch(ooscByCampaignProvider(c.id));
+          final AsyncValue<List<OoscRecordModel>> linkedOosc = ref.watch(
+            ooscByCampaignProvider(c.id),
+          );
           return ListView(
             padding: const EdgeInsets.all(16),
             children: <Widget>[
               Text(c.academicYear, style: Theme.of(context).textTheme.headlineSmall),
               Text(DateFormat.yMMMd().format(c.date), style: Theme.of(context).textTheme.bodySmall),
               const SizedBox(height: 16),
-              AchievementGauge(target: c.targetEnrollment, achieved: c.currentEnrollment, percentage: c.achievementPercentage),
+              AchievementGauge(
+                target: c.targetEnrollment,
+                achieved: c.currentEnrollment,
+                percentage: c.achievementPercentage,
+              ),
               const Divider(height: 32),
               _statGrid(context, l10n, c),
               const Divider(height: 32),
@@ -82,7 +92,9 @@ class AdmissionCampaignDetailScreen extends ConsumerWidget {
                 loading: () => const LoadingIndicator(),
                 error: (_, _) => const SizedBox.shrink(),
                 data: (List<OoscRecordModel> records) {
-                  if (records.isEmpty) return Text(l10n.oosc_noRecords, style: Theme.of(context).textTheme.bodySmall);
+                  if (records.isEmpty) {
+                    return Text(l10n.oosc_noRecords, style: Theme.of(context).textTheme.bodySmall);
+                  }
                   return Column(
                     children: <Widget>[
                       for (final OoscRecordModel r in records)
@@ -125,7 +137,11 @@ class AdmissionCampaignDetailScreen extends ConsumerWidget {
             child: Row(
               children: <Widget>[
                 Expanded(child: Text(label, style: Theme.of(context).textTheme.bodyMedium)),
-                Text(value, style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold)),
+                Text(
+                  value,
+                  style: Theme.of(context).textTheme.bodyLarge
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                ),
               ],
             ),
           ),

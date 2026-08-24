@@ -92,7 +92,8 @@ class HierarchyCascadePicker extends StatefulWidget {
     String? subDivisionId,
     String? circleId,
     String? clusterId,
-  }) onChanged;
+  })
+  onChanged;
   final String? initialDistrictId;
   final String? initialSubDivisionId;
   final String? initialCircleId;

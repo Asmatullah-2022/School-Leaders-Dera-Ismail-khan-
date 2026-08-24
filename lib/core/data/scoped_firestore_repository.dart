@@ -25,10 +25,10 @@ class ScopedFirestoreRepository<T> {
     required this.orderByField,
     this.photoField = 'evidencePhotoUrls',
   }) : _writer = OfflineWriteHelper(
-          firestore: firestore,
-          collectionName: collectionName,
-          dateFields: dateFields,
-        );
+         firestore: firestore,
+         collectionName: collectionName,
+         dateFields: dateFields,
+       );
 
   final FirebaseFirestore firestore;
   final String collectionName;
@@ -43,16 +43,16 @@ class ScopedFirestoreRepository<T> {
 
   final OfflineWriteHelper _writer;
 
-  CollectionReference<Map<String, dynamic>> get _collection =>
-      firestore.collection(collectionName);
+  CollectionReference<Map<String, dynamic>> get _collection => firestore.collection(collectionName);
 
   Stream<List<T>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query =
-        filter.apply(_collection).orderBy(orderByField, descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy(orderByField, descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) =>
-              snap.docs.map((doc) => fromJson(firestoreDataToJson(doc.data()))).toList(),
-        );
+      (QuerySnapshot<Map<String, dynamic>> snap) =>
+          snap.docs.map((doc) => fromJson(firestoreDataToJson(doc.data()))).toList(),
+    );
   }
 
   Future<T?> getById(String id) async {

@@ -17,24 +17,24 @@ class NotificationListScreen extends ConsumerWidget {
   const NotificationListScreen({super.key});
 
   static IconData iconFor(AppNotificationType type) => switch (type) {
-        AppNotificationType.emergency => Icons.emergency_outlined,
-        AppNotificationType.problem => Icons.report_problem_outlined,
-        AppNotificationType.assignment => Icons.assignment_ind_outlined,
-        AppNotificationType.reportPending => Icons.pending_actions_outlined,
-        AppNotificationType.reportReturned => Icons.undo,
-        AppNotificationType.reportApproved => Icons.check_circle_outline,
-        AppNotificationType.deadline => Icons.schedule_outlined,
-        AppNotificationType.meeting => Icons.event_note_outlined,
-        AppNotificationType.announcement => Icons.campaign_outlined,
-        AppNotificationType.system => Icons.info_outline,
-      };
+    AppNotificationType.emergency => Icons.emergency_outlined,
+    AppNotificationType.problem => Icons.report_problem_outlined,
+    AppNotificationType.assignment => Icons.assignment_ind_outlined,
+    AppNotificationType.reportPending => Icons.pending_actions_outlined,
+    AppNotificationType.reportReturned => Icons.undo,
+    AppNotificationType.reportApproved => Icons.check_circle_outline,
+    AppNotificationType.deadline => Icons.schedule_outlined,
+    AppNotificationType.meeting => Icons.event_note_outlined,
+    AppNotificationType.announcement => Icons.campaign_outlined,
+    AppNotificationType.system => Icons.info_outline,
+  };
 
   static Color colorFor(AppNotificationType type) => switch (type) {
-        AppNotificationType.emergency => AppColors.criticalRed,
-        AppNotificationType.problem => AppColors.warningAmber,
-        AppNotificationType.reportApproved => AppColors.success,
-        _ => AppColors.infoBlue,
-      };
+    AppNotificationType.emergency => AppColors.criticalRed,
+    AppNotificationType.problem => AppColors.warningAmber,
+    AppNotificationType.reportApproved => AppColors.success,
+    _ => AppColors.infoBlue,
+  };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

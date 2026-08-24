@@ -23,7 +23,9 @@ class MonitoringReportListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<MonitoringReportModel>> reportsAsync = ref.watch(scopedMonitoringReportsProvider);
+    final AsyncValue<List<MonitoringReportModel>> reportsAsync = ref.watch(
+      scopedMonitoringReportsProvider,
+    );
     final AppRole? role = ref.watch(currentRoleProvider);
 
     return AppScaffold(
@@ -33,15 +35,14 @@ class MonitoringReportListScreen extends ConsumerWidget {
           IconButton(
             icon: const Icon(Icons.tune),
             tooltip: l10n.monitoring_scoringConfig,
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(builder: (_) => const ScoringConfigAdminScreen()),
-            ),
+            onPressed: () => Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const ScoringConfigAdminScreen())),
           ),
       ],
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const MonitoringReportFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const MonitoringReportFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.monitoring_addReport),
       ),
@@ -65,7 +66,9 @@ class MonitoringReportListScreen extends ConsumerWidget {
                   title: Text(DateFormat.yMMMd().format(r.visitDate)),
                   subtitle: Text(r.monitoredByName),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => MonitoringReportDetailScreen(reportId: r.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => MonitoringReportDetailScreen(reportId: r.id),
+                    ),
                   ),
                 ),
               );

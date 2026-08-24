@@ -20,6 +20,7 @@ abstract class PlantationModel with _$PlantationModel {
     @Default(0) int teachersInvolved,
     @Default(0) int communityMembersInvolved,
     String? location,
+
     /// Recorded on a later follow-up visit, so it stays nullable until known.
     double? survivalRatePercent,
     String? remarks,

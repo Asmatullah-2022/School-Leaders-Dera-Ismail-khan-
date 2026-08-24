@@ -107,7 +107,8 @@ class _EmergencyReportFormScreenState extends ConsumerState<EmergencyReportFormS
       await repo.queueEvidencePhoto(id, path);
     }
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.common_success_submitted)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(l10n.common_success_submitted)));
     Navigator.of(context).pop();
   }
 
@@ -128,17 +129,21 @@ class _EmergencyReportFormScreenState extends ConsumerState<EmergencyReportFormS
             SchoolPicker(
               selectedSchoolId: _selectedSchool?.id,
               onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-              errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+              errorText: (_schoolTouched && _selectedSchool == null)
+                  ? l10n.validation_required
+                  : null,
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<EmergencyType>(
               initialValue: _type,
               decoration: InputDecoration(labelText: l10n.emergency_type),
               items: EmergencyType.values
-                  .map((t) => DropdownMenuItem<EmergencyType>(
-                        value: t,
-                        child: Text(emergencyTypeLabel(l10n, t)),
-                      ))
+                  .map(
+                    (t) => DropdownMenuItem<EmergencyType>(
+                      value: t,
+                      child: Text(emergencyTypeLabel(l10n, t)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _type = v ?? _type),
             ),
@@ -147,10 +152,12 @@ class _EmergencyReportFormScreenState extends ConsumerState<EmergencyReportFormS
               initialValue: _severity,
               decoration: InputDecoration(labelText: l10n.emergency_severity),
               items: EmergencySeverity.values
-                  .map((s) => DropdownMenuItem<EmergencySeverity>(
-                        value: s,
-                        child: Text(SeverityBadge.label(l10n, s)),
-                      ))
+                  .map(
+                    (s) => DropdownMenuItem<EmergencySeverity>(
+                      value: s,
+                      child: Text(SeverityBadge.label(l10n, s)),
+                    ),
+                  )
                   .toList(),
               onChanged: (v) => setState(() => _severity = v ?? _severity),
             ),
@@ -233,7 +240,11 @@ class _EmergencyReportFormScreenState extends ConsumerState<EmergencyReportFormS
               style: FilledButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.error),
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_submit),
             ),
           ],

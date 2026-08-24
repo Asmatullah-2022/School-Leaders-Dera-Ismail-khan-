@@ -38,18 +38,40 @@ class _HomeShellScreenState extends ConsumerState<HomeShellScreen> {
       body: Column(
         children: <Widget>[
           const OfflineBanner(),
-          Expanded(child: IndexedStack(index: _index, children: tabs)),
+          Expanded(
+            child: IndexedStack(index: _index, children: tabs),
+          ),
         ],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
         onDestinationSelected: (int i) => setState(() => _index = i),
         destinations: <NavigationDestination>[
-          NavigationDestination(icon: const Icon(Icons.home_outlined), selectedIcon: const Icon(Icons.home), label: l10n.nav_home),
-          NavigationDestination(icon: const Icon(Icons.apartment_outlined), selectedIcon: const Icon(Icons.apartment), label: l10n.nav_schools),
-          NavigationDestination(icon: const Icon(Icons.fact_check_outlined), selectedIcon: const Icon(Icons.fact_check), label: l10n.nav_monitoring),
-          NavigationDestination(icon: const Icon(Icons.bar_chart_outlined), selectedIcon: const Icon(Icons.bar_chart), label: l10n.nav_reports),
-          NavigationDestination(icon: const Icon(Icons.more_horiz), selectedIcon: const Icon(Icons.more_horiz), label: l10n.nav_more),
+          NavigationDestination(
+            icon: const Icon(Icons.home_outlined),
+            selectedIcon: const Icon(Icons.home),
+            label: l10n.nav_home,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.apartment_outlined),
+            selectedIcon: const Icon(Icons.apartment),
+            label: l10n.nav_schools,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.fact_check_outlined),
+            selectedIcon: const Icon(Icons.fact_check),
+            label: l10n.nav_monitoring,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.bar_chart_outlined),
+            selectedIcon: const Icon(Icons.bar_chart),
+            label: l10n.nav_reports,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.more_horiz),
+            selectedIcon: const Icon(Icons.more_horiz),
+            label: l10n.nav_more,
+          ),
         ],
       ),
     );

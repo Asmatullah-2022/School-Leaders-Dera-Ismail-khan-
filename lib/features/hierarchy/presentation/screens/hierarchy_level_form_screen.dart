@@ -55,11 +55,11 @@ class _HierarchyLevelFormScreenState extends ConsumerState<HierarchyLevelFormScr
   }
 
   String? get _parentId => switch (widget.level) {
-        HierarchyLevel.district => null,
-        HierarchyLevel.subDivision => _districtId,
-        HierarchyLevel.circle => _subDivisionId,
-        HierarchyLevel.cluster => _circleId,
-      };
+    HierarchyLevel.district => null,
+    HierarchyLevel.subDivision => _districtId,
+    HierarchyLevel.circle => _subDivisionId,
+    HierarchyLevel.cluster => _circleId,
+  };
 
   bool get _parentSatisfied => widget.level == HierarchyLevel.district || _parentId != null;
 
@@ -78,7 +78,8 @@ class _HierarchyLevelFormScreenState extends ConsumerState<HierarchyLevelFormScr
       code: _codeController.text.trim().isEmpty ? null : _codeController.text.trim(),
       parentId: _parentId,
       districtId: widget.level == HierarchyLevel.district ? null : _districtId,
-      subDivisionId: (widget.level == HierarchyLevel.circle || widget.level == HierarchyLevel.cluster)
+      subDivisionId:
+          (widget.level == HierarchyLevel.circle || widget.level == HierarchyLevel.cluster)
           ? _subDivisionId
           : null,
       circleId: widget.level == HierarchyLevel.cluster ? _circleId : null,
@@ -142,7 +143,11 @@ class _HierarchyLevelFormScreenState extends ConsumerState<HierarchyLevelFormScr
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],
@@ -167,7 +172,13 @@ class _ParentPickerChain extends StatelessWidget {
   final String? districtId;
   final String? subDivisionId;
   final String? circleId;
-  final void Function({String? districtId, String? subDivisionId, String? circleId, String? clusterId}) onChanged;
+  final void Function({
+    String? districtId,
+    String? subDivisionId,
+    String? circleId,
+    String? clusterId,
+  })
+  onChanged;
 
   @override
   Widget build(BuildContext context) {

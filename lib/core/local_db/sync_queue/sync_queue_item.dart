@@ -62,18 +62,18 @@ class SyncQueueItem {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'id': id,
-        'collectionName': collectionName,
-        'docId': docId,
-        'operation': operation.name,
-        'payloadJson': payloadJson,
-        'dateFields': dateFields,
-        'createdAt': createdAt.toIso8601String(),
-        'filePath': filePath,
-        'storageField': storageField,
-        'retryCount': retryCount,
-        'lastError': lastError,
-      };
+    'id': id,
+    'collectionName': collectionName,
+    'docId': docId,
+    'operation': operation.name,
+    'payloadJson': payloadJson,
+    'dateFields': dateFields,
+    'createdAt': createdAt.toIso8601String(),
+    'filePath': filePath,
+    'storageField': storageField,
+    'retryCount': retryCount,
+    'lastError': lastError,
+  };
 
   static SyncQueueItem fromJson(Map<dynamic, dynamic> json) {
     return SyncQueueItem(

@@ -34,7 +34,8 @@ class AchievementGauge extends StatelessWidget {
             Text('${l10n.admission_target}: $target', style: Theme.of(context).textTheme.bodySmall),
             Text(
               '${percentage.toStringAsFixed(1)}%',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold, color: barColor),
+              style: Theme.of(context).textTheme.titleMedium
+                  ?.copyWith(fontWeight: FontWeight.bold, color: barColor),
             ),
           ],
         ),
@@ -49,10 +50,7 @@ class AchievementGauge extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        Text(
-          '${l10n.admission_achieved}: $achieved',
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        Text('${l10n.admission_achieved}: $achieved', style: Theme.of(context).textTheme.bodySmall),
       ],
     );
   }

@@ -74,8 +74,7 @@ void main() {
 
     test('school filter narrows to a single school, null means all', () {
       const ReportFilter all = ReportFilter(module: ReportModule.schoolProblems);
-      const ReportFilter one =
-          ReportFilter(module: ReportModule.schoolProblems, schoolId: 's1');
+      const ReportFilter one = ReportFilter(module: ReportModule.schoolProblems, schoolId: 's1');
       expect(all.matchesSchool('anything'), isTrue);
       expect(one.matchesSchool('s1'), isTrue);
       expect(one.matchesSchool('s2'), isFalse);
@@ -103,10 +102,9 @@ void main() {
     });
 
     test('header counts match the width of every emitted row', () {
-      final ReportTable table = buildSchoolProblemTable(
-        <SchoolProblemModel>[_problem(id: 'a', reported: DateTime(2026, 1, 5))],
-        const ReportFilter(module: ReportModule.schoolProblems),
-      );
+      final ReportTable table = buildSchoolProblemTable(<SchoolProblemModel>[
+        _problem(id: 'a', reported: DateTime(2026, 1, 5)),
+      ], const ReportFilter(module: ReportModule.schoolProblems));
       expect(table.headersUr.length, table.headersEn.length);
       for (final List<String> row in table.rows) {
         expect(row.length, table.headersEn.length);
@@ -124,10 +122,10 @@ void main() {
     });
 
     test('bilingual mode pairs both scripts per column', () {
-      expect(
-        service.headersFor(_sampleTable, ReportLanguage.bilingual),
-        <String>['Name — نام', 'Count — تعداد'],
-      );
+      expect(service.headersFor(_sampleTable, ReportLanguage.bilingual), <String>[
+        'Name — نام',
+        'Count — تعداد',
+      ]);
     });
 
     test('falls back to the English header when an Urdu one is missing', () {

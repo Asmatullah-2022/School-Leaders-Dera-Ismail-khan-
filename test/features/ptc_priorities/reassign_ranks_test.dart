@@ -21,8 +21,12 @@ PtcPriorityModel _p(String id, int rank) {
   );
 }
 
-List<PtcPriorityModel> _list() =>
-    <PtcPriorityModel>[_p('a', 1), _p('b', 2), _p('c', 3), _p('d', 4)];
+List<PtcPriorityModel> _list() => <PtcPriorityModel>[
+  _p('a', 1),
+  _p('b', 2),
+  _p('c', 3),
+  _p('d', 4),
+];
 
 void main() {
   group('reorderAndReassignRanks', () {
@@ -63,11 +67,7 @@ void main() {
     });
 
     test('repairs pre-existing duplicate/gapped ranks into a clean sequence', () {
-      final List<PtcPriorityModel> messy = <PtcPriorityModel>[
-        _p('a', 5),
-        _p('b', 5),
-        _p('c', 9),
-      ];
+      final List<PtcPriorityModel> messy = <PtcPriorityModel>[_p('a', 5), _p('b', 5), _p('c', 9)];
       final List<PtcPriorityModel> result = reorderAndReassignRanks(messy, 0, 1);
       expect(result.map((p) => p.rank).toList(), <int>[1, 2, 3]);
     });

@@ -44,7 +44,10 @@ class SettingsScreen extends ConsumerWidget {
               items: <DropdownMenuItem<ThemeMode>>[
                 DropdownMenuItem<ThemeMode>(value: ThemeMode.light, child: Text(l10n.setup_light)),
                 DropdownMenuItem<ThemeMode>(value: ThemeMode.dark, child: Text(l10n.setup_dark)),
-                DropdownMenuItem<ThemeMode>(value: ThemeMode.system, child: Text(l10n.setup_systemDefault)),
+                DropdownMenuItem<ThemeMode>(
+                  value: ThemeMode.system,
+                  child: Text(l10n.setup_systemDefault),
+                ),
               ],
               onChanged: (ThemeMode? mode) {
                 if (mode != null) ref.read(themeModeProvider.notifier).setThemeMode(mode);
@@ -52,19 +55,40 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
           const Divider(),
-          ListTile(leading: const Icon(Icons.notifications_outlined), title: Text(l10n.settings_notifications)),
+          ListTile(
+            leading: const Icon(Icons.notifications_outlined),
+            title: Text(l10n.settings_notifications),
+          ),
           ListTile(leading: const Icon(Icons.lock_outline), title: Text(l10n.settings_password)),
-          ListTile(leading: const Icon(Icons.security_outlined), title: Text(l10n.settings_security)),
-          ListTile(leading: const Icon(Icons.sync_outlined), title: Text(l10n.settings_offlineSync)),
+          ListTile(
+            leading: const Icon(Icons.security_outlined),
+            title: Text(l10n.settings_security),
+          ),
+          ListTile(
+            leading: const Icon(Icons.sync_outlined),
+            title: Text(l10n.settings_offlineSync),
+          ),
           const Divider(),
           ListTile(leading: const Icon(Icons.info_outline), title: Text(l10n.settings_about)),
-          ListTile(leading: const Icon(Icons.privacy_tip_outlined), title: Text(l10n.settings_privacyPolicy)),
-          ListTile(leading: const Icon(Icons.description_outlined), title: Text(l10n.settings_terms)),
-          ListTile(leading: const Icon(Icons.support_agent_outlined), title: Text(l10n.settings_support)),
+          ListTile(
+            leading: const Icon(Icons.privacy_tip_outlined),
+            title: Text(l10n.settings_privacyPolicy),
+          ),
+          ListTile(
+            leading: const Icon(Icons.description_outlined),
+            title: Text(l10n.settings_terms),
+          ),
+          ListTile(
+            leading: const Icon(Icons.support_agent_outlined),
+            title: Text(l10n.settings_support),
+          ),
           const Divider(),
           ListTile(
             leading: Icon(Icons.logout, color: Theme.of(context).colorScheme.error),
-            title: Text(l10n.common_logout, style: TextStyle(color: Theme.of(context).colorScheme.error)),
+            title: Text(
+              l10n.common_logout,
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
+            ),
             onTap: () => ref.read(authRepositoryProvider).signOut(),
           ),
         ],

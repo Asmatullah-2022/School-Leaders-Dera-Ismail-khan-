@@ -22,7 +22,9 @@ class EmergencyReportDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<EmergencyReportModel?> reportAsync = ref.watch(emergencyReportByIdProvider(reportId));
+    final AsyncValue<EmergencyReportModel?> reportAsync = ref.watch(
+      emergencyReportByIdProvider(reportId),
+    );
     final AppRole? role = ref.watch(currentRoleProvider);
     // Anyone above school level (plus monitoring officers) can drive an
     // emergency to resolution; the reporting school leader cannot close it.
@@ -50,8 +52,10 @@ class EmergencyReportDetailScreen extends ConsumerWidget {
                 ],
               ),
               const SizedBox(height: 8),
-              Text(emergencyStatusLabel(l10n, r.status),
-                  style: Theme.of(context).textTheme.titleMedium),
+              Text(
+                emergencyStatusLabel(l10n, r.status),
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
               const Divider(height: 32),
               Text(l10n.emergency_description, style: Theme.of(context).textTheme.titleSmall),
               const SizedBox(height: 4),
@@ -69,12 +73,17 @@ class EmergencyReportDetailScreen extends ConsumerWidget {
                 _row(context, l10n.emergency_requiredSupport, r.requiredSupport!),
               if (r.contactPersonName != null)
                 _row(context, l10n.emergency_contactPerson, r.contactPersonName!),
-              if (r.contactPhone != null) _row(context, l10n.emergency_contactPhone, r.contactPhone!),
+              if (r.contactPhone != null)
+                _row(context, l10n.emergency_contactPhone, r.contactPhone!),
               if (r.casualties != null) _row(context, l10n.emergency_casualties, '${r.casualties}'),
               if (r.resolutionNotes != null)
                 _row(context, l10n.emergency_resolutionNotes, r.resolutionNotes!),
               if (r.resolvedAt != null)
-                _row(context, l10n.emergency_status_resolved, DateFormat.yMMMd().format(r.resolvedAt!)),
+                _row(
+                  context,
+                  l10n.emergency_status_resolved,
+                  DateFormat.yMMMd().format(r.resolvedAt!),
+                ),
               if (r.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const Divider(height: 32),
                 Text(l10n.common_photos, style: Theme.of(context).textTheme.titleSmall),
@@ -138,11 +147,15 @@ class _StatusActionsState extends ConsumerState<_StatusActions> {
       if (notes == null) return;
     }
     setState(() => _isSaving = true);
-    await ref.read(emergencyReportRepositoryProvider).update(
+    await ref
+        .read(emergencyReportRepositoryProvider)
+        .update(
           widget.report.copyWith(
             status: next,
             resolutionNotes: notes ?? widget.report.resolutionNotes,
-            resolvedAt: next == EmergencyStatus.resolved ? DateTime.now() : widget.report.resolvedAt,
+            resolvedAt: next == EmergencyStatus.resolved
+                ? DateTime.now()
+                : widget.report.resolvedAt,
             updatedAt: DateTime.now(),
           ),
         );

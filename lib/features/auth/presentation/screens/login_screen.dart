@@ -40,10 +40,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       _isSubmitting = true;
       _errorMessage = null;
     });
-    final Result<dynamic> result = await ref.read(authRepositoryProvider).signIn(
-          email: _emailController.text,
-          password: _passwordController.text,
-        );
+    final Result<dynamic> result = await ref
+        .read(authRepositoryProvider)
+        .signIn(email: _emailController.text, password: _passwordController.text);
     if (!mounted) return;
     setState(() => _isSubmitting = false);
     result.when(
@@ -71,7 +70,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          Icon(Icons.school, size: 64, color: Theme.of(context).colorScheme.primary),
+                          Icon(
+                            Icons.school,
+                            size: 64,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           const SizedBox(height: 12),
                           Text(
                             AppConstants.appNameFull,
@@ -79,7 +82,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           const SizedBox(height: 32),
-                          Text(l10n.auth_loginTitle, style: Theme.of(context).textTheme.headlineSmall),
+                          Text(
+                            l10n.auth_loginTitle,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           const SizedBox(height: 20),
                           AppTextField(
                             label: l10n.auth_email,
@@ -101,7 +107,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             child: IconButton(
                               onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
                               icon: Icon(
-                                _obscurePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                                _obscurePassword
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined,
                                 size: 20,
                               ),
                             ),
@@ -110,7 +118,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             alignment: Alignment.centerRight,
                             child: TextButton(
                               onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute<void>(builder: (_) => const ForgotPasswordScreen()),
+                                MaterialPageRoute<void>(
+                                  builder: (_) => const ForgotPasswordScreen(),
+                                ),
                               ),
                               child: Text(l10n.auth_forgotPassword),
                             ),

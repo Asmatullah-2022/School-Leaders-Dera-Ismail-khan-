@@ -14,10 +14,7 @@ final DateFormat _d = DateFormat('yyyy-MM-dd');
 /// One adapter per exportable module: filters the records and flattens them
 /// into a [ReportTable]. Pure functions — no Firestore, no widgets — so the
 /// column definitions and filtering are directly unit testable.
-ReportTable buildAdmissionCampaignTable(
-  List<AdmissionCampaignModel> items,
-  ReportFilter filter,
-) {
+ReportTable buildAdmissionCampaignTable(List<AdmissionCampaignModel> items, ReportFilter filter) {
   final List<AdmissionCampaignModel> filtered = items
       .where((c) => filter.matchesDate(c.date) && filter.matchesSchool(c.schoolId))
       .toList();
@@ -25,12 +22,26 @@ ReportTable buildAdmissionCampaignTable(
     titleEn: 'Admission Campaign Report',
     titleUr: 'داخلہ مہم رپورٹ',
     headersEn: const <String>[
-      'Date', 'Academic Year', 'Target', 'Current', 'Achievement %',
-      'New (Boys)', 'New (Girls)', 'OOSC Identified', 'OOSC Re-enrolled',
+      'Date',
+      'Academic Year',
+      'Target',
+      'Current',
+      'Achievement %',
+      'New (Boys)',
+      'New (Girls)',
+      'OOSC Identified',
+      'OOSC Re-enrolled',
     ],
     headersUr: const <String>[
-      'تاریخ', 'تعلیمی سال', 'ہدف', 'موجودہ', 'حصولی فیصد',
-      'نئے (لڑکے)', 'نئے (لڑکیاں)', 'OOSC نشاندہی', 'OOSC دوبارہ داخل',
+      'تاریخ',
+      'تعلیمی سال',
+      'ہدف',
+      'موجودہ',
+      'حصولی فیصد',
+      'نئے (لڑکے)',
+      'نئے (لڑکیاں)',
+      'OOSC نشاندہی',
+      'OOSC دوبارہ داخل',
     ],
     rows: <List<String>>[
       for (final AdmissionCampaignModel c in filtered)
@@ -57,10 +68,24 @@ ReportTable buildOoscTable(List<OoscRecordModel> items, ReportFilter filter) {
     titleEn: 'Out-of-School Children Report',
     titleUr: 'آؤٹ آف سکول بچوں کی رپورٹ',
     headersEn: const <String>[
-      'Child Name', 'Gender', 'Age', 'Village', 'Guardian', 'Contact', 'Reason', 'Status',
+      'Child Name',
+      'Gender',
+      'Age',
+      'Village',
+      'Guardian',
+      'Contact',
+      'Reason',
+      'Status',
     ],
     headersUr: const <String>[
-      'بچے کا نام', 'جنس', 'عمر', 'گاؤں', 'سرپرست', 'رابطہ', 'وجہ', 'حیثیت',
+      'بچے کا نام',
+      'جنس',
+      'عمر',
+      'گاؤں',
+      'سرپرست',
+      'رابطہ',
+      'وجہ',
+      'حیثیت',
     ],
     rows: <List<String>>[
       for (final OoscRecordModel o in filtered)
@@ -109,11 +134,15 @@ ReportTable buildSchoolProblemTable(List<SchoolProblemModel> items, ReportFilter
     titleEn: 'School Problems Report',
     titleUr: 'سکول مسائل رپورٹ',
     headersEn: const <String>[
-      'Date', 'Title', 'Category', 'Priority', 'Status', 'Assigned To', 'Reported By',
+      'Date',
+      'Title',
+      'Category',
+      'Priority',
+      'Status',
+      'Assigned To',
+      'Reported By',
     ],
-    headersUr: const <String>[
-      'تاریخ', 'عنوان', 'زمرہ', 'ترجیح', 'حیثیت', 'ذمہ دار', 'اطلاع دہندہ',
-    ],
+    headersUr: const <String>['تاریخ', 'عنوان', 'زمرہ', 'ترجیح', 'حیثیت', 'ذمہ دار', 'اطلاع دہندہ'],
     rows: <List<String>>[
       for (final SchoolProblemModel p in filtered)
         <String>[
@@ -137,11 +166,15 @@ ReportTable buildEmergencyTable(List<EmergencyReportModel> items, ReportFilter f
     titleEn: 'Emergency Reports',
     titleUr: 'ہنگامی صورتحال رپورٹس',
     headersEn: const <String>[
-      'Date', 'Type', 'Severity', 'Status', 'Description', 'Reported By', 'Contact',
+      'Date',
+      'Type',
+      'Severity',
+      'Status',
+      'Description',
+      'Reported By',
+      'Contact',
     ],
-    headersUr: const <String>[
-      'تاریخ', 'قسم', 'شدت', 'حیثیت', 'تفصیل', 'اطلاع دہندہ', 'رابطہ',
-    ],
+    headersUr: const <String>['تاریخ', 'قسم', 'شدت', 'حیثیت', 'تفصیل', 'اطلاع دہندہ', 'رابطہ'],
     rows: <List<String>>[
       for (final EmergencyReportModel e in filtered)
         <String>[
@@ -165,12 +198,24 @@ ReportTable buildPtcTable(List<PtcPriorityModel> items, ReportFilter filter) {
     titleEn: 'PTC Priorities Report',
     titleUr: 'PTC ترجیحات رپورٹ',
     headersEn: const <String>[
-      'Meeting Date', 'Rank', 'Priority', 'Category', 'Estimated Cost',
-      'Available Funds', 'Required Funds', 'Status',
+      'Meeting Date',
+      'Rank',
+      'Priority',
+      'Category',
+      'Estimated Cost',
+      'Available Funds',
+      'Required Funds',
+      'Status',
     ],
     headersUr: const <String>[
-      'اجلاس کی تاریخ', 'درجہ', 'ترجیح', 'زمرہ', 'تخمینی لاگت',
-      'دستیاب فنڈز', 'درکار فنڈز', 'حیثیت',
+      'اجلاس کی تاریخ',
+      'درجہ',
+      'ترجیح',
+      'زمرہ',
+      'تخمینی لاگت',
+      'دستیاب فنڈز',
+      'درکار فنڈز',
+      'حیثیت',
     ],
     rows: <List<String>>[
       for (final PtcPriorityModel p in filtered)

@@ -25,7 +25,7 @@ final dashboardStatsProvider = Provider<DashboardStats>((ref) {
       ref.watch(scopedSchoolsProvider).valueOrNull ?? const <SchoolModel>[];
   final List<HierarchyNodeModel> clusters =
       ref.watch(hierarchyAllProvider(HierarchyLevel.cluster)).valueOrNull ??
-          const <HierarchyNodeModel>[];
+      const <HierarchyNodeModel>[];
   final List<OoscRecordModel> oosc =
       ref.watch(scopedOoscRecordsProvider).valueOrNull ?? const <OoscRecordModel>[];
   final List<SchoolProblemModel> problems =

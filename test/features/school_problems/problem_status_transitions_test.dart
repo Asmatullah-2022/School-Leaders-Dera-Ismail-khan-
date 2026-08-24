@@ -21,7 +21,11 @@ void main() {
         AppRole.districtAdmin,
         AppRole.superAdmin,
       ]) {
-        expect(canManageProblemStatus(role), isTrue, reason: '$role should be able to manage status');
+        expect(
+          canManageProblemStatus(role),
+          isTrue,
+          reason: '$role should be able to manage status',
+        );
       }
     });
   });
@@ -40,7 +44,9 @@ void main() {
     });
 
     test('an in-progress problem can only move to resolved', () {
-      expect(nextProblemStatuses(ProblemStatus.inProgress), <ProblemStatus>[ProblemStatus.resolved]);
+      expect(nextProblemStatuses(ProblemStatus.inProgress), <ProblemStatus>[
+        ProblemStatus.resolved,
+      ]);
     });
 
     test('a resolved problem can be closed or reopened to in-progress', () {
@@ -59,7 +65,11 @@ void main() {
 
     test('no state lists itself as a valid next state', () {
       for (final ProblemStatus s in ProblemStatus.values) {
-        expect(nextProblemStatuses(s), isNot(contains(s)), reason: '$s should not transition to itself');
+        expect(
+          nextProblemStatuses(s),
+          isNot(contains(s)),
+          reason: '$s should not transition to itself',
+        );
       }
     });
   });

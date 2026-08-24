@@ -10,20 +10,20 @@ class OoscStatusChip extends StatelessWidget {
   final OoscStatus status;
 
   static String label(AppLocalizations l10n, OoscStatus status) => switch (status) {
-        OoscStatus.identified => l10n.oosc_status_identified,
-        OoscStatus.contacted => l10n.oosc_status_contacted,
-        OoscStatus.counseled => l10n.oosc_status_counseled,
-        OoscStatus.reenrolled => l10n.oosc_status_reenrolled,
-        OoscStatus.notReenrolled => l10n.oosc_status_notReenrolled,
-        OoscStatus.followUpRequired => l10n.oosc_status_followUpRequired,
-      };
+    OoscStatus.identified => l10n.oosc_status_identified,
+    OoscStatus.contacted => l10n.oosc_status_contacted,
+    OoscStatus.counseled => l10n.oosc_status_counseled,
+    OoscStatus.reenrolled => l10n.oosc_status_reenrolled,
+    OoscStatus.notReenrolled => l10n.oosc_status_notReenrolled,
+    OoscStatus.followUpRequired => l10n.oosc_status_followUpRequired,
+  };
 
   static Color color(OoscStatus status) => switch (status) {
-        OoscStatus.reenrolled => AppColors.success,
-        OoscStatus.notReenrolled => AppColors.criticalRed,
-        OoscStatus.followUpRequired => AppColors.warningAmber,
-        OoscStatus.identified || OoscStatus.contacted || OoscStatus.counseled => AppColors.infoBlue,
-      };
+    OoscStatus.reenrolled => AppColors.success,
+    OoscStatus.notReenrolled => AppColors.criticalRed,
+    OoscStatus.followUpRequired => AppColors.warningAmber,
+    OoscStatus.identified || OoscStatus.contacted || OoscStatus.counseled => AppColors.infoBlue,
+  };
 
   @override
   Widget build(BuildContext context) {

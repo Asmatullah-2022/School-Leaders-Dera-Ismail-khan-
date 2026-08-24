@@ -16,7 +16,9 @@ void main() {
     }
   });
 
-  testWidgets('App boots to the first-run setup screen without throwing', (WidgetTester tester) async {
+  testWidgets('App boots to the first-run setup screen without throwing', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const ProviderScope(child: SchoolLeaderApp()));
     await tester.pumpAndSettle();
 

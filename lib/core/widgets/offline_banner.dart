@@ -20,9 +20,7 @@ class OfflineBanner extends ConsumerWidget {
     if (isOnline && pending == 0) return const SizedBox.shrink();
 
     final Color background = isOnline ? AppColors.warningAmber : AppColors.neutralGrayDark;
-    final String text = !isOnline
-        ? l10n.common_noInternet
-        : l10n.sync_pendingBanner(pending);
+    final String text = !isOnline ? l10n.common_noInternet : l10n.sync_pendingBanner(pending);
 
     return Container(
       width: double.infinity,
@@ -37,7 +35,11 @@ class OfflineBanner extends ConsumerWidget {
           Flexible(
             child: Text(
               text,
-              style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
               textAlign: TextAlign.center,
             ),
           ),

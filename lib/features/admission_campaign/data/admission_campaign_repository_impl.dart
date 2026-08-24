@@ -12,11 +12,11 @@ import 'models/admission_campaign_model.dart';
 /// modules once they're ready for a full UI.
 class AdmissionCampaignRepositoryImpl implements AdmissionCampaignRepository {
   AdmissionCampaignRepositoryImpl(this._firestore)
-      : _writer = OfflineWriteHelper(
-          firestore: _firestore,
-          collectionName: FirestorePaths.admissionCampaigns,
-          dateFields: AdmissionCampaignModel.dateFields,
-        );
+    : _writer = OfflineWriteHelper(
+        firestore: _firestore,
+        collectionName: FirestorePaths.admissionCampaigns,
+        dateFields: AdmissionCampaignModel.dateFields,
+      );
 
   final FirebaseFirestore _firestore;
   final OfflineWriteHelper _writer;
@@ -26,12 +26,14 @@ class AdmissionCampaignRepositoryImpl implements AdmissionCampaignRepository {
 
   @override
   Stream<List<AdmissionCampaignModel>> watchByScope(ScopeFilter filter) {
-    final Query<Map<String, dynamic>> query = filter.apply(_collection).orderBy('date', descending: true);
+    final Query<Map<String, dynamic>> query = filter
+        .apply(_collection)
+        .orderBy('date', descending: true);
     return query.snapshots().map(
-          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
-              .map((doc) => AdmissionCampaignModel.fromJson(firestoreDataToJson(doc.data())))
-              .toList(),
-        );
+      (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+          .map((doc) => AdmissionCampaignModel.fromJson(firestoreDataToJson(doc.data())))
+          .toList(),
+    );
   }
 
   @override

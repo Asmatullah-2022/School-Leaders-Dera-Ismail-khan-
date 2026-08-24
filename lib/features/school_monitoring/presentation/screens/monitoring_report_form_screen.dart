@@ -63,9 +63,11 @@ class _MonitoringReportFormScreenState extends ConsumerState<MonitoringReportFor
     final AppLocalizations l10n = AppLocalizations.of(context);
     setState(() => _schoolTouched = true);
     final bool allCriteriaTouched = _touched.length == _scores.length;
-    if (_selectedSchool == null || (status == MonitoringReportStatus.submitted && !allCriteriaTouched)) {
+    if (_selectedSchool == null ||
+        (status == MonitoringReportStatus.submitted && !allCriteriaTouched)) {
       if (!allCriteriaTouched && status == MonitoringReportStatus.submitted) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.validation_required)));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(l10n.validation_required)));
       }
       setState(() {});
       return;
@@ -125,7 +127,9 @@ class _MonitoringReportFormScreenState extends ConsumerState<MonitoringReportFor
               SchoolPicker(
                 selectedSchoolId: _selectedSchool?.id,
                 onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-                errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+                errorText: (_schoolTouched && _selectedSchool == null)
+                    ? l10n.validation_required
+                    : null,
               ),
               const SizedBox(height: 12),
               InkWell(
@@ -151,12 +155,16 @@ class _MonitoringReportFormScreenState extends ConsumerState<MonitoringReportFor
                   onChanged: (double v) => setState(() {
                     _touched.add(c.criterionId);
                     _scores = _scores
-                        .map((s) => s.criterionId == c.criterionId ? s.copyWith(achievedScore: v) : s)
+                        .map(
+                          (s) => s.criterionId == c.criterionId ? s.copyWith(achievedScore: v) : s,
+                        )
                         .toList();
                   }),
                 ),
               const SizedBox(height: 16),
-              Center(child: GradeBadge(grade: result.grade, score: result.totalScore)),
+              Center(
+                child: GradeBadge(grade: result.grade, score: result.totalScore),
+              ),
               const SizedBox(height: 20),
               AppTextField(label: l10n.common_remarks, controller: _remarks, maxLines: 3),
               const SizedBox(height: 20),
@@ -176,9 +184,15 @@ class _MonitoringReportFormScreenState extends ConsumerState<MonitoringReportFor
                   const SizedBox(width: 12),
                   Expanded(
                     child: FilledButton(
-                      onPressed: _isSubmitting ? null : () => _submit(MonitoringReportStatus.submitted),
+                      onPressed: _isSubmitting
+                          ? null
+                          : () => _submit(MonitoringReportStatus.submitted),
                       child: _isSubmitting
-                          ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                          ? const SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
                           : Text(l10n.common_submit),
                     ),
                   ),

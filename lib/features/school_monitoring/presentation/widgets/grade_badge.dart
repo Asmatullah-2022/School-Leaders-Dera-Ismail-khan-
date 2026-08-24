@@ -10,20 +10,20 @@ class GradeBadge extends StatelessWidget {
   final double score;
 
   static String label(AppLocalizations l10n, String grade) => switch (grade) {
-        'excellent' => l10n.monitoring_grade_excellent,
-        'veryGood' => l10n.monitoring_grade_veryGood,
-        'good' => l10n.monitoring_grade_good,
-        'needsImprovement' => l10n.monitoring_grade_needsImprovement,
-        _ => l10n.monitoring_grade_critical,
-      };
+    'excellent' => l10n.monitoring_grade_excellent,
+    'veryGood' => l10n.monitoring_grade_veryGood,
+    'good' => l10n.monitoring_grade_good,
+    'needsImprovement' => l10n.monitoring_grade_needsImprovement,
+    _ => l10n.monitoring_grade_critical,
+  };
 
   static Color color(String grade) => switch (grade) {
-        'excellent' => AppColors.success,
-        'veryGood' => AppColors.primaryGreen,
-        'good' => AppColors.infoBlue,
-        'needsImprovement' => AppColors.warningAmber,
-        _ => AppColors.criticalRed,
-      };
+    'excellent' => AppColors.success,
+    'veryGood' => AppColors.primaryGreen,
+    'good' => AppColors.infoBlue,
+    'needsImprovement' => AppColors.warningAmber,
+    _ => AppColors.criticalRed,
+  };
 
   @override
   Widget build(BuildContext context) {

@@ -28,9 +28,8 @@ class OfficialUpdatesScreen extends ConsumerWidget {
       title: l10n.more_officialUpdates,
       floatingActionButton: isAdmin
           ? FloatingActionButton.extended(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const OfficialUpdateFormScreen()),
-              ),
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute<void>(builder: (_) => const OfficialUpdateFormScreen())),
               icon: const Icon(Icons.add),
               label: Text(l10n.update_addUpdate),
             )
@@ -53,10 +52,10 @@ class OfficialUpdatesScreen extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(16),
                   onTap: isAdmin
                       ? () => Navigator.of(context).push(
-                            MaterialPageRoute<void>(
-                              builder: (_) => OfficialUpdateFormScreen(existing: u),
-                            ),
-                          )
+                          MaterialPageRoute<void>(
+                            builder: (_) => OfficialUpdateFormScreen(existing: u),
+                          ),
+                        )
                       : null,
                   child: Padding(
                     padding: const EdgeInsets.all(14),
@@ -70,7 +69,10 @@ class OfficialUpdatesScreen extends ConsumerWidget {
                             ),
                             if (!u.isPublished)
                               Chip(
-                                label: Text(l10n.update_draft, style: const TextStyle(fontSize: 11)),
+                                label: Text(
+                                  l10n.update_draft,
+                                  style: const TextStyle(fontSize: 11),
+                                ),
                                 visualDensity: VisualDensity.compact,
                               ),
                           ],

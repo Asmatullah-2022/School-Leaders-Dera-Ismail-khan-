@@ -10,6 +10,7 @@ enum MeetingStatus { pending, inProgress, completed }
 abstract class ClusterMeetingModel with _$ClusterMeetingModel {
   const factory ClusterMeetingModel({
     required String id,
+
     /// Cluster meetings are scoped at cluster level; [schoolId] stays null so
     /// the shared ScopeFilter resolves them for everyone in the cluster.
     String? schoolId,

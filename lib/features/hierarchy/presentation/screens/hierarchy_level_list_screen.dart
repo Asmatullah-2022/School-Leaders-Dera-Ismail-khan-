@@ -21,18 +21,18 @@ class HierarchyLevelListScreen extends ConsumerWidget {
   final HierarchyLevel level;
 
   String _title(AppLocalizations l10n) => switch (level) {
-        HierarchyLevel.district => l10n.hierarchy_districts,
-        HierarchyLevel.subDivision => l10n.hierarchy_subDivisions,
-        HierarchyLevel.circle => l10n.hierarchy_circles,
-        HierarchyLevel.cluster => l10n.hierarchy_clusters,
-      };
+    HierarchyLevel.district => l10n.hierarchy_districts,
+    HierarchyLevel.subDivision => l10n.hierarchy_subDivisions,
+    HierarchyLevel.circle => l10n.hierarchy_circles,
+    HierarchyLevel.cluster => l10n.hierarchy_clusters,
+  };
 
   String _addLabel(AppLocalizations l10n) => switch (level) {
-        HierarchyLevel.district => l10n.hierarchy_addDistrict,
-        HierarchyLevel.subDivision => l10n.hierarchy_addSubDivision,
-        HierarchyLevel.circle => l10n.hierarchy_addCircle,
-        HierarchyLevel.cluster => l10n.hierarchy_addCluster,
-      };
+    HierarchyLevel.district => l10n.hierarchy_addDistrict,
+    HierarchyLevel.subDivision => l10n.hierarchy_addSubDivision,
+    HierarchyLevel.circle => l10n.hierarchy_addCircle,
+    HierarchyLevel.cluster => l10n.hierarchy_addCluster,
+  };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -42,9 +42,8 @@ class HierarchyLevelListScreen extends ConsumerWidget {
     return AppScaffold(
       title: _title(l10n),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => HierarchyLevelFormScreen(level: level)),
-        ),
+        onPressed: () => Navigator.of(context)
+            .push(MaterialPageRoute<void>(builder: (_) => HierarchyLevelFormScreen(level: level))),
         icon: const Icon(Icons.add),
         label: Text(_addLabel(l10n)),
       ),
@@ -69,8 +68,12 @@ class HierarchyLevelListScreen extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Chip(
-                        label: Text(node.isActive ? l10n.hierarchy_active : l10n.hierarchy_inactive),
-                        backgroundColor: node.isActive ? null : Theme.of(context).colorScheme.errorContainer,
+                        label: Text(
+                          node.isActive ? l10n.hierarchy_active : l10n.hierarchy_inactive,
+                        ),
+                        backgroundColor: node.isActive
+                            ? null
+                            : Theme.of(context).colorScheme.errorContainer,
                       ),
                       IconButton(
                         icon: const Icon(Icons.edit_outlined),

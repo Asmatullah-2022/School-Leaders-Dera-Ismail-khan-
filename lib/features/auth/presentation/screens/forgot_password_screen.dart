@@ -34,8 +34,9 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
       _isSubmitting = true;
       _message = null;
     });
-    final Result<void> result =
-        await ref.read(authRepositoryProvider).sendPasswordResetEmail(_emailController.text);
+    final Result<void> result = await ref
+        .read(authRepositoryProvider)
+        .sendPasswordResetEmail(_emailController.text);
     if (!mounted) return;
     setState(() {
       _isSubmitting = false;
@@ -66,8 +67,8 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
                 validator: (v) => Validators.email(v) == null
                     ? null
                     : (Validators.email(v) == 'validation_required'
-                        ? l10n.validation_required
-                        : l10n.validation_invalidEmail),
+                          ? l10n.validation_required
+                          : l10n.validation_invalidEmail),
               ),
               if (_message != null) ...<Widget>[
                 const SizedBox(height: 12),

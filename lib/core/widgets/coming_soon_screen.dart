@@ -22,7 +22,11 @@ class ComingSoonScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Icon(Icons.hourglass_top_outlined, size: 56, color: Theme.of(context).colorScheme.outline),
+              Icon(
+                Icons.hourglass_top_outlined,
+                size: 56,
+                color: Theme.of(context).colorScheme.outline,
+              ),
               const SizedBox(height: 16),
               Text(l10n.common_comingSoon, textAlign: TextAlign.center),
             ],

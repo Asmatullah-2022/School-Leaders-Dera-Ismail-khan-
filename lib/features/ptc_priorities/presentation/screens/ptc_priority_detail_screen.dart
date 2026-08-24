@@ -50,8 +50,10 @@ class PtcPriorityDetailScreen extends ConsumerWidget {
                 children: <Widget>[
                   CircleAvatar(
                     backgroundColor: ptcStatusColor(p.status),
-                    child: Text('${p.rank}',
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      '${p.rank}',
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
