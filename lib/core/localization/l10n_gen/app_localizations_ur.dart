@@ -1140,4 +1140,69 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get ptc_category_other => 'دیگر';
+
+  @override
+  String get reports_title => 'رپورٹس سینٹر';
+
+  @override
+  String get reports_selectModule => 'رپورٹ';
+
+  @override
+  String get reports_language => 'رپورٹ کی زبان';
+
+  @override
+  String get reports_language_english => 'English';
+
+  @override
+  String get reports_language_urdu => 'اردو';
+
+  @override
+  String get reports_language_bilingual => 'دو لسانی';
+
+  @override
+  String get reports_fromDate => 'تاریخ سے';
+
+  @override
+  String get reports_toDate => 'تاریخ تک';
+
+  @override
+  String get reports_allSchools => 'میرے دائرہ کار کے تمام سکول';
+
+  @override
+  String get reports_preview => 'پیش نظارہ';
+
+  @override
+  String reports_recordCount(int count) {
+    return '$count ریکارڈز';
+  }
+
+  @override
+  String get reports_exportPdf => 'PDF ایکسپورٹ';
+
+  @override
+  String get reports_exportCsv => 'CSV ایکسپورٹ';
+
+  @override
+  String get reports_noData => 'ان فلٹرز کے مطابق کوئی ریکارڈ نہیں';
+
+  @override
+  String get reports_exportFailed => 'ایکسپورٹ مکمل نہیں ہو سکا';
+
+  @override
+  String get reports_module_admission => 'داخلہ مہمات';
+
+  @override
+  String get reports_module_oosc => 'آؤٹ آف سکول بچے';
+
+  @override
+  String get reports_module_monitoring => 'سکول نگرانی';
+
+  @override
+  String get reports_module_problems => 'سکول مسائل';
+
+  @override
+  String get reports_module_emergency => 'ہنگامی رپورٹس';
+
+  @override
+  String get reports_module_ptc => 'PTC ترجیحات';
 }

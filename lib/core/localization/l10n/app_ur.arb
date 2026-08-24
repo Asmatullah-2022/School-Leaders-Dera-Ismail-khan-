@@ -407,5 +407,30 @@
   "ptc_category_cleanliness": "صفائی ستھرائی",
   "ptc_category_plantation": "شجر کاری",
   "ptc_category_learningMaterials": "تدریسی مواد",
-  "ptc_category_other": "دیگر"
+  "ptc_category_other": "دیگر",
+
+  "reports_title": "رپورٹس سینٹر",
+  "reports_selectModule": "رپورٹ",
+  "reports_language": "رپورٹ کی زبان",
+  "reports_language_english": "English",
+  "reports_language_urdu": "اردو",
+  "reports_language_bilingual": "دو لسانی",
+  "reports_fromDate": "تاریخ سے",
+  "reports_toDate": "تاریخ تک",
+  "reports_allSchools": "میرے دائرہ کار کے تمام سکول",
+  "reports_preview": "پیش نظارہ",
+  "reports_recordCount": "{count} ریکارڈز",
+  "@reports_recordCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "reports_exportPdf": "PDF ایکسپورٹ",
+  "reports_exportCsv": "CSV ایکسپورٹ",
+  "reports_noData": "ان فلٹرز کے مطابق کوئی ریکارڈ نہیں",
+  "reports_exportFailed": "ایکسپورٹ مکمل نہیں ہو سکا",
+  "reports_module_admission": "داخلہ مہمات",
+  "reports_module_oosc": "آؤٹ آف سکول بچے",
+  "reports_module_monitoring": "سکول نگرانی",
+  "reports_module_problems": "سکول مسائل",
+  "reports_module_emergency": "ہنگامی رپورٹس",
+  "reports_module_ptc": "PTC ترجیحات"
 }

@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/admission_campaign/presentation/screens/admission_campaign_form_screen.dart';
 import '../../features/admission_campaign/presentation/screens/admission_campaign_list_screen.dart';
+import '../../features/admission_campaign/presentation/screens/oosc_form_screen.dart';
+import '../../features/admission_campaign/presentation/screens/oosc_list_screen.dart';
 import '../../features/auth/domain/entities/app_user.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
@@ -18,6 +20,7 @@ import '../../features/onboarding/presentation/screens/setup_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/ptc_priorities/presentation/screens/ptc_priority_form_screen.dart';
 import '../../features/ptc_priorities/presentation/screens/ptc_priority_list_screen.dart';
+import '../../features/reports_center/presentation/screens/reports_center_screen.dart';
 import '../../features/school_monitoring/presentation/screens/monitoring_report_form_screen.dart';
 import '../../features/school_monitoring/presentation/screens/scoring_config_admin_screen.dart';
 import '../../features/school_problems/presentation/screens/school_problem_form_screen.dart';
@@ -101,9 +104,8 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 
       GoRoute(path: RoutePaths.admission, builder: (context, state) => const AdmissionCampaignListScreen()),
       GoRoute(path: RoutePaths.admissionForm, builder: (context, state) => const AdmissionCampaignFormScreen()),
-      _placeholder(RoutePaths.oosc, (l) => l.dashboard_oosc),
-      _placeholder(RoutePaths.ooscForm, (l) => l.dashboard_oosc),
-      _placeholder(RoutePaths.ooscDetail, (l) => l.dashboard_oosc),
+      GoRoute(path: RoutePaths.oosc, builder: (context, state) => const OoscListScreen()),
+      GoRoute(path: RoutePaths.ooscForm, builder: (context, state) => const OoscFormScreen()),
 
       GoRoute(
         path: RoutePaths.monitoringForm,
@@ -136,8 +138,7 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(path: RoutePaths.ptc, builder: (context, state) => const PtcPriorityListScreen()),
       GoRoute(path: RoutePaths.ptcForm, builder: (context, state) => const PtcPriorityFormScreen()),
 
-      _placeholder(RoutePaths.reportsFilter, (l) => l.nav_reports),
-      _placeholder(RoutePaths.reportPreview, (l) => l.nav_reports),
+      GoRoute(path: RoutePaths.reports, builder: (context, state) => const ReportsCenterScreen()),
 
       _placeholder(RoutePaths.adminUsers, (l) => l.more_adminManagement),
       _placeholder(RoutePaths.adminUserForm, (l) => l.more_adminManagement),

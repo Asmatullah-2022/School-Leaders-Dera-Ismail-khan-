@@ -2335,6 +2335,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get ptc_category_other;
+
+  /// No description provided for @reports_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports Center'**
+  String get reports_title;
+
+  /// No description provided for @reports_selectModule.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get reports_selectModule;
+
+  /// No description provided for @reports_language.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Language'**
+  String get reports_language;
+
+  /// No description provided for @reports_language_english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get reports_language_english;
+
+  /// No description provided for @reports_language_urdu.
+  ///
+  /// In en, this message translates to:
+  /// **'اردو'**
+  String get reports_language_urdu;
+
+  /// No description provided for @reports_language_bilingual.
+  ///
+  /// In en, this message translates to:
+  /// **'Bilingual'**
+  String get reports_language_bilingual;
+
+  /// No description provided for @reports_fromDate.
+  ///
+  /// In en, this message translates to:
+  /// **'From Date'**
+  String get reports_fromDate;
+
+  /// No description provided for @reports_toDate.
+  ///
+  /// In en, this message translates to:
+  /// **'To Date'**
+  String get reports_toDate;
+
+  /// No description provided for @reports_allSchools.
+  ///
+  /// In en, this message translates to:
+  /// **'All schools in my scope'**
+  String get reports_allSchools;
+
+  /// No description provided for @reports_preview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get reports_preview;
+
+  /// No description provided for @reports_recordCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} record(s)'**
+  String reports_recordCount(int count);
+
+  /// No description provided for @reports_exportPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Export PDF'**
+  String get reports_exportPdf;
+
+  /// No description provided for @reports_exportCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'Export CSV'**
+  String get reports_exportCsv;
+
+  /// No description provided for @reports_noData.
+  ///
+  /// In en, this message translates to:
+  /// **'No records match these filters'**
+  String get reports_noData;
+
+  /// No description provided for @reports_exportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Export could not be completed'**
+  String get reports_exportFailed;
+
+  /// No description provided for @reports_module_admission.
+  ///
+  /// In en, this message translates to:
+  /// **'Admission Campaigns'**
+  String get reports_module_admission;
+
+  /// No description provided for @reports_module_oosc.
+  ///
+  /// In en, this message translates to:
+  /// **'Out-of-School Children'**
+  String get reports_module_oosc;
+
+  /// No description provided for @reports_module_monitoring.
+  ///
+  /// In en, this message translates to:
+  /// **'School Monitoring'**
+  String get reports_module_monitoring;
+
+  /// No description provided for @reports_module_problems.
+  ///
+  /// In en, this message translates to:
+  /// **'School Problems'**
+  String get reports_module_problems;
+
+  /// No description provided for @reports_module_emergency.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Reports'**
+  String get reports_module_emergency;
+
+  /// No description provided for @reports_module_ptc.
+  ///
+  /// In en, this message translates to:
+  /// **'PTC Priorities'**
+  String get reports_module_ptc;
 }
 
 class _AppLocalizationsDelegate

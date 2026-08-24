@@ -407,5 +407,30 @@
   "ptc_category_cleanliness": "Cleanliness",
   "ptc_category_plantation": "Plantation",
   "ptc_category_learningMaterials": "Learning Materials",
-  "ptc_category_other": "Other"
+  "ptc_category_other": "Other",
+
+  "reports_title": "Reports Center",
+  "reports_selectModule": "Report",
+  "reports_language": "Report Language",
+  "reports_language_english": "English",
+  "reports_language_urdu": "اردو",
+  "reports_language_bilingual": "Bilingual",
+  "reports_fromDate": "From Date",
+  "reports_toDate": "To Date",
+  "reports_allSchools": "All schools in my scope",
+  "reports_preview": "Preview",
+  "reports_recordCount": "{count} record(s)",
+  "@reports_recordCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "reports_exportPdf": "Export PDF",
+  "reports_exportCsv": "Export CSV",
+  "reports_noData": "No records match these filters",
+  "reports_exportFailed": "Export could not be completed",
+  "reports_module_admission": "Admission Campaigns",
+  "reports_module_oosc": "Out-of-School Children",
+  "reports_module_monitoring": "School Monitoring",
+  "reports_module_problems": "School Problems",
+  "reports_module_emergency": "Emergency Reports",
+  "reports_module_ptc": "PTC Priorities"
 }

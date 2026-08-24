@@ -1138,4 +1138,69 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ptc_category_other => 'Other';
+
+  @override
+  String get reports_title => 'Reports Center';
+
+  @override
+  String get reports_selectModule => 'Report';
+
+  @override
+  String get reports_language => 'Report Language';
+
+  @override
+  String get reports_language_english => 'English';
+
+  @override
+  String get reports_language_urdu => 'اردو';
+
+  @override
+  String get reports_language_bilingual => 'Bilingual';
+
+  @override
+  String get reports_fromDate => 'From Date';
+
+  @override
+  String get reports_toDate => 'To Date';
+
+  @override
+  String get reports_allSchools => 'All schools in my scope';
+
+  @override
+  String get reports_preview => 'Preview';
+
+  @override
+  String reports_recordCount(int count) {
+    return '$count record(s)';
+  }
+
+  @override
+  String get reports_exportPdf => 'Export PDF';
+
+  @override
+  String get reports_exportCsv => 'Export CSV';
+
+  @override
+  String get reports_noData => 'No records match these filters';
+
+  @override
+  String get reports_exportFailed => 'Export could not be completed';
+
+  @override
+  String get reports_module_admission => 'Admission Campaigns';
+
+  @override
+  String get reports_module_oosc => 'Out-of-School Children';
+
+  @override
+  String get reports_module_monitoring => 'School Monitoring';
+
+  @override
+  String get reports_module_problems => 'School Problems';
+
+  @override
+  String get reports_module_emergency => 'Emergency Reports';
+
+  @override
+  String get reports_module_ptc => 'PTC Priorities';
 }

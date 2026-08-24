@@ -86,6 +86,11 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  # Bundled (not CDN-fetched) so bilingual PDF export keeps working offline,
+  # which is a core requirement for field use in low-connectivity areas.
+  assets:
+    - assets/fonts/
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
