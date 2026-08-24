@@ -10,6 +10,7 @@ import '../../../../core/widgets/stat_card.dart';
 import '../../../auth/domain/entities/app_user.dart';
 import '../../../auth/presentation/providers/auth_providers.dart';
 import '../../../notifications/presentation/screens/notification_list_screen.dart';
+import '../../domain/entities/dashboard_stats.dart';
 import '../providers/dashboard_providers.dart';
 
 class HomeDashboardScreen extends ConsumerWidget {
@@ -20,7 +21,7 @@ class HomeDashboardScreen extends ConsumerWidget {
     final AppLocalizations l10n = AppLocalizations.of(context);
     final AsyncValue<AppUser?> userAsync = ref.watch(currentUserProvider);
     final AppUser? user = userAsync.valueOrNull;
-    final dashboardStats = ref.watch(dashboardStatsProvider);
+    final DashboardStats stats = ref.watch(dashboardStatsProvider);
 
     return CustomScrollView(
       slivers: <Widget>[
@@ -75,34 +76,44 @@ class HomeDashboardScreen extends ConsumerWidget {
                 children: <Widget>[
                   StatCard(
                     label: l10n.dashboard_totalSchools,
-                    value: dashboardStats.valueOrNull?.totalSchools.toString() ?? '—',
+                    value: stats.totalSchools.toString(),
                     icon: Icons.apartment_outlined,
                   ),
                   StatCard(
                     label: l10n.dashboard_totalClusters,
-                    value: dashboardStats.valueOrNull?.totalClusters.toString() ?? '—',
+                    value: stats.totalClusters.toString(),
                     icon: Icons.hub_outlined,
                   ),
                   StatCard(
                     label: l10n.dashboard_totalEnrollment,
-                    value: dashboardStats.valueOrNull?.totalEnrollment.toString() ?? '—',
+                    value: stats.totalEnrollment.toString(),
                     icon: Icons.groups_outlined,
                   ),
                   StatCard(
+                    label: l10n.dashboard_newAdmissions,
+                    value: stats.newAdmissions.toString(),
+                    icon: Icons.how_to_reg_outlined,
+                  ),
+                  StatCard(
                     label: l10n.dashboard_oosc,
-                    value: dashboardStats.valueOrNull?.ooscCount.toString() ?? '—',
+                    value: stats.ooscCount.toString(),
                     icon: Icons.person_search_outlined,
                     color: Theme.of(context).colorScheme.tertiary,
                   ),
                   StatCard(
+                    label: l10n.dashboard_functionalSchools,
+                    value: stats.functionalSchools.toString(),
+                    icon: Icons.check_circle_outline,
+                  ),
+                  StatCard(
                     label: l10n.dashboard_schoolsNeedingAttention,
-                    value: dashboardStats.valueOrNull?.schoolsNeedingAttention.toString() ?? '—',
+                    value: stats.schoolsNeedingAttention.toString(),
                     icon: Icons.warning_amber_outlined,
                     color: Colors.red,
                   ),
                   StatCard(
                     label: l10n.dashboard_pendingReports,
-                    value: dashboardStats.valueOrNull?.pendingReports.toString() ?? '—',
+                    value: stats.pendingReports.toString(),
                     icon: Icons.pending_actions_outlined,
                   ),
                 ],
