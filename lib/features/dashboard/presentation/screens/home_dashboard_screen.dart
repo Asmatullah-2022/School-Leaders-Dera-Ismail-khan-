@@ -9,6 +9,7 @@ import '../../../../core/routing/route_names.dart';
 import '../../../../core/widgets/stat_card.dart';
 import '../../../auth/domain/entities/app_user.dart';
 import '../../../auth/presentation/providers/auth_providers.dart';
+import '../../../notifications/presentation/providers/notification_providers.dart';
 import '../../../notifications/presentation/screens/notification_list_screen.dart';
 import '../../domain/entities/dashboard_stats.dart';
 import '../providers/dashboard_providers.dart';
@@ -22,6 +23,9 @@ class HomeDashboardScreen extends ConsumerWidget {
     final AsyncValue<AppUser?> userAsync = ref.watch(currentUserProvider);
     final AppUser? user = userAsync.valueOrNull;
     final DashboardStats stats = ref.watch(dashboardStatsProvider);
+    final int unread = ref.watch(unreadNotificationCountProvider);
+    // Registers this device for push once a user is signed in.
+    ref.watch(fcmRegistrationProvider);
 
     return CustomScrollView(
       slivers: <Widget>[
@@ -30,7 +34,11 @@ class HomeDashboardScreen extends ConsumerWidget {
           expandedHeight: 128,
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.notifications_outlined),
+              icon: Badge(
+                isLabelVisible: unread > 0,
+                label: Text('$unread'),
+                child: const Icon(Icons.notifications_outlined),
+              ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute<void>(builder: (_) => const NotificationListScreen()),
               ),

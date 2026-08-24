@@ -2461,6 +2461,300 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'PTC Priorities'**
   String get reports_module_ptc;
+
+  /// No description provided for @update_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get update_title;
+
+  /// No description provided for @update_titleUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Title (Urdu)'**
+  String get update_titleUrdu;
+
+  /// No description provided for @update_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get update_description;
+
+  /// No description provided for @update_descriptionUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (Urdu)'**
+  String get update_descriptionUrdu;
+
+  /// No description provided for @update_category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get update_category;
+
+  /// No description provided for @update_priority.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority'**
+  String get update_priority;
+
+  /// No description provided for @update_audience.
+  ///
+  /// In en, this message translates to:
+  /// **'Target Audience'**
+  String get update_audience;
+
+  /// No description provided for @update_publishDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Publish Date'**
+  String get update_publishDate;
+
+  /// No description provided for @update_eventDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Date'**
+  String get update_eventDate;
+
+  /// No description provided for @update_published.
+  ///
+  /// In en, this message translates to:
+  /// **'Published'**
+  String get update_published;
+
+  /// No description provided for @update_draft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get update_draft;
+
+  /// No description provided for @update_publish.
+  ///
+  /// In en, this message translates to:
+  /// **'Publish'**
+  String get update_publish;
+
+  /// No description provided for @update_unpublish.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpublish'**
+  String get update_unpublish;
+
+  /// No description provided for @update_addUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'New Official Update'**
+  String get update_addUpdate;
+
+  /// No description provided for @update_noUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'No official updates yet'**
+  String get update_noUpdates;
+
+  /// No description provided for @update_deleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this official update?'**
+  String get update_deleteConfirm;
+
+  /// No description provided for @update_category_announcement.
+  ///
+  /// In en, this message translates to:
+  /// **'Announcement'**
+  String get update_category_announcement;
+
+  /// No description provided for @update_category_circular.
+  ///
+  /// In en, this message translates to:
+  /// **'Circular'**
+  String get update_category_circular;
+
+  /// No description provided for @update_category_notification.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification'**
+  String get update_category_notification;
+
+  /// No description provided for @update_category_campaign.
+  ///
+  /// In en, this message translates to:
+  /// **'Campaign'**
+  String get update_category_campaign;
+
+  /// No description provided for @update_category_training.
+  ///
+  /// In en, this message translates to:
+  /// **'Training'**
+  String get update_category_training;
+
+  /// No description provided for @update_category_meeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Meeting'**
+  String get update_category_meeting;
+
+  /// No description provided for @update_category_importantDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Important Date'**
+  String get update_category_importantDate;
+
+  /// No description provided for @update_category_educationInitiative.
+  ///
+  /// In en, this message translates to:
+  /// **'Education Initiative'**
+  String get update_category_educationInitiative;
+
+  /// No description provided for @update_priority_normal.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal'**
+  String get update_priority_normal;
+
+  /// No description provided for @update_priority_important.
+  ///
+  /// In en, this message translates to:
+  /// **'Important'**
+  String get update_priority_important;
+
+  /// No description provided for @update_priority_urgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent'**
+  String get update_priority_urgent;
+
+  /// No description provided for @update_audience_all.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyone'**
+  String get update_audience_all;
+
+  /// No description provided for @update_audience_schoolLeaders.
+  ///
+  /// In en, this message translates to:
+  /// **'School Leaders'**
+  String get update_audience_schoolLeaders;
+
+  /// No description provided for @update_audience_monitoringOfficers.
+  ///
+  /// In en, this message translates to:
+  /// **'Monitoring Officers'**
+  String get update_audience_monitoringOfficers;
+
+  /// No description provided for @update_audience_admins.
+  ///
+  /// In en, this message translates to:
+  /// **'Administrators'**
+  String get update_audience_admins;
+
+  /// No description provided for @audit_noEntries.
+  ///
+  /// In en, this message translates to:
+  /// **'No audit entries'**
+  String get audit_noEntries;
+
+  /// No description provided for @audit_actor.
+  ///
+  /// In en, this message translates to:
+  /// **'User'**
+  String get audit_actor;
+
+  /// No description provided for @audit_action.
+  ///
+  /// In en, this message translates to:
+  /// **'Action'**
+  String get audit_action;
+
+  /// No description provided for @audit_record.
+  ///
+  /// In en, this message translates to:
+  /// **'Record'**
+  String get audit_record;
+
+  /// No description provided for @audit_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Date & Time'**
+  String get audit_time;
+
+  /// No description provided for @audit_readOnlyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Audit entries are written by the server and cannot be edited.'**
+  String get audit_readOnlyNote;
+
+  /// No description provided for @audit_action_login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get audit_action_login;
+
+  /// No description provided for @audit_action_logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get audit_action_logout;
+
+  /// No description provided for @audit_action_create.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get audit_action_create;
+
+  /// No description provided for @audit_action_update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get audit_action_update;
+
+  /// No description provided for @audit_action_delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get audit_action_delete;
+
+  /// No description provided for @audit_action_submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get audit_action_submit;
+
+  /// No description provided for @audit_action_approve.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve'**
+  String get audit_action_approve;
+
+  /// No description provided for @audit_action_reject.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject'**
+  String get audit_action_reject;
+
+  /// No description provided for @audit_action_returned.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned'**
+  String get audit_action_returned;
+
+  /// No description provided for @audit_action_roleChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Role Change'**
+  String get audit_action_roleChange;
+
+  /// No description provided for @audit_action_export.
+  ///
+  /// In en, this message translates to:
+  /// **'Export'**
+  String get audit_action_export;
+
+  /// No description provided for @notifications_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications yet'**
+  String get notifications_empty;
 }
 
 class _AppLocalizationsDelegate

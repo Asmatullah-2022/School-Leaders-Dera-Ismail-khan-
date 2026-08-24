@@ -1203,4 +1203,152 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reports_module_ptc => 'PTC Priorities';
+
+  @override
+  String get update_title => 'Title';
+
+  @override
+  String get update_titleUrdu => 'Title (Urdu)';
+
+  @override
+  String get update_description => 'Description';
+
+  @override
+  String get update_descriptionUrdu => 'Description (Urdu)';
+
+  @override
+  String get update_category => 'Category';
+
+  @override
+  String get update_priority => 'Priority';
+
+  @override
+  String get update_audience => 'Target Audience';
+
+  @override
+  String get update_publishDate => 'Publish Date';
+
+  @override
+  String get update_eventDate => 'Event Date';
+
+  @override
+  String get update_published => 'Published';
+
+  @override
+  String get update_draft => 'Draft';
+
+  @override
+  String get update_publish => 'Publish';
+
+  @override
+  String get update_unpublish => 'Unpublish';
+
+  @override
+  String get update_addUpdate => 'New Official Update';
+
+  @override
+  String get update_noUpdates => 'No official updates yet';
+
+  @override
+  String get update_deleteConfirm => 'Delete this official update?';
+
+  @override
+  String get update_category_announcement => 'Announcement';
+
+  @override
+  String get update_category_circular => 'Circular';
+
+  @override
+  String get update_category_notification => 'Notification';
+
+  @override
+  String get update_category_campaign => 'Campaign';
+
+  @override
+  String get update_category_training => 'Training';
+
+  @override
+  String get update_category_meeting => 'Meeting';
+
+  @override
+  String get update_category_importantDate => 'Important Date';
+
+  @override
+  String get update_category_educationInitiative => 'Education Initiative';
+
+  @override
+  String get update_priority_normal => 'Normal';
+
+  @override
+  String get update_priority_important => 'Important';
+
+  @override
+  String get update_priority_urgent => 'Urgent';
+
+  @override
+  String get update_audience_all => 'Everyone';
+
+  @override
+  String get update_audience_schoolLeaders => 'School Leaders';
+
+  @override
+  String get update_audience_monitoringOfficers => 'Monitoring Officers';
+
+  @override
+  String get update_audience_admins => 'Administrators';
+
+  @override
+  String get audit_noEntries => 'No audit entries';
+
+  @override
+  String get audit_actor => 'User';
+
+  @override
+  String get audit_action => 'Action';
+
+  @override
+  String get audit_record => 'Record';
+
+  @override
+  String get audit_time => 'Date & Time';
+
+  @override
+  String get audit_readOnlyNote =>
+      'Audit entries are written by the server and cannot be edited.';
+
+  @override
+  String get audit_action_login => 'Login';
+
+  @override
+  String get audit_action_logout => 'Logout';
+
+  @override
+  String get audit_action_create => 'Create';
+
+  @override
+  String get audit_action_update => 'Update';
+
+  @override
+  String get audit_action_delete => 'Delete';
+
+  @override
+  String get audit_action_submit => 'Submit';
+
+  @override
+  String get audit_action_approve => 'Approve';
+
+  @override
+  String get audit_action_reject => 'Reject';
+
+  @override
+  String get audit_action_returned => 'Returned';
+
+  @override
+  String get audit_action_roleChange => 'Role Change';
+
+  @override
+  String get audit_action_export => 'Export';
+
+  @override
+  String get notifications_empty => 'No notifications yet';
 }

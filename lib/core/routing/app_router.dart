@@ -6,6 +6,7 @@ import '../../features/admission_campaign/presentation/screens/admission_campaig
 import '../../features/admission_campaign/presentation/screens/admission_campaign_list_screen.dart';
 import '../../features/admission_campaign/presentation/screens/oosc_form_screen.dart';
 import '../../features/admission_campaign/presentation/screens/oosc_list_screen.dart';
+import '../../features/audit_log/presentation/screens/audit_log_screen.dart';
 import '../../features/auth/domain/entities/app_user.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
@@ -16,6 +17,8 @@ import '../../features/hierarchy/domain/hierarchy_level.dart';
 import '../../features/hierarchy/presentation/screens/hierarchy_level_list_screen.dart';
 import '../../features/hierarchy/presentation/screens/school_form_screen.dart';
 import '../../features/notifications/presentation/screens/notification_list_screen.dart';
+import '../../features/official_updates/presentation/screens/official_update_form_screen.dart';
+import '../../features/official_updates/presentation/screens/official_updates_screen.dart';
 import '../../features/onboarding/presentation/screens/setup_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/ptc_priorities/presentation/screens/ptc_priority_form_screen.dart';
@@ -142,9 +145,15 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
 
       _placeholder(RoutePaths.adminUsers, (l) => l.more_adminManagement),
       _placeholder(RoutePaths.adminUserForm, (l) => l.more_adminManagement),
-      _placeholder(RoutePaths.officialUpdates, (l) => l.more_officialUpdates),
-      _placeholder(RoutePaths.officialUpdateForm, (l) => l.more_officialUpdates),
-      _placeholder(RoutePaths.auditLog, (l) => l.more_auditLog),
+      GoRoute(
+        path: RoutePaths.officialUpdates,
+        builder: (context, state) => const OfficialUpdatesScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.officialUpdateForm,
+        builder: (context, state) => const OfficialUpdateFormScreen(),
+      ),
+      GoRoute(path: RoutePaths.auditLog, builder: (context, state) => const AuditLogScreen()),
 
       _placeholder(RoutePaths.doorToDoor, (l) => l.more_admission),
       _placeholder(RoutePaths.community, (l) => l.more_community),

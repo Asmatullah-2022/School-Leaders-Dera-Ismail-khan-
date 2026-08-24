@@ -1205,4 +1205,152 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get reports_module_ptc => 'PTC ترجیحات';
+
+  @override
+  String get update_title => 'عنوان';
+
+  @override
+  String get update_titleUrdu => 'عنوان (اردو)';
+
+  @override
+  String get update_description => 'تفصیل';
+
+  @override
+  String get update_descriptionUrdu => 'تفصیل (اردو)';
+
+  @override
+  String get update_category => 'زمرہ';
+
+  @override
+  String get update_priority => 'ترجیح';
+
+  @override
+  String get update_audience => 'ہدف سامعین';
+
+  @override
+  String get update_publishDate => 'اشاعت کی تاریخ';
+
+  @override
+  String get update_eventDate => 'تقریب کی تاریخ';
+
+  @override
+  String get update_published => 'شائع شدہ';
+
+  @override
+  String get update_draft => 'مسودہ';
+
+  @override
+  String get update_publish => 'شائع کریں';
+
+  @override
+  String get update_unpublish => 'اشاعت واپس لیں';
+
+  @override
+  String get update_addUpdate => 'نیا سرکاری اپ ڈیٹ';
+
+  @override
+  String get update_noUpdates => 'ابھی تک کوئی سرکاری اپ ڈیٹ نہیں';
+
+  @override
+  String get update_deleteConfirm => 'کیا یہ سرکاری اپ ڈیٹ حذف کر دیا جائے؟';
+
+  @override
+  String get update_category_announcement => 'اعلان';
+
+  @override
+  String get update_category_circular => 'سرکلر';
+
+  @override
+  String get update_category_notification => 'نوٹیفکیشن';
+
+  @override
+  String get update_category_campaign => 'مہم';
+
+  @override
+  String get update_category_training => 'تربیت';
+
+  @override
+  String get update_category_meeting => 'اجلاس';
+
+  @override
+  String get update_category_importantDate => 'اہم تاریخ';
+
+  @override
+  String get update_category_educationInitiative => 'تعلیمی اقدام';
+
+  @override
+  String get update_priority_normal => 'عام';
+
+  @override
+  String get update_priority_important => 'اہم';
+
+  @override
+  String get update_priority_urgent => 'فوری';
+
+  @override
+  String get update_audience_all => 'سب';
+
+  @override
+  String get update_audience_schoolLeaders => 'سکول لیڈرز';
+
+  @override
+  String get update_audience_monitoringOfficers => 'مانیٹرنگ آفیسرز';
+
+  @override
+  String get update_audience_admins => 'منتظمین';
+
+  @override
+  String get audit_noEntries => 'کوئی آڈٹ اندراج نہیں';
+
+  @override
+  String get audit_actor => 'صارف';
+
+  @override
+  String get audit_action => 'کارروائی';
+
+  @override
+  String get audit_record => 'ریکارڈ';
+
+  @override
+  String get audit_time => 'تاریخ و وقت';
+
+  @override
+  String get audit_readOnlyNote =>
+      'آڈٹ اندراجات سرور کی طرف سے لکھے جاتے ہیں اور ان میں ترمیم نہیں کی جا سکتی۔';
+
+  @override
+  String get audit_action_login => 'لاگ ان';
+
+  @override
+  String get audit_action_logout => 'لاگ آؤٹ';
+
+  @override
+  String get audit_action_create => 'تخلیق';
+
+  @override
+  String get audit_action_update => 'ترمیم';
+
+  @override
+  String get audit_action_delete => 'حذف';
+
+  @override
+  String get audit_action_submit => 'جمع';
+
+  @override
+  String get audit_action_approve => 'منظوری';
+
+  @override
+  String get audit_action_reject => 'مسترد';
+
+  @override
+  String get audit_action_returned => 'واپس';
+
+  @override
+  String get audit_action_roleChange => 'کردار کی تبدیلی';
+
+  @override
+  String get audit_action_export => 'ایکسپورٹ';
+
+  @override
+  String get notifications_empty => 'ابھی تک کوئی اطلاع نہیں';
 }
