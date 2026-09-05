@@ -35,9 +35,9 @@ class StatementDetailScreen extends ConsumerWidget {
               ? const SizedBox.shrink()
               : IconButton(
                   icon: const Icon(Icons.edit_outlined),
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => StatementFormScreen(existing: s)),
-                  ),
+                  onPressed: () => Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute<void>(builder: (_) => StatementFormScreen(existing: s))),
                 ),
           orElse: () => const SizedBox.shrink(),
         ),
@@ -67,9 +67,16 @@ class StatementDetailScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               _row(context, l10n.statement_periodStart, DateFormat.yMMMd().format(s.periodStart)),
-              if (s.periodEnd != null) _row(context, l10n.statement_periodEnd, DateFormat.yMMMd().format(s.periodEnd!)),
-              if (s.submittedAt != null) _row(context, l10n.statement_submittedAt, DateFormat.yMMMd().format(s.submittedAt!)),
-              if (s.reviewedAt != null) _row(context, l10n.statement_reviewedAt, DateFormat.yMMMd().format(s.reviewedAt!)),
+              if (s.periodEnd != null)
+                _row(context, l10n.statement_periodEnd, DateFormat.yMMMd().format(s.periodEnd!)),
+              if (s.submittedAt != null)
+                _row(
+                  context,
+                  l10n.statement_submittedAt,
+                  DateFormat.yMMMd().format(s.submittedAt!),
+                ),
+              if (s.reviewedAt != null)
+                _row(context, l10n.statement_reviewedAt, DateFormat.yMMMd().format(s.reviewedAt!)),
               if (s.reviewNotes != null) _row(context, l10n.statement_reviewNotes, s.reviewNotes!),
               if (s.data.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),
@@ -101,19 +108,18 @@ class StatementDetailScreen extends ConsumerWidget {
                   icon: const Icon(Icons.send_outlined),
                   label: Text(l10n.statement_submit),
                 ),
-              if (canReviewStatement(role))
-                ...<Widget>[
-                  for (final StatementStatus next in nextReviewerStatuses(s.status))
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: OutlinedButton(
-                        onPressed: () => next == StatementStatus.returned
-                            ? _returnWithNotes(context, ref, s)
-                            : _updateStatus(ref, s, next),
-                        child: Text(statementStatusLabel(l10n, next)),
-                      ),
+              if (canReviewStatement(role)) ...<Widget>[
+                for (final StatementStatus next in nextReviewerStatuses(s.status))
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: OutlinedButton(
+                      onPressed: () => next == StatementStatus.returned
+                          ? _returnWithNotes(context, ref, s)
+                          : _updateStatus(ref, s, next),
+                      child: Text(statementStatusLabel(l10n, next)),
                     ),
-                ],
+                  ),
+              ],
             ],
           );
         },
@@ -148,7 +154,8 @@ class StatementDetailScreen extends ConsumerWidget {
           ),
         );
     if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.common_success_submitted)));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.common_success_submitted)));
     }
   }
 
@@ -173,10 +180,20 @@ class StatementDetailScreen extends ConsumerWidget {
       context: context,
       builder: (BuildContext dialogContext) => AlertDialog(
         title: Text(l10n.statement_status_returned),
-        content: AppTextField(label: l10n.statement_reviewNotes, controller: notesController, maxLines: 3),
+        content: AppTextField(
+          label: l10n.statement_reviewNotes,
+          controller: notesController,
+          maxLines: 3,
+        ),
         actions: <Widget>[
-          TextButton(onPressed: () => Navigator.of(dialogContext).pop(false), child: Text(l10n.common_cancel)),
-          FilledButton(onPressed: () => Navigator.of(dialogContext).pop(true), child: Text(l10n.common_confirm)),
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.common_cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: Text(l10n.common_confirm),
+          ),
         ],
       ),
     );

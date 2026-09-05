@@ -60,8 +60,10 @@ class SchoolOpeningDetailScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               _row(context, l10n.common_date, DateFormat.yMMMd().format(o.checkDate)),
-              if (o.openingTime != null) _row(context, l10n.schoolOpening_openingTime, o.openingTime!),
-              if (o.closingTime != null) _row(context, l10n.schoolOpening_closingTime, o.closingTime!),
+              if (o.openingTime != null)
+                _row(context, l10n.schoolOpening_openingTime, o.openingTime!),
+              if (o.closingTime != null)
+                _row(context, l10n.schoolOpening_closingTime, o.closingTime!),
               _row(
                 context,
                 l10n.functionality_headTeacherPresent,
@@ -69,8 +71,10 @@ class SchoolOpeningDetailScreen extends ConsumerWidget {
               ),
               _row(context, l10n.functionality_teachersPresent, '${o.teachersPresent}'),
               _row(context, l10n.functionality_studentsPresent, '${o.studentsPresent}'),
-              if (o.reasonIfClosed != null) _row(context, l10n.schoolOpening_reasonIfClosed, o.reasonIfClosed!),
-              if (o.actionRequired != null) _row(context, l10n.schoolOpening_actionRequired, o.actionRequired!),
+              if (o.reasonIfClosed != null)
+                _row(context, l10n.schoolOpening_reasonIfClosed, o.reasonIfClosed!),
+              if (o.actionRequired != null)
+                _row(context, l10n.schoolOpening_actionRequired, o.actionRequired!),
               if (o.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),
                 Text(l10n.common_photos, style: Theme.of(context).textTheme.titleSmall),

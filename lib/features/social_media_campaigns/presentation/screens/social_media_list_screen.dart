@@ -25,9 +25,9 @@ class SocialMediaListScreen extends ConsumerWidget {
     return AppScaffold(
       title: l10n.socialMedia_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const SocialMediaFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const SocialMediaFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.socialMedia_addCampaign),
       ),
@@ -50,7 +50,9 @@ class SocialMediaListScreen extends ConsumerWidget {
                   subtitle: Text(socialPlatformLabel(l10n, a.platform)),
                   trailing: Text(DateFormat.yMMMd().format(a.postDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => SocialMediaDetailScreen(campaignId: a.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => SocialMediaDetailScreen(campaignId: a.id),
+                    ),
                   ),
                 ),
               );

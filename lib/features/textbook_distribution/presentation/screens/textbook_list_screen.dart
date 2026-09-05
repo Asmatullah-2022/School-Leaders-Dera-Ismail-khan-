@@ -24,9 +24,9 @@ class TextbookListScreen extends ConsumerWidget {
     return AppScaffold(
       title: l10n.textbook_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const TextbookFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const TextbookFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.textbook_addRecord),
       ),

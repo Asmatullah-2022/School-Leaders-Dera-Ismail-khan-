@@ -21,7 +21,9 @@ class CommunityActivityDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<CommunityActivityModel?> async = ref.watch(communityActivityByIdProvider(activityId));
+    final AsyncValue<CommunityActivityModel?> async = ref.watch(
+      communityActivityByIdProvider(activityId),
+    );
 
     return AppScaffold(
       title: l10n.more_community,
@@ -32,7 +34,9 @@ class CommunityActivityDetailScreen extends ConsumerWidget {
               : IconButton(
                   icon: const Icon(Icons.edit_outlined),
                   onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => CommunityActivityFormScreen(existing: a)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => CommunityActivityFormScreen(existing: a),
+                    ),
                   ),
                 ),
           orElse: () => const SizedBox.shrink(),

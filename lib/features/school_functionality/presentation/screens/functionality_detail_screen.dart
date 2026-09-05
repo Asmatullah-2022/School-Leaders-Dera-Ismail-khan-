@@ -21,7 +21,9 @@ class FunctionalityDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<SchoolFunctionalityModel?> async = ref.watch(schoolFunctionalityByIdProvider(recordId));
+    final AsyncValue<SchoolFunctionalityModel?> async = ref.watch(
+      schoolFunctionalityByIdProvider(recordId),
+    );
 
     return AppScaffold(
       title: l10n.functionality_title,
@@ -56,7 +58,8 @@ class FunctionalityDetailScreen extends ConsumerWidget {
                   ),
                   Chip(
                     label: Text(functionalityStatusLabel(l10n, f.overallStatus)),
-                    backgroundColor: functionalityStatusColor(f.overallStatus).withValues(alpha: 0.15),
+                    backgroundColor: functionalityStatusColor(f.overallStatus)
+                        .withValues(alpha: 0.15),
                     labelStyle: TextStyle(color: functionalityStatusColor(f.overallStatus)),
                   ),
                 ],
@@ -76,9 +79,21 @@ class FunctionalityDetailScreen extends ConsumerWidget {
               _checkRow(context, l10n.functionality_schoolOpen, f.schoolOpen),
               _checkRow(context, l10n.functionality_headTeacherPresent, f.headTeacherPresent),
               _checkRow(context, l10n.functionality_classesConducted, f.classesConducted),
-              _checkRow(context, l10n.functionality_teachingActivityObserved, f.teachingActivityObserved),
-              _checkRow(context, l10n.functionality_cleanlinessSatisfactory, f.cleanlinessSatisfactory),
-              _checkRow(context, l10n.functionality_basicFacilitiesAvailable, f.basicFacilitiesAvailable),
+              _checkRow(
+                context,
+                l10n.functionality_teachingActivityObserved,
+                f.teachingActivityObserved,
+              ),
+              _checkRow(
+                context,
+                l10n.functionality_cleanlinessSatisfactory,
+                f.cleanlinessSatisfactory,
+              ),
+              _checkRow(
+                context,
+                l10n.functionality_basicFacilitiesAvailable,
+                f.basicFacilitiesAvailable,
+              ),
               _checkRow(context, l10n.functionality_timetableDisplayed, f.timetableDisplayed),
               _checkRow(context, l10n.functionality_morningAssemblyHeld, f.morningAssemblyHeld),
               _checkRow(
@@ -86,7 +101,10 @@ class FunctionalityDetailScreen extends ConsumerWidget {
                 l10n.functionality_learningEnvironmentSatisfactory,
                 f.learningEnvironmentSatisfactory,
               ),
-              if (f.remarks != null) ...<Widget>[const SizedBox(height: 8), _row(context, l10n.common_remarks, f.remarks!)],
+              if (f.remarks != null) ...<Widget>[
+                const SizedBox(height: 8),
+                _row(context, l10n.common_remarks, f.remarks!),
+              ],
               if (f.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),
                 Text(l10n.common_photos, style: Theme.of(context).textTheme.titleSmall),

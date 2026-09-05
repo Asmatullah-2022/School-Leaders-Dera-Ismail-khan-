@@ -345,6 +345,9 @@ final meetingActionRepositoryProvider = Provider<MeetingActionRepository>((ref) 
   return MeetingActionRepository(ref.watch(firestoreProvider));
 });
 
-final meetingActionsProvider = StreamProvider.family<List<MeetingActionModel>, String>((ref, meetingId) {
+final meetingActionsProvider = StreamProvider.family<List<MeetingActionModel>, String>((
+  ref,
+  meetingId,
+) {
   return ref.watch(meetingActionRepositoryProvider).watch(meetingId);
 });

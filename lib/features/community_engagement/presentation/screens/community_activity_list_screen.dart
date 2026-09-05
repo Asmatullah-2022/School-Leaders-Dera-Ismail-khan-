@@ -20,14 +20,16 @@ class CommunityActivityListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<CommunityActivityModel>> async = ref.watch(scopedCommunityActivitiesProvider);
+    final AsyncValue<List<CommunityActivityModel>> async = ref.watch(
+      scopedCommunityActivitiesProvider,
+    );
 
     return AppScaffold(
       title: l10n.more_community,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const CommunityActivityFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const CommunityActivityFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.community_addActivity),
       ),
@@ -36,7 +38,10 @@ class CommunityActivityListScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<CommunityActivityModel> items) {
           if (items.isEmpty) {
-            return EmptyState(message: l10n.community_noActivities, icon: Icons.diversity_3_outlined);
+            return EmptyState(
+              message: l10n.community_noActivities,
+              icon: Icons.diversity_3_outlined,
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -50,7 +55,9 @@ class CommunityActivityListScreen extends ConsumerWidget {
                   subtitle: Text('${l10n.community_participants}: ${a.participantsCount}'),
                   trailing: Text(DateFormat.yMMMd().format(a.activityDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => CommunityActivityDetailScreen(activityId: a.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => CommunityActivityDetailScreen(activityId: a.id),
+                    ),
                   ),
                 ),
               );

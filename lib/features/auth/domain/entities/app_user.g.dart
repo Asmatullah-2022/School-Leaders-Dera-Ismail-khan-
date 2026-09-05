@@ -20,8 +20,7 @@ _AppUser _$AppUserFromJson(Map<String, dynamic> json) => _AppUser(
   schoolId: json['schoolId'] as String?,
   isActive: json['isActive'] as bool? ?? true,
   fcmTokens:
-      (json['fcmTokens'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-      const <String>[],
+      (json['fcmTokens'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const <String>[],
   preferredLocale: json['preferredLocale'] as String? ?? 'en',
 );
 

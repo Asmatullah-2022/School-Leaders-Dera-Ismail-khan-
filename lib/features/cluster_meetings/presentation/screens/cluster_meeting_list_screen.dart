@@ -25,9 +25,9 @@ class ClusterMeetingListScreen extends ConsumerWidget {
     return AppScaffold(
       title: l10n.more_clusterMeetings,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const ClusterMeetingFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const ClusterMeetingFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.clusterMeeting_addMeeting),
       ),
@@ -54,7 +54,9 @@ class ClusterMeetingListScreen extends ConsumerWidget {
                   ),
                   trailing: Text(DateFormat.yMMMd().format(m.meetingDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => ClusterMeetingDetailScreen(meetingId: m.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => ClusterMeetingDetailScreen(meetingId: m.id),
+                    ),
                   ),
                 ),
               );

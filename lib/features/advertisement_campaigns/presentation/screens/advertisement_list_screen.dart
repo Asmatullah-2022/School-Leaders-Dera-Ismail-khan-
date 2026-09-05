@@ -20,14 +20,16 @@ class AdvertisementListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<AdvertisementCampaignModel>> async = ref.watch(scopedAdvertisementsProvider);
+    final AsyncValue<List<AdvertisementCampaignModel>> async = ref.watch(
+      scopedAdvertisementsProvider,
+    );
 
     return AppScaffold(
       title: l10n.advertisement_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const AdvertisementFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const AdvertisementFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.advertisement_addCampaign),
       ),
@@ -36,7 +38,10 @@ class AdvertisementListScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<AdvertisementCampaignModel> items) {
           if (items.isEmpty) {
-            return EmptyState(message: l10n.advertisement_noCampaigns, icon: Icons.campaign_outlined);
+            return EmptyState(
+              message: l10n.advertisement_noCampaigns,
+              icon: Icons.campaign_outlined,
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -50,7 +55,9 @@ class AdvertisementListScreen extends ConsumerWidget {
                   subtitle: Text(advertisementTypeLabel(l10n, a.advertisementType)),
                   trailing: Text(DateFormat.yMMMd().format(a.activityDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => AdvertisementDetailScreen(campaignId: a.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => AdvertisementDetailScreen(campaignId: a.id),
+                    ),
                   ),
                 ),
               );

@@ -10,7 +10,13 @@ import '../../features/audit_log/presentation/screens/audit_log_screen.dart';
 import '../../features/auth/domain/entities/app_user.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
+import '../../features/advertisement_campaigns/presentation/screens/advertisement_list_screen.dart';
+import '../../features/cleanliness/presentation/screens/cleanliness_list_screen.dart';
+import '../../features/cluster_meetings/presentation/screens/cluster_meeting_list_screen.dart';
+import '../../features/community_engagement/presentation/screens/community_activity_list_screen.dart';
 import '../../features/dashboard/presentation/screens/home_shell_screen.dart';
+import '../../features/door_to_door/presentation/screens/door_to_door_list_screen.dart';
+import '../../features/ece_monitoring/presentation/screens/ece_monitoring_list_screen.dart';
 import '../../features/emergency_reports/presentation/screens/emergency_report_form_screen.dart';
 import '../../features/emergency_reports/presentation/screens/emergency_report_list_screen.dart';
 import '../../features/hierarchy/domain/hierarchy_level.dart';
@@ -20,15 +26,22 @@ import '../../features/notifications/presentation/screens/notification_list_scre
 import '../../features/official_updates/presentation/screens/official_update_form_screen.dart';
 import '../../features/official_updates/presentation/screens/official_updates_screen.dart';
 import '../../features/onboarding/presentation/screens/setup_screen.dart';
+import '../../features/parent_teacher_contact/presentation/screens/parent_contact_list_screen.dart';
+import '../../features/plantation/presentation/screens/plantation_list_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/ptc_priorities/presentation/screens/ptc_priority_form_screen.dart';
 import '../../features/ptc_priorities/presentation/screens/ptc_priority_list_screen.dart';
 import '../../features/reports_center/presentation/screens/reports_center_screen.dart';
+import '../../features/school_functionality/presentation/screens/functionality_list_screen.dart';
 import '../../features/school_monitoring/presentation/screens/monitoring_report_form_screen.dart';
 import '../../features/school_monitoring/presentation/screens/scoring_config_admin_screen.dart';
+import '../../features/school_opening/presentation/screens/school_opening_list_screen.dart';
 import '../../features/school_problems/presentation/screens/school_problem_form_screen.dart';
 import '../../features/school_problems/presentation/screens/school_problem_list_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
+import '../../features/social_media_campaigns/presentation/screens/social_media_list_screen.dart';
+import '../../features/statements/presentation/screens/statement_list_screen.dart';
+import '../../features/textbook_distribution/presentation/screens/textbook_list_screen.dart';
 import '../local_db/app_meta_store.dart';
 import '../localization/l10n_gen/app_localizations.dart';
 import '../providers/current_user_provider.dart';
@@ -165,19 +178,52 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: RoutePaths.auditLog, builder: (context, state) => const AuditLogScreen()),
 
-      _placeholder(RoutePaths.doorToDoor, (l) => l.more_admission),
-      _placeholder(RoutePaths.community, (l) => l.more_community),
-      _placeholder(RoutePaths.parentContact, (l) => l.more_community),
-      _placeholder(RoutePaths.advertisement, (l) => l.more_admission),
-      _placeholder(RoutePaths.socialMedia, (l) => l.more_admission),
-      _placeholder(RoutePaths.textbooks, (l) => l.more_admission),
-      _placeholder(RoutePaths.clusterMeetings, (l) => l.more_clusterMeetings),
-      _placeholder(RoutePaths.statements, (l) => l.nav_reports),
-      _placeholder(RoutePaths.schoolFunctionality, (l) => l.nav_monitoring),
-      _placeholder(RoutePaths.schoolOpening, (l) => l.nav_monitoring),
-      _placeholder(RoutePaths.cleanliness, (l) => l.more_cleanliness),
-      _placeholder(RoutePaths.plantation, (l) => l.more_plantation),
-      _placeholder(RoutePaths.ece, (l) => l.more_ece),
+      GoRoute(
+        path: RoutePaths.doorToDoor,
+        builder: (context, state) => const DoorToDoorListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.community,
+        builder: (context, state) => const CommunityActivityListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.parentContact,
+        builder: (context, state) => const ParentContactListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.advertisement,
+        builder: (context, state) => const AdvertisementListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.socialMedia,
+        builder: (context, state) => const SocialMediaListScreen(),
+      ),
+      GoRoute(path: RoutePaths.textbooks, builder: (context, state) => const TextbookListScreen()),
+      GoRoute(
+        path: RoutePaths.clusterMeetings,
+        builder: (context, state) => const ClusterMeetingListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.statements,
+        builder: (context, state) => const StatementListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.schoolFunctionality,
+        builder: (context, state) => const FunctionalityListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.schoolOpening,
+        builder: (context, state) => const SchoolOpeningListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.cleanliness,
+        builder: (context, state) => const CleanlinessListScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.plantation,
+        builder: (context, state) => const PlantationListScreen(),
+      ),
+      GoRoute(path: RoutePaths.ece, builder: (context, state) => const EceMonitoringListScreen()),
     ],
   );
 });

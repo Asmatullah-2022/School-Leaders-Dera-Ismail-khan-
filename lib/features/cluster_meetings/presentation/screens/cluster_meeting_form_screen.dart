@@ -87,7 +87,11 @@ class _ClusterMeetingFormScreenState extends ConsumerState<ClusterMeetingFormScr
     final AppLocalizations l10n = AppLocalizations.of(context);
     setState(() => _hierarchyTouched = true);
     final bool formValid = _formKey.currentState?.validate() ?? false;
-    if (_clusterId == null || _circleId == null || _subDivisionId == null || _districtId == null || !formValid) {
+    if (_clusterId == null ||
+        _circleId == null ||
+        _subDivisionId == null ||
+        _districtId == null ||
+        !formValid) {
       return;
     }
     setState(() => _isSubmitting = true);
@@ -199,7 +203,10 @@ class _ClusterMeetingFormScreenState extends ConsumerState<ClusterMeetingFormScr
               decoration: InputDecoration(labelText: l10n.common_status),
               items: MeetingStatus.values
                   .map(
-                    (s) => DropdownMenuItem<MeetingStatus>(value: s, child: Text(meetingStatusLabel(l10n, s))),
+                    (s) => DropdownMenuItem<MeetingStatus>(
+                      value: s,
+                      child: Text(meetingStatusLabel(l10n, s)),
+                    ),
                   )
                   .toList(),
               onChanged: (v) => setState(() => _status = v ?? _status),
@@ -207,7 +214,11 @@ class _ClusterMeetingFormScreenState extends ConsumerState<ClusterMeetingFormScr
             const SizedBox(height: 12),
             AppTextField(label: l10n.clusterMeeting_agenda, controller: _agenda, maxLines: 3),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.clusterMeeting_agendaUrdu, controller: _agendaUrdu, maxLines: 3),
+            AppTextField(
+              label: l10n.clusterMeeting_agendaUrdu,
+              controller: _agendaUrdu,
+              maxLines: 3,
+            ),
             const SizedBox(height: 12),
             AppTextField(label: l10n.clusterMeeting_decisions, controller: _decisions, maxLines: 3),
             const SizedBox(height: 12),
@@ -222,7 +233,11 @@ class _ClusterMeetingFormScreenState extends ConsumerState<ClusterMeetingFormScr
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],

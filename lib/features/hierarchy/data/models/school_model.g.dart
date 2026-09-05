@@ -16,12 +16,8 @@ _SchoolModel _$SchoolModelFromJson(Map<String, dynamic> json) => _SchoolModel(
   circleId: json['circleId'] as String,
   clusterId: json['clusterId'] as String,
   village: json['village'] as String?,
-  level:
-      $enumDecodeNullable(_$SchoolLevelEnumMap, json['level']) ??
-      SchoolLevel.primary,
-  gender:
-      $enumDecodeNullable(_$SchoolGenderEnumMap, json['gender']) ??
-      SchoolGender.mixed,
+  level: $enumDecodeNullable(_$SchoolLevelEnumMap, json['level']) ?? SchoolLevel.primary,
+  gender: $enumDecodeNullable(_$SchoolGenderEnumMap, json['gender']) ?? SchoolGender.mixed,
   headTeacherName: json['headTeacherName'] as String?,
   headTeacherUid: json['headTeacherUid'] as String?,
   contactPhone: json['contactPhone'] as String?,
@@ -40,10 +36,7 @@ _SchoolModel _$SchoolModelFromJson(Map<String, dynamic> json) => _SchoolModel(
   library: json['library'] as bool? ?? false,
   itFacilities: json['itFacilities'] as bool? ?? false,
   buildingCondition:
-      $enumDecodeNullable(
-        _$BuildingConditionEnumMap,
-        json['buildingCondition'],
-      ) ??
+      $enumDecodeNullable(_$BuildingConditionEnumMap, json['buildingCondition']) ??
       BuildingCondition.good,
   latitude: (json['latitude'] as num?)?.toDouble(),
   longitude: (json['longitude'] as num?)?.toDouble(),
@@ -54,9 +47,7 @@ _SchoolModel _$SchoolModelFromJson(Map<String, dynamic> json) => _SchoolModel(
   createdBy: json['createdBy'] as String,
 );
 
-Map<String, dynamic> _$SchoolModelToJson(
-  _SchoolModel instance,
-) => <String, dynamic>{
+Map<String, dynamic> _$SchoolModelToJson(_SchoolModel instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'nameUrdu': instance.nameUrdu,

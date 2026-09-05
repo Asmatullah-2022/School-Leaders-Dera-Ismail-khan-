@@ -149,19 +149,16 @@ class AppLocalizationsUr extends AppLocalizations {
       'انٹرنیٹ کنکشن دستیاب نہیں۔ آپ کا ڈیٹا مقامی طور پر محفوظ کر لیا گیا ہے۔';
 
   @override
-  String get common_error_auth =>
-      'تصدیق ناکام ہوئی۔ براہ کرم دوبارہ سائن ان کریں۔';
+  String get common_error_auth => 'تصدیق ناکام ہوئی۔ براہ کرم دوبارہ سائن ان کریں۔';
 
   @override
-  String get common_error_permission =>
-      'آپ کو یہ کارروائی کرنے کی اجازت نہیں ہے۔';
+  String get common_error_permission => 'آپ کو یہ کارروائی کرنے کی اجازت نہیں ہے۔';
 
   @override
   String get common_error_notFound => 'مطلوبہ ریکارڈ نہیں ملا۔';
 
   @override
-  String get common_error_unknown =>
-      'کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔';
+  String get common_error_unknown => 'کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔';
 
   @override
   String get common_success_saved => 'کامیابی سے محفوظ ہو گیا۔';
@@ -195,15 +192,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get validation_invalidAge => 'درست عمر درج کریں';
 
   @override
-  String get validation_boysGirlsMismatch =>
-      'لڑکے + لڑکیاں کل طلبہ کے برابر ہونے چاہئیں';
+  String get validation_boysGirlsMismatch => 'لڑکے + لڑکیاں کل طلبہ کے برابر ہونے چاہئیں';
 
   @override
   String get validation_dateInFuture => 'تاریخ مستقبل میں نہیں ہو سکتی';
 
   @override
-  String get validation_endBeforeStart =>
-      'اختتامی تاریخ آغاز کی تاریخ کے بعد ہونی چاہیے';
+  String get validation_endBeforeStart => 'اختتامی تاریخ آغاز کی تاریخ کے بعد ہونی چاہیے';
 
   @override
   String get sync_offline => 'آف لائن';
@@ -521,8 +516,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get hierarchy_noClusters => 'کوئی کلسٹر نہیں ملا';
 
   @override
-  String get hierarchy_deactivateConfirm =>
-      'کیا آپ واقعی اس ریکارڈ کو غیر فعال کرنا چاہتے ہیں؟';
+  String get hierarchy_deactivateConfirm => 'کیا آپ واقعی اس ریکارڈ کو غیر فعال کرنا چاہتے ہیں؟';
 
   @override
   String get hierarchy_village => 'گاؤں/علاقہ';
@@ -801,8 +795,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get monitoring_status_submitted => 'جمع شدہ';
 
   @override
-  String get monitoring_noReports =>
-      'ابھی تک کوئی مانیٹرنگ رپورٹ درج نہیں کی گئی';
+  String get monitoring_noReports => 'ابھی تک کوئی مانیٹرنگ رپورٹ درج نہیں کی گئی';
 
   @override
   String get monitoring_addReport => 'نئی مانیٹرنگ رپورٹ';
@@ -1379,15 +1372,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get doorToDoor_addActivity => 'نئی گھر گھر سرگرمی';
 
   @override
-  String get doorToDoor_noActivities =>
-      'ابھی تک کوئی گھر گھر سرگرمی درج نہیں کی گئی';
+  String get doorToDoor_noActivities => 'ابھی تک کوئی گھر گھر سرگرمی درج نہیں کی گئی';
 
   @override
   String get community_addActivity => 'نئی کمیونٹی سرگرمی';
 
   @override
-  String get community_noActivities =>
-      'ابھی تک کوئی کمیونٹی سرگرمی درج نہیں کی گئی';
+  String get community_noActivities => 'ابھی تک کوئی کمیونٹی سرگرمی درج نہیں کی گئی';
 
   @override
   String get community_activityType => 'سرگرمی کی قسم';
@@ -1429,11 +1420,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get community_type_femaleParentEngagement => 'خواتین والدین شراکت';
 
   @override
+  String get parentContact_title => 'والدین اساتذہ رابطہ';
+
+  @override
   String get parentContact_addContact => 'نیا والدین رابطہ';
 
   @override
-  String get parentContact_noContacts =>
-      'ابھی تک کوئی والدین اساتذہ رابطہ درج نہیں کیا گیا';
+  String get parentContact_noContacts => 'ابھی تک کوئی والدین اساتذہ رابطہ درج نہیں کیا گیا';
 
   @override
   String get parentContact_parentName => 'والدین کا نام';
@@ -1490,8 +1483,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get advertisement_addCampaign => 'نئی تشہیری مہم';
 
   @override
-  String get advertisement_noCampaigns =>
-      'ابھی تک کوئی تشہیری مہم درج نہیں کی گئی';
+  String get advertisement_noCampaigns => 'ابھی تک کوئی تشہیری مہم درج نہیں کی گئی';
 
   @override
   String get advertisement_campaignTitle => 'مہم کا عنوان';
@@ -1533,8 +1525,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get socialMedia_addCampaign => 'نئی سوشل میڈیا مہم';
 
   @override
-  String get socialMedia_noCampaigns =>
-      'ابھی تک کوئی سوشل میڈیا مہم درج نہیں کی گئی';
+  String get socialMedia_noCampaigns => 'ابھی تک کوئی سوشل میڈیا مہم درج نہیں کی گئی';
 
   @override
   String get socialMedia_platform => 'پلیٹ فارم';
@@ -1573,8 +1564,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get textbook_addRecord => 'نیا کتب ریکارڈ';
 
   @override
-  String get textbook_noRecords =>
-      'ابھی تک کوئی کتب تقسیم ریکارڈ درج نہیں کیا گیا';
+  String get textbook_noRecords => 'ابھی تک کوئی کتب تقسیم ریکارڈ درج نہیں کیا گیا';
 
   @override
   String get textbook_academicYear => 'تعلیمی سال';
@@ -1610,8 +1600,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get clusterMeeting_addMeeting => 'نیا کلسٹر اجلاس';
 
   @override
-  String get clusterMeeting_noMeetings =>
-      'ابھی تک کوئی کلسٹر اجلاس درج نہیں کیا گیا';
+  String get clusterMeeting_noMeetings => 'ابھی تک کوئی کلسٹر اجلاس درج نہیں کیا گیا';
 
   @override
   String get clusterMeeting_meetingTime => 'اجلاس کا وقت';
@@ -1728,8 +1717,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get functionality_addAssessment => 'نیا فعالیت جائزہ';
 
   @override
-  String get functionality_noAssessments =>
-      'ابھی تک کوئی فعالیت جائزہ درج نہیں کیا گیا';
+  String get functionality_noAssessments => 'ابھی تک کوئی فعالیت جائزہ درج نہیں کیا گیا';
 
   @override
   String get functionality_teachersPresent => 'حاضر اساتذہ';
@@ -1753,15 +1741,13 @@ class AppLocalizationsUr extends AppLocalizations {
   String get functionality_classesConducted => 'کلاسز منعقد ہوئیں';
 
   @override
-  String get functionality_teachingActivityObserved =>
-      'تدریسی سرگرمی مشاہدہ کی گئی';
+  String get functionality_teachingActivityObserved => 'تدریسی سرگرمی مشاہدہ کی گئی';
 
   @override
   String get functionality_cleanlinessSatisfactory => 'صفائی تسلی بخش ہے';
 
   @override
-  String get functionality_basicFacilitiesAvailable =>
-      'بنیادی سہولیات دستیاب ہیں';
+  String get functionality_basicFacilitiesAvailable => 'بنیادی سہولیات دستیاب ہیں';
 
   @override
   String get functionality_timetableDisplayed => 'ٹائم ٹیبل آویزاں ہے';
@@ -1770,8 +1756,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get functionality_morningAssemblyHeld => 'صبح کی اسمبلی ہوئی';
 
   @override
-  String get functionality_learningEnvironmentSatisfactory =>
-      'تعلیمی ماحول تسلی بخش ہے';
+  String get functionality_learningEnvironmentSatisfactory => 'تعلیمی ماحول تسلی بخش ہے';
 
   @override
   String get functionality_overallStatus => 'مجموعی حیثیت';
@@ -1817,4 +1802,124 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get schoolOpening_actionRequired => 'درکار کارروائی';
+
+  @override
+  String get cleanliness_addInspection => 'نیا صفائی معائنہ';
+
+  @override
+  String get cleanliness_noInspections => 'ابھی تک کوئی صفائی معائنہ درج نہیں کیا گیا';
+
+  @override
+  String get cleanliness_classroomsClean => 'کمرہ جماعت صاف ہیں';
+
+  @override
+  String get cleanliness_courtyardClean => 'صحن صاف ہے';
+
+  @override
+  String get cleanliness_toiletsClean => 'بیت الخلاء صاف ہیں';
+
+  @override
+  String get cleanliness_drinkingWaterAreaClean => 'پینے کے پانی کا علاقہ صاف ہے';
+
+  @override
+  String get cleanliness_wasteManagedProperly => 'کچرے کا مناسب انتظام';
+
+  @override
+  String get cleanliness_furnitureClean => 'فرنیچر صاف ہے';
+
+  @override
+  String get cleanliness_schoolWallsClean => 'سکول کی دیواریں صاف ہیں';
+
+  @override
+  String get cleanliness_boundaryClean => 'چار دیواری صاف ہے';
+
+  @override
+  String get cleanliness_dailyCleaningDone => 'روزانہ صفائی ہوئی';
+
+  @override
+  String get cleanliness_weeklyCleaningDone => 'ہفتہ وار صفائی ہوئی';
+
+  @override
+  String get cleanliness_beforePhotos => 'پہلے کی تصاویر';
+
+  @override
+  String get cleanliness_afterPhotos => 'بعد کی تصاویر';
+
+  @override
+  String get plantation_addActivity => 'نئی شجر کاری سرگرمی';
+
+  @override
+  String get plantation_noActivities => 'ابھی تک کوئی شجر کاری سرگرمی درج نہیں کی گئی';
+
+  @override
+  String get plantation_treesPlanted => 'لگائے گئے پودے';
+
+  @override
+  String get plantation_treeTypes => 'پودوں کی اقسام';
+
+  @override
+  String get plantation_treeTypesHint => 'نیم، شیشم، ککر (کاما سے الگ کریں)';
+
+  @override
+  String get plantation_studentsInvolved => 'شریک طلباء';
+
+  @override
+  String get plantation_teachersInvolved => 'شریک اساتذہ';
+
+  @override
+  String get plantation_communityMembersInvolved => 'شریک کمیونٹی ممبران';
+
+  @override
+  String get plantation_survivalRate => 'بقا کی شرح';
+
+  @override
+  String get ece_addVisit => 'نیا ای سی ای روم وزٹ';
+
+  @override
+  String get ece_noVisits => 'ابھی تک کوئی ای سی ای روم وزٹ درج نہیں کیا گیا';
+
+  @override
+  String get ece_childrenEnrolled => 'داخل شدہ بچے';
+
+  @override
+  String get ece_childrenPresent => 'حاضر بچے';
+
+  @override
+  String get ece_eceRoomAvailable => 'ای سی ای روم دستیاب ہے';
+
+  @override
+  String get ece_functional => 'فعال ہے';
+
+  @override
+  String get ece_teacherAvailable => 'ای سی ای استاد دستیاب ہے';
+
+  @override
+  String get ece_furnitureAdequate => 'فرنیچر مناسب ہے';
+
+  @override
+  String get ece_learningMaterialsAvailable => 'تعلیمی مواد دستیاب ہے';
+
+  @override
+  String get ece_toysAvailable => 'کھلونے دستیاب ہیں';
+
+  @override
+  String get ece_learningCornersSetUp => 'تعلیمی کارنر قائم ہیں';
+
+  @override
+  String get ece_decorationAdequate => 'سجاوٹ مناسب ہے';
+
+  @override
+  String get ece_cleanlinessSatisfactory => 'صفائی تسلی بخش ہے';
+
+  @override
+  String get ece_safetySatisfactory => 'حفاظت تسلی بخش ہے';
+
+  @override
+  String get ece_status_good => 'اچھا';
+
+  @override
+  String get ece_status_needsImprovement => 'بہتری درکار ہے';
+
+  @override
+  String get ece_status_critical => 'نازک';
 }

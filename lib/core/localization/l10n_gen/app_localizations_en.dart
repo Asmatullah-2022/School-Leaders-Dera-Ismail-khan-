@@ -149,16 +149,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Internet connection is unavailable. Your data has been saved locally.';
 
   @override
-  String get common_error_auth =>
-      'Authentication failed. Please sign in again.';
+  String get common_error_auth => 'Authentication failed. Please sign in again.';
 
   @override
-  String get common_error_permission =>
-      'You do not have permission to perform this action.';
+  String get common_error_permission => 'You do not have permission to perform this action.';
 
   @override
-  String get common_error_notFound =>
-      'The requested record could not be found.';
+  String get common_error_notFound => 'The requested record could not be found.';
 
   @override
   String get common_error_unknown => 'Something went wrong. Please try again.';
@@ -195,8 +192,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get validation_invalidAge => 'Enter a valid age';
 
   @override
-  String get validation_boysGirlsMismatch =>
-      'Boys + Girls must equal Total Students';
+  String get validation_boysGirlsMismatch => 'Boys + Girls must equal Total Students';
 
   @override
   String get validation_dateInFuture => 'Date cannot be in the future';
@@ -520,8 +516,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get hierarchy_noClusters => 'No clusters found';
 
   @override
-  String get hierarchy_deactivateConfirm =>
-      'Are you sure you want to deactivate this record?';
+  String get hierarchy_deactivateConfirm => 'Are you sure you want to deactivate this record?';
 
   @override
   String get hierarchy_village => 'Village/Locality';
@@ -1313,8 +1308,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get audit_time => 'Date & Time';
 
   @override
-  String get audit_readOnlyNote =>
-      'Audit entries are written by the server and cannot be edited.';
+  String get audit_readOnlyNote => 'Audit entries are written by the server and cannot be edited.';
 
   @override
   String get audit_action_login => 'Login';
@@ -1377,8 +1371,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get doorToDoor_addActivity => 'New Door-to-Door Activity';
 
   @override
-  String get doorToDoor_noActivities =>
-      'No door-to-door activities recorded yet';
+  String get doorToDoor_noActivities => 'No door-to-door activities recorded yet';
 
   @override
   String get community_addActivity => 'New Community Activity';
@@ -1423,15 +1416,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get community_type_communitySupport => 'Community Support';
 
   @override
-  String get community_type_femaleParentEngagement =>
-      'Female Parent Engagement';
+  String get community_type_femaleParentEngagement => 'Female Parent Engagement';
+
+  @override
+  String get parentContact_title => 'Parent-Teacher Contact';
 
   @override
   String get parentContact_addContact => 'New Parent Contact';
 
   @override
-  String get parentContact_noContacts =>
-      'No parent-teacher contacts recorded yet';
+  String get parentContact_noContacts => 'No parent-teacher contacts recorded yet';
 
   @override
   String get parentContact_parentName => 'Parent Name';
@@ -1488,8 +1482,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get advertisement_addCampaign => 'New Advertisement Campaign';
 
   @override
-  String get advertisement_noCampaigns =>
-      'No advertisement campaigns recorded yet';
+  String get advertisement_noCampaigns => 'No advertisement campaigns recorded yet';
 
   @override
   String get advertisement_campaignTitle => 'Campaign Title';
@@ -1516,8 +1509,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get advertisement_type_schoolWallAwareness => 'School Wall Awareness';
 
   @override
-  String get advertisement_type_communityAnnouncement =>
-      'Community Announcement';
+  String get advertisement_type_communityAnnouncement => 'Community Announcement';
 
   @override
   String get advertisement_type_mosqueAnnouncement => 'Mosque Announcement';
@@ -1532,8 +1524,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get socialMedia_addCampaign => 'New Social Media Campaign';
 
   @override
-  String get socialMedia_noCampaigns =>
-      'No social media campaigns recorded yet';
+  String get socialMedia_noCampaigns => 'No social media campaigns recorded yet';
 
   @override
   String get socialMedia_platform => 'Platform';
@@ -1725,8 +1716,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get functionality_addAssessment => 'New Functionality Assessment';
 
   @override
-  String get functionality_noAssessments =>
-      'No functionality assessments recorded yet';
+  String get functionality_noAssessments => 'No functionality assessments recorded yet';
 
   @override
   String get functionality_teachersPresent => 'Teachers Present';
@@ -1750,16 +1740,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get functionality_classesConducted => 'Classes Conducted';
 
   @override
-  String get functionality_teachingActivityObserved =>
-      'Teaching Activity Observed';
+  String get functionality_teachingActivityObserved => 'Teaching Activity Observed';
 
   @override
-  String get functionality_cleanlinessSatisfactory =>
-      'Cleanliness Satisfactory';
+  String get functionality_cleanlinessSatisfactory => 'Cleanliness Satisfactory';
 
   @override
-  String get functionality_basicFacilitiesAvailable =>
-      'Basic Facilities Available';
+  String get functionality_basicFacilitiesAvailable => 'Basic Facilities Available';
 
   @override
   String get functionality_timetableDisplayed => 'Timetable Displayed';
@@ -1768,8 +1755,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get functionality_morningAssemblyHeld => 'Morning Assembly Held';
 
   @override
-  String get functionality_learningEnvironmentSatisfactory =>
-      'Learning Environment Satisfactory';
+  String get functionality_learningEnvironmentSatisfactory => 'Learning Environment Satisfactory';
 
   @override
   String get functionality_overallStatus => 'Overall Status';
@@ -1815,4 +1801,124 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get schoolOpening_actionRequired => 'Action Required';
+
+  @override
+  String get cleanliness_addInspection => 'New Cleanliness Inspection';
+
+  @override
+  String get cleanliness_noInspections => 'No cleanliness inspections recorded yet';
+
+  @override
+  String get cleanliness_classroomsClean => 'Classrooms Clean';
+
+  @override
+  String get cleanliness_courtyardClean => 'Courtyard Clean';
+
+  @override
+  String get cleanliness_toiletsClean => 'Toilets Clean';
+
+  @override
+  String get cleanliness_drinkingWaterAreaClean => 'Drinking Water Area Clean';
+
+  @override
+  String get cleanliness_wasteManagedProperly => 'Waste Managed Properly';
+
+  @override
+  String get cleanliness_furnitureClean => 'Furniture Clean';
+
+  @override
+  String get cleanliness_schoolWallsClean => 'School Walls Clean';
+
+  @override
+  String get cleanliness_boundaryClean => 'Boundary Clean';
+
+  @override
+  String get cleanliness_dailyCleaningDone => 'Daily Cleaning Done';
+
+  @override
+  String get cleanliness_weeklyCleaningDone => 'Weekly Cleaning Done';
+
+  @override
+  String get cleanliness_beforePhotos => 'Before Photos';
+
+  @override
+  String get cleanliness_afterPhotos => 'After Photos';
+
+  @override
+  String get plantation_addActivity => 'New Plantation Activity';
+
+  @override
+  String get plantation_noActivities => 'No plantation activities recorded yet';
+
+  @override
+  String get plantation_treesPlanted => 'Trees Planted';
+
+  @override
+  String get plantation_treeTypes => 'Tree Types';
+
+  @override
+  String get plantation_treeTypesHint => 'Neem, Sheesham, Kikar (comma-separated)';
+
+  @override
+  String get plantation_studentsInvolved => 'Students Involved';
+
+  @override
+  String get plantation_teachersInvolved => 'Teachers Involved';
+
+  @override
+  String get plantation_communityMembersInvolved => 'Community Members Involved';
+
+  @override
+  String get plantation_survivalRate => 'Survival Rate';
+
+  @override
+  String get ece_addVisit => 'New ECE Room Visit';
+
+  @override
+  String get ece_noVisits => 'No ECE room visits recorded yet';
+
+  @override
+  String get ece_childrenEnrolled => 'Children Enrolled';
+
+  @override
+  String get ece_childrenPresent => 'Children Present';
+
+  @override
+  String get ece_eceRoomAvailable => 'ECE Room Available';
+
+  @override
+  String get ece_functional => 'Functional';
+
+  @override
+  String get ece_teacherAvailable => 'ECE Teacher Available';
+
+  @override
+  String get ece_furnitureAdequate => 'Furniture Adequate';
+
+  @override
+  String get ece_learningMaterialsAvailable => 'Learning Materials Available';
+
+  @override
+  String get ece_toysAvailable => 'Toys Available';
+
+  @override
+  String get ece_learningCornersSetUp => 'Learning Corners Set Up';
+
+  @override
+  String get ece_decorationAdequate => 'Decoration Adequate';
+
+  @override
+  String get ece_cleanlinessSatisfactory => 'Cleanliness Satisfactory';
+
+  @override
+  String get ece_safetySatisfactory => 'Safety Satisfactory';
+
+  @override
+  String get ece_status_good => 'Good';
+
+  @override
+  String get ece_status_needsImprovement => 'Needs Improvement';
+
+  @override
+  String get ece_status_critical => 'Critical';
 }

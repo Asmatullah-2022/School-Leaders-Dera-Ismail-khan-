@@ -23,10 +23,14 @@ class MeetingActionRepository {
       .collection(FirestorePaths.meetingActionsSubcollection);
 
   Stream<List<MeetingActionModel>> watch(String meetingId) {
-    return _actions(meetingId).orderBy('createdAt', descending: true).snapshots().map(
-      (QuerySnapshot<Map<String, dynamic>> snap) =>
-          snap.docs.map((doc) => MeetingActionModel.fromJson(firestoreDataToJson(doc.data()))).toList(),
-    );
+    return _actions(meetingId)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map(
+          (QuerySnapshot<Map<String, dynamic>> snap) => snap.docs
+              .map((doc) => MeetingActionModel.fromJson(firestoreDataToJson(doc.data())))
+              .toList(),
+        );
   }
 
   Future<void> save(String meetingId, MeetingActionModel action) {
@@ -34,5 +38,6 @@ class MeetingActionRepository {
     return _actions(meetingId).doc(action.id).set(data, SetOptions(merge: true));
   }
 
-  Future<void> delete(String meetingId, String actionId) => _actions(meetingId).doc(actionId).delete();
+  Future<void> delete(String meetingId, String actionId) =>
+      _actions(meetingId).doc(actionId).delete();
 }

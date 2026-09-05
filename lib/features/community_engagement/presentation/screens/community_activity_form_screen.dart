@@ -124,7 +124,9 @@ class _CommunityActivityFormScreenState extends ConsumerState<CommunityActivityF
           SchoolPicker(
             selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
             onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-            errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+            errorText: (_schoolTouched && _selectedSchool == null)
+                ? l10n.validation_required
+                : null,
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<CommunityActivityType>(
@@ -186,7 +188,11 @@ class _CommunityActivityFormScreenState extends ConsumerState<CommunityActivityF
           const SizedBox(height: 12),
           AppTextField(label: l10n.update_description, controller: _description, maxLines: 3),
           const SizedBox(height: 12),
-          AppTextField(label: l10n.update_descriptionUrdu, controller: _descriptionUrdu, maxLines: 3),
+          AppTextField(
+            label: l10n.update_descriptionUrdu,
+            controller: _descriptionUrdu,
+            maxLines: 3,
+          ),
           const SizedBox(height: 12),
           AppTextField(label: l10n.common_remarks, controller: _remarks, maxLines: 2),
           const SizedBox(height: 20),
@@ -199,7 +205,11 @@ class _CommunityActivityFormScreenState extends ConsumerState<CommunityActivityF
           FilledButton(
             onPressed: _isSubmitting ? null : _submit,
             child: _isSubmitting
-                ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                ? const SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
                 : Text(l10n.common_save),
           ),
         ],

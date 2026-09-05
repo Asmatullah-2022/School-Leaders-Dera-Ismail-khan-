@@ -88,7 +88,8 @@ class _StatementFormScreenState extends ConsumerState<StatementFormScreen> {
     final String id = widget.existing?.id ?? OfflineWriteHelper.newId();
     final Map<String, dynamic> data = <String, dynamic>{
       for (final _DataRow row in _dataRows)
-        if (row.keyController.text.trim().isNotEmpty) row.keyController.text.trim(): row.valueController.text,
+        if (row.keyController.text.trim().isNotEmpty)
+          row.keyController.text.trim(): row.valueController.text,
     };
     final StatementModel statement = StatementModel(
       id: id,
@@ -140,7 +141,9 @@ class _StatementFormScreenState extends ConsumerState<StatementFormScreen> {
             SchoolPicker(
               selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
               onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-              errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+              errorText: (_schoolTouched && _selectedSchool == null)
+                  ? l10n.validation_required
+                  : null,
             ),
             const SizedBox(height: 12),
             AppTextField(
@@ -184,7 +187,11 @@ class _StatementFormScreenState extends ConsumerState<StatementFormScreen> {
               },
               child: InputDecorator(
                 decoration: InputDecoration(labelText: l10n.statement_periodEnd),
-                child: Text(_periodEnd == null ? l10n.common_selectOption : DateFormat.yMMMd().format(_periodEnd!)),
+                child: Text(
+                  _periodEnd == null
+                      ? l10n.common_selectOption
+                      : DateFormat.yMMMd().format(_periodEnd!),
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -205,7 +212,10 @@ class _StatementFormScreenState extends ConsumerState<StatementFormScreen> {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: AppTextField(label: l10n.statement_fieldName, controller: _dataRows[i].keyController),
+                      child: AppTextField(
+                        label: l10n.statement_fieldName,
+                        controller: _dataRows[i].keyController,
+                      ),
                     ),
                     const SizedBox(width: 8),
                     Expanded(
@@ -236,7 +246,11 @@ class _StatementFormScreenState extends ConsumerState<StatementFormScreen> {
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],

@@ -48,7 +48,10 @@ class MeetingActionsSection extends ConsumerWidget {
             if (actions.isEmpty) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
-                child: EmptyState(message: l10n.clusterMeeting_noActions, icon: Icons.checklist_outlined),
+                child: EmptyState(
+                  message: l10n.clusterMeeting_noActions,
+                  icon: Icons.checklist_outlined,
+                ),
               );
             }
             return Column(
@@ -81,7 +84,10 @@ class MeetingActionsSection extends ConsumerWidget {
                           if (s == null) return;
                           ref
                               .read(meetingActionRepositoryProvider)
-                              .save(meetingId, action.copyWith(status: s, updatedAt: DateTime.now()));
+                              .save(
+                                meetingId,
+                                action.copyWith(status: s, updatedAt: DateTime.now()),
+                              );
                         },
                       ),
                     ),
@@ -110,7 +116,11 @@ class MeetingActionsSection extends ConsumerWidget {
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  AppTextField(label: l10n.clusterMeeting_actionText, controller: textController, maxLines: 2),
+                  AppTextField(
+                    label: l10n.clusterMeeting_actionText,
+                    controller: textController,
+                    maxLines: 2,
+                  ),
                   const SizedBox(height: 12),
                   AppTextField(
                     label: l10n.clusterMeeting_responsiblePerson,
@@ -130,7 +140,9 @@ class MeetingActionsSection extends ConsumerWidget {
                     child: InputDecorator(
                       decoration: InputDecoration(labelText: l10n.clusterMeeting_deadline),
                       child: Text(
-                        deadline == null ? l10n.common_selectOption : DateFormat.yMMMd().format(deadline!),
+                        deadline == null
+                            ? l10n.common_selectOption
+                            : DateFormat.yMMMd().format(deadline!),
                       ),
                     ),
                   ),

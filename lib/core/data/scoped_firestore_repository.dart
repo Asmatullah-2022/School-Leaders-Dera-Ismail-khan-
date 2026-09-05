@@ -69,6 +69,10 @@ class ScopedFirestoreRepository<T> {
 
   Future<void> delete(String id) => _writer.delete(id);
 
-  Future<void> queueEvidencePhoto(String docId, String localFilePath) =>
-      _writer.queuePhotoUpload(docId: docId, filePath: localFilePath, storageField: photoField);
+  Future<void> queueEvidencePhoto(String docId, String localFilePath, {String? storageField}) =>
+      _writer.queuePhotoUpload(
+        docId: docId,
+        filePath: localFilePath,
+        storageField: storageField ?? photoField,
+      );
 }

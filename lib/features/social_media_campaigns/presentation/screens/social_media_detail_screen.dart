@@ -21,7 +21,9 @@ class SocialMediaDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<SocialMediaCampaignModel?> async = ref.watch(socialMediaByIdProvider(campaignId));
+    final AsyncValue<SocialMediaCampaignModel?> async = ref.watch(
+      socialMediaByIdProvider(campaignId),
+    );
 
     return AppScaffold(
       title: l10n.socialMedia_title,
@@ -52,7 +54,8 @@ class SocialMediaDetailScreen extends ConsumerWidget {
               _row(context, l10n.common_date, DateFormat.yMMMd().format(a.postDate)),
               if (a.postUrl != null) _row(context, l10n.socialMedia_postUrl, a.postUrl!),
               if (a.reach != null) _row(context, l10n.socialMedia_reach, '${a.reach}'),
-              if (a.engagement != null) _row(context, l10n.socialMedia_engagement, '${a.engagement}'),
+              if (a.engagement != null)
+                _row(context, l10n.socialMedia_engagement, '${a.engagement}'),
               if (a.description != null) _row(context, l10n.update_description, a.description!),
               if (a.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),

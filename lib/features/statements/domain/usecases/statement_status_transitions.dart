@@ -20,5 +20,7 @@ List<StatementStatus> nextReviewerStatuses(StatementStatus current) => switch (c
     StatementStatus.approved,
     StatementStatus.returned,
   ],
-  StatementStatus.draft || StatementStatus.approved || StatementStatus.returned => const <StatementStatus>[],
+  StatementStatus.draft ||
+  StatementStatus.approved ||
+  StatementStatus.returned => const <StatementStatus>[],
 };

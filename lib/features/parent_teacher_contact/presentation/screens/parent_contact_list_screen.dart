@@ -23,11 +23,11 @@ class ParentContactListScreen extends ConsumerWidget {
     final AsyncValue<List<ParentContactModel>> async = ref.watch(scopedParentContactsProvider);
 
     return AppScaffold(
-      title: l10n.more_ptc,
+      title: l10n.parentContact_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const ParentContactFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const ParentContactFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.parentContact_addContact),
       ),
@@ -47,12 +47,12 @@ class ParentContactListScreen extends ConsumerWidget {
               return Card(
                 child: ListTile(
                   title: Text(c.studentName),
-                  subtitle: Text(
-                    '${c.parentName} · ${contactMethodLabel(l10n, c.contactMethod)}',
-                  ),
+                  subtitle: Text('${c.parentName} · ${contactMethodLabel(l10n, c.contactMethod)}'),
                   trailing: Text(DateFormat.yMMMd().format(c.contactDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => ParentContactDetailScreen(contactId: c.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => ParentContactDetailScreen(contactId: c.id),
+                    ),
                   ),
                 ),
               );

@@ -93,7 +93,9 @@ class _SchoolOpeningFormScreenState extends ConsumerState<SchoolOpeningFormScree
       headTeacherPresent: _headTeacherPresent,
       teachersPresent: int.tryParse(_teachersPresent.text) ?? 0,
       studentsPresent: int.tryParse(_studentsPresent.text) ?? 0,
-      reasonIfClosed: _isOpen ? null : (_reasonIfClosed.text.trim().isEmpty ? null : _reasonIfClosed.text.trim()),
+      reasonIfClosed: _isOpen
+          ? null
+          : (_reasonIfClosed.text.trim().isEmpty ? null : _reasonIfClosed.text.trim()),
       actionRequired: _actionRequired.text.trim().isEmpty ? null : _actionRequired.text.trim(),
       verifiedByUid: widget.existing?.verifiedByUid ?? uid,
       evidencePhotoUrls: widget.existing?.evidencePhotoUrls ?? const <String>[],
@@ -126,7 +128,9 @@ class _SchoolOpeningFormScreenState extends ConsumerState<SchoolOpeningFormScree
           SchoolPicker(
             selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
             onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-            errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+            errorText: (_schoolTouched && _selectedSchool == null)
+                ? l10n.validation_required
+                : null,
           ),
           const SizedBox(height: 12),
           InkWell(
@@ -201,10 +205,18 @@ class _SchoolOpeningFormScreenState extends ConsumerState<SchoolOpeningFormScree
           ),
           if (!_isOpen) ...<Widget>[
             const SizedBox(height: 12),
-            AppTextField(label: l10n.schoolOpening_reasonIfClosed, controller: _reasonIfClosed, maxLines: 2),
+            AppTextField(
+              label: l10n.schoolOpening_reasonIfClosed,
+              controller: _reasonIfClosed,
+              maxLines: 2,
+            ),
           ],
           const SizedBox(height: 12),
-          AppTextField(label: l10n.schoolOpening_actionRequired, controller: _actionRequired, maxLines: 2),
+          AppTextField(
+            label: l10n.schoolOpening_actionRequired,
+            controller: _actionRequired,
+            maxLines: 2,
+          ),
           const SizedBox(height: 20),
           PhotoPickerField(
             localPaths: _newPhotoPaths,
@@ -215,7 +227,11 @@ class _SchoolOpeningFormScreenState extends ConsumerState<SchoolOpeningFormScree
           FilledButton(
             onPressed: _isSubmitting ? null : _submit,
             child: _isSubmitting
-                ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                ? const SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
                 : Text(l10n.common_save),
           ),
         ],

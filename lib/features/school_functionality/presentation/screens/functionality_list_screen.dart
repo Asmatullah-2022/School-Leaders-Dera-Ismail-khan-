@@ -20,14 +20,16 @@ class FunctionalityListScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<List<SchoolFunctionalityModel>> async = ref.watch(scopedSchoolFunctionalityProvider);
+    final AsyncValue<List<SchoolFunctionalityModel>> async = ref.watch(
+      scopedSchoolFunctionalityProvider,
+    );
 
     return AppScaffold(
       title: l10n.functionality_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const FunctionalityFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const FunctionalityFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.functionality_addAssessment),
       ),
@@ -36,7 +38,10 @@ class FunctionalityListScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<SchoolFunctionalityModel> items) {
           if (items.isEmpty) {
-            return EmptyState(message: l10n.functionality_noAssessments, icon: Icons.fact_check_outlined);
+            return EmptyState(
+              message: l10n.functionality_noAssessments,
+              icon: Icons.fact_check_outlined,
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -47,13 +52,19 @@ class FunctionalityListScreen extends ConsumerWidget {
               return Card(
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: functionalityStatusColor(f.overallStatus).withValues(alpha: 0.15),
-                    child: Icon(Icons.school_outlined, color: functionalityStatusColor(f.overallStatus)),
+                    backgroundColor: functionalityStatusColor(f.overallStatus)
+                        .withValues(alpha: 0.15),
+                    child: Icon(
+                      Icons.school_outlined,
+                      color: functionalityStatusColor(f.overallStatus),
+                    ),
                   ),
                   title: Text(functionalityStatusLabel(l10n, f.overallStatus)),
                   subtitle: Text(DateFormat.yMMMd().format(f.assessmentDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => FunctionalityDetailScreen(recordId: f.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => FunctionalityDetailScreen(recordId: f.id),
+                    ),
                   ),
                 ),
               );

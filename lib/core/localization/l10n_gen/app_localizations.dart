@@ -62,8 +62,7 @@ import 'app_localizations_ur.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -93,10 +91,7 @@ abstract class AppLocalizations {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('ur'),
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('ur')];
 
   /// No description provided for @appName.
   ///
@@ -2900,6 +2895,12 @@ abstract class AppLocalizations {
   /// **'Female Parent Engagement'**
   String get community_type_femaleParentEngagement;
 
+  /// No description provided for @parentContact_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Parent-Teacher Contact'**
+  String get parentContact_title;
+
   /// No description provided for @parentContact_addContact.
   ///
   /// In en, this message translates to:
@@ -3661,10 +3662,249 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Action Required'**
   String get schoolOpening_actionRequired;
+
+  /// No description provided for @cleanliness_addInspection.
+  ///
+  /// In en, this message translates to:
+  /// **'New Cleanliness Inspection'**
+  String get cleanliness_addInspection;
+
+  /// No description provided for @cleanliness_noInspections.
+  ///
+  /// In en, this message translates to:
+  /// **'No cleanliness inspections recorded yet'**
+  String get cleanliness_noInspections;
+
+  /// No description provided for @cleanliness_classroomsClean.
+  ///
+  /// In en, this message translates to:
+  /// **'Classrooms Clean'**
+  String get cleanliness_classroomsClean;
+
+  /// No description provided for @cleanliness_courtyardClean.
+  ///
+  /// In en, this message translates to:
+  /// **'Courtyard Clean'**
+  String get cleanliness_courtyardClean;
+
+  /// No description provided for @cleanliness_toiletsClean.
+  ///
+  /// In en, this message translates to:
+  /// **'Toilets Clean'**
+  String get cleanliness_toiletsClean;
+
+  /// No description provided for @cleanliness_drinkingWaterAreaClean.
+  ///
+  /// In en, this message translates to:
+  /// **'Drinking Water Area Clean'**
+  String get cleanliness_drinkingWaterAreaClean;
+
+  /// No description provided for @cleanliness_wasteManagedProperly.
+  ///
+  /// In en, this message translates to:
+  /// **'Waste Managed Properly'**
+  String get cleanliness_wasteManagedProperly;
+
+  /// No description provided for @cleanliness_furnitureClean.
+  ///
+  /// In en, this message translates to:
+  /// **'Furniture Clean'**
+  String get cleanliness_furnitureClean;
+
+  /// No description provided for @cleanliness_schoolWallsClean.
+  ///
+  /// In en, this message translates to:
+  /// **'School Walls Clean'**
+  String get cleanliness_schoolWallsClean;
+
+  /// No description provided for @cleanliness_boundaryClean.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Clean'**
+  String get cleanliness_boundaryClean;
+
+  /// No description provided for @cleanliness_dailyCleaningDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Cleaning Done'**
+  String get cleanliness_dailyCleaningDone;
+
+  /// No description provided for @cleanliness_weeklyCleaningDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Cleaning Done'**
+  String get cleanliness_weeklyCleaningDone;
+
+  /// No description provided for @cleanliness_beforePhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Before Photos'**
+  String get cleanliness_beforePhotos;
+
+  /// No description provided for @cleanliness_afterPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'After Photos'**
+  String get cleanliness_afterPhotos;
+
+  /// No description provided for @plantation_addActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'New Plantation Activity'**
+  String get plantation_addActivity;
+
+  /// No description provided for @plantation_noActivities.
+  ///
+  /// In en, this message translates to:
+  /// **'No plantation activities recorded yet'**
+  String get plantation_noActivities;
+
+  /// No description provided for @plantation_treesPlanted.
+  ///
+  /// In en, this message translates to:
+  /// **'Trees Planted'**
+  String get plantation_treesPlanted;
+
+  /// No description provided for @plantation_treeTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'Tree Types'**
+  String get plantation_treeTypes;
+
+  /// No description provided for @plantation_treeTypesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Neem, Sheesham, Kikar (comma-separated)'**
+  String get plantation_treeTypesHint;
+
+  /// No description provided for @plantation_studentsInvolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Students Involved'**
+  String get plantation_studentsInvolved;
+
+  /// No description provided for @plantation_teachersInvolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Teachers Involved'**
+  String get plantation_teachersInvolved;
+
+  /// No description provided for @plantation_communityMembersInvolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Members Involved'**
+  String get plantation_communityMembersInvolved;
+
+  /// No description provided for @plantation_survivalRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Survival Rate'**
+  String get plantation_survivalRate;
+
+  /// No description provided for @ece_addVisit.
+  ///
+  /// In en, this message translates to:
+  /// **'New ECE Room Visit'**
+  String get ece_addVisit;
+
+  /// No description provided for @ece_noVisits.
+  ///
+  /// In en, this message translates to:
+  /// **'No ECE room visits recorded yet'**
+  String get ece_noVisits;
+
+  /// No description provided for @ece_childrenEnrolled.
+  ///
+  /// In en, this message translates to:
+  /// **'Children Enrolled'**
+  String get ece_childrenEnrolled;
+
+  /// No description provided for @ece_childrenPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Children Present'**
+  String get ece_childrenPresent;
+
+  /// No description provided for @ece_eceRoomAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'ECE Room Available'**
+  String get ece_eceRoomAvailable;
+
+  /// No description provided for @ece_functional.
+  ///
+  /// In en, this message translates to:
+  /// **'Functional'**
+  String get ece_functional;
+
+  /// No description provided for @ece_teacherAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'ECE Teacher Available'**
+  String get ece_teacherAvailable;
+
+  /// No description provided for @ece_furnitureAdequate.
+  ///
+  /// In en, this message translates to:
+  /// **'Furniture Adequate'**
+  String get ece_furnitureAdequate;
+
+  /// No description provided for @ece_learningMaterialsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Materials Available'**
+  String get ece_learningMaterialsAvailable;
+
+  /// No description provided for @ece_toysAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Toys Available'**
+  String get ece_toysAvailable;
+
+  /// No description provided for @ece_learningCornersSetUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Corners Set Up'**
+  String get ece_learningCornersSetUp;
+
+  /// No description provided for @ece_decorationAdequate.
+  ///
+  /// In en, this message translates to:
+  /// **'Decoration Adequate'**
+  String get ece_decorationAdequate;
+
+  /// No description provided for @ece_cleanlinessSatisfactory.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleanliness Satisfactory'**
+  String get ece_cleanlinessSatisfactory;
+
+  /// No description provided for @ece_safetySatisfactory.
+  ///
+  /// In en, this message translates to:
+  /// **'Safety Satisfactory'**
+  String get ece_safetySatisfactory;
+
+  /// No description provided for @ece_status_good.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get ece_status_good;
+
+  /// No description provided for @ece_status_needsImprovement.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs Improvement'**
+  String get ece_status_needsImprovement;
+
+  /// No description provided for @ece_status_critical.
+  ///
+  /// In en, this message translates to:
+  /// **'Critical'**
+  String get ece_status_critical;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -3673,8 +3913,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'ur'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'ur'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;

@@ -25,9 +25,9 @@ class StatementListScreen extends ConsumerWidget {
     return AppScaffold(
       title: l10n.statement_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const StatementFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const StatementFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.statement_addStatement),
       ),
@@ -36,7 +36,10 @@ class StatementListScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<StatementModel> items) {
           if (items.isEmpty) {
-            return EmptyState(message: l10n.statement_noStatements, icon: Icons.description_outlined);
+            return EmptyState(
+              message: l10n.statement_noStatements,
+              icon: Icons.description_outlined,
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -54,7 +57,9 @@ class StatementListScreen extends ConsumerWidget {
                     labelStyle: TextStyle(color: statementStatusColor(s.status)),
                   ),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => StatementDetailScreen(statementId: s.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => StatementDetailScreen(statementId: s.id),
+                    ),
                   ),
                 ),
               );

@@ -24,7 +24,7 @@ class ParentContactDetailScreen extends ConsumerWidget {
     final AsyncValue<ParentContactModel?> async = ref.watch(parentContactByIdProvider(contactId));
 
     return AppScaffold(
-      title: l10n.more_ptc,
+      title: l10n.parentContact_title,
       actions: <Widget>[
         async.maybeWhen(
           data: (ParentContactModel? c) => c == null
@@ -49,8 +49,13 @@ class ParentContactDetailScreen extends ConsumerWidget {
               Text(c.studentName, style: Theme.of(context).textTheme.headlineSmall),
               const SizedBox(height: 16),
               _row(context, l10n.parentContact_parentName, c.parentName),
-              if (c.contactNumber != null) _row(context, l10n.parentContact_contactNumber, c.contactNumber!),
-              _row(context, l10n.parentContact_contactMethod, contactMethodLabel(l10n, c.contactMethod)),
+              if (c.contactNumber != null)
+                _row(context, l10n.parentContact_contactNumber, c.contactNumber!),
+              _row(
+                context,
+                l10n.parentContact_contactMethod,
+                contactMethodLabel(l10n, c.contactMethod),
+              ),
               _row(context, l10n.common_date, DateFormat.yMMMd().format(c.contactDate)),
               if (c.purpose != null) _row(context, l10n.parentContact_purpose, c.purpose!),
               if (c.discussion != null) _row(context, l10n.parentContact_discussion, c.discussion!),
@@ -61,7 +66,11 @@ class ParentContactDetailScreen extends ConsumerWidget {
                 c.followUpRequired ? l10n.common_yes : l10n.common_no,
               ),
               if (c.followUpRequired && c.followUpDate != null)
-                _row(context, l10n.parentContact_followUpDate, DateFormat.yMMMd().format(c.followUpDate!)),
+                _row(
+                  context,
+                  l10n.parentContact_followUpDate,
+                  DateFormat.yMMMd().format(c.followUpDate!),
+                ),
               if (c.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),
                 Text(l10n.common_photos, style: Theme.of(context).textTheme.titleSmall),

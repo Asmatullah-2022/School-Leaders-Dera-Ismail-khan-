@@ -21,7 +21,9 @@ class AdvertisementDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<AdvertisementCampaignModel?> async = ref.watch(advertisementByIdProvider(campaignId));
+    final AsyncValue<AdvertisementCampaignModel?> async = ref.watch(
+      advertisementByIdProvider(campaignId),
+    );
 
     return AppScaffold(
       title: l10n.advertisement_title,
@@ -48,7 +50,11 @@ class AdvertisementDetailScreen extends ConsumerWidget {
             children: <Widget>[
               Text(a.campaignTitle, style: Theme.of(context).textTheme.headlineSmall),
               const SizedBox(height: 16),
-              _row(context, l10n.advertisement_type, advertisementTypeLabel(l10n, a.advertisementType)),
+              _row(
+                context,
+                l10n.advertisement_type,
+                advertisementTypeLabel(l10n, a.advertisementType),
+              ),
               _row(context, l10n.common_date, DateFormat.yMMMd().format(a.activityDate)),
               if (a.location != null) _row(context, l10n.advertisement_location, a.location!),
               _row(context, l10n.advertisement_quantity, '${a.quantity}'),

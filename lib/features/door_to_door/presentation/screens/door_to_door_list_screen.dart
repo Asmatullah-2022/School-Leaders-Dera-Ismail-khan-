@@ -24,9 +24,9 @@ class DoorToDoorListScreen extends ConsumerWidget {
     return AppScaffold(
       title: l10n.doorToDoor_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const DoorToDoorFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const DoorToDoorFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.doorToDoor_addActivity),
       ),
@@ -35,7 +35,10 @@ class DoorToDoorListScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<DoorToDoorActivityModel> items) {
           if (items.isEmpty) {
-            return EmptyState(message: l10n.doorToDoor_noActivities, icon: Icons.door_front_door_outlined);
+            return EmptyState(
+              message: l10n.doorToDoor_noActivities,
+              icon: Icons.door_front_door_outlined,
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -52,7 +55,9 @@ class DoorToDoorListScreen extends ConsumerWidget {
                   ),
                   trailing: Text(DateFormat.yMMMd().format(a.activityDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => DoorToDoorDetailScreen(activityId: a.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => DoorToDoorDetailScreen(activityId: a.id),
+                    ),
                   ),
                 ),
               );

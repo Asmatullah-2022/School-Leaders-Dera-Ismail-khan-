@@ -24,9 +24,9 @@ class SchoolOpeningListScreen extends ConsumerWidget {
     return AppScaffold(
       title: l10n.schoolOpening_title,
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (_) => const SchoolOpeningFormScreen()),
-        ),
+        onPressed: () =>
+            Navigator.of(context)
+                .push(MaterialPageRoute<void>(builder: (_) => const SchoolOpeningFormScreen())),
         icon: const Icon(Icons.add),
         label: Text(l10n.schoolOpening_addCheck),
       ),
@@ -35,7 +35,10 @@ class SchoolOpeningListScreen extends ConsumerWidget {
         error: (Object e, _) => ErrorView(failure: UnknownFailure(details: e.toString())),
         data: (List<SchoolOpeningModel> items) {
           if (items.isEmpty) {
-            return EmptyState(message: l10n.schoolOpening_noChecks, icon: Icons.door_front_door_outlined);
+            return EmptyState(
+              message: l10n.schoolOpening_noChecks,
+              icon: Icons.door_front_door_outlined,
+            );
           }
           return ListView.separated(
             padding: const EdgeInsets.all(12),
@@ -53,7 +56,9 @@ class SchoolOpeningListScreen extends ConsumerWidget {
                   subtitle: o.reasonIfClosed != null ? Text(o.reasonIfClosed!) : null,
                   trailing: Text(DateFormat.yMMMd().format(o.checkDate)),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => SchoolOpeningDetailScreen(recordId: o.id)),
+                    MaterialPageRoute<void>(
+                      builder: (_) => SchoolOpeningDetailScreen(recordId: o.id),
+                    ),
                   ),
                 ),
               );

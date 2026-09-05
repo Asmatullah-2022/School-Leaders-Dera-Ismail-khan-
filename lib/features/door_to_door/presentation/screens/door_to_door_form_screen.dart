@@ -125,7 +125,9 @@ class _DoorToDoorFormScreenState extends ConsumerState<DoorToDoorFormScreen> {
           SchoolPicker(
             selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
             onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-            errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+            errorText: (_schoolTouched && _selectedSchool == null)
+                ? l10n.validation_required
+                : null,
           ),
           const SizedBox(height: 12),
           InkWell(
@@ -203,7 +205,11 @@ class _DoorToDoorFormScreenState extends ConsumerState<DoorToDoorFormScreen> {
           FilledButton(
             onPressed: _isSubmitting ? null : _submit,
             child: _isSubmitting
-                ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                ? const SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
                 : Text(l10n.common_save),
           ),
         ],

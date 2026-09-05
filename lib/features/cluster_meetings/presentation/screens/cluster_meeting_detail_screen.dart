@@ -64,8 +64,10 @@ class ClusterMeetingDetailScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               _row(context, l10n.common_date, DateFormat.yMMMd().format(m.meetingDate)),
-              if (m.meetingTime != null) _row(context, l10n.clusterMeeting_meetingTime, m.meetingTime!),
-              if (m.chairperson != null) _row(context, l10n.clusterMeeting_chairperson, m.chairperson!),
+              if (m.meetingTime != null)
+                _row(context, l10n.clusterMeeting_meetingTime, m.meetingTime!),
+              if (m.chairperson != null)
+                _row(context, l10n.clusterMeeting_chairperson, m.chairperson!),
               _row(context, l10n.clusterMeeting_participantsCount, '${m.participantsCount}'),
               if (m.agenda != null) _row(context, l10n.clusterMeeting_agenda, m.agenda!),
               if (m.decisions != null) _row(context, l10n.clusterMeeting_decisions, m.decisions!),

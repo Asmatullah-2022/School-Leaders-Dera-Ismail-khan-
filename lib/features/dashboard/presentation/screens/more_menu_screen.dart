@@ -31,6 +31,22 @@ class MoreMenuScreen extends ConsumerWidget {
       _MenuEntry(Icons.emergency_outlined, l10n.more_emergency, RoutePaths.emergency),
       _MenuEntry(Icons.campaign_outlined, l10n.more_officialUpdates, RoutePaths.officialUpdates),
       _MenuEntry(Icons.notifications_outlined, l10n.more_notifications, RoutePaths.notifications),
+      _MenuEntry(Icons.directions_walk_outlined, l10n.doorToDoor_title, RoutePaths.doorToDoor),
+      _MenuEntry(Icons.contact_phone_outlined, l10n.parentContact_title, RoutePaths.parentContact),
+      _MenuEntry(Icons.campaign_outlined, l10n.advertisement_title, RoutePaths.advertisement),
+      _MenuEntry(Icons.share_outlined, l10n.socialMedia_title, RoutePaths.socialMedia),
+      _MenuEntry(Icons.menu_book_outlined, l10n.textbook_title, RoutePaths.textbooks),
+      _MenuEntry(Icons.description_outlined, l10n.statement_title, RoutePaths.statements),
+      _MenuEntry(
+        Icons.fact_check_outlined,
+        l10n.functionality_title,
+        RoutePaths.schoolFunctionality,
+      ),
+      _MenuEntry(
+        Icons.door_front_door_outlined,
+        l10n.schoolOpening_title,
+        RoutePaths.schoolOpening,
+      ),
       if (role != null && role.canManageHierarchy) ...<_MenuEntry>[
         _MenuEntry(Icons.map_outlined, l10n.hierarchy_districts, RoutePaths.districts),
         _MenuEntry(Icons.map_outlined, l10n.hierarchy_subDivisions, RoutePaths.subDivisions),

@@ -30,9 +30,9 @@ class TextbookDetailScreen extends ConsumerWidget {
               ? const SizedBox.shrink()
               : IconButton(
                   icon: const Icon(Icons.edit_outlined),
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => TextbookFormScreen(existing: t)),
-                  ),
+                  onPressed: () => Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute<void>(builder: (_) => TextbookFormScreen(existing: t))),
                 ),
           orElse: () => const SizedBox.shrink(),
         ),
@@ -55,8 +55,10 @@ class TextbookDetailScreen extends ConsumerWidget {
               _row(context, l10n.textbook_booksDistributed, '${t.booksDistributed}'),
               _row(context, l10n.textbook_studentsReceiving, '${t.studentsReceiving}'),
               if (t.shortage > 0) _row(context, l10n.textbook_shortage, '${t.shortage}'),
-              if (t.otherMaterials != null) _row(context, l10n.textbook_otherMaterials, t.otherMaterials!),
-              if (t.supportRequired != null) _row(context, l10n.textbook_supportRequired, t.supportRequired!),
+              if (t.otherMaterials != null)
+                _row(context, l10n.textbook_otherMaterials, t.otherMaterials!),
+              if (t.supportRequired != null)
+                _row(context, l10n.textbook_supportRequired, t.supportRequired!),
               if (t.remarks != null) _row(context, l10n.common_remarks, t.remarks!),
               if (t.evidencePhotoUrls.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 16),

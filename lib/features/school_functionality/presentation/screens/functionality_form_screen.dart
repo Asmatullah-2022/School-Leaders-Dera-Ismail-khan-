@@ -148,7 +148,9 @@ class _FunctionalityFormScreenState extends ConsumerState<FunctionalityFormScree
           SchoolPicker(
             selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
             onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-            errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+            errorText: (_schoolTouched && _selectedSchool == null)
+                ? l10n.validation_required
+                : null,
           ),
           const SizedBox(height: 12),
           InkWell(
@@ -211,7 +213,11 @@ class _FunctionalityFormScreenState extends ConsumerState<FunctionalityFormScree
             ],
           ),
           const SizedBox(height: 8),
-          _switch(l10n.functionality_schoolOpen, _schoolOpen, (v) => setState(() => _schoolOpen = v)),
+          _switch(
+            l10n.functionality_schoolOpen,
+            _schoolOpen,
+            (v) => setState(() => _schoolOpen = v),
+          ),
           _switch(
             l10n.functionality_headTeacherPresent,
             _headTeacherPresent,
@@ -258,8 +264,10 @@ class _FunctionalityFormScreenState extends ConsumerState<FunctionalityFormScree
             decoration: InputDecoration(labelText: l10n.functionality_overallStatus),
             items: FunctionalityStatus.values
                 .map(
-                  (s) =>
-                      DropdownMenuItem<FunctionalityStatus>(value: s, child: Text(functionalityStatusLabel(l10n, s))),
+                  (s) => DropdownMenuItem<FunctionalityStatus>(
+                    value: s,
+                    child: Text(functionalityStatusLabel(l10n, s)),
+                  ),
                 )
                 .toList(),
             onChanged: (v) => setState(() => _status = v ?? _status),
@@ -276,7 +284,11 @@ class _FunctionalityFormScreenState extends ConsumerState<FunctionalityFormScree
           FilledButton(
             onPressed: _isSubmitting ? null : _submit,
             child: _isSubmitting
-                ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                ? const SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
                 : Text(l10n.common_save),
           ),
         ],

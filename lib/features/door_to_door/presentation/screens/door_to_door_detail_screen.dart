@@ -20,7 +20,9 @@ class DoorToDoorDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppLocalizations l10n = AppLocalizations.of(context);
-    final AsyncValue<DoorToDoorActivityModel?> async = ref.watch(doorToDoorByIdProvider(activityId));
+    final AsyncValue<DoorToDoorActivityModel?> async = ref.watch(
+      doorToDoorByIdProvider(activityId),
+    );
 
     return AppScaffold(
       title: l10n.doorToDoor_title,
@@ -45,7 +47,10 @@ class DoorToDoorDetailScreen extends ConsumerWidget {
           return ListView(
             padding: const EdgeInsets.all(16),
             children: <Widget>[
-              Text(DateFormat.yMMMd().format(a.activityDate), style: Theme.of(context).textTheme.headlineSmall),
+              Text(
+                DateFormat.yMMMd().format(a.activityDate),
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
               const SizedBox(height: 16),
               if (a.area != null) _row(context, l10n.doorToDoor_area, a.area!),
               if (a.teamMembers.isNotEmpty)

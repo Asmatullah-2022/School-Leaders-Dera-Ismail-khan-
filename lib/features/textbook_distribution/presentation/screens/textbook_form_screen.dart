@@ -138,7 +138,9 @@ class _TextbookFormScreenState extends ConsumerState<TextbookFormScreen> {
             SchoolPicker(
               selectedSchoolId: _selectedSchool?.id ?? widget.existing?.schoolId,
               onChanged: (SchoolModel s) => setState(() => _selectedSchool = s),
-              errorText: (_schoolTouched && _selectedSchool == null) ? l10n.validation_required : null,
+              errorText: (_schoolTouched && _selectedSchool == null)
+                  ? l10n.validation_required
+                  : null,
             ),
             const SizedBox(height: 12),
             AppTextField(
@@ -166,9 +168,13 @@ class _TextbookFormScreenState extends ConsumerState<TextbookFormScreen> {
             const SizedBox(height: 12),
             Row(
               children: <Widget>[
-                Expanded(child: AppTextField(label: l10n.textbook_classGrade, controller: _classGrade)),
+                Expanded(
+                  child: AppTextField(label: l10n.textbook_classGrade, controller: _classGrade),
+                ),
                 const SizedBox(width: 12),
-                Expanded(child: AppTextField(label: l10n.textbook_subject, controller: _subject)),
+                Expanded(
+                  child: AppTextField(label: l10n.textbook_subject, controller: _subject),
+                ),
               ],
             ),
             const SizedBox(height: 12),
@@ -216,9 +222,17 @@ class _TextbookFormScreenState extends ConsumerState<TextbookFormScreen> {
               ],
             ),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.textbook_otherMaterials, controller: _otherMaterials, maxLines: 2),
+            AppTextField(
+              label: l10n.textbook_otherMaterials,
+              controller: _otherMaterials,
+              maxLines: 2,
+            ),
             const SizedBox(height: 12),
-            AppTextField(label: l10n.textbook_supportRequired, controller: _supportRequired, maxLines: 2),
+            AppTextField(
+              label: l10n.textbook_supportRequired,
+              controller: _supportRequired,
+              maxLines: 2,
+            ),
             const SizedBox(height: 12),
             AppTextField(label: l10n.common_remarks, controller: _remarks, maxLines: 2),
             const SizedBox(height: 20),
@@ -231,7 +245,11 @@ class _TextbookFormScreenState extends ConsumerState<TextbookFormScreen> {
             FilledButton(
               onPressed: _isSubmitting ? null : _submit,
               child: _isSubmitting
-                  ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                  ? const SizedBox(
+                      height: 20,
+                      width: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                   : Text(l10n.common_save),
             ),
           ],
