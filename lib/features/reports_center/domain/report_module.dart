@@ -8,6 +8,19 @@ enum ReportModule {
   schoolProblems,
   emergencyReports,
   ptcPriorities,
+  doorToDoor,
+  communityEngagement,
+  parentTeacherContact,
+  advertisementCampaigns,
+  socialMediaCampaigns,
+  textbookDistribution,
+  clusterMeetings,
+  statements,
+  schoolFunctionality,
+  schoolOpening,
+  cleanliness,
+  plantation,
+  eceMonitoring,
 }
 
 enum ExportFormat { pdf, csv }

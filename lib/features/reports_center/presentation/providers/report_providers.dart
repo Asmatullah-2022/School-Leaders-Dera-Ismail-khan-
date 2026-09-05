@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../admission_campaign/presentation/providers/admission_providers.dart';
 import '../../../emergency_reports/presentation/providers/emergency_providers.dart';
 import '../../../ptc_priorities/presentation/providers/ptc_providers.dart';
+import '../../../scaffold_modules/presentation/providers/scaffold_module_providers.dart';
 import '../../../school_monitoring/presentation/providers/monitoring_providers.dart';
 import '../../../school_problems/presentation/providers/school_problem_providers.dart';
 import '../../data/report_adapters.dart';
@@ -43,5 +44,67 @@ final reportTableProvider = Provider.family<ReportTable, ReportFilter>((ref, fil
       );
     case ReportModule.ptcPriorities:
       return buildPtcTable(ref.watch(scopedPtcPrioritiesProvider).valueOrNull ?? const [], filter);
+    case ReportModule.doorToDoor:
+      return buildDoorToDoorTable(
+        ref.watch(scopedDoorToDoorProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.communityEngagement:
+      return buildCommunityActivityTable(
+        ref.watch(scopedCommunityActivitiesProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.parentTeacherContact:
+      return buildParentContactTable(
+        ref.watch(scopedParentContactsProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.advertisementCampaigns:
+      return buildAdvertisementTable(
+        ref.watch(scopedAdvertisementsProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.socialMediaCampaigns:
+      return buildSocialMediaTable(
+        ref.watch(scopedSocialMediaProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.textbookDistribution:
+      return buildTextbookTable(ref.watch(scopedTextbooksProvider).valueOrNull ?? const [], filter);
+    case ReportModule.clusterMeetings:
+      return buildClusterMeetingTable(
+        ref.watch(scopedClusterMeetingsProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.statements:
+      return buildStatementTable(
+        ref.watch(scopedStatementsProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.schoolFunctionality:
+      return buildSchoolFunctionalityTable(
+        ref.watch(scopedSchoolFunctionalityProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.schoolOpening:
+      return buildSchoolOpeningTable(
+        ref.watch(scopedSchoolOpeningProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.cleanliness:
+      return buildCleanlinessTable(
+        ref.watch(scopedCleanlinessProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.plantation:
+      return buildPlantationTable(
+        ref.watch(scopedPlantationProvider).valueOrNull ?? const [],
+        filter,
+      );
+    case ReportModule.eceMonitoring:
+      return buildEceMonitoringTable(
+        ref.watch(scopedEceMonitoringProvider).valueOrNull ?? const [],
+        filter,
+      );
   }
 });

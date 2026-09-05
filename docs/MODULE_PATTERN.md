@@ -10,9 +10,8 @@ cleanliness, plantation, ece_monitoring) that now also have full CRUD UI
 (list/form/detail screens, bilingual ARB strings, router + More-menu
 wiring) built against the shared `ScopedFirestoreRepository<T>` — see
 `lib/features/scaffold_modules/presentation/providers/scaffold_module_providers.dart`
-for their wiring. The one deliberately unfinished piece for these 13 is
-**Reports Center export adapters** (step 7 below) — they are not yet
-included in PDF/CSV exports; add an adapter per module when that's needed.
+for their wiring — and are all included in Reports Center PDF/CSV exports
+(step 7 below).
 
 Use `lib/features/admission_campaign/` as the reference implementation for a
 flagship-depth module, or `lib/features/cleanliness/` /
@@ -57,9 +56,18 @@ module (or for adding Reports Center support to an existing one):
    entry to `lib/features/dashboard/presentation/screens/more_menu_screen.dart`
    so it's reachable from the More tab. Only `schoolDetail`, `adminUsers`,
    and `adminUserForm` remain wired to `_placeholder(...)`.
-7. **Reports Center** — add an export adapter entry in
-   `lib/features/reports_center/data/report_export_repository_impl.dart` so
-   the module's records can be included in PDF/CSV exports.
+7. **Reports Center** — add a `ReportModule` enum value
+   (`lib/features/reports_center/domain/report_module.dart`), a
+   `build<Module>Table()` adapter in
+   `lib/features/reports_center/data/report_adapters.dart` (filter the
+   records with `filter.matchesDate`/`matchesSchool`, flatten to a
+   `ReportTable`), a `case` in the `reportTableProvider` switch
+   (`lib/features/reports_center/presentation/providers/report_providers.dart`)
+   watching the module's existing scoped-list provider, and a `case` in
+   `_moduleLabel` (`reports_center_screen.dart`) — reuse the module's
+   existing title/more-menu ARB key rather than adding a new
+   `reports_module_*` one. Add unit tests for the adapter following
+   `test/features/reports_center/scaffold_module_report_adapters_test.dart`.
 8. **Security rules** — add the collection's scope/role rules to
    `firebase/firestore.rules` following the existing pattern (see
    `hasScopeAccess()` and the per-collection blocks already defined for the

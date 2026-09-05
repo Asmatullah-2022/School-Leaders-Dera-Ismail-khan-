@@ -40,6 +40,19 @@ class _ReportsCenterScreenState extends ConsumerState<ReportsCenterScreen> {
     ReportModule.schoolProblems => l10n.reports_module_problems,
     ReportModule.emergencyReports => l10n.reports_module_emergency,
     ReportModule.ptcPriorities => l10n.reports_module_ptc,
+    ReportModule.doorToDoor => l10n.doorToDoor_title,
+    ReportModule.communityEngagement => l10n.more_community,
+    ReportModule.parentTeacherContact => l10n.parentContact_title,
+    ReportModule.advertisementCampaigns => l10n.advertisement_title,
+    ReportModule.socialMediaCampaigns => l10n.socialMedia_title,
+    ReportModule.textbookDistribution => l10n.textbook_title,
+    ReportModule.clusterMeetings => l10n.more_clusterMeetings,
+    ReportModule.statements => l10n.statement_title,
+    ReportModule.schoolFunctionality => l10n.functionality_title,
+    ReportModule.schoolOpening => l10n.schoolOpening_title,
+    ReportModule.cleanliness => l10n.more_cleanliness,
+    ReportModule.plantation => l10n.more_plantation,
+    ReportModule.eceMonitoring => l10n.more_ece,
   };
 
   String _languageLabel(AppLocalizations l10n, ReportLanguage lang) => switch (lang) {
