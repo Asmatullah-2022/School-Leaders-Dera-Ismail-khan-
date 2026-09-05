@@ -136,6 +136,7 @@ class _AdvertisementFormScreenState extends ConsumerState<AdvertisementFormScree
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<AdvertisementType>(
+              isExpanded: true,
               initialValue: _type,
               decoration: InputDecoration(labelText: l10n.advertisement_type),
               items: AdvertisementType.values

@@ -135,6 +135,7 @@ class _EmergencyReportFormScreenState extends ConsumerState<EmergencyReportFormS
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<EmergencyType>(
+              isExpanded: true,
               initialValue: _type,
               decoration: InputDecoration(labelText: l10n.emergency_type),
               items: EmergencyType.values
@@ -149,6 +150,7 @@ class _EmergencyReportFormScreenState extends ConsumerState<EmergencyReportFormS
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<EmergencySeverity>(
+              isExpanded: true,
               initialValue: _severity,
               decoration: InputDecoration(labelText: l10n.emergency_severity),
               items: EmergencySeverity.values

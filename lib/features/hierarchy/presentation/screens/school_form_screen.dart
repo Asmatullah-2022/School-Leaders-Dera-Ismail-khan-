@@ -218,6 +218,7 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
             AppTextField(label: l10n.hierarchy_village, controller: _village),
             const SizedBox(height: 12),
             DropdownButtonFormField<SchoolLevel>(
+              isExpanded: true,
               initialValue: _level,
               decoration: InputDecoration(labelText: l10n.hierarchy_schoolLevel),
               items: SchoolLevel.values
@@ -227,6 +228,7 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<SchoolGender>(
+              isExpanded: true,
               initialValue: _gender,
               decoration: InputDecoration(labelText: l10n.hierarchy_schoolType),
               items: SchoolGender.values
@@ -344,6 +346,7 @@ class _SchoolFormScreenState extends ConsumerState<SchoolFormScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<BuildingCondition>(
+              isExpanded: true,
               initialValue: _condition,
               decoration: InputDecoration(labelText: l10n.hierarchy_buildingCondition),
               items: BuildingCondition.values

@@ -63,6 +63,7 @@ class HierarchyLevelDropdown extends ConsumerWidget {
     String? placeholder,
   }) {
     return DropdownButtonFormField<String>(
+      isExpanded: true,
       key: ValueKey<String>('$level-$parentId'),
       initialValue: value,
       decoration: InputDecoration(labelText: label),

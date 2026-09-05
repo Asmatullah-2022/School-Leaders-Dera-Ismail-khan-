@@ -260,6 +260,7 @@ class _FunctionalityFormScreenState extends ConsumerState<FunctionalityFormScree
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<FunctionalityStatus>(
+            isExpanded: true,
             initialValue: _status,
             decoration: InputDecoration(labelText: l10n.functionality_overallStatus),
             items: FunctionalityStatus.values

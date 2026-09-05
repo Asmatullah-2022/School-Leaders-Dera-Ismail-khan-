@@ -160,6 +160,7 @@ class _ParentContactFormScreenState extends ConsumerState<ParentContactFormScree
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<ContactMethod>(
+              isExpanded: true,
               initialValue: _method,
               decoration: InputDecoration(labelText: l10n.parentContact_contactMethod),
               items: ContactMethod.values

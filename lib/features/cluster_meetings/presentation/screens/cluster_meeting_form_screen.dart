@@ -199,6 +199,7 @@ class _ClusterMeetingFormScreenState extends ConsumerState<ClusterMeetingFormScr
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<MeetingStatus>(
+              isExpanded: true,
               initialValue: _status,
               decoration: InputDecoration(labelText: l10n.common_status),
               items: MeetingStatus.values

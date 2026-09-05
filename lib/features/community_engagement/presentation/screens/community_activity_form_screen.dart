@@ -130,6 +130,7 @@ class _CommunityActivityFormScreenState extends ConsumerState<CommunityActivityF
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<CommunityActivityType>(
+            isExpanded: true,
             initialValue: _type,
             decoration: InputDecoration(labelText: l10n.community_activityType),
             items: CommunityActivityType.values

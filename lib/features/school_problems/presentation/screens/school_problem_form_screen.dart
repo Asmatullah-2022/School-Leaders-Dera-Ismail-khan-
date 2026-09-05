@@ -167,6 +167,7 @@ class _SchoolProblemFormScreenState extends ConsumerState<SchoolProblemFormScree
             AppTextField(label: l10n.problem_titleUrdu, controller: _titleUrdu),
             const SizedBox(height: 12),
             DropdownButtonFormField<ProblemCategory>(
+              isExpanded: true,
               initialValue: _category,
               decoration: InputDecoration(labelText: l10n.problem_category),
               items: ProblemCategory.values
@@ -181,6 +182,7 @@ class _SchoolProblemFormScreenState extends ConsumerState<SchoolProblemFormScree
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<ProblemPriority>(
+              isExpanded: true,
               initialValue: _priority,
               decoration: InputDecoration(labelText: l10n.problem_priority),
               items: ProblemPriority.values

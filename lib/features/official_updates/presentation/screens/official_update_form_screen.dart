@@ -152,6 +152,7 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<UpdateCategory>(
+              isExpanded: true,
               initialValue: _category,
               decoration: InputDecoration(labelText: l10n.update_category),
               items: UpdateCategory.values
@@ -166,6 +167,7 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<UpdatePriority>(
+              isExpanded: true,
               initialValue: _priority,
               decoration: InputDecoration(labelText: l10n.update_priority),
               items: UpdatePriority.values
@@ -180,6 +182,7 @@ class _OfficialUpdateFormScreenState extends ConsumerState<OfficialUpdateFormScr
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<UpdateAudience>(
+              isExpanded: true,
               initialValue: _audience,
               decoration: InputDecoration(labelText: l10n.update_audience),
               items: UpdateAudience.values

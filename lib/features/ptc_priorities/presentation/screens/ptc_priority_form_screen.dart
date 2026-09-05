@@ -201,6 +201,7 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
             AppTextField(label: l10n.ptc_priorityTitleUrdu, controller: _titleUrdu),
             const SizedBox(height: 12),
             DropdownButtonFormField<PtcCategory>(
+              isExpanded: true,
               initialValue: _category,
               decoration: InputDecoration(labelText: l10n.ptc_category),
               items: PtcCategory.values
@@ -215,6 +216,7 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<PtcPriorityLevel>(
+              isExpanded: true,
               initialValue: _level,
               decoration: InputDecoration(labelText: l10n.ptc_priorityLevel),
               items: PtcPriorityLevel.values
@@ -295,6 +297,7 @@ class _PtcPriorityFormScreenState extends ConsumerState<PtcPriorityFormScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<PtcStatus>(
+              isExpanded: true,
               initialValue: _status,
               decoration: InputDecoration(labelText: l10n.common_status),
               items: PtcStatus.values

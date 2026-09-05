@@ -230,6 +230,7 @@ class _EceMonitoringFormScreenState extends ConsumerState<EceMonitoringFormScree
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<EceStatus>(
+            isExpanded: true,
             initialValue: _status,
             decoration: InputDecoration(labelText: l10n.common_status),
             items: EceStatus.values

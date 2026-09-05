@@ -169,6 +169,7 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
               children: <Widget>[
                 Expanded(
                   child: DropdownButtonFormField<OoscGender>(
+                    isExpanded: true,
                     initialValue: _gender,
                     decoration: InputDecoration(labelText: l10n.oosc_gender),
                     items: <DropdownMenuItem<OoscGender>>[
@@ -212,6 +213,7 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<OoscReason>(
+              isExpanded: true,
               initialValue: _reason,
               decoration: InputDecoration(labelText: l10n.oosc_reason),
               items: OoscReason.values
@@ -225,6 +227,7 @@ class _OoscFormScreenState extends ConsumerState<OoscFormScreen> {
             AppTextField(label: l10n.oosc_previousSchool, controller: _previousSchool),
             const SizedBox(height: 12),
             DropdownButtonFormField<OoscStatus>(
+              isExpanded: true,
               initialValue: _status,
               decoration: InputDecoration(labelText: l10n.oosc_status),
               items: OoscStatus.values

@@ -233,6 +233,7 @@ class _AdmissionCampaignFormScreenState extends ConsumerState<AdmissionCampaignF
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<CampaignStatus>(
+              isExpanded: true,
               initialValue: _status,
               decoration: InputDecoration(labelText: l10n.admission_status),
               items: CampaignStatus.values

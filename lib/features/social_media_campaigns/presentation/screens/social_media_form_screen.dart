@@ -140,6 +140,7 @@ class _SocialMediaFormScreenState extends ConsumerState<SocialMediaFormScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<SocialPlatform>(
+              isExpanded: true,
               initialValue: _platform,
               decoration: InputDecoration(labelText: l10n.socialMedia_platform),
               items: SocialPlatform.values

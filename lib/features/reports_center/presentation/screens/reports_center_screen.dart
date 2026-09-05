@@ -126,6 +126,7 @@ class _ReportsCenterScreenState extends ConsumerState<ReportsCenterScreen> {
         padding: const EdgeInsets.all(16),
         children: <Widget>[
           DropdownButtonFormField<ReportModule>(
+            isExpanded: true,
             initialValue: _module,
             decoration: InputDecoration(labelText: l10n.reports_selectModule),
             items: ReportModule.values
@@ -138,6 +139,7 @@ class _ReportsCenterScreenState extends ConsumerState<ReportsCenterScreen> {
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<ReportLanguage>(
+            isExpanded: true,
             initialValue: _language,
             decoration: InputDecoration(labelText: l10n.reports_language),
             items: ReportLanguage.values
