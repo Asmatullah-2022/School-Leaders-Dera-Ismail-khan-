@@ -3247,6 +3247,420 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Support Required'**
   String get textbook_supportRequired;
+
+  /// No description provided for @clusterMeeting_addMeeting.
+  ///
+  /// In en, this message translates to:
+  /// **'New Cluster Meeting'**
+  String get clusterMeeting_addMeeting;
+
+  /// No description provided for @clusterMeeting_noMeetings.
+  ///
+  /// In en, this message translates to:
+  /// **'No cluster meetings recorded yet'**
+  String get clusterMeeting_noMeetings;
+
+  /// No description provided for @clusterMeeting_meetingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Meeting Time'**
+  String get clusterMeeting_meetingTime;
+
+  /// No description provided for @clusterMeeting_venue.
+  ///
+  /// In en, this message translates to:
+  /// **'Venue'**
+  String get clusterMeeting_venue;
+
+  /// No description provided for @clusterMeeting_chairperson.
+  ///
+  /// In en, this message translates to:
+  /// **'Chairperson'**
+  String get clusterMeeting_chairperson;
+
+  /// No description provided for @clusterMeeting_participantsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Participants'**
+  String get clusterMeeting_participantsCount;
+
+  /// No description provided for @clusterMeeting_agenda.
+  ///
+  /// In en, this message translates to:
+  /// **'Agenda'**
+  String get clusterMeeting_agenda;
+
+  /// No description provided for @clusterMeeting_agendaUrdu.
+  ///
+  /// In en, this message translates to:
+  /// **'Agenda (Urdu)'**
+  String get clusterMeeting_agendaUrdu;
+
+  /// No description provided for @clusterMeeting_decisions.
+  ///
+  /// In en, this message translates to:
+  /// **'Decisions'**
+  String get clusterMeeting_decisions;
+
+  /// No description provided for @clusterMeeting_minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes of Meeting'**
+  String get clusterMeeting_minutes;
+
+  /// No description provided for @clusterMeeting_status_pending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get clusterMeeting_status_pending;
+
+  /// No description provided for @clusterMeeting_status_inProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get clusterMeeting_status_inProgress;
+
+  /// No description provided for @clusterMeeting_status_completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get clusterMeeting_status_completed;
+
+  /// No description provided for @clusterMeeting_actionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Action Items'**
+  String get clusterMeeting_actionsTitle;
+
+  /// No description provided for @clusterMeeting_addAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Action'**
+  String get clusterMeeting_addAction;
+
+  /// No description provided for @clusterMeeting_noActions.
+  ///
+  /// In en, this message translates to:
+  /// **'No action items yet'**
+  String get clusterMeeting_noActions;
+
+  /// No description provided for @clusterMeeting_actionText.
+  ///
+  /// In en, this message translates to:
+  /// **'Action'**
+  String get clusterMeeting_actionText;
+
+  /// No description provided for @clusterMeeting_responsiblePerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Responsible Person'**
+  String get clusterMeeting_responsiblePerson;
+
+  /// No description provided for @clusterMeeting_deadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Deadline'**
+  String get clusterMeeting_deadline;
+
+  /// No description provided for @statement_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Statements'**
+  String get statement_title;
+
+  /// No description provided for @statement_addStatement.
+  ///
+  /// In en, this message translates to:
+  /// **'New Statement'**
+  String get statement_addStatement;
+
+  /// No description provided for @statement_noStatements.
+  ///
+  /// In en, this message translates to:
+  /// **'No statements recorded yet'**
+  String get statement_noStatements;
+
+  /// No description provided for @statement_statementType.
+  ///
+  /// In en, this message translates to:
+  /// **'Statement Type'**
+  String get statement_statementType;
+
+  /// No description provided for @statement_period.
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get statement_period;
+
+  /// No description provided for @statement_periodStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Period Start'**
+  String get statement_periodStart;
+
+  /// No description provided for @statement_periodEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Period End'**
+  String get statement_periodEnd;
+
+  /// No description provided for @statement_submittedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted On'**
+  String get statement_submittedAt;
+
+  /// No description provided for @statement_reviewedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed On'**
+  String get statement_reviewedAt;
+
+  /// No description provided for @statement_reviewNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Notes'**
+  String get statement_reviewNotes;
+
+  /// No description provided for @statement_dataFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Statement Data'**
+  String get statement_dataFields;
+
+  /// No description provided for @statement_fieldName.
+  ///
+  /// In en, this message translates to:
+  /// **'Field Name'**
+  String get statement_fieldName;
+
+  /// No description provided for @statement_fieldValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Value'**
+  String get statement_fieldValue;
+
+  /// No description provided for @statement_submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit for Review'**
+  String get statement_submit;
+
+  /// No description provided for @statement_status_draft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get statement_status_draft;
+
+  /// No description provided for @statement_status_submitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted'**
+  String get statement_status_submitted;
+
+  /// No description provided for @statement_status_underReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under Review'**
+  String get statement_status_underReview;
+
+  /// No description provided for @statement_status_approved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved'**
+  String get statement_status_approved;
+
+  /// No description provided for @statement_status_returned.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned'**
+  String get statement_status_returned;
+
+  /// No description provided for @functionality_title.
+  ///
+  /// In en, this message translates to:
+  /// **'School Functionality'**
+  String get functionality_title;
+
+  /// No description provided for @functionality_addAssessment.
+  ///
+  /// In en, this message translates to:
+  /// **'New Functionality Assessment'**
+  String get functionality_addAssessment;
+
+  /// No description provided for @functionality_noAssessments.
+  ///
+  /// In en, this message translates to:
+  /// **'No functionality assessments recorded yet'**
+  String get functionality_noAssessments;
+
+  /// No description provided for @functionality_teachersPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Teachers Present'**
+  String get functionality_teachersPresent;
+
+  /// No description provided for @functionality_teachersTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Teachers Total'**
+  String get functionality_teachersTotal;
+
+  /// No description provided for @functionality_studentsPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Students Present'**
+  String get functionality_studentsPresent;
+
+  /// No description provided for @functionality_studentsTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Students Total'**
+  String get functionality_studentsTotal;
+
+  /// No description provided for @functionality_schoolOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'School Open'**
+  String get functionality_schoolOpen;
+
+  /// No description provided for @functionality_headTeacherPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Head Teacher Present'**
+  String get functionality_headTeacherPresent;
+
+  /// No description provided for @functionality_classesConducted.
+  ///
+  /// In en, this message translates to:
+  /// **'Classes Conducted'**
+  String get functionality_classesConducted;
+
+  /// No description provided for @functionality_teachingActivityObserved.
+  ///
+  /// In en, this message translates to:
+  /// **'Teaching Activity Observed'**
+  String get functionality_teachingActivityObserved;
+
+  /// No description provided for @functionality_cleanlinessSatisfactory.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleanliness Satisfactory'**
+  String get functionality_cleanlinessSatisfactory;
+
+  /// No description provided for @functionality_basicFacilitiesAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Facilities Available'**
+  String get functionality_basicFacilitiesAvailable;
+
+  /// No description provided for @functionality_timetableDisplayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Timetable Displayed'**
+  String get functionality_timetableDisplayed;
+
+  /// No description provided for @functionality_morningAssemblyHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning Assembly Held'**
+  String get functionality_morningAssemblyHeld;
+
+  /// No description provided for @functionality_learningEnvironmentSatisfactory.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Environment Satisfactory'**
+  String get functionality_learningEnvironmentSatisfactory;
+
+  /// No description provided for @functionality_overallStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Overall Status'**
+  String get functionality_overallStatus;
+
+  /// No description provided for @functionality_status_functional.
+  ///
+  /// In en, this message translates to:
+  /// **'Functional'**
+  String get functionality_status_functional;
+
+  /// No description provided for @functionality_status_partiallyFunctional.
+  ///
+  /// In en, this message translates to:
+  /// **'Partially Functional'**
+  String get functionality_status_partiallyFunctional;
+
+  /// No description provided for @functionality_status_needsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs Attention'**
+  String get functionality_status_needsAttention;
+
+  /// No description provided for @functionality_status_nonFunctional.
+  ///
+  /// In en, this message translates to:
+  /// **'Non-Functional'**
+  String get functionality_status_nonFunctional;
+
+  /// No description provided for @schoolOpening_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeping Schools Open'**
+  String get schoolOpening_title;
+
+  /// No description provided for @schoolOpening_addCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'New Opening Check'**
+  String get schoolOpening_addCheck;
+
+  /// No description provided for @schoolOpening_noChecks.
+  ///
+  /// In en, this message translates to:
+  /// **'No opening checks recorded yet'**
+  String get schoolOpening_noChecks;
+
+  /// No description provided for @schoolOpening_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get schoolOpening_open;
+
+  /// No description provided for @schoolOpening_closed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get schoolOpening_closed;
+
+  /// No description provided for @schoolOpening_isOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'School Open Today'**
+  String get schoolOpening_isOpen;
+
+  /// No description provided for @schoolOpening_openingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Opening Time'**
+  String get schoolOpening_openingTime;
+
+  /// No description provided for @schoolOpening_closingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Closing Time'**
+  String get schoolOpening_closingTime;
+
+  /// No description provided for @schoolOpening_reasonIfClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason If Closed'**
+  String get schoolOpening_reasonIfClosed;
+
+  /// No description provided for @schoolOpening_actionRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Action Required'**
+  String get schoolOpening_actionRequired;
 }
 
 class _AppLocalizationsDelegate

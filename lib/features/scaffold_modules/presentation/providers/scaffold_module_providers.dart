@@ -7,6 +7,7 @@ import '../../../../core/providers/current_user_provider.dart';
 import '../../../../core/providers/firebase_providers.dart';
 import '../../../advertisement_campaigns/data/models/advertisement_campaign_model.dart';
 import '../../../cleanliness/data/models/cleanliness_model.dart';
+import '../../../cluster_meetings/data/meeting_action_repository.dart';
 import '../../../cluster_meetings/data/models/cluster_meeting_model.dart';
 import '../../../community_engagement/data/models/community_activity_model.dart';
 import '../../../door_to_door/data/models/door_to_door_activity_model.dart';
@@ -337,4 +338,13 @@ final plantationByIdProvider = FutureProvider.family<PlantationModel?, String>((
 
 final eceMonitoringByIdProvider = FutureProvider.family<EceMonitoringModel?, String>((ref, id) {
   return ref.watch(eceMonitoringRepositoryProvider).getById(id);
+});
+
+// --- Meeting actions subcollection (§20) ---
+final meetingActionRepositoryProvider = Provider<MeetingActionRepository>((ref) {
+  return MeetingActionRepository(ref.watch(firestoreProvider));
+});
+
+final meetingActionsProvider = StreamProvider.family<List<MeetingActionModel>, String>((ref, meetingId) {
+  return ref.watch(meetingActionRepositoryProvider).watch(meetingId);
 });

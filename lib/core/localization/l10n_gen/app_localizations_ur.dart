@@ -1605,4 +1605,216 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get textbook_supportRequired => 'درکار معاونت';
+
+  @override
+  String get clusterMeeting_addMeeting => 'نیا کلسٹر اجلاس';
+
+  @override
+  String get clusterMeeting_noMeetings =>
+      'ابھی تک کوئی کلسٹر اجلاس درج نہیں کیا گیا';
+
+  @override
+  String get clusterMeeting_meetingTime => 'اجلاس کا وقت';
+
+  @override
+  String get clusterMeeting_venue => 'مقام';
+
+  @override
+  String get clusterMeeting_chairperson => 'صدارت کنندہ';
+
+  @override
+  String get clusterMeeting_participantsCount => 'شرکاء';
+
+  @override
+  String get clusterMeeting_agenda => 'ایجنڈا';
+
+  @override
+  String get clusterMeeting_agendaUrdu => 'ایجنڈا (اردو)';
+
+  @override
+  String get clusterMeeting_decisions => 'فیصلے';
+
+  @override
+  String get clusterMeeting_minutes => 'اجلاس کی کارروائی';
+
+  @override
+  String get clusterMeeting_status_pending => 'زیر التواء';
+
+  @override
+  String get clusterMeeting_status_inProgress => 'جاری';
+
+  @override
+  String get clusterMeeting_status_completed => 'مکمل';
+
+  @override
+  String get clusterMeeting_actionsTitle => 'ایکشن آئٹمز';
+
+  @override
+  String get clusterMeeting_addAction => 'ایکشن شامل کریں';
+
+  @override
+  String get clusterMeeting_noActions => 'ابھی تک کوئی ایکشن آئٹم نہیں';
+
+  @override
+  String get clusterMeeting_actionText => 'ایکشن';
+
+  @override
+  String get clusterMeeting_responsiblePerson => 'ذمہ دار شخص';
+
+  @override
+  String get clusterMeeting_deadline => 'آخری تاریخ';
+
+  @override
+  String get statement_title => 'گوشوارہ جات';
+
+  @override
+  String get statement_addStatement => 'نیا گوشوارہ';
+
+  @override
+  String get statement_noStatements => 'ابھی تک کوئی گوشوارہ درج نہیں کیا گیا';
+
+  @override
+  String get statement_statementType => 'گوشوارے کی قسم';
+
+  @override
+  String get statement_period => 'مدت';
+
+  @override
+  String get statement_periodStart => 'مدت کا آغاز';
+
+  @override
+  String get statement_periodEnd => 'مدت کا اختتام';
+
+  @override
+  String get statement_submittedAt => 'جمع کرانے کی تاریخ';
+
+  @override
+  String get statement_reviewedAt => 'جائزہ لینے کی تاریخ';
+
+  @override
+  String get statement_reviewNotes => 'جائزہ نوٹس';
+
+  @override
+  String get statement_dataFields => 'گوشوارے کا ڈیٹا';
+
+  @override
+  String get statement_fieldName => 'فیلڈ کا نام';
+
+  @override
+  String get statement_fieldValue => 'قدر';
+
+  @override
+  String get statement_submit => 'جائزے کے لیے جمع کروائیں';
+
+  @override
+  String get statement_status_draft => 'مسودہ';
+
+  @override
+  String get statement_status_submitted => 'جمع شدہ';
+
+  @override
+  String get statement_status_underReview => 'زیر جائزہ';
+
+  @override
+  String get statement_status_approved => 'منظور شدہ';
+
+  @override
+  String get statement_status_returned => 'واپس شدہ';
+
+  @override
+  String get functionality_title => 'سکول کی فعالیت';
+
+  @override
+  String get functionality_addAssessment => 'نیا فعالیت جائزہ';
+
+  @override
+  String get functionality_noAssessments =>
+      'ابھی تک کوئی فعالیت جائزہ درج نہیں کیا گیا';
+
+  @override
+  String get functionality_teachersPresent => 'حاضر اساتذہ';
+
+  @override
+  String get functionality_teachersTotal => 'کل اساتذہ';
+
+  @override
+  String get functionality_studentsPresent => 'حاضر طلباء';
+
+  @override
+  String get functionality_studentsTotal => 'کل طلباء';
+
+  @override
+  String get functionality_schoolOpen => 'سکول کھلا ہے';
+
+  @override
+  String get functionality_headTeacherPresent => 'ہیڈ ٹیچر حاضر ہے';
+
+  @override
+  String get functionality_classesConducted => 'کلاسز منعقد ہوئیں';
+
+  @override
+  String get functionality_teachingActivityObserved =>
+      'تدریسی سرگرمی مشاہدہ کی گئی';
+
+  @override
+  String get functionality_cleanlinessSatisfactory => 'صفائی تسلی بخش ہے';
+
+  @override
+  String get functionality_basicFacilitiesAvailable =>
+      'بنیادی سہولیات دستیاب ہیں';
+
+  @override
+  String get functionality_timetableDisplayed => 'ٹائم ٹیبل آویزاں ہے';
+
+  @override
+  String get functionality_morningAssemblyHeld => 'صبح کی اسمبلی ہوئی';
+
+  @override
+  String get functionality_learningEnvironmentSatisfactory =>
+      'تعلیمی ماحول تسلی بخش ہے';
+
+  @override
+  String get functionality_overallStatus => 'مجموعی حیثیت';
+
+  @override
+  String get functionality_status_functional => 'فعال';
+
+  @override
+  String get functionality_status_partiallyFunctional => 'جزوی طور پر فعال';
+
+  @override
+  String get functionality_status_needsAttention => 'توجہ درکار ہے';
+
+  @override
+  String get functionality_status_nonFunctional => 'غیر فعال';
+
+  @override
+  String get schoolOpening_title => 'سکولوں کو کھلا رکھنا';
+
+  @override
+  String get schoolOpening_addCheck => 'نیا کھلا رہنے کا چیک';
+
+  @override
+  String get schoolOpening_noChecks => 'ابھی تک کوئی چیک درج نہیں کیا گیا';
+
+  @override
+  String get schoolOpening_open => 'کھلا';
+
+  @override
+  String get schoolOpening_closed => 'بند';
+
+  @override
+  String get schoolOpening_isOpen => 'آج سکول کھلا ہے';
+
+  @override
+  String get schoolOpening_openingTime => 'کھلنے کا وقت';
+
+  @override
+  String get schoolOpening_closingTime => 'بند ہونے کا وقت';
+
+  @override
+  String get schoolOpening_reasonIfClosed => 'بند ہونے کی وجہ';
+
+  @override
+  String get schoolOpening_actionRequired => 'درکار کارروائی';
 }

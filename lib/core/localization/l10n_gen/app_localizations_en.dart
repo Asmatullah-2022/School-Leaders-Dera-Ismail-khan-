@@ -1603,4 +1603,216 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get textbook_supportRequired => 'Support Required';
+
+  @override
+  String get clusterMeeting_addMeeting => 'New Cluster Meeting';
+
+  @override
+  String get clusterMeeting_noMeetings => 'No cluster meetings recorded yet';
+
+  @override
+  String get clusterMeeting_meetingTime => 'Meeting Time';
+
+  @override
+  String get clusterMeeting_venue => 'Venue';
+
+  @override
+  String get clusterMeeting_chairperson => 'Chairperson';
+
+  @override
+  String get clusterMeeting_participantsCount => 'Participants';
+
+  @override
+  String get clusterMeeting_agenda => 'Agenda';
+
+  @override
+  String get clusterMeeting_agendaUrdu => 'Agenda (Urdu)';
+
+  @override
+  String get clusterMeeting_decisions => 'Decisions';
+
+  @override
+  String get clusterMeeting_minutes => 'Minutes of Meeting';
+
+  @override
+  String get clusterMeeting_status_pending => 'Pending';
+
+  @override
+  String get clusterMeeting_status_inProgress => 'In Progress';
+
+  @override
+  String get clusterMeeting_status_completed => 'Completed';
+
+  @override
+  String get clusterMeeting_actionsTitle => 'Action Items';
+
+  @override
+  String get clusterMeeting_addAction => 'Add Action';
+
+  @override
+  String get clusterMeeting_noActions => 'No action items yet';
+
+  @override
+  String get clusterMeeting_actionText => 'Action';
+
+  @override
+  String get clusterMeeting_responsiblePerson => 'Responsible Person';
+
+  @override
+  String get clusterMeeting_deadline => 'Deadline';
+
+  @override
+  String get statement_title => 'Statements';
+
+  @override
+  String get statement_addStatement => 'New Statement';
+
+  @override
+  String get statement_noStatements => 'No statements recorded yet';
+
+  @override
+  String get statement_statementType => 'Statement Type';
+
+  @override
+  String get statement_period => 'Period';
+
+  @override
+  String get statement_periodStart => 'Period Start';
+
+  @override
+  String get statement_periodEnd => 'Period End';
+
+  @override
+  String get statement_submittedAt => 'Submitted On';
+
+  @override
+  String get statement_reviewedAt => 'Reviewed On';
+
+  @override
+  String get statement_reviewNotes => 'Review Notes';
+
+  @override
+  String get statement_dataFields => 'Statement Data';
+
+  @override
+  String get statement_fieldName => 'Field Name';
+
+  @override
+  String get statement_fieldValue => 'Value';
+
+  @override
+  String get statement_submit => 'Submit for Review';
+
+  @override
+  String get statement_status_draft => 'Draft';
+
+  @override
+  String get statement_status_submitted => 'Submitted';
+
+  @override
+  String get statement_status_underReview => 'Under Review';
+
+  @override
+  String get statement_status_approved => 'Approved';
+
+  @override
+  String get statement_status_returned => 'Returned';
+
+  @override
+  String get functionality_title => 'School Functionality';
+
+  @override
+  String get functionality_addAssessment => 'New Functionality Assessment';
+
+  @override
+  String get functionality_noAssessments =>
+      'No functionality assessments recorded yet';
+
+  @override
+  String get functionality_teachersPresent => 'Teachers Present';
+
+  @override
+  String get functionality_teachersTotal => 'Teachers Total';
+
+  @override
+  String get functionality_studentsPresent => 'Students Present';
+
+  @override
+  String get functionality_studentsTotal => 'Students Total';
+
+  @override
+  String get functionality_schoolOpen => 'School Open';
+
+  @override
+  String get functionality_headTeacherPresent => 'Head Teacher Present';
+
+  @override
+  String get functionality_classesConducted => 'Classes Conducted';
+
+  @override
+  String get functionality_teachingActivityObserved =>
+      'Teaching Activity Observed';
+
+  @override
+  String get functionality_cleanlinessSatisfactory =>
+      'Cleanliness Satisfactory';
+
+  @override
+  String get functionality_basicFacilitiesAvailable =>
+      'Basic Facilities Available';
+
+  @override
+  String get functionality_timetableDisplayed => 'Timetable Displayed';
+
+  @override
+  String get functionality_morningAssemblyHeld => 'Morning Assembly Held';
+
+  @override
+  String get functionality_learningEnvironmentSatisfactory =>
+      'Learning Environment Satisfactory';
+
+  @override
+  String get functionality_overallStatus => 'Overall Status';
+
+  @override
+  String get functionality_status_functional => 'Functional';
+
+  @override
+  String get functionality_status_partiallyFunctional => 'Partially Functional';
+
+  @override
+  String get functionality_status_needsAttention => 'Needs Attention';
+
+  @override
+  String get functionality_status_nonFunctional => 'Non-Functional';
+
+  @override
+  String get schoolOpening_title => 'Keeping Schools Open';
+
+  @override
+  String get schoolOpening_addCheck => 'New Opening Check';
+
+  @override
+  String get schoolOpening_noChecks => 'No opening checks recorded yet';
+
+  @override
+  String get schoolOpening_open => 'Open';
+
+  @override
+  String get schoolOpening_closed => 'Closed';
+
+  @override
+  String get schoolOpening_isOpen => 'School Open Today';
+
+  @override
+  String get schoolOpening_openingTime => 'Opening Time';
+
+  @override
+  String get schoolOpening_closingTime => 'Closing Time';
+
+  @override
+  String get schoolOpening_reasonIfClosed => 'Reason If Closed';
+
+  @override
+  String get schoolOpening_actionRequired => 'Action Required';
 }
